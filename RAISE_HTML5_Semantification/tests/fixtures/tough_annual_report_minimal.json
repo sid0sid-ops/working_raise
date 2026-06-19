@@ -1,0 +1,20 @@
+[
+  {
+    "text": "PUBLICATIONS",
+    "font_size": 19,
+    "is_bold": true,
+    "confidence": 0.96
+  },
+  {
+    "text": "The faculty published journal articles, conference papers, and book chapters.",
+    "confidence": 0.85
+  },
+  {
+    "text": "• Journal articles: 45\n• Conference papers: 62\n• Book chapters: 8",
+    "confidence": 0.82
+  },
+  {
+    "text": "possibly unreadable handwritten annotation",
+    "confidence": 0.18
+  }
+]

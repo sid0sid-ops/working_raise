@@ -1,0 +1,76 @@
+{
+  "source_file": "sample_annual_report.pdf",
+  "blocks": [
+    {
+      "block_id": "b001",
+      "page_number": 1,
+      "text": "RESEARCH ACTIVITIES",
+      "bbox": [72, 100, 420, 130],
+      "font_size": 18,
+      "font_name": "Times-Bold",
+      "is_bold": true,
+      "is_italic": false,
+      "reading_order": 1,
+      "block_type_guess": "heading",
+      "confidence": 0.98,
+      "section_hint": "Research",
+      "source_file": "sample_annual_report.pdf"
+    },
+    {
+      "block_id": "b002",
+      "page_number": 1,
+      "text": "The department continued funded research in renewable energy and computing.",
+      "bbox": [72, 145, 500, 190],
+      "font_size": 11,
+      "font_name": "Times",
+      "is_bold": false,
+      "is_italic": false,
+      "reading_order": 2,
+      "block_type_guess": "paragraph",
+      "confidence": 0.93,
+      "source_file": "sample_annual_report.pdf"
+    },
+    {
+      "block_id": "b003",
+      "page_number": 1,
+      "text": "- Publications increased\n- Grants were awarded",
+      "bbox": [72, 200, 500, 245],
+      "font_size": 11,
+      "font_name": "Times",
+      "is_bold": false,
+      "is_italic": false,
+      "reading_order": 3,
+      "block_type_guess": "paragraph",
+      "confidence": 0.91,
+      "source_file": "sample_annual_report.pdf"
+    },
+    {
+      "block_id": "b004",
+      "page_number": 2,
+      "text": "Faculty,Publications\nEngineering,12\nScience,9",
+      "bbox": [72, 80, 500, 160],
+      "font_size": 10,
+      "font_name": "Times",
+      "is_bold": false,
+      "is_italic": false,
+      "reading_order": 4,
+      "block_type_guess": "table",
+      "confidence": 0.88,
+      "source_file": "sample_annual_report.pdf"
+    },
+    {
+      "block_id": "b005",
+      "page_number": 2,
+      "text": "unclear scanned margin note",
+      "bbox": [40, 180, 130, 220],
+      "font_size": 8,
+      "font_name": "Times-Italic",
+      "is_bold": false,
+      "is_italic": true,
+      "reading_order": 5,
+      "block_type_guess": "paragraph",
+      "confidence": 0.32,
+      "source_file": "sample_annual_report.pdf"
+    }
+  ]
+}

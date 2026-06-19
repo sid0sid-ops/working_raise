@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raise.example/schemas/semantic_input.schema.json",
+  "title": "RAISE Prepared Annual Report Blocks",
+  "oneOf": [
+    { "type": "array" },
+    { "type": "object", "additionalProperties": true }
+  ],
+  "$defs": {
+    "block": {
+      "type": "object",
+      "properties": {
+        "block_id": { "type": ["string", "number"] },
+        "page_number": { "type": ["integer", "null"] },
+        "text": { "type": ["string", "number", "null"] },
+        "bbox": {
+          "anyOf": [
+            { "type": "array", "items": { "type": "number" } },
+            { "type": "string" },
+            { "type": "null" }
+          ]
+        },
+        "x0": { "type": ["number", "null"] },
+        "y0": { "type": ["number", "null"] },
+        "x1": { "type": ["number", "null"] },
+        "y1": { "type": ["number", "null"] },
+        "font_size": { "type": ["number", "null"] },
+        "font_name": { "type": ["string", "null"] },
+        "is_bold": { "type": ["boolean", "null"] },
+        "is_italic": { "type": ["boolean", "null"] },
+        "reading_order": { "type": ["integer", "null"] },
+        "block_type_guess": { "type": ["string", "null"] },
+        "confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "section_hint": { "type": ["string", "null"] },
+        "source_file": { "type": ["string", "null"] },
+        "rows": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "table": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "array",
+            "items": {}
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

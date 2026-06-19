@@ -1,0 +1,33 @@
+{
+  "document": {
+    "filename": "alternate_report.pdf",
+    "pages": [
+      {
+        "page": 1,
+        "items": [
+          {
+            "id": "title-1",
+            "content": "FACULTY PUBLICATIONS",
+            "page": 1,
+            "fontSize": 17,
+            "bold": true,
+            "type": "title",
+            "score": 0.96
+          },
+          {
+            "content": "1. Journal papers\n2. Conference papers",
+            "page": 1,
+            "order": 2,
+            "score": 0.9
+          },
+          {
+            "tableData": [["Year", "Count"], ["2024", "14"]],
+            "label": "table-candidate",
+            "page": 2,
+            "score": 0.84
+          }
+        ]
+      }
+    ]
+  }
+}

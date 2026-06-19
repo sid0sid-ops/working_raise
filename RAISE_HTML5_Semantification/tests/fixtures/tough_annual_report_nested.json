@@ -1,0 +1,59 @@
+{
+  "report_metadata": {
+    "institution": "Example University",
+    "year": "2024-2025",
+    "source_file": "example_university_annual_report.pdf"
+  },
+  "document": {
+    "pages": [
+      {
+        "pageNumber": 4,
+        "elements": [
+          {
+            "content": "DEPARTMENT OF COMPUTER SCIENCE",
+            "page": 4,
+            "bounds": [60, 80, 520, 112],
+            "fontSize": 20,
+            "font": "Helvetica-Bold",
+            "bold": true,
+            "role": "heading",
+            "probability": 0.99
+          },
+          {
+            "content": "Research Grants and Collaboration",
+            "page": 4,
+            "bounds": [60, 130, 420, 154],
+            "fontSize": 15,
+            "bold": true,
+            "role": "paragraph",
+            "probability": 0.94,
+            "section": "Grants"
+          },
+          {
+            "content": "1. DST sponsored project continued\n2. Industry collaboration signed",
+            "page": 4,
+            "bounds": [72, 170, 520, 225],
+            "fontSize": 11,
+            "probability": 0.91
+          },
+          {
+            "content": "Grant Scheme | Amount | PI\nSERB | 1250000 | Dr. Rao\nAICTE | 700000 | Dr. Khan",
+            "page": 5,
+            "bounds": [70, 90, 530, 180],
+            "fontSize": 10,
+            "label": "table-candidate",
+            "probability": 0.87
+          },
+          {
+            "content": "smudged footer possible duplicate text",
+            "page": 5,
+            "bounds": [38, 740, 280, 760],
+            "fontSize": 8,
+            "italic": true,
+            "probability": 0.21
+          }
+        ]
+      }
+    ]
+  }
+}
