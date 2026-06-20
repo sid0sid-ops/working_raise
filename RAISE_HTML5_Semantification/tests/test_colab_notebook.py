@@ -30,8 +30,52 @@ def test_colab_notebook_uploads_json_not_pdf() -> None:
     assert "files.download(semantic_html_path)" in cells["download-outputs"]
 
 
+def test_colab_notebook_detects_gpu_tpu_or_cpu_runtime() -> None:
+    runtime_cell = _notebook_cells()["colab-runtime-check"]
+
+    assert "nvidia-smi" in runtime_cell
+    assert "GPU runtime detected" in runtime_cell
+    assert "TPU runtime detected" in runtime_cell
+    assert "CPU runtime detected" in runtime_cell
+
+
+def test_colab_notebook_requires_github_package_install() -> None:
+    install_cell = _notebook_cells()["github-install-hook"]
+
+    assert "GITHUB_PACKAGE" in install_cell
+    assert "subprocess.check_call" in install_cell
+    assert '"--no-cache-dir"' in install_cell
+    assert "self-contained" not in install_cell
+    assert "except" not in install_cell
+
+
+def test_colab_notebook_explains_each_workflow_stage() -> None:
+    cells = _notebook_cells()
+    required_notes = {
+        "upload-notes",
+        "dependency-notes",
+        "github-install-notes",
+        "runtime-notes",
+        "engine-notes",
+        "smoke-tests-notes",
+        "conversion-notes",
+        "preview-notes",
+        "download-notes",
+    }
+
+    assert required_notes <= cells.keys()
+    notebook_text = "\n".join(cells.values()).lower()
+    assert "your own file" not in notebook_text
+    assert "during the presentation" not in notebook_text
+    assert "json robustness smoke tests" in notebook_text
+
+
 def test_colab_engine_runs_standard_and_alternate_json_shapes() -> None:
     cells = _notebook_cells()
+
+    assert "from raise_html5_semantification.main import build_report" in cells["engine-code"]
+    assert "def classify_block" not in cells["engine-code"]
+    assert "build_report(" in cells["run-semantification"]
 
     smoke_namespace: dict[str, object] = {}
     exec(cells["engine-code"], smoke_namespace)

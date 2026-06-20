@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from importlib import resources
 from pathlib import Path
 from typing import Any
 
@@ -20,8 +21,13 @@ def _read_json(path: Path) -> Any:
 
 
 def load_schema(schema_path: Path | None = None) -> dict[str, Any]:
-    path = schema_path or Path("schemas/semantic_input.schema.json")
-    return _read_json(path)
+    if schema_path is not None:
+        return _read_json(schema_path)
+    schema_resource = resources.files("raise_html5_semantification").joinpath(
+        "semantic_input.schema.json"
+    )
+    with schema_resource.open("r", encoding="utf-8") as file:
+        return json.load(file)
 
 
 BLOCK_CONTAINER_KEYS = (

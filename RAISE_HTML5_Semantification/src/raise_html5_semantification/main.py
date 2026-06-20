@@ -19,8 +19,9 @@ def build_report(
     validation_output_path: str | Path = "data/output/validation_report.json",
     profile_input_path: str | Path | None = None,
     profile_output_path: str | Path | None = "data/output/semantic_profile.json",
+    schema_path: str | Path | None = None,
 ) -> str:
-    blocks = load_blocks(input_path)
+    blocks = load_blocks(input_path, schema_path=schema_path)
     profile = load_semantic_profile(profile_input_path) or learn_semantic_profile(
         blocks, source_name=str(input_path)
     )

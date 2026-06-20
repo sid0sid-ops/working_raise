@@ -26,6 +26,7 @@ LEARN_PROFILE_OUTPUT_OPTION = typer.Option(
     Path("data/output/semantic_profile.json"), "--profile-output", "--output"
 )
 PROFILE_INPUT_OPTION = typer.Option(None, "--profile-input")
+SCHEMA_OPTION = typer.Option(None, "--schema")
 
 
 @app.command()
@@ -35,10 +36,18 @@ def build(
     validation_output: Path = VALIDATION_OUTPUT_OPTION,
     profile_input: Path | None = PROFILE_INPUT_OPTION,
     profile_output: Path | None = BUILD_PROFILE_OUTPUT_OPTION,
+    schema: Path | None = SCHEMA_OPTION,
 ) -> None:
     """Build semantic HTML5 and validation report from prepared block JSON."""
     try:
-        build_report(input, output, validation_output, profile_input, profile_output)
+        build_report(
+            input,
+            output,
+            validation_output,
+            profile_input,
+            profile_output,
+            schema_path=schema,
+        )
     except (InputValidationError, ValueError, OSError) as exc:
         console.print(f"[red]Build failed:[/red] {exc}")
         raise typer.Exit(1) from exc
