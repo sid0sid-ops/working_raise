@@ -27,7 +27,18 @@ def test_colab_notebook_uploads_json_not_pdf() -> None:
 
     assert "files.upload()" in cells["upload-json"]
     assert "PDF" in "".join(nbformat.read(NOTEBOOK, nbformat.NO_CONVERT).cells[0].source)
-    assert "files.download(semantic_html_path)" in cells["download-outputs"]
+    download_cell = cells["download-outputs"]
+    assert "files.download(output_path)" in download_cell
+    assert "raise_html5_semantification_outputs.zip" in download_cell
+    for filename in (
+        "report.html",
+        "source_map.json",
+        "section_map.json",
+        "ai_chunks.json",
+        "validation_report.json",
+        "input_quality_report.json",
+    ):
+        assert filename in cells["run-semantification"] or filename in download_cell
 
 
 def test_colab_notebook_detects_gpu_tpu_or_cpu_runtime() -> None:
@@ -98,6 +109,10 @@ def test_colab_engine_runs_standard_and_alternate_json_shapes() -> None:
             soup = BeautifulSoup(report_html, "lxml")
 
             assert validation_report["ok"]
+            assert Path("source_map.json").exists()
+            assert Path("section_map.json").exists()
+            assert Path("ai_chunks.json").exists()
+            assert Path("input_quality_report.json").exists()
             assert soup.find("main", attrs={"aria-label": "Semantic annual report content"})
             assert soup.find("article", attrs={"id": "semantic-report"})
             assert soup.find("nav", attrs={"id": "document-outline"})

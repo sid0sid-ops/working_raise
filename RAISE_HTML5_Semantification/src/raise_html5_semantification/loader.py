@@ -44,11 +44,23 @@ BLOCK_CONTAINER_KEYS = (
 
 TEXT_KEYS = {"text", "content", "block_text", "raw_text", "value", "line", "paragraph"}
 TABLE_KEYS = {"rows", "table", "table_rows", "tableRows", "table_data", "tableData", "cells"}
+IMAGE_KEYS = {
+    "image_path",
+    "imagePath",
+    "image_src",
+    "imageSrc",
+    "caption",
+    "image_caption",
+    "figure_caption",
+    "alt_text",
+    "altText",
+    "image_alt",
+}
 
 
 def _looks_like_block(value: dict[str, Any]) -> bool:
     keys = set(value)
-    if keys & TEXT_KEYS or keys & TABLE_KEYS:
+    if keys & TEXT_KEYS or keys & TABLE_KEYS or keys & IMAGE_KEYS:
         return True
     metadata_keys = {
         "block_id",
@@ -134,13 +146,15 @@ def normalize_raw_blocks(
                 or block.get("content")
                 or block.get("block_text")
                 or block.get("raw_text")
+                or block.get("caption")
+                or block.get("alt_text")
                 or "block"
             )
             block["block_id"] = f"generated-p{page}-{index:04d}-{slugify(text_seed[:32])}"
             block["generated_block_id"] = True
         if source_file and not block.get("source_file"):
             block["source_file"] = source_file
-        if not block.get("reading_order") and not block.get("order"):
+        if block.get("reading_order") is None and block.get("order") is None:
             block["reading_order"] = index
         normalized.append(block)
     return normalized
@@ -155,3 +169,14 @@ def load_blocks(input_path: str | Path, schema_path: str | Path | None = None) -
     raw_blocks = normalize_raw_blocks(extract_blocks(raw), source_file=source_file)
     blocks = [Block.model_validate(item) for item in raw_blocks]
     return sorted(blocks, key=lambda block: (block.reading_order is None, block.reading_order or 0))
+
+
+def load_raw_blocks(
+    input_path: str | Path, schema_path: str | Path | None = None
+) -> list[dict[str, Any]]:
+    """Load validated blocks without generating IDs or filling metadata."""
+    path = Path(input_path)
+    raw = _read_json(path)
+    schema = load_schema(Path(schema_path)) if schema_path else load_schema()
+    validate_raw_input(raw, schema)
+    return extract_blocks(raw)

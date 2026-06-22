@@ -1,141 +1,289 @@
 # RAISE HTML5 Semantification
 
-Module owner: **Siddharth Tripathi**
+Owner: **Siddharth Tripathi**<br>
+Repository: `semanticClimate/RAISE`<br>
+Branch: `siddharth-semantification`<br>
+Module: `RAISE_HTML5_Semantification/`
 
-This module folder implements Siddharth Tripathi's RAISE project module:
-**RAISE: Research Assessment Intelligence & Semantic Extraction**.
+This module converts prepared annual-report blocks from JSON into clean, structured, traceable
+HTML5. It is the bridge between upstream document preparation and downstream AI-assisted research
+assessment.
 
-Main repository:
-
-```text
-https://github.com/semanticClimate/RAISE.git
-```
-
-Branch:
+## Position in the RAISE Pipeline
 
 ```text
-siddharth-semantification
+PDF parsing and filtering (upstream team)
+                    |
+                    v
+          target_blocks.json
+                    |
+                    v
+      HTML5 Semantification (this module)
+                    |
+       +------------+-------------+
+       |            |             |
+       v            v             v
+  report.html  traceability   AI-ready chunks
+                    |
+                    v
+       downstream extraction and assessment
 ```
 
-Module folder:
+This module does not interpret research-assessment meaning. It preserves the supplied content,
+adds semantic structure, and prepares reliable handoff artifacts for later stages.
 
-```text
-RAISE_HTML5_Semantification
+## Quick Start
+
+From `RAISE_HTML5_Semantification/`:
+
+```bash
+uv sync --extra dev
+
+uv run python -m raise_html5_semantification validate \
+  --input data/input/target_blocks.json
+
+uv run python -m raise_html5_semantification build \
+  --input data/input/target_blocks.json \
+  --output data/output/report.html
 ```
 
-The module starts after PDF parsing, PDF filtering, and upstream block preparation are complete. It receives structured annual-report block JSON and converts it into clean, valid, traceable, semantic HTML5 for the next AI extraction stage.
-
-## Boundary
-
-This module does **not** perform PDF parsing. It does **not** perform PDF filtering. It does **not** perform AI structured extraction. It does **not** perform final JSON extraction. It does **not** perform CERIF or Wikidata mapping.
-
-The only task here is HTML5 semantification.
+The build command creates all standard outputs under `data/output/`.
 
 ## Input
 
-Expected input file:
+### Expected Location
 
 ```text
 data/input/target_blocks.json
 ```
 
-The input may be either a list of blocks or an object containing `blocks`, `target_blocks`, or `content_blocks`.
+The input can be:
 
-Example:
+- A JSON array of blocks.
+- An object containing `blocks`, `target_blocks`, or `content_blocks`.
+- A supported nested structure containing block-like records.
+
+### Recommended Block Fields
+
+| Field | Purpose |
+|---|---|
+| `block_id` | Stable identifier used for end-to-end source traceability. |
+| `page_number` | Original PDF page number. |
+| `text` | Original text. It is preserved without summarization. |
+| `bbox` | Original bounding box, normally `[x0, y0, x1, y1]`. |
+| `reading_order` | Controls document order. |
+| `block_type_guess` | Upstream hint such as `heading`, `paragraph`, `table`, or `image`. |
+| `font_size`, `font_name` | Support deterministic heading classification. |
+| `is_bold`, `is_italic` | Additional layout signals. |
+| `confidence` | Upstream parser/OCR confidence. |
+| `section_hint` | Optional section classification hint. |
+| `rows` or `table` | Already-extracted table structure. |
+| `image_path` or `image_src` | Reference to an image already provided upstream. |
+| `caption`, `alt_text` | Accessible image description and caption. |
+
+Missing metadata does not automatically stop the build. The module records missing or suspicious
+input information in `input_quality_report.json` so upstream problems are visible.
+
+### Text Block Example
 
 ```json
 {
-  "source_file": "university_annual_report.pdf",
-  "blocks": [
-    {
-      "block_id": "page1_block4",
-      "page_number": 1,
-      "text": "RESEARCH ACTIVITIES",
-      "bbox": [72, 100, 420, 130],
-      "font_size": 18,
-      "font_name": "Times-Bold",
-      "is_bold": true,
-      "is_italic": false,
-      "reading_order": 4,
-      "block_type_guess": "heading",
-      "confidence": 0.98,
-      "section_hint": "Research",
-      "source_file": "university_annual_report.pdf"
-    }
+  "block_id": "page66_block2",
+  "page_number": 66,
+  "text": "DEPARTMENT OF FINANCE & BUSINESS ECONOMICS",
+  "bbox": [72, 100, 510, 132],
+  "font_size": 18,
+  "font_name": "Times-Bold",
+  "is_bold": true,
+  "reading_order": 802,
+  "block_type_guess": "heading",
+  "confidence": 0.98,
+  "source_file": "university_annual_report.pdf"
+}
+```
+
+### Table Block Example
+
+```json
+{
+  "block_id": "page70_table1",
+  "page_number": 70,
+  "block_type_guess": "table",
+  "reading_order": 910,
+  "rows": [
+    ["Year", "Publications"],
+    ["2023", "42"],
+    ["2024", "51"]
   ]
 }
 ```
 
-## Output
+### Image Block Example
 
-Primary output:
-
-```text
-data/output/report.html
+```json
+{
+  "block_id": "page72_figure1",
+  "page_number": 72,
+  "block_type_guess": "chart",
+  "reading_order": 942,
+  "image_path": "images/research_grants.png",
+  "caption": "Research grants by year",
+  "alt_text": "Bar chart showing annual research grants"
+}
 ```
 
-Validation output:
+The module does not extract this image from a PDF. It only renders the upstream image reference.
 
-```text
-data/output/validation_report.json
-```
+## Outputs and Their Purpose
 
-Learned semantic profile output:
+| Output | Purpose | Expected downstream use |
+|---|---|---|
+| `report.html` | Complete semantic HTML5 representation of the report. | Human review, accessibility, section-aware extraction, and auditable evidence. |
+| `source_map.json` | Maps every source block to its generated HTML element IDs. | Trace extracted facts back to pages, blocks, tables, figures, or paragraphs. |
+| `section_map.json` | Records section hierarchy, page/block boundaries, children, and content counts. | Navigate directly to faculties, departments, and subsections without reparsing HTML. |
+| `ai_chunks.json` | Provides section-level HTML and plain-text chunks with pages and block IDs. | Input preparation for a later AI extraction module without sending the whole report at once. |
+| `validation_report.json` | Reports structural validity, counts, warnings, and traceability coverage. | Quality gate before downstream extraction. |
+| `input_quality_report.json` | Reports missing metadata, OCR noise, TOC blocks, weak tables, and missing image paths. | Diagnose upstream parsing quality without silently modifying upstream content. |
+| `semantic_profile.json` | Stores learned deterministic layout thresholds. | Reuse consistent heading behavior on reports with similar layouts. |
 
-```text
-data/output/semantic_profile.json
-```
-
-For the next teammate, use:
+Standard paths:
 
 ```python
 semantic_html_path = "data/output/report.html"
+source_map_path = "data/output/source_map.json"
+section_map_path = "data/output/section_map.json"
+ai_chunks_path = "data/output/ai_chunks.json"
 validation_report_path = "data/output/validation_report.json"
+input_quality_report_path = "data/output/input_quality_report.json"
 semantic_profile_path = "data/output/semantic_profile.json"
 ```
 
-The next AI extraction stage should read `semantic_html_path`. Every meaningful HTML element contains traceability attributes:
+## Using the Outputs in the Next Stage
+
+The next teammate should use `validation_report.json` as a gate, `ai_chunks.json` as the primary
+section-level input, and `source_map.json` to preserve evidence links.
+
+```python
+import json
+from pathlib import Path
+
+output_dir = Path("data/output")
+
+validation = json.loads((output_dir / "validation_report.json").read_text())
+input_quality = json.loads((output_dir / "input_quality_report.json").read_text())
+
+if not validation["ok"]:
+    raise RuntimeError("Semantic HTML failed validation")
+
+# Warnings should be reviewed even when validation['ok'] is true.
+warnings = [
+    issue for issue in validation["issues"] if issue["severity"] == "warning"
+]
+
+chunks = json.loads((output_dir / "ai_chunks.json").read_text())
+source_map = json.loads((output_dir / "source_map.json").read_text())
+
+publication_chunks = [
+    chunk
+    for chunk in chunks
+    if chunk["recommended_task"] == "publication extraction"
+]
+
+for chunk in publication_chunks:
+    section_html = chunk["html"]
+    source_block_ids = chunk["source_block_ids"]
+    source_pages = chunk["source_pages"]
+    # Pass section_html to the downstream extraction component.
+    # Store source_block_ids and source_pages with every extracted result.
+```
+
+This module does not call an LLM. It only prepares deterministic chunks for a later component.
+
+## Traceability Contract
+
+Every meaningful generated element carries source metadata where applicable:
 
 ```html
 <p
-  id="p-page1-block4"
-  data-page="1"
-  data-source-block="page1_block4"
+  id="p-page66-block3"
+  data-page="66"
+  data-source-block="page66_block3"
   data-block-type="paragraph"
-  data-bbox="[72, 100, 420, 130]"
-  data-confidence="0.980"
-  data-reading-order="4">
-  ...
+  data-bbox="[72, 145, 510, 190]"
+  data-confidence="0.930"
+  data-reading-order="803"
+  data-semantic-role="paragraph">
+  Original source text
 </p>
 ```
 
-The output also includes an accessible document outline, `aria-labelledby` links between sections
-and headings, `data-semantic-role`, source file metadata, generated-ID flags, table cell
-coordinates, list-item indexes, captions, and stable IDs for meaningful list/table children.
+Tables, table rows, cells, lists, list items, figures, images, captions, headings, and sections also
+receive stable IDs and traceability attributes. This lets downstream results reference source
+evidence instead of returning unsupported facts.
 
-## HTML5 Semantics
+## Semantic Structure
 
-The writer uses semantic HTML elements including `html`, `head`, `body`, `header`, `main`, `footer`, `section`, `h1`, `h2`, `h3`, `p`, `aside`, `ul`, `ol`, `li`, `table`, `thead`, `tbody`, `tr`, `th`, `td`, `figure`, `figcaption`, and `pre`.
+The generated HTML uses:
 
-Heading detection is rule based:
+- Document structure: `header`, `main`, `article`, `section`, `footer`.
+- Headings: `h1`, `h2`, `h3`.
+- Content: `p`, `aside`, `ul`, `ol`, `li`.
+- Tables: `table`, `caption`, `thead`, `tbody`, `tr`, `th`, `td`.
+- Images and uncertain tables: `figure`, `img`, `figcaption`, `pre`.
 
-- Respect `block_type_guess` when it says heading/title/h1/h2/h3.
-- Use font size, bold text, short text, uppercase text, and section keywords.
-- Section keywords include Department, Research, Publications, Grants, Patents, Faculty, Awards, Collaboration, Workshop, Conference, Outreach, and Activities.
+### Heading Rules
 
-Table handling is intentionally limited:
+- `FACULTY OF ...` normally becomes `h1`.
+- `DEPARTMENT OF ...` normally becomes `h2`.
+- Publications, Research Projects, Faculty Strength, Seminars, Patents, and similar subsections
+  normally become `h3`.
+- TOC dot leaders, number-only financial values, symbol-only blocks, and likely OCR fragments are
+  rejected as headings.
+- Font size, weight, uppercase text, and section context are deterministic fallback signals.
 
-- If upstream data marks a block as `table` or `table-candidate`, this module converts already-present rows or simple delimited text into an HTML table.
-- If structure is unclear, the text is preserved inside `figure > pre`.
-- This module does not extract tables from PDFs.
+The visible outline includes `h1` and `h2` by default:
+
+```bash
+uv run python -m raise_html5_semantification build \
+  --input data/input/target_blocks.json \
+  --output data/output/report.html \
+  --outline-depth 2
+```
+
+Use `--outline-depth 3` for smaller reports. If the requested outline would exceed 300 links, h3
+headings remain in the document body but are hidden from the outline.
+
+### Table Behavior
+
+- Already-structured rows become semantic HTML tables.
+- Homogeneous lists of objects use stable column ordering.
+- Empty cells are preserved and uneven rows are padded.
+- Delimited table text can be converted when its structure is clear.
+- Unclear table candidates are preserved as text inside `figure > pre`.
+- No table extraction from PDFs occurs here.
+
+### Image Behavior
+
+- `image`, `figure`, `chart`, and `diagram` blocks become `figure > img + figcaption`.
+- Blocks containing `image_path`, `image_src`, `caption`, or `alt_text` are image-like.
+- Missing image paths produce a traceable placeholder instead of dropping the block.
+- Missing paths are reported in validation and input-quality outputs.
+- No PDF image detection or extraction occurs here.
+
+## Benefits
+
+- **Structure:** Flat parser blocks become navigable faculties, departments, and subsections.
+- **Traceability:** Every downstream fact can retain page and source-block evidence.
+- **Preservation:** Original text and upstream table/image references are not summarized away.
+- **Smaller extraction inputs:** Section chunks avoid sending an entire annual report at once.
+- **Quality control:** Validation and input-quality reports expose structural and upstream issues.
+- **Accessibility:** Semantic HTML, heading hierarchy, captions, and alternative text improve review.
+- **Determinism:** The same prepared input and profile produce reproducible output.
+- **Separation of responsibility:** Parsing, semantification, and extraction remain independent.
 
 ## Learned Semantic Profile
 
-The module can learn deterministic layout thresholds from prepared JSON metadata. This is not
-PDF parsing and not AI extraction. It learns reusable semantification signals such as body font
-size, heading font size, H1 threshold, low-confidence threshold, and common upstream block labels.
-
-The learned profile is saved as JSON and can be reused for future reports with similar formatting:
+Learn a profile from a prepared report:
 
 ```bash
 uv run python -m raise_html5_semantification learn-profile \
@@ -143,7 +291,7 @@ uv run python -m raise_html5_semantification learn-profile \
   --output data/output/semantic_profile.json
 ```
 
-Build with a saved profile:
+Reuse it for another report with a similar layout:
 
 ```bash
 uv run python -m raise_html5_semantification build \
@@ -152,76 +300,57 @@ uv run python -m raise_html5_semantification build \
   --profile-input data/output/semantic_profile.json
 ```
 
-## Setup
+## Other Commands
+
+Inspect block classifications:
 
 ```bash
-uv sync --extra dev
+uv run python -m raise_html5_semantification inspect \
+  --input data/input/target_blocks.json
 ```
 
-If you prefer installing from requirements:
-
-```bash
-uv pip install -r requirements.txt
-```
-
-## Commands
-
-Build semantic HTML:
-
-```bash
-uv run python -m raise_html5_semantification build --input data/input/target_blocks.json --output data/output/report.html
-```
-
-Validate input JSON:
-
-```bash
-uv run python -m raise_html5_semantification validate --input data/input/target_blocks.json
-```
-
-Inspect classification decisions:
-
-```bash
-uv run python -m raise_html5_semantification inspect --input data/input/target_blocks.json
-```
-
-Run quality checks:
+Run development checks:
 
 ```bash
 uv run ruff check .
 uv run pytest
 ```
 
-## Colab Demo
+## Colab Workflow
 
-Use this Colab notebook:
+Notebook:
 
 ```text
 notebooks/RAISE_HTML5_Semantification_Colab.ipynb
 ```
 
-Colab link:
+Colab URL:
 
 ```text
 https://colab.research.google.com/github/semanticClimate/RAISE/blob/siddharth-semantification/RAISE_HTML5_Semantification/notebooks/RAISE_HTML5_Semantification_Colab.ipynb
 ```
 
-The notebook uploads JSON, not PDF. It installs dependencies, uploads `target_blocks.json`, runs semantification, generates `report.html` and `validation_report.json`, and downloads both files.
+The notebook uploads prepared JSON, runs this module, previews `report.html`, and downloads the
+HTML, maps, AI chunks, validation report, input-quality report, and a ZIP of all deliverables.
+HTML5 semantification is deterministic CPU work; GPU or TPU acceleration is not required.
 
-It also generates and downloads `semantic_profile.json`. The notebook includes a Colab runtime
-check that reports whether a TPU runtime is active. HTML5 semantification is deterministic string
-and JSON processing, so it does not require a TPU; TPU availability is only reported for the demo
-environment.
+## Known Boundaries
+
+- This module starts from `target_blocks.json`.
+- It does not parse PDFs.
+- It does not filter raw reports.
+- It does not extract tables or images from PDFs.
+- It does not perform AI extraction or generate final assessment JSON.
+- It does not perform CERIF, Wikidata, ROR, or ORCID mapping.
+- It preserves and restructures the supplied input.
+- Output quality depends on upstream block quality and reading order.
+- It reports upstream quality problems rather than attempting to hide or repair them.
 
 ## Limitations
 
-- Rule-based headings can be imperfect when upstream metadata is weak.
-- Table conversion only works for table-like blocks already identified upstream.
-- Reading order depends on the upstream `reading_order` field.
-- The module preserves traceability but does not judge research-assessment meaning.
-
-## Next Improvements Within This Module
-
-- Add configurable heading thresholds per university/report template.
-- Add richer list grouping for multi-block bullet lists.
-- Add optional CSS themes for reviewer-friendly HTML.
-- Add an HTML diff tool for comparing semantification rule changes.
+- Heading classification can be imperfect when upstream metadata is weak or inconsistent.
+- Table quality depends on upstream table labels or usable row/delimiter structure.
+- Image rendering depends on valid upstream paths and does not bundle referenced files.
+- AI chunks follow detected sections; poor upstream reading order affects their boundaries.
+- Validation warnings require human or pipeline review even when `validation_report.json` reports
+  `ok: true`.

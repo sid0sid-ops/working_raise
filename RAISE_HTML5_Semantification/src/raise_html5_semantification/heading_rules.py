@@ -22,6 +22,26 @@ SECTION_KEYWORDS = {
     "activities",
 }
 
+DOT_LEADER_RE = re.compile(r"\.{4,}")
+WORD_RE = re.compile(r"[^\W\d_]+(?:[’'-][^\W\d_]+)*", re.UNICODE)
+TITLE_NUMBER_RE = re.compile(r"(?:\d{4}(?:\s*[-–]\s*\d{2,4})?|\d+(?:st|nd|rd|th))", re.I)
+LEADING_MARKERS_RE = re.compile(r"^[\s*#\-–—:.;]+")
+FACULTY_RE = re.compile(r"^faculty\s+of\b", re.I)
+DEPARTMENT_RE = re.compile(r"^department(?:\s+of)?\b", re.I)
+SUBSECTION_RE = re.compile(
+    r"^(?:major activities(?: and achievements)?|honou?rs(?:/distinctions)?|"
+    r"publications?|research publications?(?:/ research articles?)?|journals?|"
+    r"books?(?: and book chapters?)?|book chapters?|research projects?|"
+    r"patents?(?: filed/granted)?|seminars?(?: organized| organised)?|"
+    r"conferences?(?: organized| organised)?|faculty strength|"
+    r"placement details|extension and outreach activities|"
+    r"national/international mous? signed|other inter-institutional collaboration|"
+    r"students? under exchange programme|number of m\.?phil\.?/ph\.?d\.? degrees awarded|"
+    r"financial allocation and utilization|library development|facilities|"
+    r"other significant information)\b",
+    re.I,
+)
+
 
 def font_size_baseline(blocks: list[Block]) -> float:
     sizes = [block.font_size for block in blocks if block.font_size]
@@ -38,6 +58,43 @@ def is_uppercase_heading(text: str) -> bool:
     return bool(letters) and sum(char.isupper() for char in letters) / len(letters) >= 0.8
 
 
+def is_plausible_heading_text(text: str, short_limit: int = 12) -> bool:
+    """Reject common PDF table/OCR fragments before applying layout signals."""
+    stripped = text.strip()
+    words = WORD_RE.findall(stripped)
+    if (not words and not TITLE_NUMBER_RE.fullmatch(stripped)) or len(words) > short_limit:
+        return False
+    if DOT_LEADER_RE.search(stripped):
+        return False
+    if len([line for line in stripped.splitlines() if line.strip()]) > 2:
+        return False
+
+    letters = sum(char.isalpha() for char in stripped)
+    alphanumeric = sum(char.isalnum() for char in stripped)
+    return bool(TITLE_NUMBER_RE.fullmatch(stripped)) or (
+        letters >= 2 and (not alphanumeric or letters / alphanumeric >= 0.45)
+    )
+
+
+def semantic_heading_level(text: str) -> int | None:
+    """Return levels for stable annual-report organizational labels."""
+    if re.match(r"^\s*(?:[-*•]+|\d+[.)]|[a-zA-Z][.)])\s+", text):
+        return None
+    normalized = LEADING_MARKERS_RE.sub("", " ".join(text.split())).strip()
+    if FACULTY_RE.match(normalized):
+        return 1
+    if DEPARTMENT_RE.match(normalized):
+        return 2
+    if SUBSECTION_RE.match(normalized):
+        return 3
+    return None
+
+
+def _is_bold(block: Block) -> bool:
+    font_name = (block.font_name or "").lower()
+    return bool(block.is_bold) or "bold" in font_name or "black" in font_name
+
+
 def classify_heading(
     block: Block,
     baseline_font_size: float | None = None,
@@ -47,32 +104,47 @@ def classify_heading(
     if not text:
         return None
 
+    short_limit = profile.short_heading_word_limit if profile else 12
+    if not is_plausible_heading_text(text, short_limit):
+        return None
+
     guess = normalized_type(block.block_type_guess)
+    semantic_level = semantic_heading_level(text)
+    if semantic_level is not None:
+        return semantic_level
     if guess in {"heading", "title", "section-heading", "h1", "h2", "h3"}:
         if guess == "h3":
             return 3
-        if guess == "h2" or contains_section_keyword(text):
+        if guess == "h2":
             return 2
-        return 1 if guess == "title" else 2
+        return 1 if guess in {"title", "h1"} else 2
 
     words = re.findall(r"\w+", text)
-    short_limit = profile.short_heading_word_limit if profile else 12
     short_text = len(words) <= short_limit
     baseline = profile.body_font_size if profile else baseline_font_size or 11.0
     font_size = block.font_size or baseline
-    heading_font_size = profile.heading_font_size if profile else baseline + 2.0
-    h1_font_size = profile.h1_font_size if profile else baseline + 5.0
+    learned_heading_size = profile.heading_font_size if profile else baseline + 2.0
+    learned_h1_size = profile.h1_font_size if profile else baseline + 5.0
+    heading_font_size = max(learned_heading_size, baseline * 1.15, baseline + 1.5)
+    h1_font_size = max(learned_h1_size, baseline * 1.45, baseline + 4.0)
     large = font_size >= heading_font_size
     very_large = font_size >= h1_font_size
-    bold = bool(block.is_bold)
+    bold = _is_bold(block)
     uppercase = is_uppercase_heading(text)
     keyword = contains_section_keyword(text) or bool(block.section_hint)
 
-    heading_signals = very_large or (large and bold) or (bold and uppercase) or (bold and keyword)
-    if short_text and heading_signals:
-        if very_large or uppercase and font_size >= baseline + 3.0:
+    score = 0
+    score += 3 if very_large else 2 if large else 0
+    score += 2 if bold else 0
+    score += 1 if uppercase else 0
+    score += 2 if keyword else 0
+    score += 1 if len(words) <= 8 else 0
+    score += 1 if "\n" not in text else -1
+
+    if short_text and score >= 5:
+        if very_large and score >= 6:
             return 1
-        if keyword or large:
+        if keyword or large or uppercase:
             return 2
         return 3
 

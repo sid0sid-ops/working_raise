@@ -33,6 +33,10 @@
         "confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
         "section_hint": { "type": ["string", "null"] },
         "source_file": { "type": ["string", "null"] },
+        "image_path": { "type": ["string", "null"] },
+        "image_src": { "type": ["string", "null"] },
+        "caption": { "type": ["string", "null"] },
+        "alt_text": { "type": ["string", "null"] },
         "rows": {
           "type": ["array", "null"],
           "items": {

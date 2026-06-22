@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 
 from raise_html5_semantification.heading_rules import classify_heading, font_size_baseline
+from raise_html5_semantification.image_builder import is_image_like
 from raise_html5_semantification.models import Block, HtmlNode
 from raise_html5_semantification.profiler import SemanticProfile, learn_semantic_profile
 from raise_html5_semantification.table_builder import is_table_like
@@ -17,6 +18,8 @@ def classify_block(
     baseline: float,
     profile: SemanticProfile | None = None,
 ) -> tuple[str, int | None]:
+    if is_image_like(block):
+        return "image", None
     heading_level = classify_heading(block, baseline, profile)
     if heading_level:
         return "heading", heading_level
@@ -24,7 +27,9 @@ def classify_block(
     guess = normalized_type(block.block_type_guess)
     if is_table_like(block):
         return "table", None
-    if guess in {"list", "bullet", "bullet-list"} or BULLET_RE.match(block.text):
+    if guess in {"list", "list-item", "bullet", "bullet-list", "numbered-list"} or BULLET_RE.match(
+        block.text
+    ):
         return "ordered-list" if NUMBERED_RE.match(block.text) else "unordered-list", None
     low_confidence_threshold = profile.low_confidence_threshold if profile else 0.45
     if block.confidence is not None and block.confidence < low_confidence_threshold:
@@ -42,7 +47,7 @@ def build_section_tree(
     stack: list[HtmlNode] = []
 
     for block in blocks:
-        if not block.text and not is_table_like(block):
+        if not block.text and not is_table_like(block) and not is_image_like(block):
             continue
         kind, level = classify_block(block, baseline, active_profile)
         node = HtmlNode(kind=kind, block=block, level=level)

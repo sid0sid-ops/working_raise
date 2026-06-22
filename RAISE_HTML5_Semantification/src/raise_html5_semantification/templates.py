@@ -34,9 +34,19 @@ DOCUMENT_TEMPLATE = """<!doctype html>
       border: 1px solid #d8dee4;
       overflow-x: auto;
     }
+    figure img { display: block; max-width: 100%; height: auto; }
+    figcaption { color: #57606a; font-size: 0.95rem; margin-top: 0.4rem; }
     .metadata { color: #57606a; font-size: 0.95rem; }
-    nav ol { padding-left: 1.4rem; }
+    nav { margin-top: 1rem; }
+    nav summary { cursor: pointer; font-weight: 600; }
+    .outline-note { color: #57606a; font-size: 0.9rem; }
+    nav details > ol { max-height: 24rem; overflow: auto; padding-left: 1.4rem; }
     article { display: block; }
+    @media print {
+      nav { display: none; }
+      body, header, main, footer { background: #fff; }
+      main { max-width: none; }
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -66,7 +76,7 @@ DOCUMENT_TEMPLATE = """<!doctype html>
   <footer role="contentinfo">
     <p class="metadata">
       Module owner: Siddharth Tripathi.
-      Next stage input variable: <code>semantic_html_path</code>.
+      Traceability companion: <code>source_map.json</code>.
     </p>
   </footer>
 </body>
