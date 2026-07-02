@@ -128,6 +128,12 @@ def build_input_quality_report(raw_blocks: list[dict[str, Any]]) -> dict[str, An
         for page, count in sorted(page_counts.items())
         if count > high_page_threshold
     ]
+    unique_pages = sorted(page_counts.keys())
+    missing_pages_in_sequence = []
+    if unique_pages:
+        full_range = set(range(unique_pages[0], unique_pages[-1] + 1))
+        missing_pages_in_sequence = sorted(full_range - set(unique_pages))
+        
     metadata_missing = (
         missing_block_id + missing_page + missing_bbox + missing_font + missing_confidence
     )
@@ -137,6 +143,7 @@ def build_input_quality_report(raw_blocks: list[dict[str, Any]]) -> dict[str, An
         or metadata_missing
         or unstructured_tables
         or images_without_source
+        or missing_pages_in_sequence
     )
     status = "warning" if has_warnings else "ok"
     return {
@@ -155,6 +162,7 @@ def build_input_quality_report(raw_blocks: list[dict[str, Any]]) -> dict[str, An
         },
         "unusually_high_block_count_threshold": high_page_threshold,
         "pages_with_unusually_high_block_count": high_pages,
+        "missing_pages_in_sequence": missing_pages_in_sequence,
         "likely_ocr_noise_blocks": ocr_noise,
         "likely_toc_blocks": toc_blocks,
         "table_like_block_count": table_like_count,

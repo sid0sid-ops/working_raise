@@ -84,3 +84,13 @@ def test_semantic_levels_override_generic_upstream_heading_label() -> None:
     assert classify_heading(faculty, baseline_font_size=11) == 1
     assert classify_heading(department, baseline_font_size=11) == 2
     assert classify_heading(publications, baseline_font_size=11) == 3
+
+
+def test_decimal_headings_assigned_logical_levels() -> None:
+    intro = Block(block_id="intro", text="1. Introduction", block_type_guess="heading")
+    res = Block(block_id="res", text="3.4 Research at iBRIC", block_type_guess="heading")
+    details = Block(block_id="details", text="3.4.1 Mass Spectrometry", block_type_guess="heading")
+
+    assert classify_heading(intro, baseline_font_size=11) == 1
+    assert classify_heading(res, baseline_font_size=11) == 2
+    assert classify_heading(details, baseline_font_size=11) == 3

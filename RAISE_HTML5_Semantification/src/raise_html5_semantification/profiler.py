@@ -22,6 +22,7 @@ class SemanticProfile(BaseModel):
     short_heading_word_limit: int = 12
     common_block_types: list[str] = Field(default_factory=list)
     learned_notes: list[str] = Field(default_factory=list)
+    page_body_font_sizes: dict[str, float] = Field(default_factory=dict)
 
 
 def _percentile(values: list[float], percentile: float) -> float:
@@ -50,6 +51,17 @@ def learn_semantic_profile(
     h1_font = max(_percentile(font_sizes, 0.9), learned_heading + 1.0) if font_sizes else 16.0
     low_confidence = min(0.6, max(0.45, _percentile(confidences, 0.1))) if confidences else 0.45
 
+    # Page-by-page localized font profiling
+    sizes_by_page = {}
+    for block in blocks:
+        if block.page_number and block.font_size:
+            sizes_by_page.setdefault(str(block.page_number), []).append(float(block.font_size))
+            
+    page_body_font_sizes = {}
+    for page, p_sizes in sizes_by_page.items():
+        if p_sizes:
+            page_body_font_sizes[page] = round(float(median(p_sizes)), 3)
+
     notes = [
         "Profile is learned from prepared JSON metadata, not from PDF parsing.",
         "Font-size thresholds are deterministic and reusable for future similar reports.",
@@ -70,6 +82,7 @@ def learn_semantic_profile(
         low_confidence_threshold=round(low_confidence, 3),
         common_block_types=block_types,
         learned_notes=notes,
+        page_body_font_sizes=page_body_font_sizes,
     )
 
 

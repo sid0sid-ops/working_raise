@@ -9,28 +9,70 @@ This module converts prepared annual-report blocks from JSON into clean, structu
 HTML5. It is the bridge between upstream document preparation and downstream AI-assisted research
 assessment.
 
-## Position in the RAISE Pipeline
+## Position in the RAISE Pipeline & Information Flow
 
-```text
-PDF parsing and filtering (upstream team)
-                    |
-                    v
-          target_blocks.json
-                    |
-                    v
-      HTML5 Semantification (this module)
-                    |
-       +------------+-------------+
-       |            |             |
-       v            v             v
-  report.html  traceability   AI-ready chunks
-                    |
-                    v
-       downstream extraction and assessment
+Below is the end-to-end information flow architecture showing the inputs, internal python modules (`.py`), Colab orchestrations, output artifacts, and downstream consumption by the LLM component.
+
+```mermaid
+graph TD
+    %% Upstream
+    PDF[Annual Report PDF] -->|Stage 1 & 2| PDFParse[RAISE_PDF_Parsing cli.py]
+    PDFParse -->|Output| TargetBlocks[target_blocks.json]
+
+    %% Semantification Microservice
+    subgraph RAISE_HTML5_Semantification Module
+        TargetBlocks --> Loader[loader.py: Load & Validate JSON]
+        Loader --> Profiler[profiler.py: Learn typography thresholds]
+        Profiler -->|Output| ProfileJSON[semantic_profile.json]
+        
+        Loader --> SectionBuild[section_builder.py: Group into Heading Hierarchies]
+        Loader --> TableBuild[table_builder.py: Reconstruct Grid Rows]
+        
+        SectionBuild & TableBuild --> HTMLWriter[html_writer.py: Render semantic HTML]
+        HTMLWriter -->|Output| ReportHTML[report.html]
+        
+        HTMLWriter --> Artifacts[artifacts.py: Compile Handoff Objects]
+        Artifacts -->|Convert HTML Tables to Markdown| Chunks[ai_chunks.json]
+        Artifacts -->|Output| SourceMap[source_map.json]
+        Artifacts -->|Output| SectionMap[section_map.json]
+        
+        HTMLWriter --> Validator[validator.py: Validate Table Integrity & ARIA]
+        Validator -->|Output| ValReport[validation_report.json]
+        
+        HTMLWriter --> Quality[input_quality.py: Audit Page Gaps & Metadata]
+        Quality -->|Output| QualityReport[input_quality_report.json]
+    end
+
+    %% Colab execution and LLM fine-tuning
+    subgraph Colab VM execution & llm_finetuning
+        ProfileJSON & Chunks & SourceMap -->|Upload / Drive Mount| ColabVM[Colab T4 GPU VM]
+        ColabVM -->|Run data_preparation.py| PrepDatasets[train/val_dataset.jsonl]
+        PrepDatasets -->|Run train.py QLoRA| LoRA[final_lora_adapter]
+        
+        LoRA & Chunks -->|Run extract_knowledge_graph_colab.py| KGExtract[KG Extraction Engine]
+        KGExtract -->|Output| KGGraph[llm_knowledge_graph.md]
+    end
+
+    %% Downstream
+    KGGraph -->|Download| LocalLocal[Downstream RAG & Wikidata Assessment]
 ```
 
-This module does not interpret research-assessment meaning. It preserves the supplied content,
-adds semantic structure, and prepares reliable handoff artifacts for later stages.
+### ⚙️ Information Flow Process & Module Responsibilities
+
+1. **Loader (`loader.py`)**: Consumes the raw block JSON list from upstream parsing, verifying structure and schemas.
+2. **Profiler (`profiler.py`)**: Automatically detects the statistical median font size and weights, saving layout settings to `semantic_profile.json` so layouts are processed deterministically.
+3. **Section Builder (`section_builder.py`)**: Organizes blocks into a nested tree of headings (H1/H2/H3) and paragraphs, matching organization hierarchies (Faculties → Departments).
+4. **Table Builder (`table_builder.py`)**: Translates structured rows or CSV delimiters into standard HTML table structures.
+5. **HTML Writer (`html_writer.py`)**: Generates an accessible, compliant, and auditable HTML5 page (`report.html`) complete with page outline sidebars.
+6. **Artifacts Compiler (`artifacts.py`)**: Constructs the key handoff structures:
+   - `source_map.json`: Binds HTML element IDs to PDF block IDs.
+   - `section_map.json`: Tracks structural outline offsets.
+   - `ai_chunks.json`: Section-level text fragments. *Critically, table elements are converted to Markdown formatting inside the plain text chunks to preserve structural cells.*
+7. **Validator (`validator.py`)**: Runs checks on output elements (ARIA labels, duplicate IDs, broken section outlines, and table column mismatches), outputting `validation_report.json`.
+8. **Quality Auditor (`input_quality.py`)**: Reviews metadata completeness (bboxes, fonts, page sequences, and skipped page sequence gaps), outputting `input_quality_report.json`.
+
+---
+
 
 ## Quick Start
 
@@ -352,5 +394,13 @@ HTML5 semantification is deterministic CPU work; GPU or TPU acceleration is not 
 - Table quality depends on upstream table labels or usable row/delimiter structure.
 - Image rendering depends on valid upstream paths and does not bundle referenced files.
 - AI chunks follow detected sections; poor upstream reading order affects their boundaries.
-- Validation warnings require human or pipeline review even when `validation_report.json` reports
-  `ok: true`.
+- Validation warnings require human or pipeline review even when `validation_report.json` reports `ok: true`.
+
+---
+
+## 🏛️ In-Depth Code Architecture Analysis
+
+For a comprehensive file-by-file breakdown of what is happening inside the semantification pipeline:
+
+👉 **[HTML5 Semantification Module Architecture Analysis](file:///Users/sid_mac/.gemini/antigravity-cli/brain/d98f3fde-d8d5-47de-a9b5-771a417175e5/html5_semantification_architecture.md)**
+

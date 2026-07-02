@@ -57,9 +57,19 @@ LIST_MARKER_RE = re.compile(r"^\s*(?:[-*•]+|\d+[.)]|[a-zA-Z][.)])\s+")
 
 
 def _list_items(text: str) -> list[str]:
-    lines = [line.strip() for line in text.splitlines() if line.strip()]
-    if not lines:
-        lines = [text.strip()]
+    raw_lines = [line.strip() for line in text.splitlines() if line.strip()]
+    if not raw_lines:
+        return [text.strip()]
+    lines = []
+    i = 0
+    while i < len(raw_lines):
+        line = raw_lines[i]
+        if i + 1 < len(raw_lines) and LIST_MARKER_RE.fullmatch(line + " "):
+            lines.append(line + " " + raw_lines[i + 1])
+            i += 2
+        else:
+            lines.append(line)
+            i += 1
     items: list[str] = []
     for line in lines:
         items.append(LIST_MARKER_RE.sub("", line, count=1))
@@ -67,7 +77,7 @@ def _list_items(text: str) -> list[str]:
 
 
 def render_table(block: Block) -> str:
-    label = block_label(block, "table block")
+    label = block.caption or f"Table on page {block.page_number or 'unknown'}"
     caption_id = f"caption-{slugify(block.block_id)}"
     attrs = trace_attrs(
         block,

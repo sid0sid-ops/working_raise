@@ -88,6 +88,30 @@ def _recommended_task(heading: str) -> str:
     return "semantic section extraction"
 
 
+def _html_table_to_markdown(table) -> str:
+    rows = []
+    for tr in table.find_all("tr"):
+        cells = [td.get_text().strip() for td in tr.find_all(["td", "th"])]
+        if cells:
+            rows.append(cells)
+    if not rows:
+        return ""
+    
+    headers = rows[0]
+    separator = ["---"] * len(headers)
+    markdown_rows = []
+    for row in rows[1:]:
+        if len(row) < len(headers):
+            row = row + [""] * (len(headers) - len(row))
+        elif len(row) > len(headers):
+            row = row[:len(headers)]
+        markdown_rows.append("| " + " | ".join(row) + " |")
+    hdr_line = "| " + " | ".join(headers) + " |"
+    sep_line = "| " + " | ".join(separator) + " |"
+    rows_body = "\n".join(markdown_rows)
+    return f"\n{hdr_line}\n{sep_line}\n{rows_body}\n"
+
+
 def build_ai_chunks(nodes: list[HtmlNode]) -> list[AiChunk]:
     chunks: list[AiChunk] = []
 
@@ -97,7 +121,13 @@ def build_ai_chunks(nodes: list[HtmlNode]) -> list[AiChunk]:
         direct_content = [child for child in node.children if child.kind != "heading"]
         chunk_node = node.model_copy(update={"children": direct_content})
         html = render_node(chunk_node)
-        plain_text = BeautifulSoup(html, "lxml").get_text("\n", strip=True)
+        
+        soup = BeautifulSoup(html, "lxml")
+        for table in soup.find_all("table"):
+            md_table = _html_table_to_markdown(table)
+            table.replace_with(soup.new_string(md_table))
+        plain_text = soup.get_text("\n", strip=True)
+        
         chunk_nodes = [node, *direct_content]
         pages = sorted(
             {item.block.page_number for item in chunk_nodes if item.block.page_number is not None}

@@ -111,6 +111,26 @@ def validate_html_string(
                         block_id=element.get("data-source-block"),
                     )
                 )
+        if element.name == "table":
+            rows = element.find_all("tr")
+            if not rows:
+                issues.append(
+                    ValidationIssue(
+                        severity="error",
+                        message="Table element contains no rows.",
+                        block_id=element.get("data-source-block"),
+                    )
+                )
+            else:
+                row_lengths = [len(r.find_all(["td", "th"])) for r in rows]
+                if len(set(row_lengths)) > 1:
+                    issues.append(
+                        ValidationIssue(
+                            severity="warning",
+                            message=f"Table has rows with mismatched column counts: {row_lengths}",
+                            block_id=element.get("data-source-block"),
+                        )
+                    )
 
     if expected_blocks and traceable < expected_blocks:
         issues.append(

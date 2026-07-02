@@ -23,6 +23,35 @@ def _cell_text(value: Any) -> str:
     return str(value).strip()
 
 
+def merge_text_wrapped_rows(rows: list[list[str]]) -> list[list[str]]:
+    if not rows:
+        return rows
+    merged: list[list[str]] = []
+    for row in rows:
+        if not row:
+            continue
+        if not merged:
+            merged.append(row)
+            continue
+        
+        prev_row = merged[-1]
+        # A row is a continuation if the first cell (or multiple leading cells) is empty,
+        # but at least one cell has text.
+        if len(row) == len(prev_row) and not row[0].strip() and any(cell.strip() for cell in row):
+            new_row = []
+            for prev_cell, curr_cell in zip(prev_row, row, strict=False):
+                c_strip = curr_cell.strip()
+                if c_strip:
+                    # Append with space
+                    new_row.append(f"{prev_cell} {c_strip}".strip())
+                else:
+                    new_row.append(prev_cell)
+            merged[-1] = new_row
+            continue
+        merged.append(row)
+    return merged
+
+
 def _structured_rows(raw: list[Any] | dict[str, Any]) -> list[list[str]] | None:
     if isinstance(raw, Mapping):
         return [["Field", "Value"]] + [
@@ -31,16 +60,20 @@ def _structured_rows(raw: list[Any] | dict[str, Any]) -> list[list[str]] | None:
     if not raw:
         return None
     if all(isinstance(row, Mapping) for row in raw):
-        headers = list(raw[0].keys())
-        if all(set(row.keys()) == set(headers) for row in raw):
-            return [headers] + [[_cell_text(row.get(header)) for header in headers] for row in raw]
-        return None
+        headers = []
+        for row in raw:
+            for key in row:
+                if key not in headers:
+                    headers.append(key)
+        rows = [headers] + [[_cell_text(row.get(header)) for header in headers] for row in raw]
+        return merge_text_wrapped_rows(rows)
     if all(isinstance(row, Sequence) and not isinstance(row, (str, bytes)) for row in raw):
         rows = [[_cell_text(cell) for cell in row] for row in raw if row]
         if not rows:
             return None
         width = max(len(row) for row in rows)
-        return [row + [""] * (width - len(row)) for row in rows]
+        padded = [row + [""] * (width - len(row)) for row in rows]
+        return merge_text_wrapped_rows(padded)
     return None
 
 
@@ -64,11 +97,14 @@ def table_rows(block: Block) -> list[list[str]] | None:
                 cells = cells[:-1]
             rows.append(cells)
         width = max(len(row) for row in rows)
-        return [row + [""] * (width - len(row)) for row in rows]
+        padded = [row + [""] * (width - len(row)) for row in rows]
+        return merge_text_wrapped_rows(padded)
 
     parsed = list(csv.reader(StringIO(block.text)))
     if len(parsed) > 1:
         width = max(len(row) for row in parsed)
-        return [[cell.strip() for cell in row] + [""] * (width - len(row)) for row in parsed]
+        padded = [[cell.strip() for cell in row] + [""] * (width - len(row)) for row in parsed]
+        return merge_text_wrapped_rows(padded)
 
     return None
+
