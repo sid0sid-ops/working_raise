@@ -54,9 +54,7 @@ def validate_html_string(
 
     elements = main.find_all(TRACEABLE_TAGS) if main else []
     ids = [element.get("id") for element in soup.find_all(id=True)]
-    duplicate_ids = sorted(
-        element_id for element_id, count in Counter(ids).items() if count > 1
-    )
+    duplicate_ids = sorted(element_id for element_id, count in Counter(ids).items() if count > 1)
     for element_id in duplicate_ids:
         issues.append(
             ValidationIssue(severity="error", message=f"Duplicate HTML id found: {element_id}.")
@@ -149,12 +147,14 @@ def validate_html_string(
     }
     outline_count = len(soup.select("#document-outline a"))
     section_count = len(main.find_all("section")) if main else 0
-    image_count = len(
-        main.find_all("figure", attrs={"data-semantic-role": "image-figure"})
-    ) if main else 0
-    image_placeholder_count = len(
-        main.find_all("figure", attrs={"data-semantic-role": "image-placeholder"})
-    ) if main else 0
+    image_count = (
+        len(main.find_all("figure", attrs={"data-semantic-role": "image-figure"})) if main else 0
+    )
+    image_placeholder_count = (
+        len(main.find_all("figure", attrs={"data-semantic-role": "image-placeholder"}))
+        if main
+        else 0
+    )
     if heading_counts["h1"] > 50:
         issues.append(ValidationIssue(severity="warning", message="H1 count is unusually high."))
     if heading_counts["h2"] > 1000:

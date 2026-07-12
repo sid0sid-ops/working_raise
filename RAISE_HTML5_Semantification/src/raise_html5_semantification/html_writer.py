@@ -88,9 +88,7 @@ def render_table(block: Block) -> str:
     rows = table_rows(block)
     if not rows:
         figure_attrs = trace_attrs(block, "figure", semantic_role="unclear-table", label=label)
-        figcaption_attrs = trace_attrs(
-            block, "figcaption", semantic_role="unclear-table-caption"
-        )
+        figcaption_attrs = trace_attrs(block, "figcaption", semantic_role="unclear-table-caption")
         pre_attrs = trace_attrs(block, "pre", semantic_role="preserved-table-text")
         return (
             f"<figure {figure_attrs}>"
@@ -103,9 +101,7 @@ def render_table(block: Block) -> str:
     body_rows = rows[1:]
     caption_attrs = trace_attrs(block, "caption", semantic_role="table-caption")
     thead_attrs = trace_attrs(block, "thead", semantic_role="table-header-group")
-    header_row_attrs = trace_attrs(
-        block, "tr", suffix="header", semantic_role="table-header-row"
-    )
+    header_row_attrs = trace_attrs(block, "tr", suffix="header", semantic_role="table-header-row")
     tbody_attrs = trace_attrs(block, "tbody", semantic_role="table-body-group")
     parts = [f"<table {attrs}>", f"<caption {caption_attrs}>{escape_text(label)}</caption>"]
     parts.append(f"<thead {thead_attrs}><tr {header_row_attrs}>")
@@ -220,8 +216,8 @@ def render_node(node: HtmlNode, depth: int = 0, section_path: tuple[int, ...] = 
         )
         heading = f"{indent}<h{level} {heading_attrs}>{escape_text(block.text)}</h{level}>"
         if children:
-            return f'{indent}<section {section_attrs}>\n{heading}\n{children}\n{indent}</section>'
-        return f'{indent}<section {section_attrs}>\n{heading}\n{indent}</section>'
+            return f"{indent}<section {section_attrs}>\n{heading}\n{children}\n{indent}</section>"
+        return f"{indent}<section {section_attrs}>\n{heading}\n{indent}</section>"
 
     if node.kind == "table":
         return indent + render_table(block)

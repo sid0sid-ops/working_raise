@@ -109,13 +109,9 @@ def build_input_quality_report(raw_blocks: list[dict[str, Any]]) -> dict[str, An
             if _value(raw, "image_path") is None and _value(raw, "image_src") is None:
                 images_without_source.append(_reference(raw, index))
 
-    duplicate_ids = sorted(
-        block_id for block_id, count in Counter(block_ids).items() if count > 1
-    )
+    duplicate_ids = sorted(block_id for block_id, count in Counter(block_ids).items() if count > 1)
     order_values = [order for _, order in reading_orders]
-    duplicate_orders = sorted(
-        order for order, count in Counter(order_values).items() if count > 1
-    )
+    duplicate_orders = sorted(order for order, count in Counter(order_values).items() if count > 1)
     decreases = [
         {"input_index": current[0], "previous_order": previous[1], "current_order": current[1]}
         for previous, current in zip(reading_orders, reading_orders[1:], strict=False)
@@ -133,7 +129,7 @@ def build_input_quality_report(raw_blocks: list[dict[str, Any]]) -> dict[str, An
     if unique_pages:
         full_range = set(range(unique_pages[0], unique_pages[-1] + 1))
         missing_pages_in_sequence = sorted(full_range - set(unique_pages))
-        
+
     metadata_missing = (
         missing_block_id + missing_page + missing_bbox + missing_font + missing_confidence
     )

@@ -142,16 +142,16 @@ def classify_heading(
 
     words = re.findall(r"\w+", text)
     short_text = len(words) <= short_limit
-    
+
     # Retrieve page-specific localized body font size baseline if available
     baseline = profile.body_font_size if profile else baseline_font_size or 11.0
     if profile and hasattr(profile, "page_body_font_sizes") and profile.page_body_font_sizes:
         baseline = profile.page_body_font_sizes.get(str(block.page_number), baseline)
-        
+
     font_size = block.font_size or baseline
     learned_heading_size = profile.heading_font_size if profile else baseline + 2.0
     learned_h1_size = profile.h1_font_size if profile else baseline + 5.0
-    
+
     # Scale heading thresholds proportionally to the localized baseline
     heading_font_size = max(learned_heading_size, baseline * 1.15, baseline + 1.5)
     h1_font_size = max(learned_h1_size, baseline * 1.45, baseline + 4.0)

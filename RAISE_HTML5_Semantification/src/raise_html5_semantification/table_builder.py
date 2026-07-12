@@ -33,7 +33,7 @@ def merge_text_wrapped_rows(rows: list[list[str]]) -> list[list[str]]:
         if not merged:
             merged.append(row)
             continue
-        
+
         prev_row = merged[-1]
         # A row is a continuation if the first cell (or multiple leading cells) is empty,
         # but at least one cell has text.
@@ -107,4 +107,3 @@ def table_rows(block: Block) -> list[list[str]] | None:
         return merge_text_wrapped_rows(padded)
 
     return None
-

@@ -102,8 +102,11 @@ data/input/target_blocks.json
 The input can be:
 
 - A JSON array of blocks.
-- An object containing `blocks`, `target_blocks`, or `content_blocks`.
+- An object containing `blocks`, `target_blocks`, or `content_blocks` (conforming to the authoritative `target_blocks.schema.json` contract from the parsing stage).
 - A supported nested structure containing block-like records.
+
+The default schema `semantic_input.schema.json` is aligned with `target_blocks.schema.json` and `report_blocks.schema.json` (Stage 1 & 2 outputs), supporting strict checks for `source_file`, `blocks`, and `filtering_metadata` (including exclusion records) while remaining flexible enough to load nested alternative structures via schema fallback patterns.
+
 
 ### Recommended Block Fields
 
@@ -354,9 +357,30 @@ uv run python -m raise_html5_semantification inspect \
 Run development checks:
 
 ```bash
+# Code linting
 uv run ruff check .
+
+# Code formatting checks
+uv run black --check .
+
+# Auto-format code
+uv run black .
+
+# Run test suite
 uv run pytest
 ```
+
+### 🛠️ Pre-commit Hooks
+
+This project is configured with `pre-commit` hooks for automatic quality checks (Ruff linting, Ruff formatting, Black code formatting) before code is committed:
+```bash
+# Install pre-commit hooks locally
+uv run pre-commit install
+
+# Run checks manually on all files
+uv run pre-commit run --all-files
+```
+
 
 ## Colab Workflow
 
@@ -366,15 +390,16 @@ Notebook:
 notebooks/RAISE_HTML5_Semantification_Colab.ipynb
 ```
 
-Colab URL:
-
-```text
-https://colab.research.google.com/github/semanticClimate/RAISE/blob/siddharth-semantification/RAISE_HTML5_Semantification/notebooks/RAISE_HTML5_Semantification_Colab.ipynb
-```
+To run this notebook in Google Colab:
+1. Open [Google Colab](https://colab.research.google.com/).
+2. Select the **Upload** tab.
+3. Upload the local `RAISE_HTML5_Semantification_Colab.ipynb` file from the `notebooks/` directory.
 
 The notebook uploads prepared JSON, runs this module, previews `report.html`, and downloads the
 HTML, maps, AI chunks, validation report, input-quality report, and a ZIP of all deliverables.
 HTML5 semantification is deterministic CPU work; GPU or TPU acceleration is not required.
+
+
 
 ## Known Boundaries
 
@@ -395,12 +420,4 @@ HTML5 semantification is deterministic CPU work; GPU or TPU acceleration is not 
 - Image rendering depends on valid upstream paths and does not bundle referenced files.
 - AI chunks follow detected sections; poor upstream reading order affects their boundaries.
 - Validation warnings require human or pipeline review even when `validation_report.json` reports `ok: true`.
-
----
-
-## 🏛️ In-Depth Code Architecture Analysis
-
-For a comprehensive file-by-file breakdown of what is happening inside the semantification pipeline:
-
-👉 **[HTML5 Semantification Module Architecture Analysis](file:///Users/sid_mac/.gemini/antigravity-cli/brain/d98f3fde-d8d5-47de-a9b5-771a417175e5/html5_semantification_architecture.md)**
 

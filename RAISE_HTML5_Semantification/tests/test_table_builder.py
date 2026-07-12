@@ -67,4 +67,3 @@ def test_merges_text_wrapped_rows() -> None:
         ["1", "Prof. John Doe", "Development of Novel Vaccine and Adjuvants"],
         ["2", "Dr. Jane Smith", "AI-based Drug Discovery"],
     ]
-

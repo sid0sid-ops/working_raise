@@ -56,7 +56,7 @@ def learn_semantic_profile(
     for block in blocks:
         if block.page_number and block.font_size:
             sizes_by_page.setdefault(str(block.page_number), []).append(float(block.font_size))
-            
+
     page_body_font_sizes = {}
     for page, p_sizes in sizes_by_page.items():
         if p_sizes:
