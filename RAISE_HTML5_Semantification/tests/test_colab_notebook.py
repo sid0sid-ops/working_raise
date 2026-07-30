@@ -52,12 +52,18 @@ def test_colab_notebook_detects_gpu_tpu_or_cpu_runtime() -> None:
 
 def test_colab_notebook_requires_github_package_install() -> None:
     install_cell = _notebook_cells()["github-install-hook"]
+    fallback_cell = _notebook_cells()["local-package-fallback"]
 
     assert "GITHUB_PACKAGE" in install_cell
-    assert "subprocess.check_call" in install_cell
+    assert "subprocess.run" in install_cell
     assert '"--no-cache-dir"' in install_cell
+    assert "STDOUT" in install_cell
+    assert "STDERR" in install_cell
+    assert "PACKAGE_INSTALLED" in install_cell
+    assert "files.upload()" in fallback_cell
+    assert "raise-html5-semantification" in fallback_cell
+    assert "pip" in fallback_cell
     assert "self-contained" not in install_cell
-    assert "except" not in install_cell
 
 
 def test_colab_notebook_explains_each_workflow_stage() -> None:
@@ -66,6 +72,7 @@ def test_colab_notebook_explains_each_workflow_stage() -> None:
         "upload-notes",
         "dependency-notes",
         "github-install-notes",
+        "local-package-fallback-notes",
         "runtime-notes",
         "engine-notes",
         "smoke-tests-notes",
