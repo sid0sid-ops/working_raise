@@ -2,7 +2,6 @@ import json
 from pathlib import Path
 
 from bs4 import BeautifulSoup
-
 from raise_html5_semantification.artifacts import build_ai_chunks, build_section_map
 from raise_html5_semantification.html_writer import render_document, render_outline
 from raise_html5_semantification.loader import load_blocks

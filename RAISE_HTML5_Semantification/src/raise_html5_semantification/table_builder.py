@@ -18,7 +18,7 @@ def _cell_text(value: Any) -> str:
         return ""
     if isinstance(value, Mapping):
         return "; ".join(f"{key}: {_cell_text(item)}" for key, item in value.items())
-    if isinstance(value, Sequence) and not isinstance(value, (str, bytes)):
+    if isinstance(value, Sequence) and not isinstance(value, str | bytes):
         return "; ".join(_cell_text(item) for item in value)
     return str(value).strip()
 
@@ -67,7 +67,7 @@ def _structured_rows(raw: list[Any] | dict[str, Any]) -> list[list[str]] | None:
                     headers.append(key)
         rows = [headers] + [[_cell_text(row.get(header)) for header in headers] for row in raw]
         return merge_text_wrapped_rows(rows)
-    if all(isinstance(row, Sequence) and not isinstance(row, (str, bytes)) for row in raw):
+    if all(isinstance(row, Sequence) and not isinstance(row, str | bytes) for row in raw):
         rows = [[_cell_text(cell) for cell in row] for row in raw if row]
         if not rows:
             return None

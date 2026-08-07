@@ -9,6 +9,18 @@ This module converts prepared annual-report blocks from JSON into clean, structu
 HTML5. It is the bridge between upstream document preparation and downstream AI-assisted research
 assessment.
 
+## 🚀 Unified End-to-End Google Colab Notebook
+
+The unified notebook combines Stage 1 (PDF Parsing), Stage 2 (Noise Filtering), and Stage 3 (HTML5 Semantification) into a single standalone pipeline:
+
+- **Notebook Location**: [`notebooks/RAISE_PDF_Parsing_and_Semantification_Colab.ipynb`](notebooks/RAISE_PDF_Parsing_and_Semantification_Colab.ipynb)
+- **Interactive Features**:
+  - `pymupdf` layout parsing & noise page filtering
+  - Python visual analytics charts (`matplotlib` / `seaborn`)
+  - Traceable HTML5 report rendering (`report.html`)
+  - AI RAG chunk extraction (`ai_chunks.json`)
+  - Interactive output file selector checklist vault
+
 ## Position in the RAISE Pipeline & Information Flow
 
 Below is the end-to-end information flow architecture showing the inputs, internal python modules (`.py`), Colab orchestrations, output artifacts, and downstream consumption by the LLM component.

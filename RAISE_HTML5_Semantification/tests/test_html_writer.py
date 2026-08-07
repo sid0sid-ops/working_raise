@@ -1,7 +1,6 @@
 from pathlib import Path
 
 from bs4 import BeautifulSoup
-
 from raise_html5_semantification.html_writer import build_source_map, render_document
 from raise_html5_semantification.loader import load_blocks
 from raise_html5_semantification.section_builder import build_section_tree
