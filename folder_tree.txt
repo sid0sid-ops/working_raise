@@ -1,0 +1,3105 @@
+Folder PATH listing for volume Windows
+Volume serial number is B24D-15FC
+C:.
+|   .gitignore
+|   folder_tree.txt
+|   LICENSE
+|   
+\---RAG
+    |   .dockerignore
+    |   .env
+    |   .env.docker
+    |   .env.example
+    |   app.py
+    |   docker-compose.yml
+    |   Dockerfile
+    |   Dockerfile.backend
+    |   Dockerfile.frontend
+    |   graph_workflow.mmd
+    |   LICENSE.md
+    |   main.py
+    |   README.md
+    |   requirements-docker.txt
+    |   requirements.txt
+    |   run_cli.bat
+    |   run_rag.ps1
+    |   setup.sh
+    |   SYSTEM_MANIFEST.md
+    |   THIRD_PARTY_NOTICES.md
+    |   
+    +---.pytest_cache
+    |   |   .gitignore
+    |   |   CACHEDIR.TAG
+    |   |   README.md
+    |   |   
+    |   \---v
+    |       \---cache
+    |               lastfailed
+    |               nodeids
+    |               
+    +---.runtime
+    |   |   reasoning_memory.json
+    |   |   
+    |   \---.chromadb
+    |       |   chroma.sqlite3
+    |       |   
+    |       \---b2f8b71e-a2ee-4368-8b3d-235747afda83
+    |               data_level0.bin
+    |               header.bin
+    |               index_metadata.pickle
+    |               length.bin
+    |               link_lists.bin
+    |               
+    +---data
+    |   +---documents
+    |   |       07-Jan-2025 AcademicFees.pdf
+    |   |       14-Aug-2025 AcademicFees.pdf
+    |   |       Annual Report 2024-25 final upload.pdf
+    |   |       ARE-2016-17.pdf
+    |   |       AR_2024-25_Combined_English_Mail.pdf
+    |   |       IITMRP Annual Report.pdf
+    |   |       
+    |   \---processed
+    |       |   ingested_manifest.json
+    |       |   PIPELINE_REALITY_AUDIT.json
+    |       |   
+    |       +---chunks
+    |       |       07_Jan_2025_AcademicFees_chunks.json
+    |       |       14_Aug_2025_AcademicFees_chunks.json
+    |       |       Annual_Report_2024_25_final_upload_chunks.json
+    |       |       ARE_2016_17_chunks.json
+    |       |       AR_2024_25_Combined_English_Mail_chunks.json
+    |       |       BRIC_Annual_Report_2025_English_chunks.json
+    |       |       IITMRP_Annual_Report_chunks.json
+    |       |       NIPGR_Annual_Report_2024_25_chunks.json
+    |       |       Taxonomy_Stress_Test_Demo_chunks.json
+    |       |       
+    |       +---facts
+    |       +---graph_triples
+    |       |       07_Jan_2025_AcademicFees_triples.json
+    |       |       14_Aug_2025_AcademicFees_triples.json
+    |       |       Annual_Report_2024_25_final_upload_triples.json
+    |       |       ARE_2016_17_triples.json
+    |       |       AR_2024_25_Combined_English_Mail_triples.json
+    |       |       BRIC_Annual_Report_2025_English_triples.json
+    |       |       IITMRP_Annual_Report_triples.json
+    |       |       NIPGR_Annual_Report_2024_25_triples.json
+    |       |       Taxonomy_Stress_Test_Demo_triples.json
+    |       |       
+    |       +---llm_tests
+    |       |       embedding_benchmark_results.json
+    |       |       heuristic_extraction_test.json
+    |       |       heuristic_vs_qwen_comparison.json
+    |       |       qwen3_14b_extraction_test.json
+    |       |       
+    |       \---neo4j
+    |               academic_graph.cypher
+    |               qwen_test_graph.cypher
+    |               
+    +---docs
+    |       agent_architecture.md
+    |       AI_COLLABORATOR_HANDBOOK.md
+    |       architecture.md
+    |       architecture_decision.md
+    |       comparison_engine.md
+    |       DATA_LAYOUT.md
+    |       evaluation.md
+    |       FINAL_IMPLEMENTATION_REPORT.md
+    |       GRAPHRAG_AND_VECTOR_GUIDE.md
+    |       GRAPHRAG_PIPELINE.md
+    |       graph_schema.md
+    |       inspiration_analysis.md
+    |       PIPELINE_ARCHITECTURE.md
+    |       PROJECT_BOUNDARY.md
+    |       provenance.md
+    |       ROOT_CLEANUP_LOG.md
+    |       ROOT_CLEANUP_PLAN.md
+    |       SYSTEM_TOPOLOGY_AND_ENV_MAP.md
+    |       TEST_USER_SEPARATION.md
+    |       
+    +---evaluation
+    |       evaluate.py
+    |       questions.json
+    |       
+    +---inspiration
+    |   |   AUDIT_01_FRONTEND.md
+    |   |   AUDIT_02_BACKEND_PIPELINE.md
+    |   |   AUDIT_03_DATA_AND_DATABASE.md
+    |   |   AUDIT_04_CITATIONS_EVIDENCE.md
+    |   |   AUDIT_05_UI_UX.md
+    |   |   AUDIT_06_PERFORMANCE.md
+    |   |   AUDIT_07_FINAL_ROOT_CAUSE_MATRIX.md
+    |   |   MASTER_ANTIGRAVITY_PROMPT_RAISE_ACADEMIC_GRAPHRAG_UI_UX_OFFLINE.md
+    |   |   rag at scale.odg
+    |   |   README.md
+    |   |   UNIVERSITY_REPORT_AGENTIC_GRAPHRAG_INSPIRATION_MASTER.md
+    |   |   
+    |   +---agentic-med-diag
+    |   |   |   .env.example
+    |   |   |   .gitignore
+    |   |   |   .pre-commit-config.yaml
+    |   |   |   codecov.yml
+    |   |   |   CODE_OF_CONDUCT.md
+    |   |   |   CONTRIBUTING.md
+    |   |   |   LICENSE
+    |   |   |   Makefile
+    |   |   |   pyproject.toml
+    |   |   |   README.md
+    |   |   |   
+    |   |   +---.github
+    |   |   |   |   dependabot.yml
+    |   |   |   |   pull_request_template.md
+    |   |   |   |   
+    |   |   |   \---workflows
+    |   |   |           ci.yml
+    |   |   |           
+    |   |   +---am_diag
+    |   |   |   |   py.typed
+    |   |   |   |   version.py
+    |   |   |   |   __init__.py
+    |   |   |   |   
+    |   |   |   +---agents
+    |   |   |   |   |   agent.py
+    |   |   |   |   |   models.py
+    |   |   |   |   |   prompts.py
+    |   |   |   |   |   run.py
+    |   |   |   |   |   settings.py
+    |   |   |   |   |   subagents.py
+    |   |   |   |   |   tools.py
+    |   |   |   |   |   __init__.py
+    |   |   |   |   |   
+    |   |   |   |   \---__pycache__
+    |   |   |   |           agent.cpython-313.pyc
+    |   |   |   |           models.cpython-313.pyc
+    |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |           
+    |   |   |   +---chunking
+    |   |   |   |   |   markitdown.py
+    |   |   |   |   |   recursive_character_text_splitter.py
+    |   |   |   |   |   __init__.py
+    |   |   |   |   |   
+    |   |   |   |   \---__pycache__
+    |   |   |   |           markitdown.cpython-313.pyc
+    |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |           
+    |   |   |   +---common
+    |   |   |   |   |   __init__.py
+    |   |   |   |   |   
+    |   |   |   |   +---cypher
+    |   |   |   |   |   |   loader.py
+    |   |   |   |   |   |   _identifiers.py
+    |   |   |   |   |   |   __init__.py
+    |   |   |   |   |   |   
+    |   |   |   |   |   +---community
+    |   |   |   |   |   |       link_has_report.cypher
+    |   |   |   |   |   |       link_in_community.cypher
+    |   |   |   |   |   |       link_parent_community.cypher
+    |   |   |   |   |   |       member_subgraph.cypher
+    |   |   |   |   |   |       run_gds_leiden.cypher
+    |   |   |   |   |   |       upsert_communities.cypher
+    |   |   |   |   |   |       upsert_reports.cypher
+    |   |   |   |   |   |       __init__.py
+    |   |   |   |   |   |       
+    |   |   |   |   |   +---ingest
+    |   |   |   |   |   |       link_has_entity.cypher
+    |   |   |   |   |   |       link_next_chunk.cypher
+    |   |   |   |   |   |       link_part_of.cypher
+    |   |   |   |   |   |       upsert_chunks.cypher
+    |   |   |   |   |   |       upsert_documents.cypher
+    |   |   |   |   |   |       upsert_entities.cypher
+    |   |   |   |   |   |       upsert_relations.cypher
+    |   |   |   |   |   |       __init__.py
+    |   |   |   |   |   |       
+    |   |   |   |   |   +---retrieval
+    |   |   |   |   |   |       bfs_expand.cypher
+    |   |   |   |   |   |       chunk_neighbors.cypher
+    |   |   |   |   |   |       community_members.cypher
+    |   |   |   |   |   |       hydrate_entities.cypher
+    |   |   |   |   |   |       hydrate_relations.cypher
+    |   |   |   |   |   |       __init__.py
+    |   |   |   |   |   |       
+    |   |   |   |   |   +---schema
+    |   |   |   |   |   |       constraints.cypher
+    |   |   |   |   |   |       indexes.cypher
+    |   |   |   |   |   |       __init__.py
+    |   |   |   |   |   |       
+    |   |   |   |   |   \---__pycache__
+    |   |   |   |   |           loader.cpython-313.pyc
+    |   |   |   |   |           _identifiers.cpython-313.pyc
+    |   |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |   |           
+    |   |   |   |   +---data_models
+    |   |   |   |   |   |   agent.py
+    |   |   |   |   |   |   annotations.py
+    |   |   |   |   |   |   base.py
+    |   |   |   |   |   |   chunk.py
+    |   |   |   |   |   |   cluster.py
+    |   |   |   |   |   |   community.py
+    |   |   |   |   |   |   community_report.py
+    |   |   |   |   |   |   document.py
+    |   |   |   |   |   |   entity.py
+    |   |   |   |   |   |   enums.py
+    |   |   |   |   |   |   knowledge_graph.py
+    |   |   |   |   |   |   mcq.py
+    |   |   |   |   |   |   metadata.py
+    |   |   |   |   |   |   provenance.py
+    |   |   |   |   |   |   qa.py
+    |   |   |   |   |   |   relation.py
+    |   |   |   |   |   |   rubric.py
+    |   |   |   |   |   |   schema.py
+    |   |   |   |   |   |   search.py
+    |   |   |   |   |   |   vector_record.py
+    |   |   |   |   |   |   __init__.py
+    |   |   |   |   |   |   
+    |   |   |   |   |   \---__pycache__
+    |   |   |   |   |           agent.cpython-313.pyc
+    |   |   |   |   |           annotations.cpython-313.pyc
+    |   |   |   |   |           base.cpython-313.pyc
+    |   |   |   |   |           chunk.cpython-313.pyc
+    |   |   |   |   |           cluster.cpython-313.pyc
+    |   |   |   |   |           community.cpython-313.pyc
+    |   |   |   |   |           community_report.cpython-313.pyc
+    |   |   |   |   |           document.cpython-313.pyc
+    |   |   |   |   |           entity.cpython-313.pyc
+    |   |   |   |   |           enums.cpython-313.pyc
+    |   |   |   |   |           knowledge_graph.cpython-313.pyc
+    |   |   |   |   |           mcq.cpython-313.pyc
+    |   |   |   |   |           metadata.cpython-313.pyc
+    |   |   |   |   |           provenance.cpython-313.pyc
+    |   |   |   |   |           qa.cpython-313.pyc
+    |   |   |   |   |           relation.cpython-313.pyc
+    |   |   |   |   |           rubric.cpython-313.pyc
+    |   |   |   |   |           schema.cpython-313.pyc
+    |   |   |   |   |           search.cpython-313.pyc
+    |   |   |   |   |           vector_record.cpython-313.pyc
+    |   |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |   |           
+    |   |   |   |   +---schema
+    |   |   |   |   |   |   medical_graphrag.py
+    |   |   |   |   |   |   __init__.py
+    |   |   |   |   |   |   
+    |   |   |   |   |   \---__pycache__
+    |   |   |   |   |           medical_graphrag.cpython-313.pyc
+    |   |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |   |           
+    |   |   |   |   \---__pycache__
+    |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |           
+    |   |   |   +---db
+    |   |   |   |   +---graph
+    |   |   |   |   |   |   base.py
+    |   |   |   |   |   |   neo4j.py
+    |   |   |   |   |   |   serialize.py
+    |   |   |   |   |   |   settings.py
+    |   |   |   |   |   |   __init__.py
+    |   |   |   |   |   |   
+    |   |   |   |   |   \---__pycache__
+    |   |   |   |   |           base.cpython-313.pyc
+    |   |   |   |   |           neo4j.cpython-313.pyc
+    |   |   |   |   |           serialize.cpython-313.pyc
+    |   |   |   |   |           settings.cpython-313.pyc
+    |   |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |   |           
+    |   |   |   |   \---vector
+    |   |   |   |       |   base.py
+    |   |   |   |       |   qdrant.py
+    |   |   |   |       |   settings.py
+    |   |   |   |       |   weaviate.py
+    |   |   |   |       |   __init__.py
+    |   |   |   |       |   
+    |   |   |   |       \---__pycache__
+    |   |   |   |               base.cpython-313.pyc
+    |   |   |   |               qdrant.cpython-313.pyc
+    |   |   |   |               settings.cpython-313.pyc
+    |   |   |   |               weaviate.cpython-313.pyc
+    |   |   |   |               __init__.cpython-313.pyc
+    |   |   |   |               
+    |   |   |   +---graph_construction
+    |   |   |   |   |   aggregate.py
+    |   |   |   |   |   config.py
+    |   |   |   |   |   normalize.py
+    |   |   |   |   |   __init__.py
+    |   |   |   |   |   
+    |   |   |   |   +---community
+    |   |   |   |   |       base.py
+    |   |   |   |   |       context.py
+    |   |   |   |   |       gds.py
+    |   |   |   |   |       leiden.py
+    |   |   |   |   |       summarize.py
+    |   |   |   |   |       __init__.py
+    |   |   |   |   |       
+    |   |   |   |   +---extract
+    |   |   |   |   |       base.py
+    |   |   |   |   |       combine.py
+    |   |   |   |   |       gliner_entities.py
+    |   |   |   |   |       glirel_relations.py
+    |   |   |   |   |       llm.py
+    |   |   |   |   |       __init__.py
+    |   |   |   |   |       
+    |   |   |   |   +---resolve
+    |   |   |   |   |   |   apply.py
+    |   |   |   |   |   |   candidates.py
+    |   |   |   |   |   |   cluster.py
+    |   |   |   |   |   |   deterministic.py
+    |   |   |   |   |   |   llm_dedupe.py
+    |   |   |   |   |   |   resolver.py
+    |   |   |   |   |   |   text.py
+    |   |   |   |   |   |   __init__.py
+    |   |   |   |   |   |   
+    |   |   |   |   |   \---__pycache__
+    |   |   |   |   |           text.cpython-313.pyc
+    |   |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |   |           
+    |   |   |   |   \---__pycache__
+    |   |   |   |           aggregate.cpython-313.pyc
+    |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |           
+    |   |   |   +---ingestion
+    |   |   |   |       corpus_ingestion.py
+    |   |   |   |       embedding_pipeline.py
+    |   |   |   |       extraction_pipeline.py
+    |   |   |   |       models.py
+    |   |   |   |       search_pipeline.py
+    |   |   |   |       state.py
+    |   |   |   |       __init__.py
+    |   |   |   |       
+    |   |   |   +---llm
+    |   |   |   |   |   base.py
+    |   |   |   |   |   schema_typebuilder.py
+    |   |   |   |   |   __init__.py
+    |   |   |   |   |   
+    |   |   |   |   +---baml_client
+    |   |   |   |   |   |   async_client.py
+    |   |   |   |   |   |   config.py
+    |   |   |   |   |   |   globals.py
+    |   |   |   |   |   |   inlinedbaml.py
+    |   |   |   |   |   |   parser.py
+    |   |   |   |   |   |   runtime.py
+    |   |   |   |   |   |   stream_types.py
+    |   |   |   |   |   |   sync_client.py
+    |   |   |   |   |   |   tracing.py
+    |   |   |   |   |   |   types.py
+    |   |   |   |   |   |   type_builder.py
+    |   |   |   |   |   |   type_map.py
+    |   |   |   |   |   |   watchers.py
+    |   |   |   |   |   |   __init__.py
+    |   |   |   |   |   |   
+    |   |   |   |   |   \---__pycache__
+    |   |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |   |           
+    |   |   |   |   +---baml_src
+    |   |   |   |   |       agents.baml
+    |   |   |   |   |       clients.baml
+    |   |   |   |   |       community.baml
+    |   |   |   |   |       community_search.baml
+    |   |   |   |   |       extraction.baml
+    |   |   |   |   |       generators.baml
+    |   |   |   |   |       resume.baml
+    |   |   |   |   |       retrieval.baml
+    |   |   |   |   |       
+    |   |   |   |   \---__pycache__
+    |   |   |   |           base.cpython-313.pyc
+    |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |           
+    |   |   |   +---loaders
+    |   |   |   |   +---corpus
+    |   |   |   |   |   |   base.py
+    |   |   |   |   |   |   clinical_guidelines.py
+    |   |   |   |   |   |   pubmed.py
+    |   |   |   |   |   |   pubmed_case_reports.py
+    |   |   |   |   |   |   statpearls.py
+    |   |   |   |   |   |   textbooks.py
+    |   |   |   |   |   |   __init__.py
+    |   |   |   |   |   |   
+    |   |   |   |   |   \---__pycache__
+    |   |   |   |   |           base.cpython-313.pyc
+    |   |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |   |           
+    |   |   |   |   \---dataset
+    |   |   |   |       |   base.py
+    |   |   |   |       |   careqa.py
+    |   |   |   |       |   careqa_reasoning.py
+    |   |   |   |       |   healthbench.py
+    |   |   |   |       |   medcase_reasoning.py
+    |   |   |   |       |   medmcqa.py
+    |   |   |   |       |   medqa.py
+    |   |   |   |       |   medxpertqa.py
+    |   |   |   |       |   mmlu_med.py
+    |   |   |   |       |   mmlu_pro_health.py
+    |   |   |   |       |   nejm_diagnostic.py
+    |   |   |   |       |   nejm_qa.py
+    |   |   |   |       |   prompt.py
+    |   |   |   |       |   pubhealthbench.py
+    |   |   |   |       |   pubhealthbench_freeform.py
+    |   |   |   |       |   pubmedqa.py
+    |   |   |   |       |   rar_med.py
+    |   |   |   |       |   shuffle_utils.py
+    |   |   |   |       |   supergpqa_med.py
+    |   |   |   |       |   __init__.py
+    |   |   |   |       |   
+    |   |   |   |       \---data
+    |   |   |   |               hb_consensus_criteria.json
+    |   |   |   |               pubmedqa_test_ids.json
+    |   |   |   |               
+    |   |   |   +---pipelines
+    |   |   |   |       config.py
+    |   |   |   |       ingestion.py
+    |   |   |   |       qa.py
+    |   |   |   |       __init__.py
+    |   |   |   |       
+    |   |   |   +---retrieval
+    |   |   |   |   |   config.py
+    |   |   |   |   |   filters.py
+    |   |   |   |   |   recipes.py
+    |   |   |   |   |   search.py
+    |   |   |   |   |   __init__.py
+    |   |   |   |   |   
+    |   |   |   |   +---methods
+    |   |   |   |   |   |   bfs.py
+    |   |   |   |   |   |   fulltext.py
+    |   |   |   |   |   |   hybrid.py
+    |   |   |   |   |   |   vector.py
+    |   |   |   |   |   |   __init__.py
+    |   |   |   |   |   |   
+    |   |   |   |   |   \---__pycache__
+    |   |   |   |   |           bfs.cpython-313.pyc
+    |   |   |   |   |           fulltext.cpython-313.pyc
+    |   |   |   |   |           hybrid.cpython-313.pyc
+    |   |   |   |   |           vector.cpython-313.pyc
+    |   |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |   |           
+    |   |   |   |   +---rerank
+    |   |   |   |   |   |   cross_encoder.py
+    |   |   |   |   |   |   mmr.py
+    |   |   |   |   |   |   node_distance.py
+    |   |   |   |   |   |   rrf.py
+    |   |   |   |   |   |   __init__.py
+    |   |   |   |   |   |   
+    |   |   |   |   |   \---__pycache__
+    |   |   |   |   |           cross_encoder.cpython-313.pyc
+    |   |   |   |   |           mmr.cpython-313.pyc
+    |   |   |   |   |           node_distance.cpython-313.pyc
+    |   |   |   |   |           rrf.cpython-313.pyc
+    |   |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |   |           
+    |   |   |   |   +---retrievers
+    |   |   |   |   |   |   chunk.py
+    |   |   |   |   |   |   community.py
+    |   |   |   |   |   |   entity.py
+    |   |   |   |   |   |   relation.py
+    |   |   |   |   |   |   text2cypher.py
+    |   |   |   |   |   |   __init__.py
+    |   |   |   |   |   |   
+    |   |   |   |   |   \---__pycache__
+    |   |   |   |   |           chunk.cpython-313.pyc
+    |   |   |   |   |           community.cpython-313.pyc
+    |   |   |   |   |           entity.cpython-313.pyc
+    |   |   |   |   |           relation.cpython-313.pyc
+    |   |   |   |   |           text2cypher.cpython-313.pyc
+    |   |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |   |           
+    |   |   |   |   \---__pycache__
+    |   |   |   |           config.cpython-313.pyc
+    |   |   |   |           filters.cpython-313.pyc
+    |   |   |   |           recipes.cpython-313.pyc
+    |   |   |   |           search.cpython-313.pyc
+    |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |           
+    |   |   |   +---vector
+    |   |   |   |   +---embedding
+    |   |   |   |   |   |   base.py
+    |   |   |   |   |   |   openai.py
+    |   |   |   |   |   |   sentence_transformers.py
+    |   |   |   |   |   |   zembed.py
+    |   |   |   |   |   |   __init__.py
+    |   |   |   |   |   |   
+    |   |   |   |   |   \---__pycache__
+    |   |   |   |   |           base.cpython-313.pyc
+    |   |   |   |   |           openai.cpython-313.pyc
+    |   |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |   |           
+    |   |   |   |   \---reranking
+    |   |   |   |       |   base.py
+    |   |   |   |       |   sentence_transformers.py
+    |   |   |   |       |   __init__.py
+    |   |   |   |       |   
+    |   |   |   |       \---__pycache__
+    |   |   |   |               base.cpython-313.pyc
+    |   |   |   |               sentence_transformers.cpython-313.pyc
+    |   |   |   |               __init__.cpython-313.pyc
+    |   |   |   |               
+    |   |   |   \---__pycache__
+    |   |   |           version.cpython-313.pyc
+    |   |   |           __init__.cpython-313.pyc
+    |   |   |           
+    |   |   +---img
+    |   |   |       agentic_graphrag_for_medical_diagnosis.png
+    |   |   |       graph_schema.png
+    |   |   |       
+    |   |   \---tests
+    |   |       |   __init__.py
+    |   |       |   
+    |   |       +---am_diag
+    |   |       |   |   conftest.py
+    |   |       |   |   test_import_rules.py
+    |   |       |   |   __init__.py
+    |   |       |   |   
+    |   |       |   +---agents
+    |   |       |   |   |   test_agent.py
+    |   |       |   |   |   test_models.py
+    |   |       |   |   |   test_run.py
+    |   |       |   |   |   test_subagents.py
+    |   |       |   |   |   test_tools.py
+    |   |       |   |   |   __init__.py
+    |   |       |   |   |   
+    |   |       |   |   \---__pycache__
+    |   |       |   |           test_agent.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |           test_models.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |           test_run.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |           test_subagents.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |           test_tools.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |           __init__.cpython-313.pyc
+    |   |       |   |           
+    |   |       |   +---chunking
+    |   |       |   |   |   test_markitdown.py
+    |   |       |   |   |   test_recursive_character_text_splitter.py
+    |   |       |   |   |   __init__.py
+    |   |       |   |   |   
+    |   |       |   |   \---__pycache__
+    |   |       |   |           test_markitdown.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |           test_recursive_character_text_splitter.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |           __init__.cpython-313.pyc
+    |   |       |   |           
+    |   |       |   +---common
+    |   |       |   |   +---cypher
+    |   |       |   |   |   |   test_loader.py
+    |   |       |   |   |   |   __init__.py
+    |   |       |   |   |   |   
+    |   |       |   |   |   \---__pycache__
+    |   |       |   |   |           test_loader.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           __init__.cpython-313.pyc
+    |   |       |   |   |           
+    |   |       |   |   +---data_models
+    |   |       |   |   |   |   test_chunk.py
+    |   |       |   |   |   |   test_datapoint.py
+    |   |       |   |   |   |   test_entity.py
+    |   |       |   |   |   |   test_models.py
+    |   |       |   |   |   |   test_no_stray_models.py
+    |   |       |   |   |   |   test_provenance.py
+    |   |       |   |   |   |   test_relation.py
+    |   |       |   |   |   |   test_schema_types.py
+    |   |       |   |   |   |   __init__.py
+    |   |       |   |   |   |   
+    |   |       |   |   |   \---__pycache__
+    |   |       |   |   |           test_chunk.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_datapoint.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_entity.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_models.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_no_stray_models.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_provenance.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_relation.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_schema_types.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           __init__.cpython-313.pyc
+    |   |       |   |   |           
+    |   |       |   |   \---schema
+    |   |       |   |       |   test_medical_graphrag.py
+    |   |       |   |       |   test_types.py
+    |   |       |   |       |   __init__.py
+    |   |       |   |       |   
+    |   |       |   |       \---__pycache__
+    |   |       |   |               test_medical_graphrag.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |               test_types.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |               __init__.cpython-313.pyc
+    |   |       |   |               
+    |   |       |   +---db
+    |   |       |   |   +---graph
+    |   |       |   |   |   |   conftest.py
+    |   |       |   |   |   |   test_base_ingest.py
+    |   |       |   |   |   |   test_client.py
+    |   |       |   |   |   |   test_entity_relation_queries.py
+    |   |       |   |   |   |   test_serialize.py
+    |   |       |   |   |   |   test_settings.py
+    |   |       |   |   |   |   __init__.py
+    |   |       |   |   |   |   
+    |   |       |   |   |   \---__pycache__
+    |   |       |   |   |           conftest.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_base_ingest.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_client.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_entity_relation_queries.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_serialize.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_settings.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           __init__.cpython-313.pyc
+    |   |       |   |   |           
+    |   |       |   |   \---vector
+    |   |       |   |       |   test_models.py
+    |   |       |   |       |   test_qdrant.py
+    |   |       |   |       |   test_settings.py
+    |   |       |   |       |   test_weaviate_vector_store.py
+    |   |       |   |       |   __init__.py
+    |   |       |   |       |   
+    |   |       |   |       \---__pycache__
+    |   |       |   |               test_models.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |               test_qdrant.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |               test_settings.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |               test_weaviate_vector_store.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |               __init__.cpython-313.pyc
+    |   |       |   |               
+    |   |       |   +---graph_construction
+    |   |       |   |   |   conftest.py
+    |   |       |   |   |   test_aggregation.py
+    |   |       |   |   |   test_normalization.py
+    |   |       |   |   |   test_resolution.py
+    |   |       |   |   |   test_text_normalizer.py
+    |   |       |   |   |   
+    |   |       |   |   +---extraction
+    |   |       |   |   |       test_gliner_glirel_extractor.py
+    |   |       |   |   |       test_llm_entity_relation_extractor.py
+    |   |       |   |   |       
+    |   |       |   |   \---__pycache__
+    |   |       |   |           conftest.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |           
+    |   |       |   +---ingestion
+    |   |       |   |   |   conftest.py
+    |   |       |   |   |   test_embedding_pipeline.py
+    |   |       |   |   |   test_extraction_pipeline.py
+    |   |       |   |   |   __init__.py
+    |   |       |   |   |   
+    |   |       |   |   \---__pycache__
+    |   |       |   |           conftest.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |           __init__.cpython-313.pyc
+    |   |       |   |           
+    |   |       |   +---llm
+    |   |       |   |   |   test_schema_typebuilder.py
+    |   |       |   |   |   __init__.py
+    |   |       |   |   |   
+    |   |       |   |   \---__pycache__
+    |   |       |   |           test_schema_typebuilder.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |           __init__.cpython-313.pyc
+    |   |       |   |           
+    |   |       |   +---loaders
+    |   |       |   |   +---corpus
+    |   |       |   |   |   |   test_case_reports_integration.py
+    |   |       |   |   |   |   test_case_reports_row_to_document.py
+    |   |       |   |   |   |   test_guidelines_astream.py
+    |   |       |   |   |   |   test_guidelines_integration.py
+    |   |       |   |   |   |   test_guidelines_row_to_documents.py
+    |   |       |   |   |   |   test_models.py
+    |   |       |   |   |   |   test_pubmed_integration.py
+    |   |       |   |   |   |   test_pubmed_row_to_document.py
+    |   |       |   |   |   |   test_statpearls_integration.py
+    |   |       |   |   |   |   test_statpearls_row_to_document.py
+    |   |       |   |   |   |   test_textbooks_astream.py
+    |   |       |   |   |   |   test_textbooks_integration.py
+    |   |       |   |   |   |   test_textbooks_row_to_document.py
+    |   |       |   |   |   |   __init__.py
+    |   |       |   |   |   |   
+    |   |       |   |   |   \---__pycache__
+    |   |       |   |   |           test_case_reports_integration.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_case_reports_row_to_document.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_guidelines_astream.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_guidelines_integration.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_guidelines_row_to_documents.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_models.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_pubmed_integration.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_pubmed_row_to_document.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_statpearls_integration.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_statpearls_row_to_document.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_textbooks_astream.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_textbooks_integration.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_textbooks_row_to_document.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           __init__.cpython-313.pyc
+    |   |       |   |   |           
+    |   |       |   |   \---dataset
+    |   |       |   |       |   conftest.py
+    |   |       |   |       |   helpers.py
+    |   |       |   |       |   shuffle_test_mixin.py
+    |   |       |   |       |   test_careqa.py
+    |   |       |   |       |   test_careqa_integration.py
+    |   |       |   |       |   test_careqa_reasoning.py
+    |   |       |   |       |   test_careqa_reasoning_integration.py
+    |   |       |   |       |   test_healthbench.py
+    |   |       |   |       |   test_healthbench_integration.py
+    |   |       |   |       |   test_medcase_reasoning.py
+    |   |       |   |       |   test_medcase_reasoning_integration.py
+    |   |       |   |       |   test_medmcqa.py
+    |   |       |   |       |   test_medmcqa_integration.py
+    |   |       |   |       |   test_medqa.py
+    |   |       |   |       |   test_medqa_integration.py
+    |   |       |   |       |   test_medxpertqa.py
+    |   |       |   |       |   test_medxpertqa_integration.py
+    |   |       |   |       |   test_mmlu_med.py
+    |   |       |   |       |   test_mmlu_med_integration.py
+    |   |       |   |       |   test_mmlu_pro_health.py
+    |   |       |   |       |   test_mmlu_pro_health_integration.py
+    |   |       |   |       |   test_nejm_diagnostic.py
+    |   |       |   |       |   test_nejm_diagnostic_integration.py
+    |   |       |   |       |   test_nejm_qa.py
+    |   |       |   |       |   test_nejm_qa_integration.py
+    |   |       |   |       |   test_pubhealthbench.py
+    |   |       |   |       |   test_pubhealthbench_freeform.py
+    |   |       |   |       |   test_pubhealthbench_freeform_integration.py
+    |   |       |   |       |   test_pubhealthbench_integration.py
+    |   |       |   |       |   test_pubmedqa.py
+    |   |       |   |       |   test_pubmedqa_integration.py
+    |   |       |   |       |   test_rar_med.py
+    |   |       |   |       |   test_rar_med_integration.py
+    |   |       |   |       |   test_shuffle_utils.py
+    |   |       |   |       |   test_supergpqa_med.py
+    |   |       |   |       |   test_supergpqa_med_integration.py
+    |   |       |   |       |   __init__.py
+    |   |       |   |       |   
+    |   |       |   |       \---__pycache__
+    |   |       |   |               conftest.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |               __init__.cpython-313.pyc
+    |   |       |   |               
+    |   |       |   +---retrieval
+    |   |       |   |   |   test_filters.py
+    |   |       |   |   |   test_recipes.py
+    |   |       |   |   |   test_search.py
+    |   |       |   |   |   __init__.py
+    |   |       |   |   |   
+    |   |       |   |   +---methods
+    |   |       |   |   |       __init__.py
+    |   |       |   |   |       
+    |   |       |   |   +---rerank
+    |   |       |   |   |   |   test_cross_encoder.py
+    |   |       |   |   |   |   test_mmr.py
+    |   |       |   |   |   |   test_node_distance.py
+    |   |       |   |   |   |   test_rrf.py
+    |   |       |   |   |   |   __init__.py
+    |   |       |   |   |   |   
+    |   |       |   |   |   \---__pycache__
+    |   |       |   |   |           test_cross_encoder.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_mmr.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_node_distance.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_rrf.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           __init__.cpython-313.pyc
+    |   |       |   |   |           
+    |   |       |   |   +---retrievers
+    |   |       |   |   |       __init__.py
+    |   |       |   |   |       
+    |   |       |   |   \---__pycache__
+    |   |       |   |           test_filters.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |           test_recipes.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |           test_search.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |           __init__.cpython-313.pyc
+    |   |       |   |           
+    |   |       |   +---vector
+    |   |       |   |   +---embedding
+    |   |       |   |   |   |   conftest.py
+    |   |       |   |   |   |   test_base.py
+    |   |       |   |   |   |   test_openai.py
+    |   |       |   |   |   |   test_sentence_transformers.py
+    |   |       |   |   |   |   test_zembed.py
+    |   |       |   |   |   |   __init__.py
+    |   |       |   |   |   |   
+    |   |       |   |   |   \---__pycache__
+    |   |       |   |   |           conftest.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_base.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_openai.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_sentence_transformers.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           test_zembed.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |   |           __init__.cpython-313.pyc
+    |   |       |   |   |           
+    |   |       |   |   \---reranking
+    |   |       |   |       |   conftest.py
+    |   |       |   |       |   test_base.py
+    |   |       |   |       |   test_sentence_transformers.py
+    |   |       |   |       |   __init__.py
+    |   |       |   |       |   
+    |   |       |   |       \---__pycache__
+    |   |       |   |               conftest.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |               test_base.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |               test_sentence_transformers.cpython-313-pytest-9.0.3.pyc
+    |   |       |   |               __init__.cpython-313.pyc
+    |   |       |   |               
+    |   |       |   \---__pycache__
+    |   |       |           conftest.cpython-313-pytest-9.0.3.pyc
+    |   |       |           test_import_rules.cpython-313-pytest-9.0.3.pyc
+    |   |       |           __init__.cpython-313.pyc
+    |   |       |           
+    |   |       \---__pycache__
+    |   |               __init__.cpython-313.pyc
+    |   |               
+    |   +---citegraph-copilot
+    |   |   |   .dockerignore
+    |   |   |   .env.example
+    |   |   |   .gitattributes
+    |   |   |   .gitignore
+    |   |   |   config.py
+    |   |   |   docker-compose.yml
+    |   |   |   Dockerfile
+    |   |   |   LICENSE
+    |   |   |   main.py
+    |   |   |   Makefile
+    |   |   |   pytest.ini
+    |   |   |   README.md
+    |   |   |   requirements.txt
+    |   |   |   
+    |   |   +---.github
+    |   |   |   \---workflows
+    |   |   |           ci.yml
+    |   |   |           
+    |   |   +---app
+    |   |   |   |   __init__.py
+    |   |   |   |   
+    |   |   |   +---agents
+    |   |   |   |       a2a_client.py
+    |   |   |   |       graph_build.py
+    |   |   |   |       nodes.py
+    |   |   |   |       routing.py
+    |   |   |   |       state.py
+    |   |   |   |       __init__.py
+    |   |   |   |       
+    |   |   |   +---graph
+    |   |   |   |       driver.py
+    |   |   |   |       queries.py
+    |   |   |   |       schema.cypher
+    |   |   |   |       __init__.py
+    |   |   |   |       
+    |   |   |   +---llm
+    |   |   |   |       providers.py
+    |   |   |   |       __init__.py
+    |   |   |   |       
+    |   |   |   +---mcp
+    |   |   |   |       guards.py
+    |   |   |   |       repository.py
+    |   |   |   |       server.py
+    |   |   |   |       __init__.py
+    |   |   |   |       
+    |   |   |   \---routes
+    |   |   |           graph_view.py
+    |   |   |           research.py
+    |   |   |           __init__.py
+    |   |   |           
+    |   |   +---data
+    |   |   |   \---graph
+    |   |   |           edges.csv.gz
+    |   |   |           embeddings.f32.npy
+    |   |   |           manifest.json
+    |   |   |           methods.json
+    |   |   |           papers.jsonl.gz
+    |   |   |           SOURCES.md
+    |   |   |           
+    |   |   +---docs
+    |   |   |       01-empty-state.png
+    |   |   |       02-answer-with-graph.png
+    |   |   |       03-citation-highlight.png
+    |   |   |       04-trace.png
+    |   |   |       05-human-approval.png
+    |   |   |       06-approval-edited.png
+    |   |   |       07-answer-after-reject.png
+    |   |   |       architecture.md
+    |   |   |       demo.gif
+    |   |   |       demo.mp4
+    |   |   |       
+    |   |   +---scripts
+    |   |   |       build_dump.py
+    |   |   |       embed_dump.py
+    |   |   |       extract_methods.py
+    |   |   |       load_dump.py
+    |   |   |       record_demo.py
+    |   |   |       seeds.py
+    |   |   |       sources.py
+    |   |   |       __init__.py
+    |   |   |       
+    |   |   +---services
+    |   |   |   |   __init__.py
+    |   |   |   |   
+    |   |   |   +---common
+    |   |   |   |       card.py
+    |   |   |   |       executor_base.py
+    |   |   |   |       server.py
+    |   |   |   |       __init__.py
+    |   |   |   |       
+    |   |   |   +---critic
+    |   |   |   |       card.py
+    |   |   |   |       executor.py
+    |   |   |   |       server.py
+    |   |   |   |       __init__.py
+    |   |   |   |       
+    |   |   |   +---graph_analyst
+    |   |   |   |       card.py
+    |   |   |   |       executor.py
+    |   |   |   |       server.py
+    |   |   |   |       __init__.py
+    |   |   |   |       
+    |   |   |   \---literature_scout
+    |   |   |           card.py
+    |   |   |           executor.py
+    |   |   |           server.py
+    |   |   |           __init__.py
+    |   |   |           
+    |   |   +---static
+    |   |   |   |   app.js
+    |   |   |   |   favicon.svg
+    |   |   |   |   graph.js
+    |   |   |   |   index.html
+    |   |   |   |   style.css
+    |   |   |   |   
+    |   |   |   \---vendor
+    |   |   |           d3.v7.min.js
+    |   |   |           
+    |   |   +---tests
+    |   |   |   |   test_a2a_client.py
+    |   |   |   |   test_a2a_executor.py
+    |   |   |   |   test_agent_cards.py
+    |   |   |   |   test_cypher_guard.py
+    |   |   |   |   test_demo_trim.py
+    |   |   |   |   test_dump_manifest.py
+    |   |   |   |   test_env_example.py
+    |   |   |   |   test_graph_queries.py
+    |   |   |   |   test_hitl_interrupt.py
+    |   |   |   |   test_mcp_tools.py
+    |   |   |   |   test_providers.py
+    |   |   |   |   test_routing.py
+    |   |   |   |   test_state_reducers.py
+    |   |   |   |   __init__.py
+    |   |   |   |   
+    |   |   |   \---integration
+    |   |   |           test_schema_and_search.py
+    |   |   |           __init__.py
+    |   |   |           
+    |   |   \---__pycache__
+    |   |           config.cpython-313.pyc
+    |   |           
+    |   +---graphrag-langgraph-neo4j
+    |   |   |   .dockerignore
+    |   |   |   .env.docker
+    |   |   |   .env.example
+    |   |   |   docker-compose.yml
+    |   |   |   Dockerfile.backend
+    |   |   |   Dockerfile.frontend
+    |   |   |   LICENSE.md
+    |   |   |   README.md
+    |   |   |   requirements-docker.txt
+    |   |   |   requirements.txt
+    |   |   |   setup.sh
+    |   |   |   
+    |   |   +---.github
+    |   |   |       copilot-instructions.md
+    |   |   |       
+    |   |   +---api
+    |   |   |   |   main.py
+    |   |   |   |   models.py
+    |   |   |   |   __init__.py
+    |   |   |   |   
+    |   |   |   +---routers
+    |   |   |   |   |   chat.py
+    |   |   |   |   |   database.py
+    |   |   |   |   |   documents.py
+    |   |   |   |   |   history.py
+    |   |   |   |   |   __init__.py
+    |   |   |   |   |   
+    |   |   |   |   \---__pycache__
+    |   |   |   |           chat.cpython-313.pyc
+    |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |           
+    |   |   |   +---services
+    |   |   |   |   |   chat_history_service.py
+    |   |   |   |   |   follow_up_service.py
+    |   |   |   |   |   __init__.py
+    |   |   |   |   |   
+    |   |   |   |   \---__pycache__
+    |   |   |   |           chat_history_service.cpython-313.pyc
+    |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |           
+    |   |   |   +---tests
+    |   |   |   |   |   test_documents.py
+    |   |   |   |   |   __init__.py
+    |   |   |   |   |   
+    |   |   |   |   \---__pycache__
+    |   |   |   |           test_documents.cpython-313-pytest-9.0.3.pyc
+    |   |   |   |           __init__.cpython-313.pyc
+    |   |   |   |           
+    |   |   |   \---__pycache__
+    |   |   |           main.cpython-313.pyc
+    |   |   |           models.cpython-313.pyc
+    |   |   |           __init__.cpython-313.pyc
+    |   |   |           
+    |   |   +---config
+    |   |   |       settings.py
+    |   |   |       
+    |   |   +---core
+    |   |   |   |   chunking.py
+    |   |   |   |   document_summarizer.py
+    |   |   |   |   embeddings.py
+    |   |   |   |   entity_extraction.py
+    |   |   |   |   graph_db.py
+    |   |   |   |   llm.py
+    |   |   |   |   ocr.py
+    |   |   |   |   quality_scorer.py
+    |   |   |   |   token_manager.py
+    |   |   |   |   __init__.py
+    |   |   |   |   
+    |   |   |   \---__pycache__
+    |   |   |           graph_db.cpython-313.pyc
+    |   |   |           __init__.cpython-313.pyc
+    |   |   |           
+    |   |   +---docs
+    |   |   |       FOLLOW_UP_FLOW_DIAGRAM.md
+    |   |   |       FOLLOW_UP_IMPLEMENTATION.md
+    |   |   |       HYBRID_APPROACH.md
+    |   |   |       MIGRATION_V2.md
+    |   |   |       MULTI_HOP_IMPLEMENTATION.md
+    |   |   |       OCR_IMPLEMENTATION.md
+    |   |   |       QUALITY_SCORE_IMPLEMENTATION.md
+    |   |   |       RATE_LIMITING_IMPROVEMENTS.md
+    |   |   |       SETUP_V2.md
+    |   |   |       
+    |   |   +---frontend
+    |   |   |   |   .env.local.example
+    |   |   |   |   .eslintrc.json
+    |   |   |   |   jest.config.js
+    |   |   |   |   next.config.js
+    |   |   |   |   package-lock.json
+    |   |   |   |   package.json
+    |   |   |   |   postcss.config.js
+    |   |   |   |   README.md
+    |   |   |   |   tailwind.config.js
+    |   |   |   |   tsconfig.json
+    |   |   |   |   
+    |   |   |   \---src
+    |   |   |       +---app
+    |   |   |       |       globals.css
+    |   |   |       |       layout.tsx
+    |   |   |       |       page.tsx
+    |   |   |       |       
+    |   |   |       +---components
+    |   |   |       |   +---Chat
+    |   |   |       |   |       ChatInput.tsx
+    |   |   |       |   |       ChatInterface.tsx
+    |   |   |       |   |       ConnectionStatus.tsx
+    |   |   |       |   |       FollowUpQuestions.tsx
+    |   |   |       |   |       LoadingIndicator.tsx
+    |   |   |       |   |       MessageBubble.tsx
+    |   |   |       |   |       QualityBadge.tsx
+    |   |   |       |   |       SourcesList.tsx
+    |   |   |       |   |       
+    |   |   |       |   +---Document
+    |   |   |       |   |       DocumentPreview.tsx
+    |   |   |       |   |       DocumentView.tsx
+    |   |   |       |   |       
+    |   |   |       |   +---Sidebar
+    |   |   |       |   |       DatabaseTab.tsx
+    |   |   |       |   |       HistoryTab.tsx
+    |   |   |       |   |       Sidebar.tsx
+    |   |   |       |   |       UploadTab.tsx
+    |   |   |       |   |       
+    |   |   |       |   +---Theme
+    |   |   |       |   |       ThemeProvider.tsx
+    |   |   |       |   |       ThemeToggle.tsx
+    |   |   |       |   |       
+    |   |   |       |   \---Toast
+    |   |   |       |           Toast.tsx
+    |   |   |       |           ToastContainer.tsx
+    |   |   |       |           
+    |   |   |       +---lib
+    |   |   |       |       api.ts
+    |   |   |       |       
+    |   |   |       +---store
+    |   |   |       |       chatStore.test.ts
+    |   |   |       |       chatStore.ts
+    |   |   |       |       themeStore.ts
+    |   |   |       |       
+    |   |   |       \---types
+    |   |   |               index.ts
+    |   |   |               upload.ts
+    |   |   |               
+    |   |   +---ingestion
+    |   |   |   |   document_processor.py
+    |   |   |   |   __init__.py
+    |   |   |   |   
+    |   |   |   \---loaders
+    |   |   |           csv_loader.py
+    |   |   |           docx_loader.py
+    |   |   |           image_loader.py
+    |   |   |           pdf_loader.py
+    |   |   |           pptx_loader.py
+    |   |   |           text_loader.py
+    |   |   |           xlsx_loader.py
+    |   |   |           __init__.py
+    |   |   |           
+    |   |   +---rag
+    |   |   |   |   graph_rag.py
+    |   |   |   |   retriever.py
+    |   |   |   |   __init__.py
+    |   |   |   |   
+    |   |   |   \---nodes
+    |   |   |           generation.py
+    |   |   |           graph_reasoning.py
+    |   |   |           query_analysis.py
+    |   |   |           retrieval.py
+    |   |   |           __init__.py
+    |   |   |           
+    |   |   +---RELEASES
+    |   |   |       v1.0.0.md
+    |   |   |       V1.1.0.md
+    |   |   |       v1.2.0.md
+    |   |   |       v2.0.0.md
+    |   |   |       
+    |   |   \---scripts
+    |   |           benchmark_rag.py
+    |   |           create_similarities.py
+    |   |           ingest_documents.py
+    |   |           setup_neo4j.py
+    |   |           __init__.py
+    |   |           
+    |   +---graphrag-the-definitive-guide-code
+    |   |   |   .gitignore
+    |   |   |   graphrag-book.env.example
+    |   |   |   README.md
+    |   |   |   
+    |   |   +---code
+    |   |   |   +---ch02
+    |   |   |   |       rag_app.py
+    |   |   |   |       rag_ingest.py
+    |   |   |   |       requirements.txt
+    |   |   |   |       run_rag.sh
+    |   |   |   |       
+    |   |   |   +---ch03
+    |   |   |   |       app_graphrag.py
+    |   |   |   |       entity_extraction.py
+    |   |   |   |       graphrag_retrievers.py
+    |   |   |   |       graph_refinement.py
+    |   |   |   |       lexical_graph.py
+    |   |   |   |       quick_eval.py
+    |   |   |   |       requirements.txt
+    |   |   |   |       run_graphrag.sh
+    |   |   |   |       structured_import.py
+    |   |   |   |       
+    |   |   |   +---ch04
+    |   |   |   |       onto-as-graphragpackage-schema.json
+    |   |   |   |       onto-as-pydantic.py
+    |   |   |   |       owl-onto.ttl
+    |   |   |   |       palantir-onto.json
+    |   |   |   |       skos-onto.ttl
+    |   |   |   |       
+    |   |   |   +---ch08
+    |   |   |   |       agent.py
+    |   |   |   |       app_agent.py
+    |   |   |   |       create_index.py
+    |   |   |   |       fulltext_tool.py
+    |   |   |   |       mcp_connect.py
+    |   |   |   |       mcp_tools.py
+    |   |   |   |       recommendation_tool.py
+    |   |   |   |       requirements.txt
+    |   |   |   |       run_import.sh
+    |   |   |   |       utils.py
+    |   |   |   |       vector_tool.py
+    |   |   |   |       
+    |   |   |   +---ch09
+    |   |   |   |       adopt_omg_graph.py
+    |   |   |   |       agent_with_memory.py
+    |   |   |   |       app_agent_memory.py
+    |   |   |   |       memory_io.py
+    |   |   |   |       memory_settings.py
+    |   |   |   |       queries.cypher
+    |   |   |   |       requirements.txt
+    |   |   |   |       run_setup.sh
+    |   |   |   |       
+    |   |   |   +---ch10
+    |   |   |   |       community_detection.py
+    |   |   |   |       community_summarization.py
+    |   |   |   |       count_tokens.py
+    |   |   |   |       entity_resolution.py
+    |   |   |   |       extraction.py
+    |   |   |   |       global_search_community.py
+    |   |   |   |       global_search_relationships.py
+    |   |   |   |       incremental_update.py
+    |   |   |   |       initial_summarization.py
+    |   |   |   |       local_search.py
+    |   |   |   |       requirements.txt
+    |   |   |   |       run_incremental_update.sh
+    |   |   |   |       run_ingestion.sh
+    |   |   |   |       run_searches.sh
+    |   |   |   |       utils.py
+    |   |   |   |       
+    |   |   |   \---ch12
+    |   |   |           agent_eval.py
+    |   |   |           agent_eval_data.py
+    |   |   |           eval_data.py
+    |   |   |           kg_construction_eval.py
+    |   |   |           ontology_extractor.py
+    |   |   |           run_eval.sh
+    |   |   |           run_import.sh
+    |   |   |           utils.py
+    |   |   |           
+    |   |   \---data
+    |   |       +---ch02
+    |   |       |   |   omg-company.md
+    |   |       |   |   
+    |   |       |   +---cv
+    |   |       |   |       cv_alexander_schmidt.md
+    |   |       |   |       cv_amanda_taylor.md
+    |   |       |   |       cv_benjamin_okonkwo.md
+    |   |       |   |       cv_carlos_rodriguez.md
+    |   |       |   |       cv_carol_nguyen.md
+    |   |       |   |       cv_daniel_singh.md
+    |   |       |   |       cv_david_kim.md
+    |   |       |   |       cv_elena_rodriguez.md
+    |   |       |   |       cv_emily_johnson.md
+    |   |       |   |       cv_gabriela_santos.md
+    |   |       |   |       cv_james_wilson.md
+    |   |       |   |       cv_jason_chen.md
+    |   |       |   |       cv_jennifer_rodriguez.md
+    |   |       |   |       cv_jonathan_brooks.md
+    |   |       |   |       cv_kimberly_nguyen.md
+    |   |       |   |       cv_lisa_wang.md
+    |   |       |   |       cv_marcus_washington.md
+    |   |       |   |       cv_michelle_wong.md
+    |   |       |   |       cv_nicole_adams.md
+    |   |       |   |       cv_olivia_martinez.md
+    |   |       |   |       cv_rachel_garcia.md
+    |   |       |   |       cv_robert_jackson.md
+    |   |       |   |       cv_ryan_carter.md
+    |   |       |   |       cv_sarah_chen.md
+    |   |       |   |       cv_sarah_johnson.md
+    |   |       |   |       cv_sophia_lee.md
+    |   |       |   |       cv_thomas_miller.md
+    |   |       |   |       
+    |   |       |   +---projects
+    |   |       |   |       prj_PRJ001.md
+    |   |       |   |       prj_PRJ002.md
+    |   |       |   |       prj_PRJ003.md
+    |   |       |   |       prj_PRJ004.md
+    |   |       |   |       prj_PRJ005.md
+    |   |       |   |       prj_PRJ006.md
+    |   |       |   |       prj_PRJ007.md
+    |   |       |   |       prj_PRJ008.md
+    |   |       |   |       prj_PRJ009.md
+    |   |       |   |       prj_PRJ010.md
+    |   |       |   |       prj_PRJ011.md
+    |   |       |   |       prj_PRJ012.md
+    |   |       |   |       prj_PRJ013.md
+    |   |       |   |       prj_PRJ014.md
+    |   |       |   |       prj_PRJ015.md
+    |   |       |   |       prj_PRJ016.md
+    |   |       |   |       prj_PRJ017.md
+    |   |       |   |       prj_PRJ018.md
+    |   |       |   |       prj_PRJ019.md
+    |   |       |   |       prj_PRJ020.md
+    |   |       |   |       prj_PRJ021.md
+    |   |       |   |       prj_PRJ022.md
+    |   |       |   |       prj_PRJ023.md
+    |   |       |   |       prj_PRJ024.md
+    |   |       |   |       prj_PRJ025.md
+    |   |       |   |       prj_PRJ026.md
+    |   |       |   |       prj_PRJ027.md
+    |   |       |   |       prj_PRJ028.md
+    |   |       |   |       prj_PRJ029.md
+    |   |       |   |       prj_PRJ030.md
+    |   |       |   |       prj_PRJ031.md
+    |   |       |   |       prj_PRJ032.md
+    |   |       |   |       prj_PRJ033.md
+    |   |       |   |       prj_PRJ034.md
+    |   |       |   |       prj_PRJ035.md
+    |   |       |   |       prj_PRJ036.md
+    |   |       |   |       prj_PRJ037.md
+    |   |       |   |       prj_PRJ038.md
+    |   |       |   |       prj_PRJ039.md
+    |   |       |   |       prj_PRJ040.md
+    |   |       |   |       
+    |   |       |   \---structured
+    |   |       |           consultant_skills.csv
+    |   |       |           employees.csv
+    |   |       |           projects.csv
+    |   |       |           project_participation.csv
+    |   |       |           
+    |   |       +---ch03
+    |   |       |       retriever_outputs.adoc
+    |   |       |       
+    |   |       +---ch08
+    |   |       |       project_description_embedding.csv
+    |   |       |       
+    |   |       \---ch10
+    |   |               articles_initial.csv
+    |   |               articles_update.csv
+    |   |               
+    |   +---graphrag.github.io
+    |   |   |   .gitignore
+    |   |   |   astro.config.mjs
+    |   |   |   CNAME
+    |   |   |   CODE_OF_CONDUCT.md
+    |   |   |   CONTRIBUTING.md
+    |   |   |   DEVELOP.md
+    |   |   |   LICENSE
+    |   |   |   package-lock.json
+    |   |   |   package.json
+    |   |   |   README.md
+    |   |   |   tailwind.config.mjs
+    |   |   |   tsconfig.json
+    |   |   |   vitest.config.ts
+    |   |   |   
+    |   |   +---.github
+    |   |   |   \---workflows
+    |   |   |           deploy.yml
+    |   |   |           
+    |   |   +---.vscode
+    |   |   |       extensions.json
+    |   |   |       launch.json
+    |   |   |       
+    |   |   +---media
+    |   |   |       diagram-template.excalidraw
+    |   |   |       documentation-architecture.excalidraw
+    |   |   |       exponential.excalidraw
+    |   |   |       graph-trio.excalidraw
+    |   |   |       graphrag.excalidraw
+    |   |   |       knowledge-graph-elements.excalidraw
+    |   |   |       knowledge-graph-lexical-graph-extracted-entities-community-summaries.excalidraw
+    |   |   |       knowledge-graph-lexical-graph-extracted-entities.excalidraw
+    |   |   |       knowledge-graph-lexical-graph-hierarchical-structure.excalidraw
+    |   |   |       knowledge-graph-lexical-graph-hypothetical-questions.excalidraw
+    |   |   |       knowledge-graph-lexical-graph-parent-child.excalidraw
+    |   |   |       knowledge-graph-lexical-graph-sibling-structure.excalidraw
+    |   |   |       knowledge-graph-lexical-graph.excalidraw
+    |   |   |       
+    |   |   +---public
+    |   |   |       android-chrome-192x192.png
+    |   |   |       android-chrome-512x512.png
+    |   |   |       apple-touch-icon.png
+    |   |   |       CNAME
+    |   |   |       favicon-16x16.png
+    |   |   |       favicon-32x32.png
+    |   |   |       favicon.ico
+    |   |   |       favicon.svg
+    |   |   |       site.webmanifest
+    |   |   |       
+    |   |   \---src
+    |   |       |   env.d.ts
+    |   |       |   tailwind.css
+    |   |       |   
+    |   |       +---assets
+    |   |       |   \---images
+    |   |       |       |   diagram-template.svg
+    |   |       |       |   documentation-architecture.svg
+    |   |       |       |   domain-graph.svg
+    |   |       |       |   element-chapter-node.svg
+    |   |       |       |   element-chunk-node.svg
+    |   |       |       |   element-community-node.svg
+    |   |       |       |   element-document-node.svg
+    |   |       |       |   element-entity-node.svg
+    |   |       |       |   element-first-chunk-relationship.svg
+    |   |       |       |   element-has-chapter-relationship.svg
+    |   |       |       |   element-has-child-relationship.svg
+    |   |       |       |   element-has-entity-relationship.svg
+    |   |       |       |   element-has-question-relationship.svg
+    |   |       |       |   element-has-section-relationship.svg
+    |   |       |       |   element-has-subsection-relationship.svg
+    |   |       |       |   element-in-community-relationship.svg
+    |   |       |       |   element-next-chunk-relationship.svg
+    |   |       |       |   element-parent-community-relationship.svg
+    |   |       |       |   element-part-of-relationship.svg
+    |   |       |       |   element-question-node.svg
+    |   |       |       |   element-relates-to-relationship.svg
+    |   |       |       |   element-section-node.svg
+    |   |       |       |   element-subsection-node.svg
+    |   |       |       |   graph-trio.svg
+    |   |       |       |   graphrag-diagram.svg
+    |   |       |       |   graphrag-logo.svg
+    |   |       |       |   graphrag-triangle.png
+    |   |       |       |   graphrag-triangle.svg
+    |   |       |       |   knowledge-graph-lexical-graph-extracted-entities-community-summaries.svg
+    |   |       |       |   knowledge-graph-lexical-graph-extracted-entities.svg
+    |   |       |       |   knowledge-graph-lexical-graph-hierarchical-structure.svg
+    |   |       |       |   knowledge-graph-lexical-graph-hypothetical-questions.svg
+    |   |       |       |   knowledge-graph-lexical-graph-parent-child.svg
+    |   |       |       |   knowledge-graph-lexical-graph-sibling-structure.svg
+    |   |       |       |   knowledge-graph-lexical-graph.svg
+    |   |       |       |   memory-episodic-data-model.svg
+    |   |       |       |   memory-episodic-example.svg
+    |   |       |       |   memory-procedural-data-model.svg
+    |   |       |       |   memory-procedural-example.svg
+    |   |       |       |   memory-procedural-temporal-data-model.svg
+    |   |       |       |   memory-procedural-temporal-example.svg
+    |   |       |       |   memory-semantic-data-model.svg
+    |   |       |       |   memory-semantic-example.svg
+    |   |       |       |   memory-semantic-temporal-data-model.svg
+    |   |       |       |   memory-semantic-temporal-example.svg
+    |   |       |       |   neo4j-logo-white.png
+    |   |       |       |   next-relationship.svg
+    |   |       |       |   text-node.svg
+    |   |       |       |   text-seq.svg
+    |   |       |       |   
+    |   |       |       \---railroad
+    |   |       |               arrow.svg
+    |   |       |               node.svg
+    |   |       |               path.svg
+    |   |       |               pattern-element.svg
+    |   |       |               pattern.svg
+    |   |       |               relationship.svg
+    |   |       |               subject.svg
+    |   |       |               
+    |   |       +---components
+    |   |       |       GrArxivPage.astro
+    |   |       |       GrIcon.astro
+    |   |       |       GrPageFrame.astro
+    |   |       |       GrSiteFooter.astro
+    |   |       |       LinkSpan.astro
+    |   |       |       LocalIcons.ts
+    |   |       |       NamedIcon.astro
+    |   |       |       
+    |   |       +---content
+    |   |       |   |   config.ts
+    |   |       |   |   
+    |   |       |   \---docs
+    |   |       |       |   index.mdx
+    |   |       |       |   
+    |   |       |       +---appendices
+    |   |       |       |       glossary.mdx
+    |   |       |       |       notation.md
+    |   |       |       |       research.mdx
+    |   |       |       |       
+    |   |       |       +---concepts
+    |   |       |       |       index.md
+    |   |       |       |       intro-to-graphrag.md
+    |   |       |       |       intro-to-knowledge-graphs.md
+    |   |       |       |       template.md
+    |   |       |       |       
+    |   |       |       +---guides
+    |   |       |       |       chunking.md
+    |   |       |       |       index.md
+    |   |       |       |       template.md
+    |   |       |       |       
+    |   |       |       \---reference
+    |   |       |           |   index.mdx
+    |   |       |           |   template.md
+    |   |       |           |   
+    |   |       |           +---graphrag
+    |   |       |           |       basic-retriever.md
+    |   |       |           |       cypher-templates.md
+    |   |       |           |       dynamic-cypher-generation.md
+    |   |       |           |       global-community-summary-retriever.md
+    |   |       |           |       graph-enhanced-vector-search.md
+    |   |       |           |       hypothetical-question-retriever.md
+    |   |       |           |       local-retriever.md
+    |   |       |           |       metadata-filtering.md
+    |   |       |           |       parent-child-retriever.md
+    |   |       |           |       pattern-matching.md
+    |   |       |           |       text2cypher.md
+    |   |       |           |       
+    |   |       |           +---knowledge-graph
+    |   |       |           |       domain-graph.md
+    |   |       |           |       lexical-graph-extracted-entities-community-summaries.md
+    |   |       |           |       lexical-graph-extracted-entities.md
+    |   |       |           |       lexical-graph-hierarchical-structure.md
+    |   |       |           |       lexical-graph-hypothetical-questions.md
+    |   |       |           |       lexical-graph-parent-child.md
+    |   |       |           |       lexical-graph-sibling-structure.md
+    |   |       |           |       lexical-graph.md
+    |   |       |           |       memory-graph-episodic.md
+    |   |       |           |       memory-graph-procedural.md
+    |   |       |           |       memory-graph-semantic.md
+    |   |       |           |       memory-graph-temporal.md
+    |   |       |           |       memory-graph.md
+    |   |       |           |       text-seq.md
+    |   |       |           |       
+    |   |       |           \---preparation
+    |   |       |                   ner.md
+    |   |       |                   
+    |   |       +---data
+    |   |       |       papers.json
+    |   |       |       
+    |   |       +---lib
+    |   |       |       arxiv.spec.ts
+    |   |       |       arxiv.ts
+    |   |       |       
+    |   |       \---pages
+    |   |           +---appendices
+    |   |           |   |   research.astro
+    |   |           |   |   
+    |   |           |   \---research
+    |   |           |           [paper].astro
+    |   |           |           
+    |   |           \---guides
+    |   |                   index.md
+    |   |                   
+    |   +---Knowledge-Graph-Based-Hybrid-RAG
+    |   |   |   demowithinspector.pdf
+    |   |   |   LICENSE
+    |   |   |   LLMpoweredRAG.py
+    |   |   |   queries.txt
+    |   |   |   README.md
+    |   |   |   README_template.md
+    |   |   |   uobkg.png
+    |   |   |   
+    |   |   +---Data
+    |   |   |       .gitkeep
+    |   |   |       uob_affils.csv
+    |   |   |       
+    |   |   +---Dissertation
+    |   |   |       .gitkeep
+    |   |   |       shamsi-mxs1923.pdf
+    |   |   |       
+    |   |   +---embeddings
+    |   |   |       .gitkeep
+    |   |   |       embeddingsdevelop.png
+    |   |   |       embeddingskg.py
+    |   |   |       
+    |   |   +---Neo4jKG
+    |   |   |       .gitkeep
+    |   |   |       kgbuilder.py
+    |   |   |       knowledge_graph_nodes.png
+    |   |   |       README.md
+    |   |   |       requirements-2.txt
+    |   |   |       uobkg.png
+    |   |   |       
+    |   |   +---RAG
+    |   |   |       .gitkeep
+    |   |   |       collaboration.py
+    |   |   |       enhancedretrieval.py
+    |   |   |       readme.md
+    |   |   |       retrievalqueries.py
+    |   |   |       
+    |   |   \---scopusscraping
+    |   |           .gitkeep
+    |   |           env.example
+    |   |           README.md
+    |   |           requirements.txt
+    |   |           scopusscrap.ipynb
+    |   |           Screenshot_2025-08-23_at_12.31.32.png
+    |   |           
+    |   +---microsoft_graphrag
+    |   |   \---repo
+    |   |       |   .gitattributes
+    |   |       |   .gitignore
+    |   |       |   .vsts-ci.yml
+    |   |       |   breaking-changes.md
+    |   |       |   CHANGELOG.md
+    |   |       |   CODEOWNERS
+    |   |       |   CODE_OF_CONDUCT.md
+    |   |       |   CONTRIBUTING.md
+    |   |       |   cspell.config.yaml
+    |   |       |   DEVELOPING.md
+    |   |       |   dictionary.txt
+    |   |       |   LICENSE
+    |   |       |   mkdocs.yaml
+    |   |       |   pyproject.toml
+    |   |       |   RAI_TRANSPARENCY.md
+    |   |       |   README.md
+    |   |       |   RELEASE.md
+    |   |       |   SECURITY.md
+    |   |       |   SUPPORT.md
+    |   |       |   uv.lock
+    |   |       |   
+    |   |       +---.agents
+    |   |       |   \---skills
+    |   |       |       \---update-deps
+    |   |       |           |   SKILL.md
+    |   |       |           |   
+    |   |       |           \---references
+    |   |       |                   migration-gotchas.md
+    |   |       |                   
+    |   |       +---.github
+    |   |       |   |   dependabot.yml
+    |   |       |   |   pull_request_template.md
+    |   |       |   |   
+    |   |       |   +---ISSUE_TEMPLATE
+    |   |       |   |       bug_report.yml
+    |   |       |   |       config.yml
+    |   |       |   |       feature_request.yml
+    |   |       |   |       general_issue.yml
+    |   |       |   |       
+    |   |       |   \---workflows
+    |   |       |           close-dependabot-prs.yml
+    |   |       |           gh-pages.yml
+    |   |       |           issues-autoresolve.yml
+    |   |       |           python-checks.yml
+    |   |       |           python-integration-tests.yml
+    |   |       |           python-notebook-tests.yml
+    |   |       |           python-publish.yml
+    |   |       |           python-smoke-tests.yml
+    |   |       |           python-unit-tests.yml
+    |   |       |           semver.yml
+    |   |       |           spellcheck.yml
+    |   |       |           update-deps.yml
+    |   |       |           
+    |   |       +---.semversioner
+    |   |       |   |   0.1.0.json
+    |   |       |   |   0.2.0.json
+    |   |       |   |   0.2.1.json
+    |   |       |   |   0.2.2.json
+    |   |       |   |   0.3.0.json
+    |   |       |   |   0.3.1.json
+    |   |       |   |   0.3.2.json
+    |   |       |   |   0.3.3.json
+    |   |       |   |   0.3.4.json
+    |   |       |   |   0.3.5.json
+    |   |       |   |   0.3.6.json
+    |   |       |   |   0.4.0.json
+    |   |       |   |   0.4.1.json
+    |   |       |   |   0.5.0.json
+    |   |       |   |   0.9.0.json
+    |   |       |   |   1.0.0.json
+    |   |       |   |   1.0.1.json
+    |   |       |   |   1.1.0.json
+    |   |       |   |   1.1.1.json
+    |   |       |   |   1.1.2.json
+    |   |       |   |   1.2.0.json
+    |   |       |   |   2.0.0.json
+    |   |       |   |   2.1.0.json
+    |   |       |   |   2.2.0.json
+    |   |       |   |   2.2.1.json
+    |   |       |   |   2.3.0.json
+    |   |       |   |   2.4.0.json
+    |   |       |   |   2.5.0.json
+    |   |       |   |   2.6.0.json
+    |   |       |   |   2.7.0.json
+    |   |       |   |   2.7.1.json
+    |   |       |   |   3.0.0.json
+    |   |       |   |   3.0.1.json
+    |   |       |   |   3.0.2.json
+    |   |       |   |   3.0.3.json
+    |   |       |   |   3.0.4.json
+    |   |       |   |   3.0.5.json
+    |   |       |   |   3.0.6.json
+    |   |       |   |   3.0.7.json
+    |   |       |   |   3.0.8.json
+    |   |       |   |   3.0.9.json
+    |   |       |   |   3.1.0.json
+    |   |       |   |   3.1.1.json
+    |   |       |   |   3.1.2.json
+    |   |       |   |   
+    |   |       |   \---next-release
+    |   |       |           patch-20260824002403308803.json
+    |   |       |           patch-20260824180455220107.json
+    |   |       |           
+    |   |       +---.vscode
+    |   |       |       extensions.json
+    |   |       |       launch.json
+    |   |       |       settings.json
+    |   |       |       
+    |   |       +---docs
+    |   |       |   |   blog_posts.md
+    |   |       |   |   cli.md
+    |   |       |   |   developing.md
+    |   |       |   |   get_started.md
+    |   |       |   |   index.md
+    |   |       |   |   visualization_guide.md
+    |   |       |   |   
+    |   |       |   +---config
+    |   |       |   |       init.md
+    |   |       |   |       models.md
+    |   |       |   |       overview.md
+    |   |       |   |       yaml.md
+    |   |       |   |       
+    |   |       |   +---data
+    |   |       |   |   \---operation_dulce
+    |   |       |   |           ABOUT.md
+    |   |       |   |           dataset.zip
+    |   |       |   |           Operation Dulce v2 1 1.md
+    |   |       |   |           
+    |   |       |   +---examples_notebooks
+    |   |       |   |   |   api_overview.ipynb
+    |   |       |   |   |   drift_search.ipynb
+    |   |       |   |   |   global_search.ipynb
+    |   |       |   |   |   global_search_with_dynamic_community_selection.ipynb
+    |   |       |   |   |   index_migration_to_v1.ipynb
+    |   |       |   |   |   index_migration_to_v2.ipynb
+    |   |       |   |   |   index_migration_to_v3.ipynb
+    |   |       |   |   |   input_documents.ipynb
+    |   |       |   |   |   local_search.ipynb
+    |   |       |   |   |   
+    |   |       |   |   \---inputs
+    |   |       |   |       \---operation dulce
+    |   |       |   |           |   ABOUT.md
+    |   |       |   |           |   communities.parquet
+    |   |       |   |           |   community_reports.parquet
+    |   |       |   |           |   covariates.parquet
+    |   |       |   |           |   documents.parquet
+    |   |       |   |           |   embeddings.community_full_content.parquet
+    |   |       |   |           |   entities.parquet
+    |   |       |   |           |   Operation Dulce v2 1 1.md
+    |   |       |   |           |   relationships.parquet
+    |   |       |   |           |   text_units.parquet
+    |   |       |   |           |   
+    |   |       |   |           \---lancedb
+    |   |       |   |               +---community_full_content.lance
+    |   |       |   |               |   +---data
+    |   |       |   |               |   |       667cccff-01b5-4b70-a2a6-8cf4d6ada077.lance
+    |   |       |   |               |   |       a84d995f-111c-45d1-ba5a-32b3747b8a18.lance
+    |   |       |   |               |   |       
+    |   |       |   |               |   +---_indices
+    |   |       |   |               |   |   \---dd5917d9-d48d-4af3-bc2e-43a53b2fdbe6
+    |   |       |   |               |   |           auxiliary.idx
+    |   |       |   |               |   |           index.idx
+    |   |       |   |               |   |           
+    |   |       |   |               |   +---_transactions
+    |   |       |   |               |   |       0-a943ac34-0e87-43c2-80d0-8f83fb80f4f5.txn
+    |   |       |   |               |   |       1-ec798d7b-a8bf-4985-a5d0-784434802168.txn
+    |   |       |   |               |   |       2-78887911-d792-4dc9-b28d-f2858db1139a.txn
+    |   |       |   |               |   |       3-c16be721-5d7e-46a0-98c2-34d5d9c29383.txn
+    |   |       |   |               |   |       
+    |   |       |   |               |   \---_versions
+    |   |       |   |               |           1.manifest
+    |   |       |   |               |           2.manifest
+    |   |       |   |               |           3.manifest
+    |   |       |   |               |           4.manifest
+    |   |       |   |               |           
+    |   |       |   |               +---entity_description.lance
+    |   |       |   |               |   +---data
+    |   |       |   |               |   |       2677858d-16a4-4c0c-9515-ed5a9ee32fd7.lance
+    |   |       |   |               |   |       4ed23c16-d11c-49b5-869d-653cfbd9c271.lance
+    |   |       |   |               |   |       5370b2ef-efd3-434e-9745-9d046b53bb4a.lance
+    |   |       |   |               |   |       ec59d894-a2a6-4a44-8266-d07bbd684c33.lance
+    |   |       |   |               |   |       
+    |   |       |   |               |   +---_indices
+    |   |       |   |               |   |   \---b1bd07f3-ad25-40bc-b91c-14215386e477
+    |   |       |   |               |   |           auxiliary.idx
+    |   |       |   |               |   |           index.idx
+    |   |       |   |               |   |           
+    |   |       |   |               |   +---_transactions
+    |   |       |   |               |   |       0-5b75ba0a-bae9-4244-8a6b-31de09f7e03d.txn
+    |   |       |   |               |   |       1-71f2ac8d-a101-467d-b57d-2dea6d14f7a7.txn
+    |   |       |   |               |   |       2-d621e621-8e92-419f-99e4-f1c7d163bcc2.txn
+    |   |       |   |               |   |       3-4ada922f-cf85-44df-bc8b-b132e35009d0.txn
+    |   |       |   |               |   |       4-dcac110d-2a49-4777-a51e-5078fed1b0df.txn
+    |   |       |   |               |   |       5-ec86af9f-b799-4457-b07a-24a3459dd952.txn
+    |   |       |   |               |   |       6-c2afb84c-4b3a-4ccd-8843-0deaa25bd971.txn
+    |   |       |   |               |   |       7-6798041f-3283-4b54-8313-54f80e00d338.txn
+    |   |       |   |               |   |       
+    |   |       |   |               |   \---_versions
+    |   |       |   |               |           1.manifest
+    |   |       |   |               |           2.manifest
+    |   |       |   |               |           3.manifest
+    |   |       |   |               |           4.manifest
+    |   |       |   |               |           5.manifest
+    |   |       |   |               |           6.manifest
+    |   |       |   |               |           7.manifest
+    |   |       |   |               |           8.manifest
+    |   |       |   |               |           
+    |   |       |   |               \---text_unit_text.lance
+    |   |       |   |                   +---data
+    |   |       |   |                   |       4105076e-7a55-4549-b86a-51c6bfa68ea5.lance
+    |   |       |   |                   |       a28d4629-848b-4e1d-854d-cad6297a0c1a.lance
+    |   |       |   |                   |       
+    |   |       |   |                   +---_indices
+    |   |       |   |                   |   \---f5099c4f-df9a-476d-a736-1eac0a498173
+    |   |       |   |                   |           auxiliary.idx
+    |   |       |   |                   |           index.idx
+    |   |       |   |                   |           
+    |   |       |   |                   +---_transactions
+    |   |       |   |                   |       0-9abee4db-9914-4c35-b600-d995235f8e27.txn
+    |   |       |   |                   |       1-302f5740-fbd0-4887-9933-13a2842ec8e4.txn
+    |   |       |   |                   |       2-551a917c-5ab9-46a7-9085-fd82aa879717.txn
+    |   |       |   |                   |       3-b0b6e7bb-a152-4148-be3b-d1ab50215bda.txn
+    |   |       |   |                   |       
+    |   |       |   |                   \---_versions
+    |   |       |   |                           1.manifest
+    |   |       |   |                           2.manifest
+    |   |       |   |                           3.manifest
+    |   |       |   |                           4.manifest
+    |   |       |   |                           
+    |   |       |   +---img
+    |   |       |   |   |   auto-tune-diagram.png
+    |   |       |   |   |   drift-search-diagram.png
+    |   |       |   |   |   GraphRag-Figure1.jpg
+    |   |       |   |   |   pipeline-running.png
+    |   |       |   |   |   
+    |   |       |   |   \---viz_guide
+    |   |       |   |           gephi-appearance-pane.png
+    |   |       |   |           gephi-initial-graph-example.png
+    |   |       |   |           gephi-layout-forceatlas2-pane.png
+    |   |       |   |           gephi-layout-pane.png
+    |   |       |   |           gephi-network-overview-settings.png
+    |   |       |   |           
+    |   |       |   +---index
+    |   |       |   |       architecture.md
+    |   |       |   |       byog.md
+    |   |       |   |       default_dataflow.md
+    |   |       |   |       inputs.md
+    |   |       |   |       methods.md
+    |   |       |   |       outputs.md
+    |   |       |   |       overview.md
+    |   |       |   |       
+    |   |       |   +---prompt_tuning
+    |   |       |   |       auto_prompt_tuning.md
+    |   |       |   |       manual_prompt_tuning.md
+    |   |       |   |       overview.md
+    |   |       |   |       
+    |   |       |   +---query
+    |   |       |   |   |   drift_search.md
+    |   |       |   |   |   global_search.md
+    |   |       |   |   |   local_search.md
+    |   |       |   |   |   overview.md
+    |   |       |   |   |   question_generation.md
+    |   |       |   |   |   
+    |   |       |   |   \---notebooks
+    |   |       |   |           overview.md
+    |   |       |   |           
+    |   |       |   +---scripts
+    |   |       |   |       create_cookie_banner.js
+    |   |       |   |       
+    |   |       |   \---stylesheets
+    |   |       |           extra.css
+    |   |       |           
+    |   |       +---packages
+    |   |       |   +---graphrag
+    |   |       |   |   |   pyproject.toml
+    |   |       |   |   |   README.md
+    |   |       |   |   |   
+    |   |       |   |   \---graphrag
+    |   |       |   |       |   py.typed
+    |   |       |   |       |   __init__.py
+    |   |       |   |       |   __main__.py
+    |   |       |   |       |   
+    |   |       |   |       +---api
+    |   |       |   |       |       index.py
+    |   |       |   |       |       prompt_tune.py
+    |   |       |   |       |       query.py
+    |   |       |   |       |       __init__.py
+    |   |       |   |       |       
+    |   |       |   |       +---cache
+    |   |       |   |       |       cache_key_creator.py
+    |   |       |   |       |       __init__.py
+    |   |       |   |       |       
+    |   |       |   |       +---callbacks
+    |   |       |   |       |       console_workflow_callbacks.py
+    |   |       |   |       |       llm_callbacks.py
+    |   |       |   |       |       noop_query_callbacks.py
+    |   |       |   |       |       noop_workflow_callbacks.py
+    |   |       |   |       |       query_callbacks.py
+    |   |       |   |       |       workflow_callbacks.py
+    |   |       |   |       |       workflow_callbacks_manager.py
+    |   |       |   |       |       __init__.py
+    |   |       |   |       |       
+    |   |       |   |       +---cli
+    |   |       |   |       |       index.py
+    |   |       |   |       |       initialize.py
+    |   |       |   |       |       main.py
+    |   |       |   |       |       prompt_tune.py
+    |   |       |   |       |       query.py
+    |   |       |   |       |       __init__.py
+    |   |       |   |       |       
+    |   |       |   |       +---config
+    |   |       |   |       |   |   defaults.py
+    |   |       |   |       |   |   embeddings.py
+    |   |       |   |       |   |   enums.py
+    |   |       |   |       |   |   errors.py
+    |   |       |   |       |   |   init_content.py
+    |   |       |   |       |   |   load_config.py
+    |   |       |   |       |   |   __init__.py
+    |   |       |   |       |   |   
+    |   |       |   |       |   \---models
+    |   |       |   |       |           basic_search_config.py
+    |   |       |   |       |           cluster_graph_config.py
+    |   |       |   |       |           community_reports_config.py
+    |   |       |   |       |           drift_search_config.py
+    |   |       |   |       |           embed_text_config.py
+    |   |       |   |       |           extract_claims_config.py
+    |   |       |   |       |           extract_graph_config.py
+    |   |       |   |       |           extract_graph_nlp_config.py
+    |   |       |   |       |           global_search_config.py
+    |   |       |   |       |           graph_rag_config.py
+    |   |       |   |       |           local_search_config.py
+    |   |       |   |       |           prune_graph_config.py
+    |   |       |   |       |           reporting_config.py
+    |   |       |   |       |           snapshots_config.py
+    |   |       |   |       |           summarize_descriptions_config.py
+    |   |       |   |       |           __init__.py
+    |   |       |   |       |           
+    |   |       |   |       +---data_model
+    |   |       |   |       |       community.py
+    |   |       |   |       |       community_report.py
+    |   |       |   |       |       covariate.py
+    |   |       |   |       |       data_reader.py
+    |   |       |   |       |       dfs.py
+    |   |       |   |       |       document.py
+    |   |       |   |       |       entity.py
+    |   |       |   |       |       identified.py
+    |   |       |   |       |       named.py
+    |   |       |   |       |       relationship.py
+    |   |       |   |       |       row_transformers.py
+    |   |       |   |       |       schemas.py
+    |   |       |   |       |       text_unit.py
+    |   |       |   |       |       types.py
+    |   |       |   |       |       __init__.py
+    |   |       |   |       |       
+    |   |       |   |       +---graphs
+    |   |       |   |       |       compute_degree.py
+    |   |       |   |       |       connected_components.py
+    |   |       |   |       |       edge_weights.py
+    |   |       |   |       |       hierarchical_leiden.py
+    |   |       |   |       |       modularity.py
+    |   |       |   |       |       stable_lcc.py
+    |   |       |   |       |       __init__.py
+    |   |       |   |       |       
+    |   |       |   |       +---index
+    |   |       |   |       |   |   validate_config.py
+    |   |       |   |       |   |   __init__.py
+    |   |       |   |       |   |   
+    |   |       |   |       |   +---operations
+    |   |       |   |       |   |   |   cluster_graph.py
+    |   |       |   |       |   |   |   compute_edge_combined_degree.py
+    |   |       |   |       |   |   |   finalize_community_reports.py
+    |   |       |   |       |   |   |   finalize_entities.py
+    |   |       |   |       |   |   |   finalize_relationships.py
+    |   |       |   |       |   |   |   prune_graph.py
+    |   |       |   |       |   |   |   snapshot_graphml.py
+    |   |       |   |       |   |   |   __init__.py
+    |   |       |   |       |   |   |   
+    |   |       |   |       |   |   +---build_noun_graph
+    |   |       |   |       |   |   |   |   build_noun_graph.py
+    |   |       |   |       |   |   |   |   __init__.py
+    |   |       |   |       |   |   |   |   
+    |   |       |   |       |   |   |   \---np_extractors
+    |   |       |   |       |   |   |           base.py
+    |   |       |   |       |   |   |           cfg_extractor.py
+    |   |       |   |       |   |   |           factory.py
+    |   |       |   |       |   |   |           np_validator.py
+    |   |       |   |       |   |   |           regex_extractor.py
+    |   |       |   |       |   |   |           resource_loader.py
+    |   |       |   |       |   |   |           stop_words.py
+    |   |       |   |       |   |   |           syntactic_parsing_extractor.py
+    |   |       |   |       |   |   |           __init__.py
+    |   |       |   |       |   |   |           
+    |   |       |   |       |   |   +---embed_text
+    |   |       |   |       |   |   |       embed_text.py
+    |   |       |   |       |   |   |       run_embed_text.py
+    |   |       |   |       |   |   |       __init__.py
+    |   |       |   |       |   |   |       
+    |   |       |   |       |   |   +---extract_covariates
+    |   |       |   |       |   |   |       claim_extractor.py
+    |   |       |   |       |   |   |       extract_covariates.py
+    |   |       |   |       |   |   |       typing.py
+    |   |       |   |       |   |   |       __init__.py
+    |   |       |   |       |   |   |       
+    |   |       |   |       |   |   +---extract_graph
+    |   |       |   |       |   |   |       extract_graph.py
+    |   |       |   |       |   |   |       graph_extractor.py
+    |   |       |   |       |   |   |       utils.py
+    |   |       |   |       |   |   |       __init__.py
+    |   |       |   |       |   |   |       
+    |   |       |   |       |   |   +---summarize_communities
+    |   |       |   |       |   |   |   |   build_mixed_context.py
+    |   |       |   |       |   |   |   |   community_reports_extractor.py
+    |   |       |   |       |   |   |   |   explode_communities.py
+    |   |       |   |       |   |   |   |   summarize_communities.py
+    |   |       |   |       |   |   |   |   typing.py
+    |   |       |   |       |   |   |   |   utils.py
+    |   |       |   |       |   |   |   |   __init__.py
+    |   |       |   |       |   |   |   |   
+    |   |       |   |       |   |   |   +---graph_context
+    |   |       |   |       |   |   |   |       context_builder.py
+    |   |       |   |       |   |   |   |       sort_context.py
+    |   |       |   |       |   |   |   |       __init__.py
+    |   |       |   |       |   |   |   |       
+    |   |       |   |       |   |   |   \---text_unit_context
+    |   |       |   |       |   |   |           context_builder.py
+    |   |       |   |       |   |   |           prep_text_units.py
+    |   |       |   |       |   |   |           sort_context.py
+    |   |       |   |       |   |   |           __init__.py
+    |   |       |   |       |   |   |           
+    |   |       |   |       |   |   \---summarize_descriptions
+    |   |       |   |       |   |           description_summary_extractor.py
+    |   |       |   |       |   |           summarize_descriptions.py
+    |   |       |   |       |   |           typing.py
+    |   |       |   |       |   |           __init__.py
+    |   |       |   |       |   |           
+    |   |       |   |       |   +---run
+    |   |       |   |       |   |       profiling.py
+    |   |       |   |       |   |       run_pipeline.py
+    |   |       |   |       |   |       utils.py
+    |   |       |   |       |   |       __init__.py
+    |   |       |   |       |   |       
+    |   |       |   |       |   +---text_splitting
+    |   |       |   |       |   |       text_splitting.py
+    |   |       |   |       |   |       __init__.py
+    |   |       |   |       |   |       
+    |   |       |   |       |   +---typing
+    |   |       |   |       |   |       context.py
+    |   |       |   |       |   |       error_handler.py
+    |   |       |   |       |   |       pipeline.py
+    |   |       |   |       |   |       pipeline_run_result.py
+    |   |       |   |       |   |       state.py
+    |   |       |   |       |   |       stats.py
+    |   |       |   |       |   |       workflow.py
+    |   |       |   |       |   |       __init__.py
+    |   |       |   |       |   |       
+    |   |       |   |       |   +---update
+    |   |       |   |       |   |       communities.py
+    |   |       |   |       |   |       entities.py
+    |   |       |   |       |   |       incremental_index.py
+    |   |       |   |       |   |       relationships.py
+    |   |       |   |       |   |       __init__.py
+    |   |       |   |       |   |       
+    |   |       |   |       |   +---utils
+    |   |       |   |       |   |       dataframes.py
+    |   |       |   |       |   |       derive_from_rows.py
+    |   |       |   |       |   |       dicts.py
+    |   |       |   |       |   |       hashing.py
+    |   |       |   |       |   |       is_null.py
+    |   |       |   |       |   |       string.py
+    |   |       |   |       |   |       uuid.py
+    |   |       |   |       |   |       __init__.py
+    |   |       |   |       |   |       
+    |   |       |   |       |   \---workflows
+    |   |       |   |       |           create_base_text_units.py
+    |   |       |   |       |           create_communities.py
+    |   |       |   |       |           create_community_reports.py
+    |   |       |   |       |           create_community_reports_text.py
+    |   |       |   |       |           create_final_documents.py
+    |   |       |   |       |           create_final_text_units.py
+    |   |       |   |       |           extract_covariates.py
+    |   |       |   |       |           extract_graph.py
+    |   |       |   |       |           extract_graph_nlp.py
+    |   |       |   |       |           factory.py
+    |   |       |   |       |           finalize_graph.py
+    |   |       |   |       |           generate_text_embeddings.py
+    |   |       |   |       |           load_input_documents.py
+    |   |       |   |       |           load_update_documents.py
+    |   |       |   |       |           prune_graph.py
+    |   |       |   |       |           update_clean_state.py
+    |   |       |   |       |           update_communities.py
+    |   |       |   |       |           update_community_reports.py
+    |   |       |   |       |           update_covariates.py
+    |   |       |   |       |           update_entities_relationships.py
+    |   |       |   |       |           update_final_documents.py
+    |   |       |   |       |           update_text_embeddings.py
+    |   |       |   |       |           update_text_units.py
+    |   |       |   |       |           __init__.py
+    |   |       |   |       |           
+    |   |       |   |       +---logger
+    |   |       |   |       |       blob_workflow_logger.py
+    |   |       |   |       |       factory.py
+    |   |       |   |       |       progress.py
+    |   |       |   |       |       standard_logging.py
+    |   |       |   |       |       __init__.py
+    |   |       |   |       |       
+    |   |       |   |       +---prompts
+    |   |       |   |       |   |   __init__.py
+    |   |       |   |       |   |   
+    |   |       |   |       |   +---index
+    |   |       |   |       |   |       community_report.py
+    |   |       |   |       |   |       community_report_text_units.py
+    |   |       |   |       |   |       extract_claims.py
+    |   |       |   |       |   |       extract_graph.py
+    |   |       |   |       |   |       summarize_descriptions.py
+    |   |       |   |       |   |       __init__.py
+    |   |       |   |       |   |       
+    |   |       |   |       |   \---query
+    |   |       |   |       |           basic_search_system_prompt.py
+    |   |       |   |       |           drift_search_system_prompt.py
+    |   |       |   |       |           global_search_knowledge_system_prompt.py
+    |   |       |   |       |           global_search_map_system_prompt.py
+    |   |       |   |       |           global_search_reduce_system_prompt.py
+    |   |       |   |       |           local_search_system_prompt.py
+    |   |       |   |       |           question_gen_system_prompt.py
+    |   |       |   |       |           __init__.py
+    |   |       |   |       |           
+    |   |       |   |       +---prompt_tune
+    |   |       |   |       |   |   defaults.py
+    |   |       |   |       |   |   types.py
+    |   |       |   |       |   |   __init__.py
+    |   |       |   |       |   |   
+    |   |       |   |       |   +---generator
+    |   |       |   |       |   |       community_reporter_role.py
+    |   |       |   |       |   |       community_report_rating.py
+    |   |       |   |       |   |       community_report_summarization.py
+    |   |       |   |       |   |       domain.py
+    |   |       |   |       |   |       entity_relationship.py
+    |   |       |   |       |   |       entity_summarization_prompt.py
+    |   |       |   |       |   |       entity_types.py
+    |   |       |   |       |   |       extract_graph_prompt.py
+    |   |       |   |       |   |       language.py
+    |   |       |   |       |   |       persona.py
+    |   |       |   |       |   |       __init__.py
+    |   |       |   |       |   |       
+    |   |       |   |       |   +---loader
+    |   |       |   |       |   |       input.py
+    |   |       |   |       |   |       __init__.py
+    |   |       |   |       |   |       
+    |   |       |   |       |   +---prompt
+    |   |       |   |       |   |       community_reporter_role.py
+    |   |       |   |       |   |       community_report_rating.py
+    |   |       |   |       |   |       domain.py
+    |   |       |   |       |   |       entity_relationship.py
+    |   |       |   |       |   |       entity_types.py
+    |   |       |   |       |   |       language.py
+    |   |       |   |       |   |       persona.py
+    |   |       |   |       |   |       __init__.py
+    |   |       |   |       |   |       
+    |   |       |   |       |   \---template
+    |   |       |   |       |           community_report_summarization.py
+    |   |       |   |       |           entity_summarization.py
+    |   |       |   |       |           extract_graph.py
+    |   |       |   |       |           __init__.py
+    |   |       |   |       |           
+    |   |       |   |       +---query
+    |   |       |   |       |   |   factory.py
+    |   |       |   |       |   |   indexer_adapters.py
+    |   |       |   |       |   |   __init__.py
+    |   |       |   |       |   |   
+    |   |       |   |       |   +---context_builder
+    |   |       |   |       |   |       builders.py
+    |   |       |   |       |   |       community_context.py
+    |   |       |   |       |   |       conversation_history.py
+    |   |       |   |       |   |       dynamic_community_selection.py
+    |   |       |   |       |   |       entity_extraction.py
+    |   |       |   |       |   |       local_context.py
+    |   |       |   |       |   |       rate_prompt.py
+    |   |       |   |       |   |       rate_relevancy.py
+    |   |       |   |       |   |       source_context.py
+    |   |       |   |       |   |       __init__.py
+    |   |       |   |       |   |       
+    |   |       |   |       |   +---input
+    |   |       |   |       |   |   |   __init__.py
+    |   |       |   |       |   |   |   
+    |   |       |   |       |   |   +---loaders
+    |   |       |   |       |   |   |       dfs.py
+    |   |       |   |       |   |   |       utils.py
+    |   |       |   |       |   |   |       __init__.py
+    |   |       |   |       |   |   |       
+    |   |       |   |       |   |   \---retrieval
+    |   |       |   |       |   |           community_reports.py
+    |   |       |   |       |   |           covariates.py
+    |   |       |   |       |   |           entities.py
+    |   |       |   |       |   |           relationships.py
+    |   |       |   |       |   |           text_units.py
+    |   |       |   |       |   |           __init__.py
+    |   |       |   |       |   |           
+    |   |       |   |       |   +---llm
+    |   |       |   |       |   |       text_utils.py
+    |   |       |   |       |   |       __init__.py
+    |   |       |   |       |   |       
+    |   |       |   |       |   +---question_gen
+    |   |       |   |       |   |       base.py
+    |   |       |   |       |   |       local_gen.py
+    |   |       |   |       |   |       __init__.py
+    |   |       |   |       |   |       
+    |   |       |   |       |   \---structured_search
+    |   |       |   |       |       |   base.py
+    |   |       |   |       |       |   __init__.py
+    |   |       |   |       |       |   
+    |   |       |   |       |       +---basic_search
+    |   |       |   |       |       |       basic_context.py
+    |   |       |   |       |       |       search.py
+    |   |       |   |       |       |       __init__.py
+    |   |       |   |       |       |       
+    |   |       |   |       |       +---drift_search
+    |   |       |   |       |       |       action.py
+    |   |       |   |       |       |       drift_context.py
+    |   |       |   |       |       |       primer.py
+    |   |       |   |       |       |       search.py
+    |   |       |   |       |       |       state.py
+    |   |       |   |       |       |       __init__.py
+    |   |       |   |       |       |       
+    |   |       |   |       |       +---global_search
+    |   |       |   |       |       |       community_context.py
+    |   |       |   |       |       |       search.py
+    |   |       |   |       |       |       __init__.py
+    |   |       |   |       |       |       
+    |   |       |   |       |       \---local_search
+    |   |       |   |       |               mixed_context.py
+    |   |       |   |       |               search.py
+    |   |       |   |       |               __init__.py
+    |   |       |   |       |               
+    |   |       |   |       +---tokenizer
+    |   |       |   |       |       get_tokenizer.py
+    |   |       |   |       |       __init__.py
+    |   |       |   |       |       
+    |   |       |   |       \---utils
+    |   |       |   |               api.py
+    |   |       |   |               cli.py
+    |   |       |   |               __init__.py
+    |   |       |   |               
+    |   |       |   +---graphrag-cache
+    |   |       |   |   |   pyproject.toml
+    |   |       |   |   |   README.md
+    |   |       |   |   |   
+    |   |       |   |   +---example_notebooks
+    |   |       |   |   |       basic_cache_example.ipynb
+    |   |       |   |   |       custom_cache_example.ipynb
+    |   |       |   |   |       
+    |   |       |   |   \---graphrag_cache
+    |   |       |   |           cache.py
+    |   |       |   |           cache_config.py
+    |   |       |   |           cache_factory.py
+    |   |       |   |           cache_key.py
+    |   |       |   |           cache_type.py
+    |   |       |   |           json_cache.py
+    |   |       |   |           memory_cache.py
+    |   |       |   |           noop_cache.py
+    |   |       |   |           py.typed
+    |   |       |   |           __init__.py
+    |   |       |   |           
+    |   |       |   +---graphrag-chunking
+    |   |       |   |   |   pyproject.toml
+    |   |       |   |   |   README.md
+    |   |       |   |   |   
+    |   |       |   |   +---example_notebooks
+    |   |       |   |   |       basic_sentence_example.ipynb
+    |   |       |   |   |       factory_helper_util_example.ipynb
+    |   |       |   |   |       token_chunking_example.ipynb
+    |   |       |   |   |       
+    |   |       |   |   \---graphrag_chunking
+    |   |       |   |           bootstrap_nltk.py
+    |   |       |   |           chunker.py
+    |   |       |   |           chunker_factory.py
+    |   |       |   |           chunking_config.py
+    |   |       |   |           chunk_strategy_type.py
+    |   |       |   |           create_chunk_results.py
+    |   |       |   |           sentence_chunker.py
+    |   |       |   |           text_chunk.py
+    |   |       |   |           token_chunker.py
+    |   |       |   |           transformers.py
+    |   |       |   |           __init__.py
+    |   |       |   |           
+    |   |       |   +---graphrag-common
+    |   |       |   |   |   pyproject.toml
+    |   |       |   |   |   README.md
+    |   |       |   |   |   
+    |   |       |   |   +---example_notebooks
+    |   |       |   |   |   |   config_module_example.ipynb
+    |   |       |   |   |   |   factory_module_example.ipynb
+    |   |       |   |   |   |   
+    |   |       |   |   |   \---config_files
+    |   |       |   |   |           config.toml
+    |   |       |   |   |           config.yaml
+    |   |       |   |   |           settings.yaml
+    |   |       |   |   |           
+    |   |       |   |   \---graphrag_common
+    |   |       |   |       |   py.typed
+    |   |       |   |       |   __init__.py
+    |   |       |   |       |   
+    |   |       |   |       +---config
+    |   |       |   |       |       load_config.py
+    |   |       |   |       |       __init__.py
+    |   |       |   |       |       
+    |   |       |   |       +---factory
+    |   |       |   |       |       factory.py
+    |   |       |   |       |       __init__.py
+    |   |       |   |       |       
+    |   |       |   |       \---hasher
+    |   |       |   |               hasher.py
+    |   |       |   |               __init__.py
+    |   |       |   |               
+    |   |       |   +---graphrag-input
+    |   |       |   |   |   pyproject.toml
+    |   |       |   |   |   README.md
+    |   |       |   |   |   
+    |   |       |   |   +---example_notebooks
+    |   |       |   |   |   |   input_example.ipynb
+    |   |       |   |   |   |   
+    |   |       |   |   |   \---input
+    |   |       |   |   |           input.csv
+    |   |       |   |   |           input.pdf
+    |   |       |   |   |           
+    |   |       |   |   \---graphrag_input
+    |   |       |   |           csv.py
+    |   |       |   |           get_property.py
+    |   |       |   |           hashing.py
+    |   |       |   |           input_config.py
+    |   |       |   |           input_reader.py
+    |   |       |   |           input_reader_factory.py
+    |   |       |   |           input_type.py
+    |   |       |   |           json.py
+    |   |       |   |           jsonl.py
+    |   |       |   |           markitdown.py
+    |   |       |   |           parquet.py
+    |   |       |   |           structured_file_reader.py
+    |   |       |   |           text.py
+    |   |       |   |           text_document.py
+    |   |       |   |           __init__.py
+    |   |       |   |           
+    |   |       |   +---graphrag-llm
+    |   |       |   |   |   pyproject.toml
+    |   |       |   |   |   README.md
+    |   |       |   |   |   
+    |   |       |   |   +---example_notebooks
+    |   |       |   |   |       basic_completion_example.ipynb
+    |   |       |   |   |       basic_embedding_example.ipynb
+    |   |       |   |   |       
+    |   |       |   |   +---graphrag_llm
+    |   |       |   |   |   |   py.typed
+    |   |       |   |   |   |   README.md
+    |   |       |   |   |   |   __init__.py
+    |   |       |   |   |   |   
+    |   |       |   |   |   +---cache
+    |   |       |   |   |   |       create_cache_key.py
+    |   |       |   |   |   |       __init__.py
+    |   |       |   |   |   |       
+    |   |       |   |   |   +---completion
+    |   |       |   |   |   |       completion.py
+    |   |       |   |   |   |       completion_factory.py
+    |   |       |   |   |   |       lite_llm_completion.py
+    |   |       |   |   |   |       mock_llm_completion.py
+    |   |       |   |   |   |       __init__.py
+    |   |       |   |   |   |       
+    |   |       |   |   |   +---config
+    |   |       |   |   |   |       metrics_config.py
+    |   |       |   |   |   |       model_config.py
+    |   |       |   |   |   |       rate_limit_config.py
+    |   |       |   |   |   |       retry_config.py
+    |   |       |   |   |   |       template_engine_config.py
+    |   |       |   |   |   |       tokenizer_config.py
+    |   |       |   |   |   |       types.py
+    |   |       |   |   |   |       __init__.py
+    |   |       |   |   |   |       
+    |   |       |   |   |   +---embedding
+    |   |       |   |   |   |       embedding.py
+    |   |       |   |   |   |       embedding_factory.py
+    |   |       |   |   |   |       lite_llm_embedding.py
+    |   |       |   |   |   |       mock_llm_embedding.py
+    |   |       |   |   |   |       __init__.py
+    |   |       |   |   |   |       
+    |   |       |   |   |   +---metrics
+    |   |       |   |   |   |       default_metrics_processor.py
+    |   |       |   |   |   |       file_metrics_writer.py
+    |   |       |   |   |   |       log_metrics_writer.py
+    |   |       |   |   |   |       memory_metrics_store.py
+    |   |       |   |   |   |       metrics_aggregator.py
+    |   |       |   |   |   |       metrics_processor.py
+    |   |       |   |   |   |       metrics_processor_factory.py
+    |   |       |   |   |   |       metrics_store.py
+    |   |       |   |   |   |       metrics_store_factory.py
+    |   |       |   |   |   |       metrics_writer.py
+    |   |       |   |   |   |       metrics_writer_factory.py
+    |   |       |   |   |   |       noop_metrics_store.py
+    |   |       |   |   |   |       __init__.py
+    |   |       |   |   |   |       
+    |   |       |   |   |   +---middleware
+    |   |       |   |   |   |       with_cache.py
+    |   |       |   |   |   |       with_errors_for_testing.py
+    |   |       |   |   |   |       with_logging.py
+    |   |       |   |   |   |       with_metrics.py
+    |   |       |   |   |   |       with_middleware_pipeline.py
+    |   |       |   |   |   |       with_rate_limiting.py
+    |   |       |   |   |   |       with_request_count.py
+    |   |       |   |   |   |       with_retries.py
+    |   |       |   |   |   |       __init__.py
+    |   |       |   |   |   |       
+    |   |       |   |   |   +---model_cost_registry
+    |   |       |   |   |   |       model_cost_registry.py
+    |   |       |   |   |   |       __init__.py
+    |   |       |   |   |   |       
+    |   |       |   |   |   +---rate_limit
+    |   |       |   |   |   |       rate_limiter.py
+    |   |       |   |   |   |       rate_limit_factory.py
+    |   |       |   |   |   |       sliding_window_rate_limiter.py
+    |   |       |   |   |   |       __init__.py
+    |   |       |   |   |   |       
+    |   |       |   |   |   +---retry
+    |   |       |   |   |   |       exceptions_to_skip.py
+    |   |       |   |   |   |       exponential_retry.py
+    |   |       |   |   |   |       immediate_retry.py
+    |   |       |   |   |   |       retry.py
+    |   |       |   |   |   |       retry_factory.py
+    |   |       |   |   |   |       __init__.py
+    |   |       |   |   |   |       
+    |   |       |   |   |   +---templating
+    |   |       |   |   |   |       file_template_manager.py
+    |   |       |   |   |   |       jinja_template_engine.py
+    |   |       |   |   |   |       template_engine.py
+    |   |       |   |   |   |       template_engine_factory.py
+    |   |       |   |   |   |       template_manager.py
+    |   |       |   |   |   |       template_manager_factory.py
+    |   |       |   |   |   |       __init__.py
+    |   |       |   |   |   |       
+    |   |       |   |   |   +---threading
+    |   |       |   |   |   |       completion_thread.py
+    |   |       |   |   |   |       completion_thread_runner.py
+    |   |       |   |   |   |       embedding_thread.py
+    |   |       |   |   |   |       embedding_thread_runner.py
+    |   |       |   |   |   |       __init__.py
+    |   |       |   |   |   |       
+    |   |       |   |   |   +---tokenizer
+    |   |       |   |   |   |       lite_llm_tokenizer.py
+    |   |       |   |   |   |       tiktoken_tokenizer.py
+    |   |       |   |   |   |       tokenizer.py
+    |   |       |   |   |   |       tokenizer_factory.py
+    |   |       |   |   |   |       __init__.py
+    |   |       |   |   |   |       
+    |   |       |   |   |   +---types
+    |   |       |   |   |   |       types.py
+    |   |       |   |   |   |       __init__.py
+    |   |       |   |   |   |       
+    |   |       |   |   |   \---utils
+    |   |       |   |   |           completion_messages_builder.py
+    |   |       |   |   |           create_completion_response.py
+    |   |       |   |   |           create_embedding_response.py
+    |   |       |   |   |           function_tool_manager.py
+    |   |       |   |   |           gather_completion_response.py
+    |   |       |   |   |           structure_response.py
+    |   |       |   |   |           __init__.py
+    |   |       |   |   |           
+    |   |       |   |   \---notebooks
+    |   |       |   |       |   01_basic.ipynb
+    |   |       |   |       |   02_encoding_decoding.ipynb
+    |   |       |   |       |   03_structured_responses.ipynb
+    |   |       |   |       |   04_metrics.ipynb
+    |   |       |   |       |   05_caching.ipynb
+    |   |       |   |       |   06_retries.ipynb
+    |   |       |   |       |   07_rate_limiting.ipynb
+    |   |       |   |       |   08_batching.ipynb
+    |   |       |   |       |   09_message_builder_and_history.ipynb
+    |   |       |   |       |   10_tool_calling.ipynb
+    |   |       |   |       |   11_templating.ipynb
+    |   |       |   |       |   12_mocking.ipynb
+    |   |       |   |       |   README.md
+    |   |       |   |       |   
+    |   |       |   |       \---templates
+    |   |       |   |               weather_listings.jinja
+    |   |       |   |               
+    |   |       |   +---graphrag-storage
+    |   |       |   |   |   COSMOS_TABLE_PROVIDER_DESIGN.md
+    |   |       |   |   |   pyproject.toml
+    |   |       |   |   |   README.md
+    |   |       |   |   |   
+    |   |       |   |   +---example_notebooks
+    |   |       |   |   |       basic_storage_example.ipynb
+    |   |       |   |   |       custom_storage_example.ipynb
+    |   |       |   |   |       
+    |   |       |   |   \---graphrag_storage
+    |   |       |   |       |   azure_blob_storage.py
+    |   |       |   |       |   azure_cosmos_storage.py
+    |   |       |   |       |   file_storage.py
+    |   |       |   |       |   memory_storage.py
+    |   |       |   |       |   py.typed
+    |   |       |   |       |   storage.py
+    |   |       |   |       |   storage_config.py
+    |   |       |   |       |   storage_factory.py
+    |   |       |   |       |   storage_type.py
+    |   |       |   |       |   __init__.py
+    |   |       |   |       |   
+    |   |       |   |       \---tables
+    |   |       |   |               cosmos_table.py
+    |   |       |   |               cosmos_table_provider.py
+    |   |       |   |               csv_table.py
+    |   |       |   |               csv_table_provider.py
+    |   |       |   |               parquet_table.py
+    |   |       |   |               parquet_table_provider.py
+    |   |       |   |               table.py
+    |   |       |   |               table_provider.py
+    |   |       |   |               table_provider_config.py
+    |   |       |   |               table_provider_factory.py
+    |   |       |   |               table_type.py
+    |   |       |   |               __init__.py
+    |   |       |   |               
+    |   |       |   \---graphrag-vectors
+    |   |       |       |   pyproject.toml
+    |   |       |       |   README.md
+    |   |       |       |   
+    |   |       |       +---example_notebooks
+    |   |       |       |   |   azure_ai_search.ipynb
+    |   |       |       |   |   basic_usage_factory_example.ipynb
+    |   |       |       |   |   basic_usage_with_utility_function_example.ipynb
+    |   |       |       |   |   cosmosdb.ipynb
+    |   |       |       |   |   custom_vector_example.ipynb
+    |   |       |       |   |   custom_vector_store.ipynb
+    |   |       |       |   |   lancedb.ipynb
+    |   |       |       |   |   
+    |   |       |       |   \---data
+    |   |       |       |           embeddings.text_unit_text.parquet
+    |   |       |       |           text_units.parquet
+    |   |       |       |           
+    |   |       |       \---graphrag_vectors
+    |   |       |               azure_ai_search.py
+    |   |       |               cosmosdb.py
+    |   |       |               filtering.py
+    |   |       |               index_schema.py
+    |   |       |               lancedb.py
+    |   |       |               timestamp.py
+    |   |       |               types.py
+    |   |       |               vector_store.py
+    |   |       |               vector_store_config.py
+    |   |       |               vector_store_factory.py
+    |   |       |               vector_store_type.py
+    |   |       |               __init__.py
+    |   |       |               
+    |   |       +---scripts
+    |   |       |       close-dependabot-prs.ts
+    |   |       |       copy_build_assets.py
+    |   |       |       open-deps-update-issue.ts
+    |   |       |       semver-check.sh
+    |   |       |       spellcheck.sh
+    |   |       |       start-azurite.sh
+    |   |       |       update_workspace_dependency_versions.py
+    |   |       |       __init__.py
+    |   |       |       
+    |   |       +---tests
+    |   |       |   |   conftest.py
+    |   |       |   |   __init__.py
+    |   |       |   |   
+    |   |       |   +---fixtures
+    |   |       |   |   +---azure
+    |   |       |   |   |   |   config.json
+    |   |       |   |   |   |   settings.yml
+    |   |       |   |   |   |   
+    |   |       |   |   |   \---input
+    |   |       |   |   |           ABOUT.md
+    |   |       |   |   |           dulce.txt
+    |   |       |   |   |           
+    |   |       |   |   +---min-csv
+    |   |       |   |   |   |   config.json
+    |   |       |   |   |   |   settings.yml
+    |   |       |   |   |   |   
+    |   |       |   |   |   \---input
+    |   |       |   |   |           ABOUT.md
+    |   |       |   |   |           dulce.csv
+    |   |       |   |   |           
+    |   |       |   |   \---text
+    |   |       |   |       |   config.json
+    |   |       |   |       |   settings.yml
+    |   |       |   |       |   
+    |   |       |   |       +---input
+    |   |       |   |       |       ABOUT.md
+    |   |       |   |       |       dulce.txt
+    |   |       |   |       |       
+    |   |       |   |       \---prompts
+    |   |       |   |               community_report.txt
+    |   |       |   |               
+    |   |       |   +---integration
+    |   |       |   |   |   __init__.py
+    |   |       |   |   |   
+    |   |       |   |   +---cache
+    |   |       |   |   |       test_factory.py
+    |   |       |   |   |       __init__.py
+    |   |       |   |   |       
+    |   |       |   |   +---language_model
+    |   |       |   |   |       test_factory.py
+    |   |       |   |   |       test_rate_limiter.py
+    |   |       |   |   |       test_retries.py
+    |   |       |   |   |       utils.py
+    |   |       |   |   |       __init__.py
+    |   |       |   |   |       
+    |   |       |   |   +---logging
+    |   |       |   |   |       test_factory.py
+    |   |       |   |   |       test_standard_logging.py
+    |   |       |   |   |       __init__.py
+    |   |       |   |   |       
+    |   |       |   |   +---storage
+    |   |       |   |   |       test_blob_storage.py
+    |   |       |   |   |       test_cosmosdb_storage.py
+    |   |       |   |   |       test_factory.py
+    |   |       |   |   |       test_file_storage.py
+    |   |       |   |   |       __init__.py
+    |   |       |   |   |       
+    |   |       |   |   \---vector_stores
+    |   |       |   |           test_azure_ai_search.py
+    |   |       |   |           test_cosmosdb.py
+    |   |       |   |           test_factory.py
+    |   |       |   |           test_lancedb.py
+    |   |       |   |           __init__.py
+    |   |       |   |           
+    |   |       |   +---notebook
+    |   |       |   |       test_notebooks.py
+    |   |       |   |       __init__.py
+    |   |       |   |       
+    |   |       |   +---smoke
+    |   |       |   |       test_fixtures.py
+    |   |       |   |       __init__.py
+    |   |       |   |       
+    |   |       |   +---unit
+    |   |       |   |   |   __init__.py
+    |   |       |   |   |   
+    |   |       |   |   +---chunking
+    |   |       |   |   |       test_chunker.py
+    |   |       |   |   |       test_prepend_metadata.py
+    |   |       |   |   |       __init__.py
+    |   |       |   |   |       
+    |   |       |   |   +---config
+    |   |       |   |   |   |   prompt-a.txt
+    |   |       |   |   |   |   prompt-b.txt
+    |   |       |   |   |   |   prompt-c.txt
+    |   |       |   |   |   |   prompt-d.txt
+    |   |       |   |   |   |   test_config.py
+    |   |       |   |   |   |   test_metrics_config.py
+    |   |       |   |   |   |   test_model_config.py
+    |   |       |   |   |   |   test_rate_limit_config.py
+    |   |       |   |   |   |   test_retry_config.py
+    |   |       |   |   |   |   test_template_engine_config.py
+    |   |       |   |   |   |   test_tokenizer_config.py
+    |   |       |   |   |   |   utils.py
+    |   |       |   |   |   |   __init__.py
+    |   |       |   |   |   |   
+    |   |       |   |   |   \---fixtures
+    |   |       |   |   |       +---minimal_config
+    |   |       |   |   |       |       settings.yaml
+    |   |       |   |   |       |       
+    |   |       |   |   |       +---minimal_config_missing_env_var
+    |   |       |   |   |       |       settings.yaml
+    |   |       |   |   |       |       
+    |   |       |   |   |       \---timestamp_dirs
+    |   |       |   |   |           \---20240812-120000
+    |   |       |   |   |                   empty.txt
+    |   |       |   |   |                   
+    |   |       |   |   +---graphrag_factory
+    |   |       |   |   |       test_factory.py
+    |   |       |   |   |       __init__.py
+    |   |       |   |   |       
+    |   |       |   |   +---graphs
+    |   |       |   |   |   |   nx_stable_lcc.py
+    |   |       |   |   |   |   test_compute_degree.py
+    |   |       |   |   |   |   test_connected_components.py
+    |   |       |   |   |   |   test_modularity.py
+    |   |       |   |   |   |   test_stable_lcc.py
+    |   |       |   |   |   |   __init__.py
+    |   |       |   |   |   |   
+    |   |       |   |   |   \---fixtures
+    |   |       |   |   |           graph.json
+    |   |       |   |   |           
+    |   |       |   |   +---hasher
+    |   |       |   |   |       test_hasher.py
+    |   |       |   |   |       __init__.py
+    |   |       |   |   |       
+    |   |       |   |   +---indexing
+    |   |       |   |   |   |   test_cluster_graph.py
+    |   |       |   |   |   |   test_create_communities.py
+    |   |       |   |   |   |   test_finalize_graph.py
+    |   |       |   |   |   |   test_init_content.py
+    |   |       |   |   |   |   test_profiling.py
+    |   |       |   |   |   |   __init__.py
+    |   |       |   |   |   |   
+    |   |       |   |   |   +---cache
+    |   |       |   |   |   |       test_file_pipeline_cache.py
+    |   |       |   |   |   |       __init__.py
+    |   |       |   |   |   |       
+    |   |       |   |   |   +---graph
+    |   |       |   |   |   |   |   __init__.py
+    |   |       |   |   |   |   |   
+    |   |       |   |   |   |   +---extractors
+    |   |       |   |   |   |   |   |   __init__.py
+    |   |       |   |   |   |   |   |   
+    |   |       |   |   |   |   |   \---community_reports
+    |   |       |   |   |   |   |           test_sort_context.py
+    |   |       |   |   |   |   |           __init__.py
+    |   |       |   |   |   |   |           
+    |   |       |   |   |   |   \---utils
+    |   |       |   |   |   |           test_stable_lcc.py
+    |   |       |   |   |   |           __init__.py
+    |   |       |   |   |   |           
+    |   |       |   |   |   +---input
+    |   |       |   |   |   |   |   test_csv_loader.py
+    |   |       |   |   |   |   |   test_jsonl_loader.py
+    |   |       |   |   |   |   |   test_json_loader.py
+    |   |       |   |   |   |   |   test_markitdown_loader.py
+    |   |       |   |   |   |   |   test_parquet_loader.py
+    |   |       |   |   |   |   |   test_text_document.py
+    |   |       |   |   |   |   |   test_text_loader.py
+    |   |       |   |   |   |   |   __init__.py
+    |   |       |   |   |   |   |   
+    |   |       |   |   |   |   \---data
+    |   |       |   |   |   |       +---jsonl-with-invalid-and-blank-lines
+    |   |       |   |   |   |       |       input.jsonl
+    |   |       |   |   |   |       |       
+    |   |       |   |   |   |       +---multiple-csvs
+    |   |       |   |   |   |       |       input1.csv
+    |   |       |   |   |   |       |       input2.csv
+    |   |       |   |   |   |       |       input3.csv
+    |   |       |   |   |   |       |       
+    |   |       |   |   |   |       +---multiple-jsons
+    |   |       |   |   |   |       |       input1.json
+    |   |       |   |   |   |       |       input2.json
+    |   |       |   |   |   |       |       
+    |   |       |   |   |   |       +---multiple-txts
+    |   |       |   |   |   |       |       input1.txt
+    |   |       |   |   |   |       |       input2.txt
+    |   |       |   |   |   |       |       
+    |   |       |   |   |   |       +---one-csv
+    |   |       |   |   |   |       |       input.csv
+    |   |       |   |   |   |       |       
+    |   |       |   |   |   |       +---one-html
+    |   |       |   |   |   |       |       input.html
+    |   |       |   |   |   |       |       
+    |   |       |   |   |   |       +---one-json-multiple-objects
+    |   |       |   |   |   |       |       input.json
+    |   |       |   |   |   |       |       
+    |   |       |   |   |   |       +---one-json-one-object
+    |   |       |   |   |   |       |       input.json
+    |   |       |   |   |   |       |       
+    |   |       |   |   |   |       +---one-jsonl
+    |   |       |   |   |   |       |       input.jsonl
+    |   |       |   |   |   |       |       
+    |   |       |   |   |   |       +---one-parquet
+    |   |       |   |   |   |       |       input.parquet
+    |   |       |   |   |   |       |       
+    |   |       |   |   |   |       \---one-txt
+    |   |       |   |   |   |               input.txt
+    |   |       |   |   |   |               
+    |   |       |   |   |   +---operations
+    |   |       |   |   |   |   |   test_extract_graph.py
+    |   |       |   |   |   |   |   __init__.py
+    |   |       |   |   |   |   |   
+    |   |       |   |   |   |   \---embed_text
+    |   |       |   |   |   |           test_embed_text.py
+    |   |       |   |   |   |           __init__.py
+    |   |       |   |   |   |           
+    |   |       |   |   |   +---update
+    |   |       |   |   |   |       test_update_relationships.py
+    |   |       |   |   |   |       __init__.py
+    |   |       |   |   |   |       
+    |   |       |   |   |   \---verbs
+    |   |       |   |   |       |   __init__.py
+    |   |       |   |   |       |   
+    |   |       |   |   |       \---entities
+    |   |       |   |   |           |   __init__.py
+    |   |       |   |   |           |   
+    |   |       |   |   |           \---extraction
+    |   |       |   |   |               |   __init__.py
+    |   |       |   |   |               |   
+    |   |       |   |   |               \---strategies
+    |   |       |   |   |                   |   __init__.py
+    |   |       |   |   |                   |   
+    |   |       |   |   |                   \---graph_intelligence
+    |   |       |   |   |                           test_gi_entity_extraction.py
+    |   |       |   |   |                           __init__.py
+    |   |       |   |   |                           
+    |   |       |   |   +---language_model
+    |   |       |   |   |       test_cache_middleware.py
+    |   |       |   |   |       __init__.py
+    |   |       |   |   |       
+    |   |       |   |   +---load_config
+    |   |       |   |   |   |   config.py
+    |   |       |   |   |   |   test_load_config.py
+    |   |       |   |   |   |   __init__.py
+    |   |       |   |   |   |   
+    |   |       |   |   |   \---fixtures
+    |   |       |   |   |           config.yaml
+    |   |       |   |   |           config_with_env.yaml
+    |   |       |   |   |           invalid_config.yaml
+    |   |       |   |   |           invalid_config_format.yaml
+    |   |       |   |   |           settings.yaml
+    |   |       |   |   |           test.env
+    |   |       |   |   |           
+    |   |       |   |   +---logger
+    |   |       |   |   |       test_blob_workflow_logger.py
+    |   |       |   |   |       __init__.py
+    |   |       |   |   |       
+    |   |       |   |   +---prompt_tune
+    |   |       |   |   |       test_load_docs_in_chunks.py
+    |   |       |   |   |       __init__.py
+    |   |       |   |   |       
+    |   |       |   |   +---query
+    |   |       |   |   |   |   __init__.py
+    |   |       |   |   |   |   
+    |   |       |   |   |   +---context_builder
+    |   |       |   |   |   |       dynamic_community_selection.py
+    |   |       |   |   |   |       test_entity_extraction.py
+    |   |       |   |   |   |       __init__.py
+    |   |       |   |   |   |       
+    |   |       |   |   |   +---data
+    |   |       |   |   |   |   +---defaults
+    |   |       |   |   |   |   |   \---output
+    |   |       |   |   |   |   |       +---20240812-120000
+    |   |       |   |   |   |   |       |       empty.txt
+    |   |       |   |   |   |   |       |       
+    |   |       |   |   |   |   |       \---20240812-121000
+    |   |       |   |   |   |   |               empty.txt
+    |   |       |   |   |   |   |               
+    |   |       |   |   |   |   +---empty
+    |   |       |   |   |   |   |   \---something-else
+    |   |       |   |   |   |   |           empty.txt
+    |   |       |   |   |   |   |           
+    |   |       |   |   |   |   +---hidden
+    |   |       |   |   |   |   |   \---output
+    |   |       |   |   |   |   |       |   .hidden
+    |   |       |   |   |   |   |       |   
+    |   |       |   |   |   |   |       +---.another
+    |   |       |   |   |   |   |       |       empty.txt
+    |   |       |   |   |   |   |       |       
+    |   |       |   |   |   |   |       +---20240812-120000
+    |   |       |   |   |   |   |       |       empty.txt
+    |   |       |   |   |   |   |       |       
+    |   |       |   |   |   |   |       \---20240812-121000
+    |   |       |   |   |   |   |               empty.txt
+    |   |       |   |   |   |   |               
+    |   |       |   |   |   |   \---non-numeric
+    |   |       |   |   |   |       \---output
+    |   |       |   |   |   |           +---20240812-120000
+    |   |       |   |   |   |           |       empty.txt
+    |   |       |   |   |   |           |       
+    |   |       |   |   |   |           +---20240812-121000
+    |   |       |   |   |   |           |       empty.txt
+    |   |       |   |   |   |           |       
+    |   |       |   |   |   |           \---something-else
+    |   |       |   |   |   |                   empty.txt
+    |   |       |   |   |   |                   
+    |   |       |   |   |   \---input
+    |   |       |   |   |       |   __init__.py
+    |   |       |   |   |       |   
+    |   |       |   |   |       \---retrieval
+    |   |       |   |   |               test_entities.py
+    |   |       |   |   |               __init__.py
+    |   |       |   |   |               
+    |   |       |   |   +---storage
+    |   |       |   |   |       test_csv_table.py
+    |   |       |   |   |       test_csv_table_provider.py
+    |   |       |   |   |       test_parquet_table_provider.py
+    |   |       |   |   |       __init__.py
+    |   |       |   |   |       
+    |   |       |   |   +---utils
+    |   |       |   |   |       test_encoding.py
+    |   |       |   |   |       __init__.py
+    |   |       |   |   |       
+    |   |       |   |   \---vector_stores
+    |   |       |   |           test_filtering.py
+    |   |       |   |           test_timestamp.py
+    |   |       |   |           __init__.py
+    |   |       |   |           
+    |   |       |   \---verbs
+    |   |       |       |   test_create_base_text_units.py
+    |   |       |       |   test_create_communities.py
+    |   |       |       |   test_create_community_reports.py
+    |   |       |       |   test_create_final_documents.py
+    |   |       |       |   test_create_final_text_units.py
+    |   |       |       |   test_extract_covariates.py
+    |   |       |       |   test_extract_graph.py
+    |   |       |       |   test_extract_graph_nlp.py
+    |   |       |       |   test_finalize_graph.py
+    |   |       |       |   test_generate_text_embeddings.py
+    |   |       |       |   test_pipeline_state.py
+    |   |       |       |   test_prune_graph.py
+    |   |       |       |   test_update_text_embeddings.py
+    |   |       |       |   util.py
+    |   |       |       |   __init__.py
+    |   |       |       |   
+    |   |       |       \---data
+    |   |       |               communities.parquet
+    |   |       |               community_reports.parquet
+    |   |       |               covariates.csv
+    |   |       |               covariates.parquet
+    |   |       |               documents.parquet
+    |   |       |               entities.csv
+    |   |       |               entities.parquet
+    |   |       |               relationships.csv
+    |   |       |               relationships.parquet
+    |   |       |               text_units.csv
+    |   |       |               text_units.parquet
+    |   |       |               
+    |   |       \---unified-search-app
+    |   |           |   .vsts-ci.yml
+    |   |           |   Dockerfile
+    |   |           |   pyproject.toml
+    |   |           |   README.md
+    |   |           |   uv.lock
+    |   |           |   
+    |   |           +---app
+    |   |           |   |   app_logic.py
+    |   |           |   |   data_config.py
+    |   |           |   |   home_page.py
+    |   |           |   |   __init__.py
+    |   |           |   |   
+    |   |           |   +---knowledge_loader
+    |   |           |   |   |   data_prep.py
+    |   |           |   |   |   model.py
+    |   |           |   |   |   __init__.py
+    |   |           |   |   |   
+    |   |           |   |   \---data_sources
+    |   |           |   |           blob_source.py
+    |   |           |   |           default.py
+    |   |           |   |           loader.py
+    |   |           |   |           local_source.py
+    |   |           |   |           typing.py
+    |   |           |   |           __init__.py
+    |   |           |   |           
+    |   |           |   +---rag
+    |   |           |   |       typing.py
+    |   |           |   |       __init__.py
+    |   |           |   |       
+    |   |           |   +---state
+    |   |           |   |       query_variable.py
+    |   |           |   |       session_variable.py
+    |   |           |   |       session_variables.py
+    |   |           |   |       __init__.py
+    |   |           |   |       
+    |   |           |   \---ui
+    |   |           |           questions_list.py
+    |   |           |           report_details.py
+    |   |           |           report_list.py
+    |   |           |           search.py
+    |   |           |           sidebar.py
+    |   |           |           __init__.py
+    |   |           |           
+    |   |           \---images
+    |   |                   image-1.png
+    |   |                   image-2.png
+    |   |                   image-3.png
+    |   |                   image-4.png
+    |   |                   
+    |   +---neo4j_knowledge_graphs
+    |   +---open_reading_framework
+    |   +---semantic-rag-neo4j
+    |   |   |   .DS_Store
+    |   |   |   README.md
+    |   |   |   
+    |   |   +---backend
+    |   |   |   |   .DS_Store
+    |   |   |   |   main.py
+    |   |   |   |   __init__.py
+    |   |   |   |   
+    |   |   |   +---graph
+    |   |   |   |       neo4j_client.py
+    |   |   |   |       queries.py
+    |   |   |   |       __init__.py
+    |   |   |   |       
+    |   |   |   +---ontology
+    |   |   |   |       ecommerce.py
+    |   |   |   |       __init__.py
+    |   |   |   |       
+    |   |   |   \---orchestration
+    |   |   |           pipeline.py
+    |   |   |           __init__.py
+    |   |   |           
+    |   |   +---data
+    |   |   |       seed_neo4j.py
+    |   |   |       
+    |   |   \---frontend
+    |   |           app.py
+    |   |           
+    |   \---ui_inspiration
+    |           notebooklm_google_com.html
+    |           notebooklm_google_landing.html
+    |           notebook_google_com.html
+    |           
+    +---logs
+    |       pipeline.log
+    |       
+    +---prompts
+    |       retrieval_qa_chat_prompt.md
+    |       
+    +---RAG
+    |   \---.runtime
+    |       \---.chromadb
+    |           |   chroma.sqlite3
+    |           |   
+    |           +---1f1c74ff-7728-4e30-9440-feaf0577adc8
+    |           |       data_level0.bin
+    |           |       header.bin
+    |           |       index_metadata.pickle
+    |           |       length.bin
+    |           |       link_lists.bin
+    |           |       
+    |           +---4b99e451-2c3b-4e98-bd84-cdad935404be
+    |           |       data_level0.bin
+    |           |       header.bin
+    |           |       index_metadata.pickle
+    |           |       length.bin
+    |           |       link_lists.bin
+    |           |       
+    |           \---fa955ba1-aaa0-441b-b038-a608d373e6eb
+    |                   data_level0.bin
+    |                   header.bin
+    |                   index_metadata.pickle
+    |                   length.bin
+    |                   link_lists.bin
+    |                   
+    +---schemas
+    |       Corporate_Profile_Organizational_CV-3.json
+    |       
+    +---scripts
+    |       cleanup_raise_root.ps1
+    |       run_embedding_benchmark.py
+    |       run_qwen_extraction_benchmark.py
+    |       sync_neo4j_live.py
+    |       
+    +---src
+    |   |   academic_extractor.py
+    |   |   agent_router.py
+    |   |   batch_ingest.py
+    |   |   claim_verifier.py
+    |   |   comparative_engine.py
+    |   |   config.py
+    |   |   fact_engine.py
+    |   |   graph_engine.py
+    |   |   ingestion_adapter.py
+    |   |   langgraph_workflow.py
+    |   |   local_llm.py
+    |   |   neo4j_engine.py
+    |   |   neo4j_schema.py
+    |   |   pipeline_academic_ingest.py
+    |   |   rag_pipeline.py
+    |   |   reasoning_memory.py
+    |   |   structure_chunker.py
+    |   |   table_engine.py
+    |   |   vector_engine.py
+    |   |   
+    |   +---graph
+    |   +---parsers
+    |   |   |   document_parser.py
+    |   |   |   
+    |   |   \---__pycache__
+    |   |           document_parser.cpython-313.pyc
+    |   |           
+    |   +---prompts
+    |   +---retrieval
+    |   +---tools
+    |   \---__pycache__
+    |           academic_extractor.cpython-313.pyc
+    |           agent_router.cpython-313.pyc
+    |           batch_ingest.cpython-313.pyc
+    |           claim_verifier.cpython-313.pyc
+    |           comparative_engine.cpython-313.pyc
+    |           config.cpython-313.pyc
+    |           fact_engine.cpython-313.pyc
+    |           graph_engine.cpython-313.pyc
+    |           langgraph_workflow.cpython-313.pyc
+    |           neo4j_engine.cpython-313.pyc
+    |           neo4j_schema.cpython-313.pyc
+    |           pipeline_academic_ingest.cpython-313.pyc
+    |           rag_pipeline.cpython-313.pyc
+    |           reasoning_memory.cpython-313.pyc
+    |           structure_chunker.cpython-313.pyc
+    |           table_engine.cpython-313.pyc
+    |           vector_engine.cpython-313.pyc
+    |           
+    +---static
+    |   |   app.js
+    |   |   style.css
+    |   |   
+    |   +---css
+    |   |       base.css
+    |   |       chat.css
+    |   |       evidence.css
+    |   |       header.css
+    |   |       home.css
+    |   |       modals.css
+    |   |       sources.css
+    |   |       studio.css
+    |   |       tokens.css
+    |   |       
+    |   \---js
+    |           chat.js
+    |           evidence.js
+    |           home.js
+    |           main.js
+    |           router.js
+    |           settings.js
+    |           sources.js
+    |           studio.js
+    |           toast.js
+    |           voice.js
+    |           
+    +---templates
+    |   |   index.html
+    |   |   
+    |   \---components
+    |           chat_panel.html
+    |           evidence_drawer.html
+    |           header.html
+    |           home_view.html
+    |           modals.html
+    |           source_panel.html
+    |           studio_panel.html
+    |           
+    +---tests
+    |   |   test_full_system.py
+    |   |   test_neo4j_schema.py
+    |   |   
+    |   +---fixtures
+    |   |       Taxonomy_Stress_Test_Demo.pdf
+    |   |       
+    |   +---Test pdf
+    |   |       Annual Report 2024-25 final upload.pdf
+    |   |       ARE-2016-17.pdf
+    |   |       AR_2024-25_Combined_English_Mail.pdf
+    |   |       IITMRP Annual Report.pdf
+    |   |       
+    |   \---__pycache__
+    |           test_full_system.cpython-313-pytest-9.0.3.pyc
+    |           test_neo4j_schema.cpython-313-pytest-9.0.3.pyc
+    |           
+    \---__pycache__
+            app.cpython-313.pyc
+            main.cpython-313.pyc
+            

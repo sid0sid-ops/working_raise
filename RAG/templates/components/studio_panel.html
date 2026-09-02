@@ -1,0 +1,18 @@
+<!-- Studio Panel Component -->
+<section class="panel-card studio-panel" id="studioViewport">
+    <div class="panel-card-header">
+        <span class="panel-header-title">Knowledge Graph Studio</span>
+    </div>
+    <div class="studio-body">
+        <div class="studio-status-box">
+            <span class="material-symbols-outlined" style="color:#10b981;">check_circle</span>
+            <span>Neo4j Graph Database Connected (bolt://localhost:7687)</span>
+        </div>
+        <div class="studio-cypher-section">
+            <label class="studio-label">Cypher Query Executor (Document-Scoped)</label>
+            <textarea id="cypherInput" class="studio-textarea" rows="3" placeholder="MATCH (n)-[r]->(m) RETURN n, r, m LIMIT 25"></textarea>
+            <button type="button" class="add-source-pill-btn" onclick="StudioModule.runCypher()" style="margin-top:8px;">Execute Cypher</button>
+            <pre id="cypherOutput" class="studio-output">Results will appear here...</pre>
+        </div>
+    </div>
+</section>

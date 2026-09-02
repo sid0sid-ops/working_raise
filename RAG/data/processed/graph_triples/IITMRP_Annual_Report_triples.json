@@ -1,0 +1,2115 @@
+{
+  "entities": [
+    {
+      "entity_id": "uni_iit_madras_research_park__iitm",
+      "label": "University",
+      "name": "IIT Madras Research Park (IITMRP)",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 25,
+        "section_heading": "Basic Sciences to Business",
+        "chunk_id": "IITMRP_Annual_Report_p025",
+        "source_text": "Basic Sciences to Business Key projects facilitated through IITMRP Established in 2012 Employee Strength 260+ Product Launches 150+ Patents Filed 225+ Patents Grants 90+ The collaboration enabled the "
+      }
+    },
+    {
+      "entity_id": "sec_section__page_1_",
+      "label": "Section",
+      "name": "Section (Page 1)",
+      "properties": {
+        "page": 1,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 1,
+        "section_heading": "Section (Page 1)",
+        "chunk_id": "IITMRP_Annual_Report_p001",
+        "source_text": "Ideas Intersections Impact Bringing Unlike Minds Together to Build For Tomorrow Annual Report 2024- 25"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p001",
+      "label": "Chunk",
+      "name": "Passage (p.1)",
+      "properties": {
+        "text_preview": "Ideas Intersections Impact Bringing Unlike Minds Together to Build For Tomorrow Annual Report 2024- 25",
+        "page": 1,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 1,
+        "section_heading": "Section (Page 1)",
+        "chunk_id": "IITMRP_Annual_Report_p001",
+        "source_text": "Ideas Intersections Impact Bringing Unlike Minds Together to Build For Tomorrow Annual Report 2024- 25"
+      }
+    },
+    {
+      "entity_id": "sec_in_2024_",
+      "label": "Section",
+      "name": "In 2024,",
+      "properties": {
+        "page": 2,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 2,
+        "section_heading": "In 2024,",
+        "chunk_id": "IITMRP_Annual_Report_p002",
+        "source_text": "In 2024, we brought unlike minds together \u2014 engineers & entrepreneurs, researchers & risk-takers, designers & developers and sparked innovation that scaled. 2025 holds even bigger intersections to co-"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p002",
+      "label": "Chunk",
+      "name": "Passage (p.2)",
+      "properties": {
+        "text_preview": "In 2024, we brought unlike minds together \u2014 engineers & entrepreneurs, researchers & risk-takers, designers & developers and sparked innovation that s",
+        "page": 2,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 2,
+        "section_heading": "In 2024,",
+        "chunk_id": "IITMRP_Annual_Report_p002",
+        "source_text": "In 2024, we brought unlike minds together \u2014 engineers & entrepreneurs, researchers & risk-takers, designers & developers and sparked innovation that scaled. 2025 holds even bigger intersections to co-"
+      }
+    },
+    {
+      "entity_id": "sec_introduction",
+      "label": "Section",
+      "name": "Introduction",
+      "properties": {
+        "page": 3,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 3,
+        "section_heading": "Introduction",
+        "chunk_id": "IITMRP_Annual_Report_p003",
+        "source_text": "Introduction IITMRP: At A Glance Message from Our Chairman Message from Our Group CEO Message from Our Professor-in-Charge Board of Directors IITM Incubation Cell Centres of Excellence Ecosystem Enabl"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p003",
+      "label": "Chunk",
+      "name": "Passage (p.3)",
+      "properties": {
+        "text_preview": "Introduction IITMRP: At A Glance Message from Our Chairman Message from Our Group CEO Message from Our Professor-in-Charge Board of Directors IITM Inc",
+        "page": 3,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 3,
+        "section_heading": "Introduction",
+        "chunk_id": "IITMRP_Annual_Report_p003",
+        "source_text": "Introduction IITMRP: At A Glance Message from Our Chairman Message from Our Group CEO Message from Our Professor-in-Charge Board of Directors IITM Incubation Cell Centres of Excellence Ecosystem Enabl"
+      }
+    },
+    {
+      "entity_id": "centre_iit_madras_research_park",
+      "label": "Centre",
+      "name": "IIT Madras Research Park",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 20,
+        "section_heading": "Section (Page 20)",
+        "chunk_id": "IITMRP_Annual_Report_p020",
+        "source_text": "17 Establishment in: Entry into IITM Research Park: 2007 2018 ECOSYSTEM ENABLERS Catalysts of Innovation and Scale At IIT Madras Research Park, ecosystem enablers are more than supporters. They are st"
+      }
+    },
+    {
+      "entity_id": "sec_as_india_s__rst_university_based",
+      "label": "Section",
+      "name": "As India\u2019s \ufb01rst university-based",
+      "properties": {
+        "page": 5,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 5,
+        "section_heading": "As India\u2019s \ufb01rst university-based",
+        "chunk_id": "IITMRP_Annual_Report_p005",
+        "source_text": "As India\u2019s \ufb01rst university-based Research Park, we have always believed in the power of collaboration. Every day, research-driven companies, startups, academic pioneers, and students come together to "
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p005",
+      "label": "Chunk",
+      "name": "Passage (p.5)",
+      "properties": {
+        "text_preview": "As India\u2019s \ufb01rst university-based Research Park, we have always believed in the power of collaboration. Every day, research-driven companies, startups,",
+        "page": 5,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 5,
+        "section_heading": "As India\u2019s \ufb01rst university-based",
+        "chunk_id": "IITMRP_Annual_Report_p005",
+        "source_text": "As India\u2019s \ufb01rst university-based Research Park, we have always believed in the power of collaboration. Every day, research-driven companies, startups, academic pioneers, and students come together to "
+      }
+    },
+    {
+      "entity_id": "sec_section__page_6_",
+      "label": "Section",
+      "name": "Section (Page 6)",
+      "properties": {
+        "page": 6,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 6,
+        "section_heading": "Section (Page 6)",
+        "chunk_id": "IITMRP_Annual_Report_p006",
+        "source_text": "03 At a Glance 1.2 Enabling Innovation Through Collaboration million sq.ft. of Collaborative Workspace 250+ Research-focused Organisations & Labs 15 Centres of Excellence 6000 + Technologists co-creat"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p006",
+      "label": "Chunk",
+      "name": "Passage (p.6)",
+      "properties": {
+        "text_preview": "03 At a Glance 1.2 Enabling Innovation Through Collaboration million sq.ft. of Collaborative Workspace 250+ Research-focused Organisations & Labs 15 C",
+        "page": 6,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 6,
+        "section_heading": "Section (Page 6)",
+        "chunk_id": "IITMRP_Annual_Report_p006",
+        "source_text": "03 At a Glance 1.2 Enabling Innovation Through Collaboration million sq.ft. of Collaborative Workspace 250+ Research-focused Organisations & Labs 15 Centres of Excellence 6000 + Technologists co-creat"
+      }
+    },
+    {
+      "entity_id": "sec_chairman",
+      "label": "Section",
+      "name": "Chairman",
+      "properties": {
+        "page": 7,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 7,
+        "section_heading": "Chairman",
+        "chunk_id": "IITMRP_Annual_Report_p007",
+        "source_text": "Chairman As Chairman of the Board of Directors, I am honoured to envision IITM Research Park as a global vanguard of collaborative innovation. Our Startup Shatam mission, a bold commitment to ignite e"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p007",
+      "label": "Chunk",
+      "name": "Passage (p.7)",
+      "properties": {
+        "text_preview": "Chairman As Chairman of the Board of Directors, I am honoured to envision IITM Research Park as a global vanguard of collaborative innovation. Our Sta",
+        "page": 7,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 7,
+        "section_heading": "Chairman",
+        "chunk_id": "IITMRP_Annual_Report_p007",
+        "source_text": "Chairman As Chairman of the Board of Directors, I am honoured to envision IITM Research Park as a global vanguard of collaborative innovation. Our Startup Shatam mission, a bold commitment to ignite e"
+      }
+    },
+    {
+      "entity_id": "centre_technology_business_incubator",
+      "label": "Centre",
+      "name": "Technology Business Incubator",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 10,
+        "section_heading": "Section (Page 10)",
+        "chunk_id": "IITMRP_Annual_Report_p010",
+        "source_text": "07 Directors Board of Prof. V. Kamakoti Director, IIT Madras Chairman of Board of Directors, IITM Research Park Natarajan Malupillai Group CEO, IITM Research Park, Incubation Cell, Rural Technology Bu"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_8_",
+      "label": "Section",
+      "name": "Section (Page 8)",
+      "properties": {
+        "page": 8,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 8,
+        "section_heading": "Section (Page 8)",
+        "chunk_id": "IITMRP_Annual_Report_p008",
+        "source_text": "05 05 As I re\ufb02ect on the past year at the IIT Madras Research Park (IITMRP), I am \ufb01lled with pride and gratitude. This is a shining example of a bold vision backed by grit and several years of hard wo"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p008",
+      "label": "Chunk",
+      "name": "Passage (p.8)",
+      "properties": {
+        "text_preview": "05 05 As I re\ufb02ect on the past year at the IIT Madras Research Park (IITMRP), I am \ufb01lled with pride and gratitude. This is a shining example of a bold ",
+        "page": 8,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 8,
+        "section_heading": "Section (Page 8)",
+        "chunk_id": "IITMRP_Annual_Report_p008",
+        "source_text": "05 05 As I re\ufb02ect on the past year at the IIT Madras Research Park (IITMRP), I am \ufb01lled with pride and gratitude. This is a shining example of a bold vision backed by grit and several years of hard wo"
+      }
+    },
+    {
+      "entity_id": "dept_department_of_civil_engineering_at_iit_m",
+      "label": "Department",
+      "name": "Department of Civil Engineering at IIT Madras",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 9,
+        "section_heading": "Professor-in-Charge",
+        "chunk_id": "IITMRP_Annual_Report_p009",
+        "source_text": "Professor-in-Charge Message from Our Professor Radhakrishna G Pillai I am a Professor in the Department of Civil Engineering at IIT Madras. In September 2024, I took the additional responsibility of P"
+      }
+    },
+    {
+      "entity_id": "dept_department_of_civil_engineering",
+      "label": "Department",
+      "name": "Department of Civil Engineering",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 10,
+        "section_heading": "Section (Page 10)",
+        "chunk_id": "IITMRP_Annual_Report_p010",
+        "source_text": "07 Directors Board of Prof. V. Kamakoti Director, IIT Madras Chairman of Board of Directors, IITM Research Park Natarajan Malupillai Group CEO, IITM Research Park, Incubation Cell, Rural Technology Bu"
+      }
+    },
+    {
+      "entity_id": "lab_IITMRP_Annual_Report_p009_1",
+      "label": "Practical_Lab",
+      "name": "Practical/Lab Session (Laboratory)",
+      "properties": {
+        "description": "o promote a culture of taking laboratory research to \ufb01eld implementation & commercialisation in a bi"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 9,
+        "section_heading": "Professor-in-Charge",
+        "chunk_id": "IITMRP_Annual_Report_p009",
+        "source_text": "Professor-in-Charge Message from Our Professor Radhakrishna G Pillai I am a Professor in the Department of Civil Engineering at IIT Madras. In September 2024, I took the additional responsibility of P"
+      }
+    },
+    {
+      "entity_id": "sec_professor_in_charge",
+      "label": "Section",
+      "name": "Professor-in-Charge",
+      "properties": {
+        "page": 9,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 9,
+        "section_heading": "Professor-in-Charge",
+        "chunk_id": "IITMRP_Annual_Report_p009",
+        "source_text": "Professor-in-Charge Message from Our Professor Radhakrishna G Pillai I am a Professor in the Department of Civil Engineering at IIT Madras. In September 2024, I took the additional responsibility of P"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p009",
+      "label": "Chunk",
+      "name": "Passage (p.9)",
+      "properties": {
+        "text_preview": "Professor-in-Charge Message from Our Professor Radhakrishna G Pillai I am a Professor in the Department of Civil Engineering at IIT Madras. In Septemb",
+        "page": 9,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 9,
+        "section_heading": "Professor-in-Charge",
+        "chunk_id": "IITMRP_Annual_Report_p009",
+        "source_text": "Professor-in-Charge Message from Our Professor Radhakrishna G Pillai I am a Professor in the Department of Civil Engineering at IIT Madras. In September 2024, I took the additional responsibility of P"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_10_",
+      "label": "Section",
+      "name": "Section (Page 10)",
+      "properties": {
+        "page": 10,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 10,
+        "section_heading": "Section (Page 10)",
+        "chunk_id": "IITMRP_Annual_Report_p010",
+        "source_text": "07 Directors Board of Prof. V. Kamakoti Director, IIT Madras Chairman of Board of Directors, IITM Research Park Natarajan Malupillai Group CEO, IITM Research Park, Incubation Cell, Rural Technology Bu"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p010",
+      "label": "Chunk",
+      "name": "Passage (p.10)",
+      "properties": {
+        "text_preview": "07 Directors Board of Prof. V. Kamakoti Director, IIT Madras Chairman of Board of Directors, IITM Research Park Natarajan Malupillai Group CEO, IITM R",
+        "page": 10,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 10,
+        "section_heading": "Section (Page 10)",
+        "chunk_id": "IITMRP_Annual_Report_p010",
+        "source_text": "07 Directors Board of Prof. V. Kamakoti Director, IIT Madras Chairman of Board of Directors, IITM Research Park Natarajan Malupillai Group CEO, IITM Research Park, Incubation Cell, Rural Technology Bu"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_11_",
+      "label": "Section",
+      "name": "Section (Page 11)",
+      "properties": {
+        "page": 11,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 11,
+        "section_heading": "Section (Page 11)",
+        "chunk_id": "IITMRP_Annual_Report_p011",
+        "source_text": "08 Directors Board of Gopal Srinivasan Chairman and Managing Director, TVS Capital Funds Prof. Manu Santhanam Dean, IC&SR, IIT Madras S. Mahalingam Former Chief Financial Officer (CFO) & Executive Dir"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p011",
+      "label": "Chunk",
+      "name": "Passage (p.11)",
+      "properties": {
+        "text_preview": "08 Directors Board of Gopal Srinivasan Chairman and Managing Director, TVS Capital Funds Prof. Manu Santhanam Dean, IC&SR, IIT Madras S. Mahalingam Fo",
+        "page": 11,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 11,
+        "section_heading": "Section (Page 11)",
+        "chunk_id": "IITMRP_Annual_Report_p011",
+        "source_text": "08 Directors Board of Gopal Srinivasan Chairman and Managing Director, TVS Capital Funds Prof. Manu Santhanam Dean, IC&SR, IIT Madras S. Mahalingam Former Chief Financial Officer (CFO) & Executive Dir"
+      }
+    },
+    {
+      "entity_id": "centre_bioincubator",
+      "label": "Centre",
+      "name": "Bioincubator",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 12,
+        "section_heading": "Section (Page 12)",
+        "chunk_id": "IITMRP_Annual_Report_p012",
+        "source_text": "09 The National Model for Nurturing Deep-Tech Entrepreneurship As India\u2019s leading deep-tech startup incubator, IITM Incubation Cell ( IITMIC) plays a pivotal role in transforming cutting-edge research"
+      }
+    },
+    {
+      "entity_id": "fact_IITMRP_Annual_Report_p012_1",
+      "label": "MetricFact",
+      "name": "Metric: \u20b950,000 Cr",
+      "properties": {
+        "raw_value": "\u20b950,000 Cr",
+        "context": "s 01 IPO of an IITMIC incubated Startup \u20b950,000 Cr (US $6 Billion) Valuation \u20b912,000 Cr (U"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 12,
+        "section_heading": "Section (Page 12)",
+        "chunk_id": "IITMRP_Annual_Report_p012",
+        "source_text": "09 The National Model for Nurturing Deep-Tech Entrepreneurship As India\u2019s leading deep-tech startup incubator, IITM Incubation Cell ( IITMIC) plays a pivotal role in transforming cutting-edge research"
+      }
+    },
+    {
+      "entity_id": "fact_IITMRP_Annual_Report_p012_2",
+      "label": "MetricFact",
+      "name": "Metric: \u20b912,000 Cr",
+      "properties": {
+        "raw_value": "\u20b912,000 Cr",
+        "context": "up \u20b950,000 Cr (US $6 Billion) Valuation \u20b912,000 Cr (US $1.4 Billion) of Investments 11,000"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 12,
+        "section_heading": "Section (Page 12)",
+        "chunk_id": "IITMRP_Annual_Report_p012",
+        "source_text": "09 The National Model for Nurturing Deep-Tech Entrepreneurship As India\u2019s leading deep-tech startup incubator, IITM Incubation Cell ( IITMIC) plays a pivotal role in transforming cutting-edge research"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_12_",
+      "label": "Section",
+      "name": "Section (Page 12)",
+      "properties": {
+        "page": 12,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 12,
+        "section_heading": "Section (Page 12)",
+        "chunk_id": "IITMRP_Annual_Report_p012",
+        "source_text": "09 The National Model for Nurturing Deep-Tech Entrepreneurship As India\u2019s leading deep-tech startup incubator, IITM Incubation Cell ( IITMIC) plays a pivotal role in transforming cutting-edge research"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p012",
+      "label": "Chunk",
+      "name": "Passage (p.12)",
+      "properties": {
+        "text_preview": "09 The National Model for Nurturing Deep-Tech Entrepreneurship As India\u2019s leading deep-tech startup incubator, IITM Incubation Cell ( IITMIC) plays a ",
+        "page": 12,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 12,
+        "section_heading": "Section (Page 12)",
+        "chunk_id": "IITMRP_Annual_Report_p012",
+        "source_text": "09 The National Model for Nurturing Deep-Tech Entrepreneurship As India\u2019s leading deep-tech startup incubator, IITM Incubation Cell ( IITMIC) plays a pivotal role in transforming cutting-edge research"
+      }
+    },
+    {
+      "entity_id": "sec_900_startup_founders",
+      "label": "Section",
+      "name": "900 Startup Founders",
+      "properties": {
+        "page": 13,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 13,
+        "section_heading": "900 Startup Founders",
+        "chunk_id": "IITMRP_Annual_Report_p013",
+        "source_text": "900 Startup Founders Faculty Project Staff Alumini External Students 117 companies have IIT faculty as founders or minority shareholders The strength of the startup ecosystem lies in its diversity of "
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p013",
+      "label": "Chunk",
+      "name": "Passage (p.13)",
+      "properties": {
+        "text_preview": "900 Startup Founders Faculty Project Staff Alumini External Students 117 companies have IIT faculty as founders or minority shareholders The strength ",
+        "page": 13,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 13,
+        "section_heading": "900 Startup Founders",
+        "chunk_id": "IITMRP_Annual_Report_p013",
+        "source_text": "900 Startup Founders Faculty Project Staff Alumini External Students 117 companies have IIT faculty as founders or minority shareholders The strength of the startup ecosystem lies in its diversity of "
+      }
+    },
+    {
+      "entity_id": "sec_startup_shatam_catalysing",
+      "label": "Section",
+      "name": "Startup Shatam Catalysing",
+      "properties": {
+        "page": 14,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 14,
+        "section_heading": "Startup Shatam Catalysing",
+        "chunk_id": "IITMRP_Annual_Report_p014",
+        "source_text": "Startup Shatam Catalysing India\u2019s Product Nation Vision In a landmark accomplishment, IITMIC incubated 104 deep-tech startups in FY 2024-25 averaging one every three days. Launched by IIT Madras, Dire"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p014",
+      "label": "Chunk",
+      "name": "Passage (p.14)",
+      "properties": {
+        "text_preview": "Startup Shatam Catalysing India\u2019s Product Nation Vision In a landmark accomplishment, IITMIC incubated 104 deep-tech startups in FY 2024-25 averaging ",
+        "page": 14,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 14,
+        "section_heading": "Startup Shatam Catalysing",
+        "chunk_id": "IITMRP_Annual_Report_p014",
+        "source_text": "Startup Shatam Catalysing India\u2019s Product Nation Vision In a landmark accomplishment, IITMIC incubated 104 deep-tech startups in FY 2024-25 averaging one every three days. Launched by IIT Madras, Dire"
+      }
+    },
+    {
+      "entity_id": "centre_centre_for_non_destructive_evaluation",
+      "label": "Centre",
+      "name": "Centre for Non Destructive Evaluation",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 15,
+        "section_heading": "Section (Page 15)",
+        "chunk_id": "IITMRP_Annual_Report_p015",
+        "source_text": "12 START UP SUCCESS STORIES Born out of IIT Madras, Xyma Analytics is a deep-tech innovation company dedicated to revolutionising real-time monitoring in sectors such as oil & gas, power, and heavy in"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_15_",
+      "label": "Section",
+      "name": "Section (Page 15)",
+      "properties": {
+        "page": 15,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 15,
+        "section_heading": "Section (Page 15)",
+        "chunk_id": "IITMRP_Annual_Report_p015",
+        "source_text": "12 START UP SUCCESS STORIES Born out of IIT Madras, Xyma Analytics is a deep-tech innovation company dedicated to revolutionising real-time monitoring in sectors such as oil & gas, power, and heavy in"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p015",
+      "label": "Chunk",
+      "name": "Passage (p.15)",
+      "properties": {
+        "text_preview": "12 START UP SUCCESS STORIES Born out of IIT Madras, Xyma Analytics is a deep-tech innovation company dedicated to revolutionising real-time monitoring",
+        "page": 15,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 15,
+        "section_heading": "Section (Page 15)",
+        "chunk_id": "IITMRP_Annual_Report_p015",
+        "source_text": "12 START UP SUCCESS STORIES Born out of IIT Madras, Xyma Analytics is a deep-tech innovation company dedicated to revolutionising real-time monitoring in sectors such as oil & gas, power, and heavy in"
+      }
+    },
+    {
+      "entity_id": "dept_department_of_computer_science_and_engin",
+      "label": "Department",
+      "name": "Department of Computer Science and Engineering",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 16,
+        "section_heading": "Section (Page 16)",
+        "chunk_id": "IITMRP_Annual_Report_p016",
+        "source_text": "13 Tapping into the IITMRP Ecosystem: \u25cf Access to world-class infrastructure and lab facilities critical for chip design and prototyping. \u25cf Networking and peer support through IITM Pravartak Technolog"
+      }
+    },
+    {
+      "entity_id": "dept_department_of_computer_science",
+      "label": "Department",
+      "name": "Department of Computer Science",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 16,
+        "section_heading": "Section (Page 16)",
+        "chunk_id": "IITMRP_Annual_Report_p016",
+        "source_text": "13 Tapping into the IITMRP Ecosystem: \u25cf Access to world-class infrastructure and lab facilities critical for chip design and prototyping. \u25cf Networking and peer support through IITM Pravartak Technolog"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_16_",
+      "label": "Section",
+      "name": "Section (Page 16)",
+      "properties": {
+        "page": 16,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 16,
+        "section_heading": "Section (Page 16)",
+        "chunk_id": "IITMRP_Annual_Report_p016",
+        "source_text": "13 Tapping into the IITMRP Ecosystem: \u25cf Access to world-class infrastructure and lab facilities critical for chip design and prototyping. \u25cf Networking and peer support through IITM Pravartak Technolog"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p016",
+      "label": "Chunk",
+      "name": "Passage (p.16)",
+      "properties": {
+        "text_preview": "13 Tapping into the IITMRP Ecosystem: \u25cf Access to world-class infrastructure and lab facilities critical for chip design and prototyping. \u25cf Networking",
+        "page": 16,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 16,
+        "section_heading": "Section (Page 16)",
+        "chunk_id": "IITMRP_Annual_Report_p016",
+        "source_text": "13 Tapping into the IITMRP Ecosystem: \u25cf Access to world-class infrastructure and lab facilities critical for chip design and prototyping. \u25cf Networking and peer support through IITM Pravartak Technolog"
+      }
+    },
+    {
+      "entity_id": "centre_center_for_rehabilitation_research_and_d",
+      "label": "Centre",
+      "name": "Center for Rehabilitation Research and Device",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 17,
+        "section_heading": "Section (Page 17)",
+        "chunk_id": "IITMRP_Annual_Report_p017",
+        "source_text": "14 Tapping into the IITMRP Ecosystem: \u25cf Access to R&D infrastructure, testbeds, and easy \ufb01nancing pilots with SBI Bank. \u25cf Strategic funding and project support via IITMIC and CSR partners notably Indi"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_17_",
+      "label": "Section",
+      "name": "Section (Page 17)",
+      "properties": {
+        "page": 17,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 17,
+        "section_heading": "Section (Page 17)",
+        "chunk_id": "IITMRP_Annual_Report_p017",
+        "source_text": "14 Tapping into the IITMRP Ecosystem: \u25cf Access to R&D infrastructure, testbeds, and easy \ufb01nancing pilots with SBI Bank. \u25cf Strategic funding and project support via IITMIC and CSR partners notably Indi"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p017",
+      "label": "Chunk",
+      "name": "Passage (p.17)",
+      "properties": {
+        "text_preview": "14 Tapping into the IITMRP Ecosystem: \u25cf Access to R&D infrastructure, testbeds, and easy \ufb01nancing pilots with SBI Bank. \u25cf Strategic funding and projec",
+        "page": 17,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 17,
+        "section_heading": "Section (Page 17)",
+        "chunk_id": "IITMRP_Annual_Report_p017",
+        "source_text": "14 Tapping into the IITMRP Ecosystem: \u25cf Access to R&D infrastructure, testbeds, and easy \ufb01nancing pilots with SBI Bank. \u25cf Strategic funding and project support via IITMIC and CSR partners notably Indi"
+      }
+    },
+    {
+      "entity_id": "centre_center_of_excellence_in_advanced_automot",
+      "label": "Centre",
+      "name": "Center of Excellence in Advanced Automotive Research",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "section_heading": "Section (Page 18)",
+        "chunk_id": "IITMRP_Annual_Report_p018",
+        "source_text": "15 Centres of Excellence: Accelerating Innovation The Centres of Excellence at IIT Madras Research Park are strategic enablers of deep-tech innovation designed to catalyse industry-academia partnershi"
+      }
+    },
+    {
+      "entity_id": "centre_centre_of_battery_engineering_and_electr",
+      "label": "Centre",
+      "name": "Centre of Battery Engineering and Electric Vehicles",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "section_heading": "Section (Page 18)",
+        "chunk_id": "IITMRP_Annual_Report_p018",
+        "source_text": "15 Centres of Excellence: Accelerating Innovation The Centres of Excellence at IIT Madras Research Park are strategic enablers of deep-tech innovation designed to catalyse industry-academia partnershi"
+      }
+    },
+    {
+      "entity_id": "centre_centre_of_excellence_in_wireless_technol",
+      "label": "Centre",
+      "name": "Centre of Excellence in Wireless Technology Centre for",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "section_heading": "Section (Page 18)",
+        "chunk_id": "IITMRP_Annual_Report_p018",
+        "source_text": "15 Centres of Excellence: Accelerating Innovation The Centres of Excellence at IIT Madras Research Park are strategic enablers of deep-tech innovation designed to catalyse industry-academia partnershi"
+      }
+    },
+    {
+      "entity_id": "centre_centre_for_urbanization",
+      "label": "Centre",
+      "name": "Centre for Urbanization",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "section_heading": "Section (Page 18)",
+        "chunk_id": "IITMRP_Annual_Report_p018",
+        "source_text": "15 Centres of Excellence: Accelerating Innovation The Centres of Excellence at IIT Madras Research Park are strategic enablers of deep-tech innovation designed to catalyse industry-academia partnershi"
+      }
+    },
+    {
+      "entity_id": "centre_center_for_excellence_in_energy___teleco",
+      "label": "Centre",
+      "name": "Center for Excellence in Energy & Telecommunications",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "section_heading": "Section (Page 18)",
+        "chunk_id": "IITMRP_Annual_Report_p018",
+        "source_text": "15 Centres of Excellence: Accelerating Innovation The Centres of Excellence at IIT Madras Research Park are strategic enablers of deep-tech innovation designed to catalyse industry-academia partnershi"
+      }
+    },
+    {
+      "entity_id": "centre_centre_for_clean_water_india_centre_for_",
+      "label": "Centre",
+      "name": "Centre for Clean Water India Centre for Lab Grown",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "section_heading": "Section (Page 18)",
+        "chunk_id": "IITMRP_Annual_Report_p018",
+        "source_text": "15 Centres of Excellence: Accelerating Innovation The Centres of Excellence at IIT Madras Research Park are strategic enablers of deep-tech innovation designed to catalyse industry-academia partnershi"
+      }
+    },
+    {
+      "entity_id": "centre_centre_of_excellence_in_road_safety_iitm",
+      "label": "Centre",
+      "name": "Centre of Excellence in Road Safety IITM CDOT Samgnya",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "section_heading": "Section (Page 18)",
+        "chunk_id": "IITMRP_Annual_Report_p018",
+        "source_text": "15 Centres of Excellence: Accelerating Innovation The Centres of Excellence at IIT Madras Research Park are strategic enablers of deep-tech innovation designed to catalyse industry-academia partnershi"
+      }
+    },
+    {
+      "entity_id": "centre_advanced_manufacturing_technology_development_centre",
+      "label": "Centre",
+      "name": "Advanced Manufacturing Technology Development Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "section_heading": "Section (Page 18)",
+        "chunk_id": "IITMRP_Annual_Report_p018",
+        "source_text": "15 Centres of Excellence: Accelerating Innovation The Centres of Excellence at IIT Madras Research Park are strategic enablers of deep-tech innovation designed to catalyse industry-academia partnershi"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_18_",
+      "label": "Section",
+      "name": "Section (Page 18)",
+      "properties": {
+        "page": 18,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "section_heading": "Section (Page 18)",
+        "chunk_id": "IITMRP_Annual_Report_p018",
+        "source_text": "15 Centres of Excellence: Accelerating Innovation The Centres of Excellence at IIT Madras Research Park are strategic enablers of deep-tech innovation designed to catalyse industry-academia partnershi"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p018",
+      "label": "Chunk",
+      "name": "Passage (p.18)",
+      "properties": {
+        "text_preview": "15 Centres of Excellence: Accelerating Innovation The Centres of Excellence at IIT Madras Research Park are strategic enablers of deep-tech innovation",
+        "page": 18,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "section_heading": "Section (Page 18)",
+        "chunk_id": "IITMRP_Annual_Report_p018",
+        "source_text": "15 Centres of Excellence: Accelerating Innovation The Centres of Excellence at IIT Madras Research Park are strategic enablers of deep-tech innovation designed to catalyse industry-academia partnershi"
+      }
+    },
+    {
+      "entity_id": "centre_centre_for_lab_grown_diamond_incent_lgd_",
+      "label": "Centre",
+      "name": "Centre for Lab Grown Diamond InCent LGD is India",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 19,
+        "section_heading": "Section (Page 19)",
+        "chunk_id": "IITMRP_Annual_Report_p019",
+        "source_text": "16 CASE STUDY Year of Establishment: Research on Lab Grown Diamond growth and applications Key Areas of Focus: 2023 India Centre for Lab Grown Diamond InCent LGD is India's pioneering hub for cutting-"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_19_",
+      "label": "Section",
+      "name": "Section (Page 19)",
+      "properties": {
+        "page": 19,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 19,
+        "section_heading": "Section (Page 19)",
+        "chunk_id": "IITMRP_Annual_Report_p019",
+        "source_text": "16 CASE STUDY Year of Establishment: Research on Lab Grown Diamond growth and applications Key Areas of Focus: 2023 India Centre for Lab Grown Diamond InCent LGD is India's pioneering hub for cutting-"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p019",
+      "label": "Chunk",
+      "name": "Passage (p.19)",
+      "properties": {
+        "text_preview": "16 CASE STUDY Year of Establishment: Research on Lab Grown Diamond growth and applications Key Areas of Focus: 2023 India Centre for Lab Grown Diamond",
+        "page": 19,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 19,
+        "section_heading": "Section (Page 19)",
+        "chunk_id": "IITMRP_Annual_Report_p019",
+        "source_text": "16 CASE STUDY Year of Establishment: Research on Lab Grown Diamond growth and applications Key Areas of Focus: 2023 India Centre for Lab Grown Diamond InCent LGD is India's pioneering hub for cutting-"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_20_",
+      "label": "Section",
+      "name": "Section (Page 20)",
+      "properties": {
+        "page": 20,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 20,
+        "section_heading": "Section (Page 20)",
+        "chunk_id": "IITMRP_Annual_Report_p020",
+        "source_text": "17 Establishment in: Entry into IITM Research Park: 2007 2018 ECOSYSTEM ENABLERS Catalysts of Innovation and Scale At IIT Madras Research Park, ecosystem enablers are more than supporters. They are st"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p020",
+      "label": "Chunk",
+      "name": "Passage (p.20)",
+      "properties": {
+        "text_preview": "17 Establishment in: Entry into IITM Research Park: 2007 2018 ECOSYSTEM ENABLERS Catalysts of Innovation and Scale At IIT Madras Research Park, ecosys",
+        "page": 20,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 20,
+        "section_heading": "Section (Page 20)",
+        "chunk_id": "IITMRP_Annual_Report_p020",
+        "source_text": "17 Establishment in: Entry into IITM Research Park: 2007 2018 ECOSYSTEM ENABLERS Catalysts of Innovation and Scale At IIT Madras Research Park, ecosystem enablers are more than supporters. They are st"
+      }
+    },
+    {
+      "entity_id": "fact_IITMRP_Annual_Report_p021_1",
+      "label": "MetricFact",
+      "name": "Metric: \u20b922 Cr",
+      "properties": {
+        "raw_value": "\u20b922 Cr",
+        "context": "bilise $100 Million \u25cf Participated in a \u20b922 Cr Series A round for TIEA Connectors to b"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 21,
+        "section_heading": "Mentored & Invested",
+        "chunk_id": "IITMRP_Annual_Report_p021",
+        "source_text": "Mentored & Invested in 24-25: 18 INVESTED MENTORED Establishment in: Entry into IITM Research Park: 2021 2023 A Deep-Tech Venture Capital Firm focusing on startups that will fundamentally transform in"
+      }
+    },
+    {
+      "entity_id": "sec_mentored___invested",
+      "label": "Section",
+      "name": "Mentored & Invested",
+      "properties": {
+        "page": 21,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 21,
+        "section_heading": "Mentored & Invested",
+        "chunk_id": "IITMRP_Annual_Report_p021",
+        "source_text": "Mentored & Invested in 24-25: 18 INVESTED MENTORED Establishment in: Entry into IITM Research Park: 2021 2023 A Deep-Tech Venture Capital Firm focusing on startups that will fundamentally transform in"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p021",
+      "label": "Chunk",
+      "name": "Passage (p.21)",
+      "properties": {
+        "text_preview": "Mentored & Invested in 24-25: 18 INVESTED MENTORED Establishment in: Entry into IITM Research Park: 2021 2023 A Deep-Tech Venture Capital Firm focusin",
+        "page": 21,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 21,
+        "section_heading": "Mentored & Invested",
+        "chunk_id": "IITMRP_Annual_Report_p021",
+        "source_text": "Mentored & Invested in 24-25: 18 INVESTED MENTORED Establishment in: Entry into IITM Research Park: 2021 2023 A Deep-Tech Venture Capital Firm focusing on startups that will fundamentally transform in"
+      }
+    },
+    {
+      "entity_id": "centre_centre_of_excellence_projects_carried_ou",
+      "label": "Centre",
+      "name": "Centre of Excellence projects carried out",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 22,
+        "section_heading": "Section (Page 22)",
+        "chunk_id": "IITMRP_Annual_Report_p022",
+        "source_text": "19 R&D CLIENTS Bridging Industry and Academia At IITMRP, industry-academia collaboration is fostered through a dynamic ecosystem that integrates IIT Madras faculty expertise, industry professionals, a"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_22_",
+      "label": "Section",
+      "name": "Section (Page 22)",
+      "properties": {
+        "page": 22,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 22,
+        "section_heading": "Section (Page 22)",
+        "chunk_id": "IITMRP_Annual_Report_p022",
+        "source_text": "19 R&D CLIENTS Bridging Industry and Academia At IITMRP, industry-academia collaboration is fostered through a dynamic ecosystem that integrates IIT Madras faculty expertise, industry professionals, a"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p022",
+      "label": "Chunk",
+      "name": "Passage (p.22)",
+      "properties": {
+        "text_preview": "19 R&D CLIENTS Bridging Industry and Academia At IITMRP, industry-academia collaboration is fostered through a dynamic ecosystem that integrates IIT M",
+        "page": 22,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 22,
+        "section_heading": "Section (Page 22)",
+        "chunk_id": "IITMRP_Annual_Report_p022",
+        "source_text": "19 R&D CLIENTS Bridging Industry and Academia At IITMRP, industry-academia collaboration is fostered through a dynamic ecosystem that integrates IIT Madras faculty expertise, industry professionals, a"
+      }
+    },
+    {
+      "entity_id": "sec_more_than_just_a_metaphorical_conne",
+      "label": "Section",
+      "name": "More than just a metaphorical connect, IITMRP is situated at close pro",
+      "properties": {
+        "page": 23,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 23,
+        "section_heading": "More than just a metaphorical connect, IITMRP is situated at close pro",
+        "chunk_id": "IITMRP_Annual_Report_p023",
+        "source_text": "More than just a metaphorical connect, IITMRP is situated at close proximity to IIT Madras with a bridge connecting us to enable easy, real-time access between collaborators. 20"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p023",
+      "label": "Chunk",
+      "name": "Passage (p.23)",
+      "properties": {
+        "text_preview": "More than just a metaphorical connect, IITMRP is situated at close proximity to IIT Madras with a bridge connecting us to enable easy, real-time acces",
+        "page": 23,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 23,
+        "section_heading": "More than just a metaphorical connect, IITMRP is situated at close pro",
+        "chunk_id": "IITMRP_Annual_Report_p023",
+        "source_text": "More than just a metaphorical connect, IITMRP is situated at close proximity to IIT Madras with a bridge connecting us to enable easy, real-time access between collaborators. 20"
+      }
+    },
+    {
+      "entity_id": "sec_case_study",
+      "label": "Section",
+      "name": "CASE STUDY",
+      "properties": {
+        "page": 24,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 24,
+        "section_heading": "CASE STUDY",
+        "chunk_id": "IITMRP_Annual_Report_p024",
+        "source_text": "CASE STUDY Saint-Gobain Research India Primary Sectors: Construction, Mobility, Industry 21 Saint-Gobain Research India (SGR India) is one of the 8 cross-functional R&D centers for the Saint-Gobain Gr"
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p024",
+      "label": "Chunk",
+      "name": "Passage (p.24)",
+      "properties": {
+        "text_preview": "CASE STUDY Saint-Gobain Research India Primary Sectors: Construction, Mobility, Industry 21 Saint-Gobain Research India (SGR India) is one of the 8 cr",
+        "page": 24,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 24,
+        "section_heading": "CASE STUDY",
+        "chunk_id": "IITMRP_Annual_Report_p024",
+        "source_text": "CASE STUDY Saint-Gobain Research India Primary Sectors: Construction, Mobility, Industry 21 Saint-Gobain Research India (SGR India) is one of the 8 cross-functional R&D centers for the Saint-Gobain Gr"
+      }
+    },
+    {
+      "entity_id": "sec_basic_sciences_to_business",
+      "label": "Section",
+      "name": "Basic Sciences to Business",
+      "properties": {
+        "page": 25,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 25,
+        "section_heading": "Basic Sciences to Business",
+        "chunk_id": "IITMRP_Annual_Report_p025",
+        "source_text": "Basic Sciences to Business Key projects facilitated through IITMRP Established in 2012 Employee Strength 260+ Product Launches 150+ Patents Filed 225+ Patents Grants 90+ The collaboration enabled the "
+      }
+    },
+    {
+      "entity_id": "IITMRP_Annual_Report_p025",
+      "label": "Chunk",
+      "name": "Passage (p.25)",
+      "properties": {
+        "text_preview": "Basic Sciences to Business Key projects facilitated through IITMRP Established in 2012 Employee Strength 260+ Product Launches 150+ Patents Filed 225+",
+        "page": 25,
+        "pdf": "IITMRP Annual Report.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 25,
+        "section_heading": "Basic Sciences to Business",
+        "chunk_id": "IITMRP_Annual_Report_p025",
+        "source_text": "Basic Sciences to Business Key projects facilitated through IITMRP Established in 2012 Employee Strength 260+ Product Launches 150+ Patents Filed 225+ Patents Grants 90+ The collaboration enabled the "
+      }
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_section__page_1__has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_1_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 1,
+        "chunk_id": "IITMRP_Annual_Report_p001"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_1__IITMRP_Annual_Report_p001_contains",
+      "source_id": "sec_section__page_1_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p001",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 1,
+        "chunk_id": "IITMRP_Annual_Report_p001"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_in_2024__has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_in_2024_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 2,
+        "chunk_id": "IITMRP_Annual_Report_p002"
+      }
+    },
+    {
+      "relation_id": "rel_sec_in_2024__IITMRP_Annual_Report_p002_contains",
+      "source_id": "sec_in_2024_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p002",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 2,
+        "chunk_id": "IITMRP_Annual_Report_p002"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_introduction_has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_introduction",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 3,
+        "chunk_id": "IITMRP_Annual_Report_p003"
+      }
+    },
+    {
+      "relation_id": "rel_sec_introduction_IITMRP_Annual_Report_p003_contains",
+      "source_id": "sec_introduction",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p003",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 3,
+        "chunk_id": "IITMRP_Annual_Report_p003"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_centre_iit_madras_research_park_has_centre",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_iit_madras_research_park",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 20,
+        "chunk_id": "IITMRP_Annual_Report_p020"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_as_india_s__rst_university_based_has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_as_india_s__rst_university_based",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 5,
+        "chunk_id": "IITMRP_Annual_Report_p005"
+      }
+    },
+    {
+      "relation_id": "rel_sec_as_india_s__rst_university_based_IITMRP_Annual_Report_p005_contains",
+      "source_id": "sec_as_india_s__rst_university_based",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p005",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 5,
+        "chunk_id": "IITMRP_Annual_Report_p005"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_section__page_6__has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_6_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 6,
+        "chunk_id": "IITMRP_Annual_Report_p006"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_6__IITMRP_Annual_Report_p006_contains",
+      "source_id": "sec_section__page_6_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p006",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 6,
+        "chunk_id": "IITMRP_Annual_Report_p006"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_chairman_has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_chairman",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 7,
+        "chunk_id": "IITMRP_Annual_Report_p007"
+      }
+    },
+    {
+      "relation_id": "rel_sec_chairman_IITMRP_Annual_Report_p007_contains",
+      "source_id": "sec_chairman",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p007",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 7,
+        "chunk_id": "IITMRP_Annual_Report_p007"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_centre_technology_business_incubator_has_centre",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_technology_business_incubator",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 10,
+        "chunk_id": "IITMRP_Annual_Report_p010"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_section__page_8__has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_8_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 8,
+        "chunk_id": "IITMRP_Annual_Report_p008"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_8__IITMRP_Annual_Report_p008_contains",
+      "source_id": "sec_section__page_8_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p008",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 8,
+        "chunk_id": "IITMRP_Annual_Report_p008"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_dept_department_of_civil_engineering_at_iit_m_has_dept",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_DEPARTMENT",
+      "target_id": "dept_department_of_civil_engineering_at_iit_m",
+      "target_label": "Department",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 9,
+        "chunk_id": "IITMRP_Annual_Report_p009"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_dept_department_of_civil_engineering_has_dept",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_DEPARTMENT",
+      "target_id": "dept_department_of_civil_engineering",
+      "target_label": "Department",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 10,
+        "chunk_id": "IITMRP_Annual_Report_p010"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_lab_IITMRP_Annual_Report_p009_1_has_lab",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_PRACTICAL",
+      "target_id": "lab_IITMRP_Annual_Report_p009_1",
+      "target_label": "Practical_Lab",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 9,
+        "chunk_id": "IITMRP_Annual_Report_p009"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_professor_in_charge_has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_professor_in_charge",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 9,
+        "chunk_id": "IITMRP_Annual_Report_p009"
+      }
+    },
+    {
+      "relation_id": "rel_sec_professor_in_charge_IITMRP_Annual_Report_p009_contains",
+      "source_id": "sec_professor_in_charge",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p009",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 9,
+        "chunk_id": "IITMRP_Annual_Report_p009"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_section__page_10__has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_10_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 10,
+        "chunk_id": "IITMRP_Annual_Report_p010"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_10__IITMRP_Annual_Report_p010_contains",
+      "source_id": "sec_section__page_10_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p010",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 10,
+        "chunk_id": "IITMRP_Annual_Report_p010"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_section__page_11__has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_11_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 11,
+        "chunk_id": "IITMRP_Annual_Report_p011"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_11__IITMRP_Annual_Report_p011_contains",
+      "source_id": "sec_section__page_11_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p011",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 11,
+        "chunk_id": "IITMRP_Annual_Report_p011"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_centre_bioincubator_has_centre",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_bioincubator",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 12,
+        "chunk_id": "IITMRP_Annual_Report_p012"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_fact_IITMRP_Annual_Report_p012_1_reported_metric",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "REPORTED_METRIC",
+      "target_id": "fact_IITMRP_Annual_Report_p012_1",
+      "target_label": "MetricFact",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 12,
+        "chunk_id": "IITMRP_Annual_Report_p012"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_fact_IITMRP_Annual_Report_p012_2_reported_metric",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "REPORTED_METRIC",
+      "target_id": "fact_IITMRP_Annual_Report_p012_2",
+      "target_label": "MetricFact",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 12,
+        "chunk_id": "IITMRP_Annual_Report_p012"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_section__page_12__has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_12_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 12,
+        "chunk_id": "IITMRP_Annual_Report_p012"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_12__IITMRP_Annual_Report_p012_contains",
+      "source_id": "sec_section__page_12_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p012",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 12,
+        "chunk_id": "IITMRP_Annual_Report_p012"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_900_startup_founders_has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_900_startup_founders",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 13,
+        "chunk_id": "IITMRP_Annual_Report_p013"
+      }
+    },
+    {
+      "relation_id": "rel_sec_900_startup_founders_IITMRP_Annual_Report_p013_contains",
+      "source_id": "sec_900_startup_founders",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p013",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 13,
+        "chunk_id": "IITMRP_Annual_Report_p013"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_startup_shatam_catalysing_has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_startup_shatam_catalysing",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 14,
+        "chunk_id": "IITMRP_Annual_Report_p014"
+      }
+    },
+    {
+      "relation_id": "rel_sec_startup_shatam_catalysing_IITMRP_Annual_Report_p014_contains",
+      "source_id": "sec_startup_shatam_catalysing",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p014",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 14,
+        "chunk_id": "IITMRP_Annual_Report_p014"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_centre_centre_for_non_destructive_evaluation_has_centre",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_for_non_destructive_evaluation",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 15,
+        "chunk_id": "IITMRP_Annual_Report_p015"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_section__page_15__has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_15_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 15,
+        "chunk_id": "IITMRP_Annual_Report_p015"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_15__IITMRP_Annual_Report_p015_contains",
+      "source_id": "sec_section__page_15_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p015",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 15,
+        "chunk_id": "IITMRP_Annual_Report_p015"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_dept_department_of_computer_science_and_engin_has_dept",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_DEPARTMENT",
+      "target_id": "dept_department_of_computer_science_and_engin",
+      "target_label": "Department",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 16,
+        "chunk_id": "IITMRP_Annual_Report_p016"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_dept_department_of_computer_science_has_dept",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_DEPARTMENT",
+      "target_id": "dept_department_of_computer_science",
+      "target_label": "Department",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 16,
+        "chunk_id": "IITMRP_Annual_Report_p016"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_section__page_16__has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_16_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 16,
+        "chunk_id": "IITMRP_Annual_Report_p016"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_16__IITMRP_Annual_Report_p016_contains",
+      "source_id": "sec_section__page_16_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p016",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 16,
+        "chunk_id": "IITMRP_Annual_Report_p016"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_centre_center_for_rehabilitation_research_and_d_has_centre",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_center_for_rehabilitation_research_and_d",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 17,
+        "chunk_id": "IITMRP_Annual_Report_p017"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_section__page_17__has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_17_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 17,
+        "chunk_id": "IITMRP_Annual_Report_p017"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_17__IITMRP_Annual_Report_p017_contains",
+      "source_id": "sec_section__page_17_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p017",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 17,
+        "chunk_id": "IITMRP_Annual_Report_p017"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_centre_center_of_excellence_in_advanced_automot_has_centre",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_center_of_excellence_in_advanced_automot",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "chunk_id": "IITMRP_Annual_Report_p018"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_centre_centre_of_battery_engineering_and_electr_has_centre",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_of_battery_engineering_and_electr",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "chunk_id": "IITMRP_Annual_Report_p018"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_centre_centre_of_excellence_in_wireless_technol_has_centre",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_of_excellence_in_wireless_technol",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "chunk_id": "IITMRP_Annual_Report_p018"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_centre_centre_for_urbanization_has_centre",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_for_urbanization",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "chunk_id": "IITMRP_Annual_Report_p018"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_centre_center_for_excellence_in_energy___teleco_has_centre",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_center_for_excellence_in_energy___teleco",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "chunk_id": "IITMRP_Annual_Report_p018"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_centre_centre_for_clean_water_india_centre_for__has_centre",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_for_clean_water_india_centre_for_",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "chunk_id": "IITMRP_Annual_Report_p018"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_centre_centre_of_excellence_in_road_safety_iitm_has_centre",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_of_excellence_in_road_safety_iitm",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "chunk_id": "IITMRP_Annual_Report_p018"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_centre_advanced_manufacturing_technology_development_centre_has_centre",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_advanced_manufacturing_technology_development_centre",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "chunk_id": "IITMRP_Annual_Report_p018"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_section__page_18__has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_18_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "chunk_id": "IITMRP_Annual_Report_p018"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_18__IITMRP_Annual_Report_p018_contains",
+      "source_id": "sec_section__page_18_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p018",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 18,
+        "chunk_id": "IITMRP_Annual_Report_p018"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_centre_centre_for_lab_grown_diamond_incent_lgd__has_centre",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_for_lab_grown_diamond_incent_lgd_",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 19,
+        "chunk_id": "IITMRP_Annual_Report_p019"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_section__page_19__has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_19_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 19,
+        "chunk_id": "IITMRP_Annual_Report_p019"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_19__IITMRP_Annual_Report_p019_contains",
+      "source_id": "sec_section__page_19_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p019",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 19,
+        "chunk_id": "IITMRP_Annual_Report_p019"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_section__page_20__has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_20_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 20,
+        "chunk_id": "IITMRP_Annual_Report_p020"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_20__IITMRP_Annual_Report_p020_contains",
+      "source_id": "sec_section__page_20_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p020",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 20,
+        "chunk_id": "IITMRP_Annual_Report_p020"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_fact_IITMRP_Annual_Report_p021_1_reported_metric",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "REPORTED_METRIC",
+      "target_id": "fact_IITMRP_Annual_Report_p021_1",
+      "target_label": "MetricFact",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 21,
+        "chunk_id": "IITMRP_Annual_Report_p021"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_mentored___invested_has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_mentored___invested",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 21,
+        "chunk_id": "IITMRP_Annual_Report_p021"
+      }
+    },
+    {
+      "relation_id": "rel_sec_mentored___invested_IITMRP_Annual_Report_p021_contains",
+      "source_id": "sec_mentored___invested",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p021",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 21,
+        "chunk_id": "IITMRP_Annual_Report_p021"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_centre_centre_of_excellence_projects_carried_ou_has_centre",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_of_excellence_projects_carried_ou",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 22,
+        "chunk_id": "IITMRP_Annual_Report_p022"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_section__page_22__has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_22_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 22,
+        "chunk_id": "IITMRP_Annual_Report_p022"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_22__IITMRP_Annual_Report_p022_contains",
+      "source_id": "sec_section__page_22_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p022",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 22,
+        "chunk_id": "IITMRP_Annual_Report_p022"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_more_than_just_a_metaphorical_conne_has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_more_than_just_a_metaphorical_conne",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 23,
+        "chunk_id": "IITMRP_Annual_Report_p023"
+      }
+    },
+    {
+      "relation_id": "rel_sec_more_than_just_a_metaphorical_conne_IITMRP_Annual_Report_p023_contains",
+      "source_id": "sec_more_than_just_a_metaphorical_conne",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p023",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 23,
+        "chunk_id": "IITMRP_Annual_Report_p023"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_case_study_has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_case_study",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 24,
+        "chunk_id": "IITMRP_Annual_Report_p024"
+      }
+    },
+    {
+      "relation_id": "rel_sec_case_study_IITMRP_Annual_Report_p024_contains",
+      "source_id": "sec_case_study",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p024",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 24,
+        "chunk_id": "IITMRP_Annual_Report_p024"
+      }
+    },
+    {
+      "relation_id": "rel_uni_iit_madras_research_park__iitm_sec_basic_sciences_to_business_has_section",
+      "source_id": "uni_iit_madras_research_park__iitm",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_basic_sciences_to_business",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 25,
+        "chunk_id": "IITMRP_Annual_Report_p025"
+      }
+    },
+    {
+      "relation_id": "rel_sec_basic_sciences_to_business_IITMRP_Annual_Report_p025_contains",
+      "source_id": "sec_basic_sciences_to_business",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "IITMRP_Annual_Report_p025",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "IITMRP Annual Report.pdf",
+        "page_number": 25,
+        "chunk_id": "IITMRP_Annual_Report_p025"
+      }
+    }
+  ]
+}

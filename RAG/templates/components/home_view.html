@@ -1,0 +1,47 @@
+<!-- Home Dashboard View Component -->
+<div class="app-view home-view active" id="homeView">
+    <header class="home-header">
+        <div class="home-header-left">
+            <span class="home-brand-logo">RAISE</span>
+            <span class="home-brand-sub">Academic GraphRAG</span>
+            <span class="offline-badge" title="AI processing, dense vector retrieval, and Neo4j graph traversal run 100% locally on this computer.">
+                <span class="status-dot"></span> Running locally (Offline-First)
+            </span>
+        </div>
+        <div class="home-header-right">
+            <button type="button" class="header-action-btn" onclick="SettingsModal.open()" title="Settings & Local Configuration">
+                <span class="material-symbols-outlined">tune</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="home-content">
+        <div class="home-hero">
+            <h1 class="home-title">Academic Research Workspace</h1>
+            <p class="home-subtitle">Offline-First Multi-PDF Knowledge Graph Traversal, Dense Vector Retrieval, and Grounded Claim Verification.</p>
+        </div>
+
+        <div class="notebook-grid" id="notebookGrid">
+            <div class="create-notebook-card" onclick="window.UploadModal.open()">
+                <div class="create-icon-wrapper">
+                    <span class="material-symbols-outlined create-plus-icon">upload_file</span>
+                </div>
+                <span class="create-card-title">Upload Academic PDFs</span>
+                <span class="create-card-desc">Add institutional reports, extract knowledge graphs, and ground Q&A</span>
+            </div>
+            <!-- Dynamic Notebook / Document Cards will be rendered here by HomeModule -->
+        </div>
+
+        <div class="empty-hub-state" id="emptyHubState" style="display:none;">
+            <div class="empty-hub-icon-box">
+                <span class="material-symbols-outlined icon-xl">menu_book</span>
+            </div>
+            <h2 class="empty-hub-title">No academic materials yet</h2>
+            <p class="empty-hub-desc">Please upload an academic PDF to begin your research.</p>
+            <button type="button" class="pill-primary-btn" onclick="window.UploadModal.open()" style="margin-top:16px;">
+                <span class="material-symbols-outlined">upload_file</span>
+                <span>Upload Academic PDFs</span>
+            </button>
+        </div>
+    </main>
+</div>

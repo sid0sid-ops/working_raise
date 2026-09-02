@@ -1,0 +1,124 @@
+<!-- Modals & Dialogs Component -->
+<!-- 1. Upload Modal -->
+<div class="modal-overlay hidden" id="uploadModal">
+    <div class="upload-dialog-card" style="max-width: 520px;">
+        <div class="upload-dialog-header">
+            <h2 class="upload-dialog-title">Upload Academic PDFs</h2>
+            <button type="button" class="panel-icon-btn" onclick="window.UploadModal.close()" title="Close">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        
+        <p class="upload-dialog-subtitle">
+            Select one or more PDF files to add to your research workspace. All embeddings and knowledge graphs are extracted 100% locally.
+        </p>
+
+        <div class="upload-single-dropzone" onclick="document.getElementById('modalFileInput').click()" style="border: 2px dashed var(--border-color); border-radius: 12px; padding: 36px 20px; text-align: center; cursor: pointer; background: var(--surface-bg); transition: all 0.2s;">
+            <div class="option-icon-box" style="margin-bottom:12px;">
+                <span class="material-symbols-outlined option-icon" style="font-size:36px; color:var(--accent-color);">upload_file</span>
+            </div>
+            <h3 class="option-title" style="margin:0 0 6px; font-size:16px;">Select Academic PDFs</h3>
+            <p class="option-desc" style="margin:0; font-size:13px; color:var(--text-muted);">Click to browse or drag and drop PDF files here (Multiple supported)</p>
+            <input type="file" id="modalFileInput" accept=".pdf" multiple style="display:none;" onchange="window.UploadModal.handleFileInput(event)">
+        </div>
+
+        <div class="upload-progress-box hidden" id="uploadProgressBox" style="margin-top:16px;">
+            <div class="progress-bar-track" style="height:6px; background:var(--border-color); border-radius:3px; overflow:hidden;">
+                <div class="progress-bar-fill" id="uploadProgressBarFill" style="width:0%; height:100%; background:var(--accent-color); transition:width 0.3s;"></div>
+            </div>
+            <div class="progress-status-text" id="uploadProgressStatusText" style="font-size:12px; color:var(--text-secondary); margin-top:6px;">Reading PDF...</div>
+        </div>
+
+        <div class="upload-dialog-footer" style="margin-top:20px; display:flex; justify-content:flex-end; gap:10px;">
+            <button type="button" class="pill-cancel-btn" onclick="window.UploadModal.close()">Cancel</button>
+            <button type="button" class="pill-primary-btn" onclick="document.getElementById('modalFileInput').click()">
+                <span class="material-symbols-outlined icon-xs">add</span>
+                <span>Select PDFs</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- 2. Create Notebook Modal -->
+<div class="modal-overlay hidden" id="newNotebookModal">
+    <div class="upload-dialog-card" style="max-width: 480px;">
+        <div class="upload-dialog-header">
+            <h2 class="upload-dialog-title">Create Research Notebook</h2>
+            <button type="button" class="panel-icon-btn" onclick="AppRouter.closeCreateNotebookModal()" title="Close">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <p class="upload-dialog-subtitle">Organize documents and grounded multi-hop analyses into an isolated workspace.</p>
+        
+        <div class="input-form-group" style="margin-bottom:16px;">
+            <label class="form-label" for="newNotebookName">Notebook Name</label>
+            <input type="text" id="newNotebookName" class="form-text-input" placeholder="e.g., Cancer Biology & Apoptosis Mechanisms" value="Untitled research notebook">
+        </div>
+
+        <div class="input-form-group" style="margin-bottom:20px;">
+            <label class="form-label" for="newNotebookDesc">Description (Optional)</label>
+            <input type="text" id="newNotebookDesc" class="form-text-input" placeholder="e.g., Comparative analysis of institutional research outputs">
+        </div>
+
+        <div class="upload-dialog-footer">
+            <button type="button" class="pill-cancel-btn" onclick="AppRouter.closeCreateNotebookModal()">Cancel</button>
+            <button type="button" class="pill-primary-btn" onclick="AppRouter.submitCreateNotebook()">Create Notebook</button>
+        </div>
+    </div>
+</div>
+
+<!-- 3. Settings Modal -->
+<div class="modal-overlay hidden" id="settingsModal" onclick="if(event.target === this) SettingsModal.close()">
+    <div class="upload-dialog-card" style="max-width: 520px;">
+        <div class="upload-dialog-header">
+            <h2 class="upload-dialog-title">Workspace Settings</h2>
+            <button type="button" class="panel-icon-btn" onclick="SettingsModal.close()" title="Close">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        
+        <div class="settings-section">
+            <h4 class="settings-sec-title">Execution Mode</h4>
+            <div class="settings-row">
+                <div>
+                    <div class="settings-item-title">Offline Local Mode</div>
+                    <div class="settings-item-desc">Vectors & Graph queries run 100% on CPU/GPU without internet</div>
+                </div>
+                <span class="offline-badge-mini"><span class="status-dot"></span> Active</span>
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <h4 class="settings-sec-title">Audio & Read Aloud</h4>
+            <div class="settings-row">
+                <div>
+                    <div class="settings-item-title">Speech Rate</div>
+                    <div class="settings-item-desc">Adjust read-aloud playback speed</div>
+                </div>
+                <select id="speechRateSelect" class="source-scope-select" style="width:110px;" onchange="VoiceModule.setRate(this.value)">
+                    <option value="0.9">0.9x Slow</option>
+                    <option value="1.0" selected>1.0x Normal</option>
+                    <option value="1.15">1.15x Fast</option>
+                    <option value="1.3">1.3x Very Fast</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <h4 class="settings-sec-title">Chat Behavior</h4>
+            <div class="settings-row">
+                <div>
+                    <div class="settings-item-title">Auto-scroll during generation</div>
+                    <div class="settings-item-desc">Follow streaming answer tokens down to page bottom</div>
+                </div>
+                <input type="checkbox" id="autoScrollCheckbox" class="custom-checkbox" checked onchange="ChatModule.setAutoScroll(this.checked)">
+            </div>
+        </div>
+
+        <div class="upload-dialog-footer">
+            <button type="button" class="pill-primary-btn" onclick="SettingsModal.close()">Save & Close</button>
+        </div>
+    </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>

@@ -1,0 +1,18 @@
+[
+  {
+    "chunk_id": "07_Jan_2025_AcademicFees_p001",
+    "document_id": "07_Jan_2025_AcademicFees",
+    "pdf_filename": "07-Jan-2025 AcademicFees.pdf",
+    "university": "07 Jan 2025 Academicfees",
+    "reporting_period": "2025",
+    "heading": "<!-- image -->",
+    "primary_page": 1,
+    "source_pages": [
+      1
+    ],
+    "plain_text": "<!-- image --> <!-- image -->",
+    "enriched_text": "Institution: 07 Jan 2025 Academicfees\nDocument: 07-Jan-2025 AcademicFees.pdf\nPeriod: 2025\nPage: 1\nHeading: <!-- image -->\n\nContent:\n<!-- image --> <!-- image -->",
+    "token_estimate": 6,
+    "recommended_task": "academic_research"
+  }
+]

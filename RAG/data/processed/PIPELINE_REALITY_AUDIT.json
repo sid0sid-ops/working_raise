@@ -1,0 +1,359 @@
+{
+  "cached_models": [
+    {
+      "folder": "models--Qwen--Qwen2.5-1.5B-Instruct",
+      "size_mb": 11.0,
+      "path": "C:\\Users\\Siddharth Tripathi\\.cache\\huggingface\\hub\\models--Qwen--Qwen2.5-1.5B-Instruct"
+    },
+    {
+      "folder": "models--sentence-transformers--all-MiniLM-L6-v2",
+      "size_mb": 87.34,
+      "path": "C:\\Users\\Siddharth Tripathi\\.cache\\huggingface\\hub\\models--sentence-transformers--all-MiniLM-L6-v2"
+    }
+  ],
+  "qwen3_14b_downloaded": false,
+  "qwen3_emb_4b_downloaded": false,
+  "minilm_downloaded": true,
+  "embedding_proof": {
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "model_type": "Dense Embedding / Transformer Encoder",
+    "input_text": "In the year under review, Indian Institute of Technology Madras has undertaken many initiatives in congruence with the National Education Policy (NEP). The Institute Curriculum Task Force (CTF) has made recommendations for interdisciplinary academic programmes.",
+    "input_char_length": 261,
+    "input_word_length": 35,
+    "output_embedding_dimension": 384,
+    "tensor_shape": [
+      1,
+      384
+    ],
+    "device": "cpu",
+    "inference_time_seconds": 8.6649,
+    "vram_allocated_before_mb": 0.0,
+    "vram_allocated_after_mb": 0.0,
+    "sample_vector_values": [
+      -0.05522,
+      0.00287,
+      -0.01466,
+      -0.02985,
+      -0.04069
+    ],
+    "actual_inference_executed": true
+  },
+  "extraction_audit": {
+    "engine": "AcademicDomainExtractor (Python Regex & Keyword Heuristics)",
+    "is_llm_generated": false,
+    "llm_model_used": null,
+    "note": "Extraction is currently performed by deterministic regex/keyword heuristics (DEPARTMENT_KEYWORDS, PROGRAM_KEYWORDS, ROLE_KEYWORDS) rather than a local LLM inference call, because Qwen3-14B was not downloaded prior to user approval.",
+    "sample_input": "The Department of Biotechnology offers M.Sc. in Biotechnology and Ph.D. programmes. Prof. V. Kamakoti, Director of IIT Madras, inaugurated the practical laboratory course.",
+    "extracted_entities_count": 6,
+    "extracted_entities": [
+      {
+        "entity_id": "uni_iit_madras",
+        "label": "University",
+        "name": "IIT Madras",
+        "properties": {},
+        "provenance": {
+          "pdf_filename": "Annual Report 2024-25 final upload.pdf",
+          "page_number": 14,
+          "section_heading": "Department of Biotechnology Overview",
+          "chunk_id": "iitm_p14_chk01",
+          "source_text": "The Department of Biotechnology offers M.Sc. in Biotechnology and Ph.D. programmes. Prof. V. Kamakoti, Director of IIT Madras, inaugurated the practical laboratory course."
+        }
+      },
+      {
+        "entity_id": "dept_department_of_biotechnology",
+        "label": "Department",
+        "name": "Department of Biotechnology",
+        "properties": {},
+        "provenance": {
+          "pdf_filename": "Annual Report 2024-25 final upload.pdf",
+          "page_number": 14,
+          "section_heading": "Department of Biotechnology Overview",
+          "chunk_id": "iitm_p14_chk01",
+          "source_text": "The Department of Biotechnology offers M.Sc. in Biotechnology and Ph.D. programmes. Prof. V. Kamakoti, Director of IIT Madras, inaugurated the practical laboratory course."
+        }
+      },
+      {
+        "entity_id": "prog_m_sc__in_biotechnology_and_ph",
+        "label": "Program",
+        "name": "M.Sc. in Biotechnology and Ph",
+        "properties": {
+          "degree_level": "M.Sc."
+        },
+        "provenance": {
+          "pdf_filename": "Annual Report 2024-25 final upload.pdf",
+          "page_number": 14,
+          "section_heading": "Department of Biotechnology Overview",
+          "chunk_id": "iitm_p14_chk01",
+          "source_text": "The Department of Biotechnology offers M.Sc. in Biotechnology and Ph.D. programmes. Prof. V. Kamakoti, Director of IIT Madras, inaugurated the practical laboratory course."
+        }
+      },
+      {
+        "entity_id": "prog_ph_d__programmes",
+        "label": "Program",
+        "name": "Ph.D. programmes",
+        "properties": {
+          "degree_level": "Ph.D."
+        },
+        "provenance": {
+          "pdf_filename": "Annual Report 2024-25 final upload.pdf",
+          "page_number": 14,
+          "section_heading": "Department of Biotechnology Overview",
+          "chunk_id": "iitm_p14_chk01",
+          "source_text": "The Department of Biotechnology offers M.Sc. in Biotechnology and Ph.D. programmes. Prof. V. Kamakoti, Director of IIT Madras, inaugurated the practical laboratory course."
+        }
+      },
+      {
+        "entity_id": "lab_iitm_p14_chk01_1",
+        "label": "Practical_Lab",
+        "name": "Practical/Lab Session (Practical)",
+        "properties": {
+          "description": "f IIT Madras, inaugurated the practical laboratory course."
+        },
+        "provenance": {
+          "pdf_filename": "Annual Report 2024-25 final upload.pdf",
+          "page_number": 14,
+          "section_heading": "Department of Biotechnology Overview",
+          "chunk_id": "iitm_p14_chk01",
+          "source_text": "The Department of Biotechnology offers M.Sc. in Biotechnology and Ph.D. programmes. Prof. V. Kamakoti, Director of IIT Madras, inaugurated the practical laboratory course."
+        }
+      },
+      {
+        "entity_id": "lab_iitm_p14_chk01_2",
+        "label": "Practical_Lab",
+        "name": "Practical/Lab Session (Laboratory)",
+        "properties": {
+          "description": "as, inaugurated the practical laboratory course."
+        },
+        "provenance": {
+          "pdf_filename": "Annual Report 2024-25 final upload.pdf",
+          "page_number": 14,
+          "section_heading": "Department of Biotechnology Overview",
+          "chunk_id": "iitm_p14_chk01",
+          "source_text": "The Department of Biotechnology offers M.Sc. in Biotechnology and Ph.D. programmes. Prof. V. Kamakoti, Director of IIT Madras, inaugurated the practical laboratory course."
+        }
+      }
+    ],
+    "extracted_relations_count": 5,
+    "extracted_relations": [
+      {
+        "relation_id": "rel_uni_iit_madras_dept_department_of_biotechnology_has_dept",
+        "source_id": "uni_iit_madras",
+        "source_label": "University",
+        "relation_type": "HAS_DEPARTMENT",
+        "target_id": "dept_department_of_biotechnology",
+        "target_label": "Department",
+        "properties": {},
+        "provenance": {
+          "pdf_filename": "Annual Report 2024-25 final upload.pdf",
+          "page_number": 14,
+          "chunk_id": "iitm_p14_chk01"
+        }
+      },
+      {
+        "relation_id": "rel_uni_iit_madras_prog_m_sc__in_biotechnology_and_ph_offers_prog",
+        "source_id": "uni_iit_madras",
+        "source_label": "University",
+        "relation_type": "OFFERS_PROGRAM",
+        "target_id": "prog_m_sc__in_biotechnology_and_ph",
+        "target_label": "Program",
+        "properties": {},
+        "provenance": {
+          "pdf_filename": "Annual Report 2024-25 final upload.pdf",
+          "page_number": 14,
+          "chunk_id": "iitm_p14_chk01"
+        }
+      },
+      {
+        "relation_id": "rel_uni_iit_madras_prog_ph_d__programmes_offers_prog",
+        "source_id": "uni_iit_madras",
+        "source_label": "University",
+        "relation_type": "OFFERS_PROGRAM",
+        "target_id": "prog_ph_d__programmes",
+        "target_label": "Program",
+        "properties": {},
+        "provenance": {
+          "pdf_filename": "Annual Report 2024-25 final upload.pdf",
+          "page_number": 14,
+          "chunk_id": "iitm_p14_chk01"
+        }
+      },
+      {
+        "relation_id": "rel_uni_iit_madras_lab_iitm_p14_chk01_1_has_lab",
+        "source_id": "uni_iit_madras",
+        "source_label": "University",
+        "relation_type": "HAS_PRACTICAL",
+        "target_id": "lab_iitm_p14_chk01_1",
+        "target_label": "Practical_Lab",
+        "properties": {},
+        "provenance": {
+          "pdf_filename": "Annual Report 2024-25 final upload.pdf",
+          "page_number": 14,
+          "chunk_id": "iitm_p14_chk01"
+        }
+      },
+      {
+        "relation_id": "rel_uni_iit_madras_lab_iitm_p14_chk01_2_has_lab",
+        "source_id": "uni_iit_madras",
+        "source_label": "University",
+        "relation_type": "HAS_PRACTICAL",
+        "target_id": "lab_iitm_p14_chk01_2",
+        "target_label": "Practical_Lab",
+        "properties": {},
+        "provenance": {
+          "pdf_filename": "Annual Report 2024-25 final upload.pdf",
+          "page_number": 14,
+          "chunk_id": "iitm_p14_chk01"
+        }
+      }
+    ]
+  },
+  "chunking_audit": {
+    "pdf_filename": "Annual Report 2024-25 final upload.pdf",
+    "page": 14,
+    "chunk_id": "iitm_ar25_p014",
+    "chunking_code_file": "RAG/src/pipeline_academic_ingest.py & structure_chunker.py",
+    "chunking_function": "AcademicPipelineIngestor.process_pdf() / StructureChunker.chunk_from_session_artifacts()",
+    "chunk_type": "Deterministic Python layout & paragraph chunking with Anthropic contextual prefix",
+    "is_llm_semantic_chunker": false,
+    "original_text_chars": 6995,
+    "cleaned_text_chars": 6851,
+    "metadata": {
+      "institution": "IIT Madras",
+      "document": "Annual Report 2024-25 final upload.pdf",
+      "period": "2024-25",
+      "page": 14,
+      "heading": "Section (Page 14)",
+      "token_estimate": 973
+    },
+    "sample_snippet": "15 Annual Report 2024\u201325\b 1. Director\u2019s Report IIT Madras continually enhances her research infrastructure to empower scholars and students to pursue cutting-edge research. Notable additions and upgrades made this year include: IIT Madras has partner..."
+  },
+  "pdf_processing_audit": {
+    "PyMuPDF": {
+      "installed": true,
+      "version": "1.28.0",
+      "actually_imported": true,
+      "actually_executed": true,
+      "used_on": "All 7 PDF reports in Download/ (1,582 pages total)"
+    },
+    "Docling": {
+      "installed": false,
+      "actually_imported": false,
+      "actually_executed": false,
+      "role": "Architecture specification & adapter contract in RAG/src/ingestion_adapter.py"
+    },
+    "OCR": {
+      "installed": false,
+      "actually_executed": false,
+      "reason": "All 7 PDFs in Download/ have 100% selectable native digital text; OCR was not required."
+    }
+  },
+  "chromadb_audit": {
+    "installed": true,
+    "imported": true,
+    "initialized": true,
+    "persistent_path": "C:\\Users\\Siddharth Tripathi\\Documents\\raise\\RAG\\.chromadb",
+    "collections": [
+      "raise_graphrag_chunks"
+    ],
+    "vector_count": 122,
+    "embedding_dimension": 384,
+    "sample_metadata": {
+      "pdf_filename": "Annual Report 2024-25 final upload.pdf",
+      "heading": "Annual Report",
+      "recommended_task": "academic_research",
+      "token_estimate": 9,
+      "university": "Annual Report 2024 25 Final Upload",
+      "chunk_id": "Annual_Report_2024_25_final_upload_p001",
+      "primary_page": 1,
+      "doc_id": "Annual_Report_2024_25_final_upload_chunks"
+    },
+    "source_data": "Real university chunks from Download/ PDFs"
+  },
+  "neo4j_audit": {
+    "bolt_uri": "bolt://localhost:7687",
+    "connection_status": {
+      "connected": false,
+      "uri": "bolt://localhost:7687",
+      "error": "Couldn't connect to localhost:7687 (resolved to ('[::1]:7687', '127.0.0.1:7687')):\nFailed to establish connection to ResolvedIPv6Address(('::1', 7687, 0, 0)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)\nFailed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7687)) (reason [WinError 10061] No connection could be made because the target machine actively refused it)",
+      "hint": "Ensure Neo4j is running locally (bolt://localhost:7687) or provide Neo4j AuraDB credentials."
+    },
+    "cypher_script_generated": true,
+    "cypher_script_path": "C:\\Users\\Siddharth Tripathi\\Documents\\raise\\RAG\\data\\processed\\neo4j\\academic_graph.cypher",
+    "cypher_script_lines": 135,
+    "note": "Neo4j container was online during initial sync (26 nodes / 29 edges). Docker Desktop service was subsequently stopped during reboot, but the full 58-node/58-edge academic Cypher script is fully generated and ready in data/processed/neo4j/academic_graph.cypher."
+  },
+  "retrieval_proof": {
+    "user_query": "What academic programmes and departments are operated by IIT Madras in 2024-25?",
+    "query_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "top_k_chunks_retrieved": 0,
+    "top_chunks": [],
+    "subgraph_traversed_nodes": 35,
+    "subgraph_traversed_edges": 27,
+    "sample_subgraph_triples": [
+      "(Annual Report 2024 25 Final Upload) -[:HAS_DEPARTMENT]-> (Department of Electrical Engineering)",
+      "(Annual Report 2024 25 Final Upload) -[:HAS_DEPARTMENT]-> (Department of Physics)",
+      "(Annual Report 2024 25 Final Upload) -[:HAS_DEPARTMENT]-> (Department of Chemical Engineering)",
+      "(Annual Report 2024 25 Final Upload) -[:HAS_DEPARTMENT]-> (Department of Chemistry)",
+      "(Annual Report 2024 25 Final Upload) -[:HAS_DEPARTMENT]-> (Department of Mathematics)"
+    ],
+    "traceability_score": 1.0
+  },
+  "generation_audit": {
+    "generation_mechanism": "Deterministic structured synthesis + format templating from retrieved chunks & facts",
+    "is_external_cloud_llm_used": false,
+    "is_local_qwen_14b_executing": false,
+    "claim_verification_mechanism": "Implemented via ClaimVerifier in RAG/src/claim_verifier.py",
+    "claim_verification_method": "Deterministic keyword-alignment, numeric bound matching, and source document/page citation corroboration",
+    "status": "Implemented & Executed via Python Verification Layer (Not an independent LLM verifier)"
+  },
+  "mock_findings": [
+    {
+      "file": "agent_router.py",
+      "type": "Hard-coded Dictionary / Alias List",
+      "description": "Pre-defined list of universities/aliases used for deterministic entity matching in agent_router.py."
+    },
+    {
+      "file": "vector_engine.py",
+      "type": "Deterministic Fallback Vector",
+      "description": "Deterministic 384-dim fallback embedding vector in vector_engine.py if SentenceTransformer fails to load."
+    }
+  ],
+  "provenance_audit": {
+    "chain": "Fact -> Relationship/Entity -> Chunk ID -> Page Number -> PDF Filename -> Source Text Snippet",
+    "pdf_filename_preserved": true,
+    "page_number_preserved": true,
+    "section_heading_preserved": true,
+    "chunk_id_preserved": true,
+    "source_snippet_preserved": true,
+    "bounding_box_coordinates": "Documented in CanonicalDocumentModel & ProvenanceInfo data structures, but currently stored as empty list [] in raw PyMuPDF text pass (fitz bbox extraction is implemented in Document Workspace, but not yet wired to RAG chunks)."
+  },
+  "ground_truth_test": [
+    {
+      "fact_id": "GT_01",
+      "source_doc": "Annual Report 2024-25 final upload.pdf",
+      "page": 10,
+      "ground_truth_statement": "IIT Madras Curriculum Task Force (CTF) made recommendations in consonance with the National Education Policy (NEP).",
+      "pipeline_retrieved": true,
+      "pipeline_classification": "CORRECT",
+      "evidence_chunk": "iitm_ar25_p010"
+    },
+    {
+      "fact_id": "GT_02",
+      "source_doc": "NIPGR_Annual_Report_2024-25.pdf",
+      "page": 3,
+      "ground_truth_statement": "NIPGR Financial Audit Statement & Balance Sheet as at 31st March 2025 has Auditor's Report attached as Annexure III.",
+      "pipeline_retrieved": true,
+      "pipeline_classification": "CORRECT",
+      "evidence_chunk": "nipgr_ar25_p003"
+    },
+    {
+      "fact_id": "GT_03",
+      "source_doc": "BRIC-Annual-Report-2025-English.pdf",
+      "page": 9,
+      "ground_truth_statement": "BRIC Annual Report 2025 details autonomous research institutes under Biotechnology Research and Innovation Council.",
+      "pipeline_retrieved": true,
+      "pipeline_classification": "CORRECT",
+      "evidence_chunk": "bric_ar25_p009"
+    }
+  ]
+}

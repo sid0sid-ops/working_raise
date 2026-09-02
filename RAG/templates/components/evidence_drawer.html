@@ -1,0 +1,21 @@
+<!-- Evidence Drawer Component -->
+<aside class="evidence-drawer hidden" id="evidenceDrawer">
+    <div class="evidence-drawer-header">
+        <div class="evidence-drawer-title-row">
+            <span class="material-symbols-outlined icon-xs" style="color:var(--accent-blue);">fact_check</span>
+            <span class="evidence-drawer-title">Grounded Evidence</span>
+        </div>
+        <button type="button" class="panel-icon-btn" onclick="EvidenceDrawer.close()" title="Close Drawer">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <div class="evidence-drawer-summary" id="evidenceDrawerSummary">
+        <span id="evidenceSourceCount">0 sources</span> · <span id="evidencePassageCount">0 passages</span>
+    </div>
+    <div class="evidence-drawer-body" id="evidenceDrawerBody">
+        <div class="evidence-empty-state">
+            <span class="material-symbols-outlined">travel_explore</span>
+            <p>Click any inline citation badge (e.g. [1], [2]) in an answer to inspect the exact ground-truth passage and open the verified PDF page.</p>
+        </div>
+    </div>
+</aside>

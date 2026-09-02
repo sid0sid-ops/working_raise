@@ -1,0 +1,37 @@
+<!-- Source Panel Component -->
+<aside class="panel-card source-panel" id="sourcePanel">
+    <div class="panel-card-header">
+        <div class="panel-header-left">
+            <span class="panel-header-title">Research Sources</span>
+            <span class="panel-header-badge" id="sourceCountBadge">0 PDFs</span>
+        </div>
+        <button type="button" class="panel-icon-btn" title="Add Source" onclick="AppRouter.openUploadModal()">
+            <span class="material-symbols-outlined">add</span>
+        </button>
+    </div>
+
+    <div class="source-panel-body">
+        <button type="button" class="add-source-pill-btn" onclick="AppRouter.openUploadModal()">
+            <span class="material-symbols-outlined">upload_file</span>
+            <span>Add academic PDF</span>
+        </button>
+
+        <div class="sources-list-controls">
+            <div class="controls-left">
+                <span class="controls-label">Indexed Documents</span>
+            </div>
+            <div class="controls-right" onclick="SourcesModule.toggleSelectAll()">
+                <span class="select-all-text">Select all</span>
+                <input type="checkbox" id="selectAllCheckbox" class="custom-checkbox" checked>
+            </div>
+        </div>
+
+        <div class="sources-scroll-list" id="documentListContainer">
+            <div class="source-empty-state">
+                <span class="material-symbols-outlined source-empty-icon">picture_as_pdf</span>
+                <span class="source-empty-title">No sources loaded yet</span>
+                <span class="source-empty-desc">Click "Add academic PDF" or load the pre-indexed vault.</span>
+            </div>
+        </div>
+    </div>
+</aside>

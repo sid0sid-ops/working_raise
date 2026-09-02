@@ -22,6 +22,17 @@ executed_output.ipynb
 *.zip
 *.log
 
+# Runtime data & output folders
+outputs/*
+!outputs/.gitkeep
+data/output/*
+!data/output/.gitkeep
+data/downloads/*
+!data/downloads/.gitkeep
+data/input/*
+!data/input/.gitkeep
+!data/schemas/*
+
 # Temporary Scratch Scripts & Test Environments
 scratch/
 tmp/
@@ -45,3 +56,5 @@ Thumbs.db
 .venv/
 env/
 venv/
+.runtime/
+python_installer.exe

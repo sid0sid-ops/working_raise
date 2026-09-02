@@ -1,0 +1,685 @@
+{
+  "entities": [
+    {
+      "entity_id": "uni_ar_2024_25_combined_english_ma",
+      "label": "University",
+      "name": "Ar 2024 25 Combined English Mail",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 11,
+        "section_heading": "Section (Page 11)",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p011",
+        "source_text": "1 Annual Report 2024-25 1. ABOUT IIT (ISM) DHANBAD 1.1 Historical Purview, Campus, and Objective Historical Purview: The Indian National Congress at its XVII Session of December 1901 passed a resoluti"
+      }
+    },
+    {
+      "entity_id": "sec_published_in_2025___iit__ism__dhanb",
+      "label": "Section",
+      "name": "Published in 2025 \u00a9 IIT (ISM) Dhanbad",
+      "properties": {
+        "page": 3,
+        "pdf": "AR_2024-25_Combined_English_Mail.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 3,
+        "section_heading": "Published in 2025 \u00a9 IIT (ISM) Dhanbad",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p003",
+        "source_text": "Published in 2025 \u00a9 IIT (ISM) Dhanbad ANNUAL REPORT 2024-25 (01 APRIL 2024 - 31 MARCH 2025) INDIAN INSTITUTE OF TECHNOLOGY (INDIAN SCHOOL OF MINES), DHANBAD"
+      }
+    },
+    {
+      "entity_id": "AR_2024_25_Combined_English_Mail_p003",
+      "label": "Chunk",
+      "name": "Passage (p.3)",
+      "properties": {
+        "text_preview": "Published in 2025 \u00a9 IIT (ISM) Dhanbad ANNUAL REPORT 2024-25 (01 APRIL 2024 - 31 MARCH 2025) INDIAN INSTITUTE OF TECHNOLOGY (INDIAN SCHOOL OF MINES), D",
+        "page": 3,
+        "pdf": "AR_2024-25_Combined_English_Mail.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 3,
+        "section_heading": "Published in 2025 \u00a9 IIT (ISM) Dhanbad",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p003",
+        "source_text": "Published in 2025 \u00a9 IIT (ISM) Dhanbad ANNUAL REPORT 2024-25 (01 APRIL 2024 - 31 MARCH 2025) INDIAN INSTITUTE OF TECHNOLOGY (INDIAN SCHOOL OF MINES), DHANBAD"
+      }
+    },
+    {
+      "entity_id": "centre_centre_for_innovation",
+      "label": "Centre",
+      "name": "Centre for Innovation",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 5,
+        "section_heading": "Contents",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p005",
+        "source_text": "Contents Contents Contents 1.1 Historical Purview, Campus, and Objective 1.2 List of the Departments in the Institute 1.3 Board of Governors 1.4 Finance Committee 1.5 The Senate (as on 31/03/2025) 1.6"
+      }
+    },
+    {
+      "entity_id": "centre_centre_for_tinkering_and_innovation",
+      "label": "Centre",
+      "name": "Centre for Tinkering and Innovation",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 5,
+        "section_heading": "Contents",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p005",
+        "source_text": "Contents Contents Contents 1.1 Historical Purview, Campus, and Objective 1.2 List of the Departments in the Institute 1.3 Board of Governors 1.4 Finance Committee 1.5 The Senate (as on 31/03/2025) 1.6"
+      }
+    },
+    {
+      "entity_id": "centre_centre_for_intellectual_property_and_man",
+      "label": "Centre",
+      "name": "Centre for Intellectual Property and Management Cell",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 5,
+        "section_heading": "Contents",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p005",
+        "source_text": "Contents Contents Contents 1.1 Historical Purview, Campus, and Objective 1.2 List of the Departments in the Institute 1.3 Board of Governors 1.4 Finance Committee 1.5 The Senate (as on 31/03/2025) 1.6"
+      }
+    },
+    {
+      "entity_id": "centre_centre_of_societal_mission",
+      "label": "Centre",
+      "name": "Centre of Societal Mission",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 5,
+        "section_heading": "Contents",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p005",
+        "source_text": "Contents Contents Contents 1.1 Historical Purview, Campus, and Objective 1.2 List of the Departments in the Institute 1.3 Board of Governors 1.4 Finance Committee 1.5 The Senate (as on 31/03/2025) 1.6"
+      }
+    },
+    {
+      "entity_id": "prog_ph_d__degrees_awarded",
+      "label": "Program",
+      "name": "Ph.D. Degrees Awarded",
+      "properties": {
+        "degree_level": "Ph.D."
+      },
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 5,
+        "section_heading": "Contents",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p005",
+        "source_text": "Contents Contents Contents 1.1 Historical Purview, Campus, and Objective 1.2 List of the Departments in the Institute 1.3 Board of Governors 1.4 Finance Committee 1.5 The Senate (as on 31/03/2025) 1.6"
+      }
+    },
+    {
+      "entity_id": "lab_AR_2024_25_Combined_English_Mail_p005_1",
+      "label": "Practical_Lab",
+      "name": "Practical/Lab Session (Laboratory)",
+      "properties": {
+        "description": "Mission 9.1 State-of-the-art Laboratory, Research & Testing Facilities 9.2 Health Centre 9.3 Comput"
+      },
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 5,
+        "section_heading": "Contents",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p005",
+        "source_text": "Contents Contents Contents 1.1 Historical Purview, Campus, and Objective 1.2 List of the Departments in the Institute 1.3 Board of Governors 1.4 Finance Committee 1.5 The Senate (as on 31/03/2025) 1.6"
+      }
+    },
+    {
+      "entity_id": "sec_contents",
+      "label": "Section",
+      "name": "Contents",
+      "properties": {
+        "page": 5,
+        "pdf": "AR_2024-25_Combined_English_Mail.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 5,
+        "section_heading": "Contents",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p005",
+        "source_text": "Contents Contents Contents 1.1 Historical Purview, Campus, and Objective 1.2 List of the Departments in the Institute 1.3 Board of Governors 1.4 Finance Committee 1.5 The Senate (as on 31/03/2025) 1.6"
+      }
+    },
+    {
+      "entity_id": "AR_2024_25_Combined_English_Mail_p005",
+      "label": "Chunk",
+      "name": "Passage (p.5)",
+      "properties": {
+        "text_preview": "Contents Contents Contents 1.1 Historical Purview, Campus, and Objective 1.2 List of the Departments in the Institute 1.3 Board of Governors 1.4 Finan",
+        "page": 5,
+        "pdf": "AR_2024-25_Combined_English_Mail.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 5,
+        "section_heading": "Contents",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p005",
+        "source_text": "Contents Contents Contents 1.1 Historical Purview, Campus, and Objective 1.2 List of the Departments in the Institute 1.3 Board of Governors 1.4 Finance Committee 1.5 The Senate (as on 31/03/2025) 1.6"
+      }
+    },
+    {
+      "entity_id": "centre_institute_for_their_steadfast_commitment",
+      "label": "Centre",
+      "name": "Institute for their steadfast commitment and warmly invite",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 7,
+        "section_heading": "The year 2024\u201325 has unfolded as a chapter of remarkable growth and",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p007",
+        "source_text": "The year 2024\u201325 has unfolded as a chapter of remarkable growth and visionary strides for IIT (ISM) Dhanbad. Guided by the aspirations of our Centenary year, the Institute has woven its teaching, rese"
+      }
+    },
+    {
+      "entity_id": "lab_AR_2024_25_Combined_English_Mail_p007_1",
+      "label": "Practical_Lab",
+      "name": "Practical/Lab Session (Practical)",
+      "properties": {
+        "description": "earch outcomes translate into practical innovations and strategic solutions. This year, our student"
+      },
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 7,
+        "section_heading": "The year 2024\u201325 has unfolded as a chapter of remarkable growth and",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p007",
+        "source_text": "The year 2024\u201325 has unfolded as a chapter of remarkable growth and visionary strides for IIT (ISM) Dhanbad. Guided by the aspirations of our Centenary year, the Institute has woven its teaching, rese"
+      }
+    },
+    {
+      "entity_id": "sec_the_year_2024_25_has_unfolded_as_a_",
+      "label": "Section",
+      "name": "The year 2024\u201325 has unfolded as a chapter of remarkable growth and",
+      "properties": {
+        "page": 7,
+        "pdf": "AR_2024-25_Combined_English_Mail.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 7,
+        "section_heading": "The year 2024\u201325 has unfolded as a chapter of remarkable growth and",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p007",
+        "source_text": "The year 2024\u201325 has unfolded as a chapter of remarkable growth and visionary strides for IIT (ISM) Dhanbad. Guided by the aspirations of our Centenary year, the Institute has woven its teaching, rese"
+      }
+    },
+    {
+      "entity_id": "AR_2024_25_Combined_English_Mail_p007",
+      "label": "Chunk",
+      "name": "Passage (p.7)",
+      "properties": {
+        "text_preview": "The year 2024\u201325 has unfolded as a chapter of remarkable growth and visionary strides for IIT (ISM) Dhanbad. Guided by the aspirations of our Centenar",
+        "page": 7,
+        "pdf": "AR_2024-25_Combined_English_Mail.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 7,
+        "section_heading": "The year 2024\u201325 has unfolded as a chapter of remarkable growth and",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p007",
+        "source_text": "The year 2024\u201325 has unfolded as a chapter of remarkable growth and visionary strides for IIT (ISM) Dhanbad. Guided by the aspirations of our Centenary year, the Institute has woven its teaching, rese"
+      }
+    },
+    {
+      "entity_id": "sec_vision",
+      "label": "Section",
+      "name": "VISION",
+      "properties": {
+        "page": 8,
+        "pdf": "AR_2024-25_Combined_English_Mail.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 8,
+        "section_heading": "VISION",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p008",
+        "source_text": "VISION To be an internationally acclaimed premier institution of higher technical and scienti\ufb01c education with social commitment having an ethos for intellectual excellence, where initiative is nurtur"
+      }
+    },
+    {
+      "entity_id": "AR_2024_25_Combined_English_Mail_p008",
+      "label": "Chunk",
+      "name": "Passage (p.8)",
+      "properties": {
+        "text_preview": "VISION To be an internationally acclaimed premier institution of higher technical and scienti\ufb01c education with social commitment having an ethos for i",
+        "page": 8,
+        "pdf": "AR_2024-25_Combined_English_Mail.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 8,
+        "section_heading": "VISION",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p008",
+        "source_text": "VISION To be an internationally acclaimed premier institution of higher technical and scienti\ufb01c education with social commitment having an ethos for intellectual excellence, where initiative is nurtur"
+      }
+    },
+    {
+      "entity_id": "dept_school_of_mines_in_england",
+      "label": "Department",
+      "name": "School of Mines in England",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 11,
+        "section_heading": "Section (Page 11)",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p011",
+        "source_text": "1 Annual Report 2024-25 1. ABOUT IIT (ISM) DHANBAD 1.1 Historical Purview, Campus, and Objective Historical Purview: The Indian National Congress at its XVII Session of December 1901 passed a resoluti"
+      }
+    },
+    {
+      "entity_id": "dept_school_of_mines",
+      "label": "Department",
+      "name": "School of Mines",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 11,
+        "section_heading": "Section (Page 11)",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p011",
+        "source_text": "1 Annual Report 2024-25 1. ABOUT IIT (ISM) DHANBAD 1.1 Historical Purview, Campus, and Objective Historical Purview: The Indian National Congress at its XVII Session of December 1901 passed a resoluti"
+      }
+    },
+    {
+      "entity_id": "dept_school_of_mines_was_formally_opened_on",
+      "label": "Department",
+      "name": "School of Mines was formally opened on",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 11,
+        "section_heading": "Section (Page 11)",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p011",
+        "source_text": "1 Annual Report 2024-25 1. ABOUT IIT (ISM) DHANBAD 1.1 Historical Purview, Campus, and Objective Historical Purview: The Indian National Congress at its XVII Session of December 1901 passed a resoluti"
+      }
+    },
+    {
+      "entity_id": "prog_ph_d__objective",
+      "label": "Program",
+      "name": "Ph.D. Objective",
+      "properties": {
+        "degree_level": "Ph.D."
+      },
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 11,
+        "section_heading": "Section (Page 11)",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p011",
+        "source_text": "1 Annual Report 2024-25 1. ABOUT IIT (ISM) DHANBAD 1.1 Historical Purview, Campus, and Objective Historical Purview: The Indian National Congress at its XVII Session of December 1901 passed a resoluti"
+      }
+    },
+    {
+      "entity_id": "lab_AR_2024_25_Combined_English_Mail_p011_1",
+      "label": "Practical_Lab",
+      "name": "Practical/Lab Session (Laboratory)",
+      "properties": {
+        "description": "r solving real-life problems, laboratory testing assignments and the conduct of Executive Developmen"
+      },
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 11,
+        "section_heading": "Section (Page 11)",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p011",
+        "source_text": "1 Annual Report 2024-25 1. ABOUT IIT (ISM) DHANBAD 1.1 Historical Purview, Campus, and Objective Historical Purview: The Indian National Congress at its XVII Session of December 1901 passed a resoluti"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_11_",
+      "label": "Section",
+      "name": "Section (Page 11)",
+      "properties": {
+        "page": 11,
+        "pdf": "AR_2024-25_Combined_English_Mail.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 11,
+        "section_heading": "Section (Page 11)",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p011",
+        "source_text": "1 Annual Report 2024-25 1. ABOUT IIT (ISM) DHANBAD 1.1 Historical Purview, Campus, and Objective Historical Purview: The Indian National Congress at its XVII Session of December 1901 passed a resoluti"
+      }
+    },
+    {
+      "entity_id": "AR_2024_25_Combined_English_Mail_p011",
+      "label": "Chunk",
+      "name": "Passage (p.11)",
+      "properties": {
+        "text_preview": "1 Annual Report 2024-25 1. ABOUT IIT (ISM) DHANBAD 1.1 Historical Purview, Campus, and Objective Historical Purview: The Indian National Congress at i",
+        "page": 11,
+        "pdf": "AR_2024-25_Combined_English_Mail.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 11,
+        "section_heading": "Section (Page 11)",
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p011",
+        "source_text": "1 Annual Report 2024-25 1. ABOUT IIT (ISM) DHANBAD 1.1 Historical Purview, Campus, and Objective Historical Purview: The Indian National Congress at its XVII Session of December 1901 passed a resoluti"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_sec_published_in_2025___iit__ism__dhanb_has_section",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_published_in_2025___iit__ism__dhanb",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 3,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p003"
+      }
+    },
+    {
+      "relation_id": "rel_sec_published_in_2025___iit__ism__dhanb_AR_2024_25_Combined_English_Mail_p003_contains",
+      "source_id": "sec_published_in_2025___iit__ism__dhanb",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "AR_2024_25_Combined_English_Mail_p003",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 3,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p003"
+      }
+    },
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_centre_centre_for_innovation_has_centre",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_for_innovation",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 5,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p005"
+      }
+    },
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_centre_centre_for_tinkering_and_innovation_has_centre",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_for_tinkering_and_innovation",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 5,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p005"
+      }
+    },
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_centre_centre_for_intellectual_property_and_man_has_centre",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_for_intellectual_property_and_man",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 5,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p005"
+      }
+    },
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_centre_centre_of_societal_mission_has_centre",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_of_societal_mission",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 5,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p005"
+      }
+    },
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_prog_ph_d__degrees_awarded_offers_prog",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "OFFERS_PROGRAM",
+      "target_id": "prog_ph_d__degrees_awarded",
+      "target_label": "Program",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 5,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p005"
+      }
+    },
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_lab_AR_2024_25_Combined_English_Mail_p005_1_has_lab",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "HAS_PRACTICAL",
+      "target_id": "lab_AR_2024_25_Combined_English_Mail_p005_1",
+      "target_label": "Practical_Lab",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 5,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p005"
+      }
+    },
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_sec_contents_has_section",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_contents",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 5,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p005"
+      }
+    },
+    {
+      "relation_id": "rel_sec_contents_AR_2024_25_Combined_English_Mail_p005_contains",
+      "source_id": "sec_contents",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "AR_2024_25_Combined_English_Mail_p005",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 5,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p005"
+      }
+    },
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_centre_institute_for_their_steadfast_commitment_has_centre",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_institute_for_their_steadfast_commitment",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 7,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p007"
+      }
+    },
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_lab_AR_2024_25_Combined_English_Mail_p007_1_has_lab",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "HAS_PRACTICAL",
+      "target_id": "lab_AR_2024_25_Combined_English_Mail_p007_1",
+      "target_label": "Practical_Lab",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 7,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p007"
+      }
+    },
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_sec_the_year_2024_25_has_unfolded_as_a__has_section",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_the_year_2024_25_has_unfolded_as_a_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 7,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p007"
+      }
+    },
+    {
+      "relation_id": "rel_sec_the_year_2024_25_has_unfolded_as_a__AR_2024_25_Combined_English_Mail_p007_contains",
+      "source_id": "sec_the_year_2024_25_has_unfolded_as_a_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "AR_2024_25_Combined_English_Mail_p007",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 7,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p007"
+      }
+    },
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_sec_vision_has_section",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_vision",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 8,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p008"
+      }
+    },
+    {
+      "relation_id": "rel_sec_vision_AR_2024_25_Combined_English_Mail_p008_contains",
+      "source_id": "sec_vision",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "AR_2024_25_Combined_English_Mail_p008",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 8,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p008"
+      }
+    },
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_dept_school_of_mines_in_england_has_dept",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "HAS_DEPARTMENT",
+      "target_id": "dept_school_of_mines_in_england",
+      "target_label": "Department",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 11,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p011"
+      }
+    },
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_dept_school_of_mines_has_dept",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "HAS_DEPARTMENT",
+      "target_id": "dept_school_of_mines",
+      "target_label": "Department",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 11,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p011"
+      }
+    },
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_dept_school_of_mines_was_formally_opened_on_has_dept",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "HAS_DEPARTMENT",
+      "target_id": "dept_school_of_mines_was_formally_opened_on",
+      "target_label": "Department",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 11,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p011"
+      }
+    },
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_prog_ph_d__objective_offers_prog",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "OFFERS_PROGRAM",
+      "target_id": "prog_ph_d__objective",
+      "target_label": "Program",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 11,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p011"
+      }
+    },
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_lab_AR_2024_25_Combined_English_Mail_p011_1_has_lab",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "HAS_PRACTICAL",
+      "target_id": "lab_AR_2024_25_Combined_English_Mail_p011_1",
+      "target_label": "Practical_Lab",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 11,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p011"
+      }
+    },
+    {
+      "relation_id": "rel_uni_ar_2024_25_combined_english_ma_sec_section__page_11__has_section",
+      "source_id": "uni_ar_2024_25_combined_english_ma",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_11_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 11,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p011"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_11__AR_2024_25_Combined_English_Mail_p011_contains",
+      "source_id": "sec_section__page_11_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "AR_2024_25_Combined_English_Mail_p011",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "AR_2024-25_Combined_English_Mail.pdf",
+        "page_number": 11,
+        "chunk_id": "AR_2024_25_Combined_English_Mail_p011"
+      }
+    }
+  ]
+}

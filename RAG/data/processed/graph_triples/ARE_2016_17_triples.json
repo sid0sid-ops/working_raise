@@ -1,0 +1,2254 @@
+{
+  "entities": [
+    {
+      "entity_id": "uni_are_2016_17",
+      "label": "University",
+      "name": "Are 2016 17",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 25,
+        "section_heading": "Section (Page 25)",
+        "chunk_id": "ARE_2016_17_p025",
+        "source_text": "xxi Europe \u2022 Clausthal University of Technology, Germany \u2022 Politechnico Di Torino, Italy \u2022 Perm National Research Poytechnic University (PNRPU), Perm \u2022 Politecnico Di Torino (Dept. of Mechanical and A"
+      }
+    },
+    {
+      "entity_id": "sec_annual_report",
+      "label": "Section",
+      "name": "ANNUAL REPORT",
+      "properties": {
+        "page": 2,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 2,
+        "section_heading": "ANNUAL REPORT",
+        "chunk_id": "ARE_2016_17_p002",
+        "source_text": "ANNUAL REPORT 2016 - 2017 INDIAN INSTITUTE OF TECHNOLOGY (INDIAN SCHOOL OF MINES) DHANBAD \u2013 826 004"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p002",
+      "label": "Chunk",
+      "name": "Passage (p.2)",
+      "properties": {
+        "text_preview": "ANNUAL REPORT 2016 - 2017 INDIAN INSTITUTE OF TECHNOLOGY (INDIAN SCHOOL OF MINES) DHANBAD \u2013 826 004",
+        "page": 2,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 2,
+        "section_heading": "ANNUAL REPORT",
+        "chunk_id": "ARE_2016_17_p002",
+        "source_text": "ANNUAL REPORT 2016 - 2017 INDIAN INSTITUTE OF TECHNOLOGY (INDIAN SCHOOL OF MINES) DHANBAD \u2013 826 004"
+      }
+    },
+    {
+      "entity_id": "centre_centre_of_excellence_in_safety",
+      "label": "Centre",
+      "name": "Centre of Excellence in Safety",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "section_heading": "Section (Page 19)",
+        "chunk_id": "ARE_2016_17_p019",
+        "source_text": "xv Centre Address Area(in sq.ft) Estd. IIIF Kolkata NBCC Shopping Centre, New Town, Rajarhat Kolkata 16000 sq.ft 2015 IIIF New Delhi Unit No.401, NBCC Centre, Plot No.02, Okhla Phase\u2013I, New Delhi 2000"
+      }
+    },
+    {
+      "entity_id": "centre_centre_of_excellence_in_mining_technolog",
+      "label": "Centre",
+      "name": "Centre of Excellence in Mining Technology",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 24,
+        "section_heading": "Section (Page 24)",
+        "chunk_id": "ARE_2016_17_p024",
+        "source_text": "xx \u2022 The Centre of Excellence in Mining Technology (CEMT) has also been established at IIT(ISM) Dhanbad in collaboration with Australian institutions and research organizations for conducting research"
+      }
+    },
+    {
+      "entity_id": "prog_ph_d__degree_awarded",
+      "label": "Program",
+      "name": "Ph.D. Degree Awarded",
+      "properties": {
+        "degree_level": "Ph.D."
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 15,
+        "section_heading": "Section (Page 15)",
+        "chunk_id": "ARE_2016_17_p015",
+        "source_text": "xi 3.1.2 Web of Science Database (WoS) The outcome of research resulting in growth of Research Publications in Web of Science database is as follows: Year No.of Publications Per Faculty Publication Ye"
+      }
+    },
+    {
+      "entity_id": "sec_annual_report_2016___2017",
+      "label": "Section",
+      "name": "Annual Report 2016 - 2017",
+      "properties": {
+        "page": 4,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 4,
+        "section_heading": "Annual Report 2016 - 2017",
+        "chunk_id": "ARE_2016_17_p004",
+        "source_text": "Annual Report 2016 - 2017 5. Industry-Institute Interaction 199 5.1 Consultancy Projects 199 5.1.1 List of major industries, Government organizations, research institutions sponsoring projects to IIT "
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p003",
+      "label": "Chunk",
+      "name": "Passage (p.3)",
+      "properties": {
+        "text_preview": "Annual Report 2016 - 2017 CONTENTS Page No. Foreword i Vision iii Mission iii Executive Summary v 1. About IIT (ISM), Dhanbad 1 2. Academic Activities",
+        "page": 3,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 3,
+        "section_heading": "Annual Report 2016 - 2017",
+        "chunk_id": "ARE_2016_17_p003",
+        "source_text": "Annual Report 2016 - 2017 CONTENTS Page No. Foreword i Vision iii Mission iii Executive Summary v 1. About IIT (ISM), Dhanbad 1 2. Academic Activities 5 2.1 Undergraduate Programmes 6 2.2 Dual Degree "
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p004",
+      "label": "Chunk",
+      "name": "Passage (p.4)",
+      "properties": {
+        "text_preview": "Annual Report 2016 - 2017 5. Industry-Institute Interaction 199 5.1 Consultancy Projects 199 5.1.1 List of major industries, Government organizations,",
+        "page": 4,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 4,
+        "section_heading": "Annual Report 2016 - 2017",
+        "chunk_id": "ARE_2016_17_p004",
+        "source_text": "Annual Report 2016 - 2017 5. Industry-Institute Interaction 199 5.1 Consultancy Projects 199 5.1.1 List of major industries, Government organizations, research institutions sponsoring projects to IIT "
+      }
+    },
+    {
+      "entity_id": "dept_school_of_mines",
+      "label": "Department",
+      "name": "School of Mines",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 24,
+        "section_heading": "Section (Page 24)",
+        "chunk_id": "ARE_2016_17_p024",
+        "source_text": "xx \u2022 The Centre of Excellence in Mining Technology (CEMT) has also been established at IIT(ISM) Dhanbad in collaboration with Australian institutions and research organizations for conducting research"
+      }
+    },
+    {
+      "entity_id": "centre_institute_of_technology",
+      "label": "Centre",
+      "name": "Institute of Technology",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 24,
+        "section_heading": "Section (Page 24)",
+        "chunk_id": "ARE_2016_17_p024",
+        "source_text": "xx \u2022 The Centre of Excellence in Mining Technology (CEMT) has also been established at IIT(ISM) Dhanbad in collaboration with Australian institutions and research organizations for conducting research"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_5_",
+      "label": "Section",
+      "name": "Section (Page 5)",
+      "properties": {
+        "page": 5,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 5,
+        "section_heading": "Section (Page 5)",
+        "chunk_id": "ARE_2016_17_p005",
+        "source_text": "i Foreword The journey of the Institute that started in 1926 as Indian School of Mines, Dhanbad to address the need of trained manpower related to mining activities in the country culminated as Indian"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p005",
+      "label": "Chunk",
+      "name": "Passage (p.5)",
+      "properties": {
+        "text_preview": "i Foreword The journey of the Institute that started in 1926 as Indian School of Mines, Dhanbad to address the need of trained manpower related to min",
+        "page": 5,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 5,
+        "section_heading": "Section (Page 5)",
+        "chunk_id": "ARE_2016_17_p005",
+        "source_text": "i Foreword The journey of the Institute that started in 1926 as Indian School of Mines, Dhanbad to address the need of trained manpower related to mining activities in the country culminated as Indian"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_6_",
+      "label": "Section",
+      "name": "Section (Page 6)",
+      "properties": {
+        "page": 6,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 6,
+        "section_heading": "Section (Page 6)",
+        "chunk_id": "ARE_2016_17_p006",
+        "source_text": "ii Annual Report 2016 - 2017"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p006",
+      "label": "Chunk",
+      "name": "Passage (p.6)",
+      "properties": {
+        "text_preview": "ii Annual Report 2016 - 2017",
+        "page": 6,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 6,
+        "section_heading": "Section (Page 6)",
+        "chunk_id": "ARE_2016_17_p006",
+        "source_text": "ii Annual Report 2016 - 2017"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_7_",
+      "label": "Section",
+      "name": "Section (Page 7)",
+      "properties": {
+        "page": 7,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 7,
+        "section_heading": "Section (Page 7)",
+        "chunk_id": "ARE_2016_17_p007",
+        "source_text": "iii Vision To be an internationally acclaimed premier institution of higher technical and scientific education with social commitment having an ethos for intellectual excellence, where initiative is n"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p007",
+      "label": "Chunk",
+      "name": "Passage (p.7)",
+      "properties": {
+        "text_preview": "iii Vision To be an internationally acclaimed premier institution of higher technical and scientific education with social commitment having an ethos ",
+        "page": 7,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 7,
+        "section_heading": "Section (Page 7)",
+        "chunk_id": "ARE_2016_17_p007",
+        "source_text": "iii Vision To be an internationally acclaimed premier institution of higher technical and scientific education with social commitment having an ethos for intellectual excellence, where initiative is n"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_8_",
+      "label": "Section",
+      "name": "Section (Page 8)",
+      "properties": {
+        "page": 8,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 8,
+        "section_heading": "Section (Page 8)",
+        "chunk_id": "ARE_2016_17_p008",
+        "source_text": "iv Annual Report 2016 - 2017"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p008",
+      "label": "Chunk",
+      "name": "Passage (p.8)",
+      "properties": {
+        "text_preview": "iv Annual Report 2016 - 2017",
+        "page": 8,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 8,
+        "section_heading": "Section (Page 8)",
+        "chunk_id": "ARE_2016_17_p008",
+        "source_text": "iv Annual Report 2016 - 2017"
+      }
+    },
+    {
+      "entity_id": "prog_ph_d__and_d",
+      "label": "Program",
+      "name": "Ph.D. and D",
+      "properties": {
+        "degree_level": "Ph.D."
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 9,
+        "section_heading": "Section (Page 9)",
+        "chunk_id": "ARE_2016_17_p009",
+        "source_text": "v Executive Summary Innovations and Marching Ahead towards Excellence The Institute made rapid strides in its pursuit for academic and research excellence through the implementation of a number of inn"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_9_",
+      "label": "Section",
+      "name": "Section (Page 9)",
+      "properties": {
+        "page": 9,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 9,
+        "section_heading": "Section (Page 9)",
+        "chunk_id": "ARE_2016_17_p009",
+        "source_text": "v Executive Summary Innovations and Marching Ahead towards Excellence The Institute made rapid strides in its pursuit for academic and research excellence through the implementation of a number of inn"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p009",
+      "label": "Chunk",
+      "name": "Passage (p.9)",
+      "properties": {
+        "text_preview": "v Executive Summary Innovations and Marching Ahead towards Excellence The Institute made rapid strides in its pursuit for academic and research excell",
+        "page": 9,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 9,
+        "section_heading": "Section (Page 9)",
+        "chunk_id": "ARE_2016_17_p009",
+        "source_text": "v Executive Summary Innovations and Marching Ahead towards Excellence The Institute made rapid strides in its pursuit for academic and research excellence through the implementation of a number of inn"
+      }
+    },
+    {
+      "entity_id": "prog_b_tech_and_dual_degree_programmes",
+      "label": "Program",
+      "name": "B.Tech and Dual Degree Programmes",
+      "properties": {
+        "degree_level": "B.Tech"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 10,
+        "section_heading": "Section (Page 10)",
+        "chunk_id": "ARE_2016_17_p010",
+        "source_text": "vi The details of programmes offered by IIT (ISM) are given below: Sl. No. Courses offered No. of Courses Till 2011 In 2016-17 1. 4-YearB.Tech. 10 13 2. 5-YearDualDegree 5 5 3. 5-YearIntegratedM.Tech."
+      }
+    },
+    {
+      "entity_id": "prog_m_tech_programmes",
+      "label": "Program",
+      "name": "M.Tech Programmes",
+      "properties": {
+        "degree_level": "M.Tech"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 10,
+        "section_heading": "Section (Page 10)",
+        "chunk_id": "ARE_2016_17_p010",
+        "source_text": "vi The details of programmes offered by IIT (ISM) are given below: Sl. No. Courses offered No. of Courses Till 2011 In 2016-17 1. 4-YearB.Tech. 10 13 2. 5-YearDualDegree 5 5 3. 5-YearIntegratedM.Tech."
+      }
+    },
+    {
+      "entity_id": "prog_executive_mba_programme",
+      "label": "Program",
+      "name": "Executive MBA programme",
+      "properties": {
+        "degree_level": "Executive MBA"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 10,
+        "section_heading": "Section (Page 10)",
+        "chunk_id": "ARE_2016_17_p010",
+        "source_text": "vi The details of programmes offered by IIT (ISM) are given below: Sl. No. Courses offered No. of Courses Till 2011 In 2016-17 1. 4-YearB.Tech. 10 13 2. 5-YearDualDegree 5 5 3. 5-YearIntegratedM.Tech."
+      }
+    },
+    {
+      "entity_id": "sec_section__page_10_",
+      "label": "Section",
+      "name": "Section (Page 10)",
+      "properties": {
+        "page": 10,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 10,
+        "section_heading": "Section (Page 10)",
+        "chunk_id": "ARE_2016_17_p010",
+        "source_text": "vi The details of programmes offered by IIT (ISM) are given below: Sl. No. Courses offered No. of Courses Till 2011 In 2016-17 1. 4-YearB.Tech. 10 13 2. 5-YearDualDegree 5 5 3. 5-YearIntegratedM.Tech."
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p010",
+      "label": "Chunk",
+      "name": "Passage (p.10)",
+      "properties": {
+        "text_preview": "vi The details of programmes offered by IIT (ISM) are given below: Sl. No. Courses offered No. of Courses Till 2011 In 2016-17 1. 4-YearB.Tech. 10 13 ",
+        "page": 10,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 10,
+        "section_heading": "Section (Page 10)",
+        "chunk_id": "ARE_2016_17_p010",
+        "source_text": "vi The details of programmes offered by IIT (ISM) are given below: Sl. No. Courses offered No. of Courses Till 2011 In 2016-17 1. 4-YearB.Tech. 10 13 2. 5-YearDualDegree 5 5 3. 5-YearIntegratedM.Tech."
+      }
+    },
+    {
+      "entity_id": "sec_section__page_11_",
+      "label": "Section",
+      "name": "Section (Page 11)",
+      "properties": {
+        "page": 11,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 11,
+        "section_heading": "Section (Page 11)",
+        "chunk_id": "ARE_2016_17_p011",
+        "source_text": "vii The student strength in 2016-17 has gone up to 7903 compared to 3362 in the year 2010-11 registering a growth of 135%. The comparison of student strength over the previous years is given here: 2.2"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p011",
+      "label": "Chunk",
+      "name": "Passage (p.11)",
+      "properties": {
+        "text_preview": "vii The student strength in 2016-17 has gone up to 7903 compared to 3362 in the year 2010-11 registering a growth of 135%. The comparison of student s",
+        "page": 11,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 11,
+        "section_heading": "Section (Page 11)",
+        "chunk_id": "ARE_2016_17_p011",
+        "source_text": "vii The student strength in 2016-17 has gone up to 7903 compared to 3362 in the year 2010-11 registering a growth of 135%. The comparison of student strength over the previous years is given here: 2.2"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_12_",
+      "label": "Section",
+      "name": "Section (Page 12)",
+      "properties": {
+        "page": 12,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 12,
+        "section_heading": "Section (Page 12)",
+        "chunk_id": "ARE_2016_17_p012",
+        "source_text": "viii 2.2.2 Chair Professors In recognition to the longstanding interaction of IIT(ISM) and its contribution to industry, nine Endowment Chairs have been instituted by different public and private sect"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p012",
+      "label": "Chunk",
+      "name": "Passage (p.12)",
+      "properties": {
+        "text_preview": "viii 2.2.2 Chair Professors In recognition to the longstanding interaction of IIT(ISM) and its contribution to industry, nine Endowment Chairs have be",
+        "page": 12,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 12,
+        "section_heading": "Section (Page 12)",
+        "chunk_id": "ARE_2016_17_p012",
+        "source_text": "viii 2.2.2 Chair Professors In recognition to the longstanding interaction of IIT(ISM) and its contribution to industry, nine Endowment Chairs have been instituted by different public and private sect"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_13_",
+      "label": "Section",
+      "name": "Section (Page 13)",
+      "properties": {
+        "page": 13,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 13,
+        "section_heading": "Section (Page 13)",
+        "chunk_id": "ARE_2016_17_p013",
+        "source_text": "ix The placement percentage of students admitted through IIT-JEE over the last six years is presented below: 2.4 Innovative Initiatives in Academics The major initiatives taken during the last six yea"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p013",
+      "label": "Chunk",
+      "name": "Passage (p.13)",
+      "properties": {
+        "text_preview": "ix The placement percentage of students admitted through IIT-JEE over the last six years is presented below: 2.4 Innovative Initiatives in Academics T",
+        "page": 13,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 13,
+        "section_heading": "Section (Page 13)",
+        "chunk_id": "ARE_2016_17_p013",
+        "source_text": "ix The placement percentage of students admitted through IIT-JEE over the last six years is presented below: 2.4 Innovative Initiatives in Academics The major initiatives taken during the last six yea"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_14_",
+      "label": "Section",
+      "name": "Section (Page 14)",
+      "properties": {
+        "page": 14,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 14,
+        "section_heading": "Section (Page 14)",
+        "chunk_id": "ARE_2016_17_p014",
+        "source_text": "x 3. RESEARCH AND INDUSTRY-INSTITUTE COLLABORATION 3.1 Publications 3.1.1 SCOPUS Database The outcome of research resulting in growth of Research Publications indexed in SCOPUS database maintained by "
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p014",
+      "label": "Chunk",
+      "name": "Passage (p.14)",
+      "properties": {
+        "text_preview": "x 3. RESEARCH AND INDUSTRY-INSTITUTE COLLABORATION 3.1 Publications 3.1.1 SCOPUS Database The outcome of research resulting in growth of Research Publ",
+        "page": 14,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 14,
+        "section_heading": "Section (Page 14)",
+        "chunk_id": "ARE_2016_17_p014",
+        "source_text": "x 3. RESEARCH AND INDUSTRY-INSTITUTE COLLABORATION 3.1 Publications 3.1.1 SCOPUS Database The outcome of research resulting in growth of Research Publications indexed in SCOPUS database maintained by "
+      }
+    },
+    {
+      "entity_id": "sec_section__page_15_",
+      "label": "Section",
+      "name": "Section (Page 15)",
+      "properties": {
+        "page": 15,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 15,
+        "section_heading": "Section (Page 15)",
+        "chunk_id": "ARE_2016_17_p015",
+        "source_text": "xi 3.1.2 Web of Science Database (WoS) The outcome of research resulting in growth of Research Publications in Web of Science database is as follows: Year No.of Publications Per Faculty Publication Ye"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p015",
+      "label": "Chunk",
+      "name": "Passage (p.15)",
+      "properties": {
+        "text_preview": "xi 3.1.2 Web of Science Database (WoS) The outcome of research resulting in growth of Research Publications in Web of Science database is as follows: ",
+        "page": 15,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 15,
+        "section_heading": "Section (Page 15)",
+        "chunk_id": "ARE_2016_17_p015",
+        "source_text": "xi 3.1.2 Web of Science Database (WoS) The outcome of research resulting in growth of Research Publications in Web of Science database is as follows: Year No.of Publications Per Faculty Publication Ye"
+      }
+    },
+    {
+      "entity_id": "prog_ph_d__degrees_awarded_also_provided",
+      "label": "Program",
+      "name": "Ph.D. Degrees Awarded Also provided is",
+      "properties": {
+        "degree_level": "Ph.D."
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 16,
+        "section_heading": "Section (Page 16)",
+        "chunk_id": "ARE_2016_17_p016",
+        "source_text": "xii 3.2.2 Ph.D. Degrees Awarded Also provided is the comparison of number of Ph.D. degrees awarded over the last six years period, which shows a growth of 659% over the base year 2010-11. Annual Repor"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_16_",
+      "label": "Section",
+      "name": "Section (Page 16)",
+      "properties": {
+        "page": 16,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 16,
+        "section_heading": "Section (Page 16)",
+        "chunk_id": "ARE_2016_17_p016",
+        "source_text": "xii 3.2.2 Ph.D. Degrees Awarded Also provided is the comparison of number of Ph.D. degrees awarded over the last six years period, which shows a growth of 659% over the base year 2010-11. Annual Repor"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p016",
+      "label": "Chunk",
+      "name": "Passage (p.16)",
+      "properties": {
+        "text_preview": "xii 3.2.2 Ph.D. Degrees Awarded Also provided is the comparison of number of Ph.D. degrees awarded over the last six years period, which shows a growt",
+        "page": 16,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 16,
+        "section_heading": "Section (Page 16)",
+        "chunk_id": "ARE_2016_17_p016",
+        "source_text": "xii 3.2.2 Ph.D. Degrees Awarded Also provided is the comparison of number of Ph.D. degrees awarded over the last six years period, which shows a growth of 659% over the base year 2010-11. Annual Repor"
+      }
+    },
+    {
+      "entity_id": "prog_ph_d__awarded_yearly_growth",
+      "label": "Program",
+      "name": "Ph.D. awarded Yearly Growth",
+      "properties": {
+        "degree_level": "Ph.D."
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 17,
+        "section_heading": "Section (Page 17)",
+        "chunk_id": "ARE_2016_17_p017",
+        "source_text": "xiii 3.3 Sponsored Research/Industry Sponsored Projects The Institute continued its growth in R&D and Industry sponsored projects and executed projects worth Rs.124.34 crores during the year 2016-17, "
+      }
+    },
+    {
+      "entity_id": "sec_section__page_17_",
+      "label": "Section",
+      "name": "Section (Page 17)",
+      "properties": {
+        "page": 17,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 17,
+        "section_heading": "Section (Page 17)",
+        "chunk_id": "ARE_2016_17_p017",
+        "source_text": "xiii 3.3 Sponsored Research/Industry Sponsored Projects The Institute continued its growth in R&D and Industry sponsored projects and executed projects worth Rs.124.34 crores during the year 2016-17, "
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p017",
+      "label": "Chunk",
+      "name": "Passage (p.17)",
+      "properties": {
+        "text_preview": "xiii 3.3 Sponsored Research/Industry Sponsored Projects The Institute continued its growth in R&D and Industry sponsored projects and executed project",
+        "page": 17,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 17,
+        "section_heading": "Section (Page 17)",
+        "chunk_id": "ARE_2016_17_p017",
+        "source_text": "xiii 3.3 Sponsored Research/Industry Sponsored Projects The Institute continued its growth in R&D and Industry sponsored projects and executed projects worth Rs.124.34 crores during the year 2016-17, "
+      }
+    },
+    {
+      "entity_id": "sec_section__page_18_",
+      "label": "Section",
+      "name": "Section (Page 18)",
+      "properties": {
+        "page": 18,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 18,
+        "section_heading": "Section (Page 18)",
+        "chunk_id": "ARE_2016_17_p018",
+        "source_text": "xiv In the year 2016-17, more than sixty-five organizations comprising government, public and private sectors have sponsored more than 500 sponsored R&D and Industrial projects. 3.4 Executive Developm"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p018",
+      "label": "Chunk",
+      "name": "Passage (p.18)",
+      "properties": {
+        "text_preview": "xiv In the year 2016-17, more than sixty-five organizations comprising government, public and private sectors have sponsored more than 500 sponsored R",
+        "page": 18,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 18,
+        "section_heading": "Section (Page 18)",
+        "chunk_id": "ARE_2016_17_p018",
+        "source_text": "xiv In the year 2016-17, more than sixty-five organizations comprising government, public and private sectors have sponsored more than 500 sponsored R&D and Industrial projects. 3.4 Executive Developm"
+      }
+    },
+    {
+      "entity_id": "centre_centre_of_advanced_learning_in_the_field",
+      "label": "Centre",
+      "name": "Centre of Advanced Learning in the fields of mining",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "section_heading": "Section (Page 19)",
+        "chunk_id": "ARE_2016_17_p019",
+        "source_text": "xv Centre Address Area(in sq.ft) Estd. IIIF Kolkata NBCC Shopping Centre, New Town, Rajarhat Kolkata 16000 sq.ft 2015 IIIF New Delhi Unit No.401, NBCC Centre, Plot No.02, Okhla Phase\u2013I, New Delhi 2000"
+      }
+    },
+    {
+      "entity_id": "centre_centre_for_mining_environment",
+      "label": "Centre",
+      "name": "Centre for Mining Environment",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "section_heading": "Section (Page 19)",
+        "chunk_id": "ARE_2016_17_p019",
+        "source_text": "xv Centre Address Area(in sq.ft) Estd. IIIF Kolkata NBCC Shopping Centre, New Town, Rajarhat Kolkata 16000 sq.ft 2015 IIIF New Delhi Unit No.401, NBCC Centre, Plot No.02, Okhla Phase\u2013I, New Delhi 2000"
+      }
+    },
+    {
+      "entity_id": "centre_centre_of_advanced_study_in_mining_engin",
+      "label": "Centre",
+      "name": "Centre of Advanced Study in Mining Engineering",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "section_heading": "Section (Page 19)",
+        "chunk_id": "ARE_2016_17_p019",
+        "source_text": "xv Centre Address Area(in sq.ft) Estd. IIIF Kolkata NBCC Shopping Centre, New Town, Rajarhat Kolkata 16000 sq.ft 2015 IIIF New Delhi Unit No.401, NBCC Centre, Plot No.02, Okhla Phase\u2013I, New Delhi 2000"
+      }
+    },
+    {
+      "entity_id": "centre_centre_of_rock_excavation_engineering",
+      "label": "Centre",
+      "name": "Centre of Rock Excavation Engineering",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "section_heading": "Section (Page 19)",
+        "chunk_id": "ARE_2016_17_p019",
+        "source_text": "xv Centre Address Area(in sq.ft) Estd. IIIF Kolkata NBCC Shopping Centre, New Town, Rajarhat Kolkata 16000 sq.ft 2015 IIIF New Delhi Unit No.401, NBCC Centre, Plot No.02, Okhla Phase\u2013I, New Delhi 2000"
+      }
+    },
+    {
+      "entity_id": "centre_centre_of_long_wall_mine_mechanization",
+      "label": "Centre",
+      "name": "Centre of Long wall Mine Mechanization",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "section_heading": "Section (Page 19)",
+        "chunk_id": "ARE_2016_17_p019",
+        "source_text": "xv Centre Address Area(in sq.ft) Estd. IIIF Kolkata NBCC Shopping Centre, New Town, Rajarhat Kolkata 16000 sq.ft 2015 IIIF New Delhi Unit No.401, NBCC Centre, Plot No.02, Okhla Phase\u2013I, New Delhi 2000"
+      }
+    },
+    {
+      "entity_id": "centre_centre_of_moef___cc_new_research_centres",
+      "label": "Centre",
+      "name": "Centre of MoEF & CC New Research Centres added during",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "section_heading": "Section (Page 19)",
+        "chunk_id": "ARE_2016_17_p019",
+        "source_text": "xv Centre Address Area(in sq.ft) Estd. IIIF Kolkata NBCC Shopping Centre, New Town, Rajarhat Kolkata 16000 sq.ft 2015 IIIF New Delhi Unit No.401, NBCC Centre, Plot No.02, Okhla Phase\u2013I, New Delhi 2000"
+      }
+    },
+    {
+      "entity_id": "centre_centre_of_water_resource_management",
+      "label": "Centre",
+      "name": "Centre of Water Resource Management",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "section_heading": "Section (Page 19)",
+        "chunk_id": "ARE_2016_17_p019",
+        "source_text": "xv Centre Address Area(in sq.ft) Estd. IIIF Kolkata NBCC Shopping Centre, New Town, Rajarhat Kolkata 16000 sq.ft 2015 IIIF New Delhi Unit No.401, NBCC Centre, Plot No.02, Okhla Phase\u2013I, New Delhi 2000"
+      }
+    },
+    {
+      "entity_id": "centre_centre_for_water_and_sanitation",
+      "label": "Centre",
+      "name": "Centre for Water and Sanitation",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "section_heading": "Section (Page 19)",
+        "chunk_id": "ARE_2016_17_p019",
+        "source_text": "xv Centre Address Area(in sq.ft) Estd. IIIF Kolkata NBCC Shopping Centre, New Town, Rajarhat Kolkata 16000 sq.ft 2015 IIIF New Delhi Unit No.401, NBCC Centre, Plot No.02, Okhla Phase\u2013I, New Delhi 2000"
+      }
+    },
+    {
+      "entity_id": "centre_centre_for_renewable_energy",
+      "label": "Centre",
+      "name": "Centre for Renewable Energy",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "section_heading": "Section (Page 19)",
+        "chunk_id": "ARE_2016_17_p019",
+        "source_text": "xv Centre Address Area(in sq.ft) Estd. IIIF Kolkata NBCC Shopping Centre, New Town, Rajarhat Kolkata 16000 sq.ft 2015 IIIF New Delhi Unit No.401, NBCC Centre, Plot No.02, Okhla Phase\u2013I, New Delhi 2000"
+      }
+    },
+    {
+      "entity_id": "centre_centre_for_clean_coal_and_energy_technol",
+      "label": "Centre",
+      "name": "Centre for Clean Coal and Energy Technologies",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 23,
+        "section_heading": "Section (Page 23)",
+        "chunk_id": "ARE_2016_17_p023",
+        "source_text": "xix \u2022 Discovery of Chromite deposits in Sukinda Chromite Belt. \u2022 Electrical Resistivity Imaging and Self Potential Survey for locating Fracture Zones and Seepage Analysis in coal mines. \u2022 Energy Effic"
+      }
+    },
+    {
+      "entity_id": "centre_centre_for_innovation",
+      "label": "Centre",
+      "name": "Centre for Innovation",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "section_heading": "Section (Page 19)",
+        "chunk_id": "ARE_2016_17_p019",
+        "source_text": "xv Centre Address Area(in sq.ft) Estd. IIIF Kolkata NBCC Shopping Centre, New Town, Rajarhat Kolkata 16000 sq.ft 2015 IIIF New Delhi Unit No.401, NBCC Centre, Plot No.02, Okhla Phase\u2013I, New Delhi 2000"
+      }
+    },
+    {
+      "entity_id": "centre_centre_for_societal_mission_annual_repor",
+      "label": "Centre",
+      "name": "Centre for Societal Mission Annual Report",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "section_heading": "Section (Page 19)",
+        "chunk_id": "ARE_2016_17_p019",
+        "source_text": "xv Centre Address Area(in sq.ft) Estd. IIIF Kolkata NBCC Shopping Centre, New Town, Rajarhat Kolkata 16000 sq.ft 2015 IIIF New Delhi Unit No.401, NBCC Centre, Plot No.02, Okhla Phase\u2013I, New Delhi 2000"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_19_",
+      "label": "Section",
+      "name": "Section (Page 19)",
+      "properties": {
+        "page": 19,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "section_heading": "Section (Page 19)",
+        "chunk_id": "ARE_2016_17_p019",
+        "source_text": "xv Centre Address Area(in sq.ft) Estd. IIIF Kolkata NBCC Shopping Centre, New Town, Rajarhat Kolkata 16000 sq.ft 2015 IIIF New Delhi Unit No.401, NBCC Centre, Plot No.02, Okhla Phase\u2013I, New Delhi 2000"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p019",
+      "label": "Chunk",
+      "name": "Passage (p.19)",
+      "properties": {
+        "text_preview": "xv Centre Address Area(in sq.ft) Estd. IIIF Kolkata NBCC Shopping Centre, New Town, Rajarhat Kolkata 16000 sq.ft 2015 IIIF New Delhi Unit No.401, NBCC",
+        "page": 19,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "section_heading": "Section (Page 19)",
+        "chunk_id": "ARE_2016_17_p019",
+        "source_text": "xv Centre Address Area(in sq.ft) Estd. IIIF Kolkata NBCC Shopping Centre, New Town, Rajarhat Kolkata 16000 sq.ft 2015 IIIF New Delhi Unit No.401, NBCC Centre, Plot No.02, Okhla Phase\u2013I, New Delhi 2000"
+      }
+    },
+    {
+      "entity_id": "centre_centre_for_incubation",
+      "label": "Centre",
+      "name": "Centre for Incubation",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 20,
+        "section_heading": "Section (Page 20)",
+        "chunk_id": "ARE_2016_17_p020",
+        "source_text": "xvi 3.10 Innovative Initiatives for Augmenting Research and Industry-Institute Collaboration The innovative steps taken in the areas of Research, Innovation and Development are as follows: \u2022 Establish"
+      }
+    },
+    {
+      "entity_id": "prog_ph_d__degree",
+      "label": "Program",
+      "name": "Ph.D. degree",
+      "properties": {
+        "degree_level": "Ph.D."
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 20,
+        "section_heading": "Section (Page 20)",
+        "chunk_id": "ARE_2016_17_p020",
+        "source_text": "xvi 3.10 Innovative Initiatives for Augmenting Research and Industry-Institute Collaboration The innovative steps taken in the areas of Research, Innovation and Development are as follows: \u2022 Establish"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_20_",
+      "label": "Section",
+      "name": "Section (Page 20)",
+      "properties": {
+        "page": 20,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 20,
+        "section_heading": "Section (Page 20)",
+        "chunk_id": "ARE_2016_17_p020",
+        "source_text": "xvi 3.10 Innovative Initiatives for Augmenting Research and Industry-Institute Collaboration The innovative steps taken in the areas of Research, Innovation and Development are as follows: \u2022 Establish"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p020",
+      "label": "Chunk",
+      "name": "Passage (p.20)",
+      "properties": {
+        "text_preview": "xvi 3.10 Innovative Initiatives for Augmenting Research and Industry-Institute Collaboration The innovative steps taken in the areas of Research, Inno",
+        "page": 20,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 20,
+        "section_heading": "Section (Page 20)",
+        "chunk_id": "ARE_2016_17_p020",
+        "source_text": "xvi 3.10 Innovative Initiatives for Augmenting Research and Industry-Institute Collaboration The innovative steps taken in the areas of Research, Innovation and Development are as follows: \u2022 Establish"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_21_",
+      "label": "Section",
+      "name": "Section (Page 21)",
+      "properties": {
+        "page": 21,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 21,
+        "section_heading": "Section (Page 21)",
+        "chunk_id": "ARE_2016_17_p021",
+        "source_text": "xvii Name of Equipment Purpose/Uses Year of Installation FE-SEM (Field Emission Scanning Electron Microscope) Software :Smart SEM To find the surface structure, surface morphology & elemental composit"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p021",
+      "label": "Chunk",
+      "name": "Passage (p.21)",
+      "properties": {
+        "text_preview": "xvii Name of Equipment Purpose/Uses Year of Installation FE-SEM (Field Emission Scanning Electron Microscope) Software :Smart SEM To find the surface ",
+        "page": 21,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 21,
+        "section_heading": "Section (Page 21)",
+        "chunk_id": "ARE_2016_17_p021",
+        "source_text": "xvii Name of Equipment Purpose/Uses Year of Installation FE-SEM (Field Emission Scanning Electron Microscope) Software :Smart SEM To find the surface structure, surface morphology & elemental composit"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_22_",
+      "label": "Section",
+      "name": "Section (Page 22)",
+      "properties": {
+        "page": 22,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 22,
+        "section_heading": "Section (Page 22)",
+        "chunk_id": "ARE_2016_17_p022",
+        "source_text": "xviii 6. DISCOVERY/ MAJOR TECHNOLOGY DEVELOPED AND IMPLEMENTED IN THE LAST SIX YEARS One significant discovery and eighteen major technologies developed and implemented in the mineral and allied indus"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p022",
+      "label": "Chunk",
+      "name": "Passage (p.22)",
+      "properties": {
+        "text_preview": "xviii 6. DISCOVERY/ MAJOR TECHNOLOGY DEVELOPED AND IMPLEMENTED IN THE LAST SIX YEARS One significant discovery and eighteen major technologies develop",
+        "page": 22,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 22,
+        "section_heading": "Section (Page 22)",
+        "chunk_id": "ARE_2016_17_p022",
+        "source_text": "xviii 6. DISCOVERY/ MAJOR TECHNOLOGY DEVELOPED AND IMPLEMENTED IN THE LAST SIX YEARS One significant discovery and eighteen major technologies developed and implemented in the mineral and allied indus"
+      }
+    },
+    {
+      "entity_id": "dept_school_of_mines_in_dhanbad",
+      "label": "Department",
+      "name": "School of Mines in Dhanbad",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 23,
+        "section_heading": "Section (Page 23)",
+        "chunk_id": "ARE_2016_17_p023",
+        "source_text": "xix \u2022 Discovery of Chromite deposits in Sukinda Chromite Belt. \u2022 Electrical Resistivity Imaging and Self Potential Survey for locating Fracture Zones and Seepage Analysis in coal mines. \u2022 Energy Effic"
+      }
+    },
+    {
+      "entity_id": "prog_ph_d__programme_will_broaden_the_ho",
+      "label": "Program",
+      "name": "Ph.D. programme will broaden the horizon",
+      "properties": {
+        "degree_level": "Ph.D."
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 23,
+        "section_heading": "Section (Page 23)",
+        "chunk_id": "ARE_2016_17_p023",
+        "source_text": "xix \u2022 Discovery of Chromite deposits in Sukinda Chromite Belt. \u2022 Electrical Resistivity Imaging and Self Potential Survey for locating Fracture Zones and Seepage Analysis in coal mines. \u2022 Energy Effic"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_23_",
+      "label": "Section",
+      "name": "Section (Page 23)",
+      "properties": {
+        "page": 23,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 23,
+        "section_heading": "Section (Page 23)",
+        "chunk_id": "ARE_2016_17_p023",
+        "source_text": "xix \u2022 Discovery of Chromite deposits in Sukinda Chromite Belt. \u2022 Electrical Resistivity Imaging and Self Potential Survey for locating Fracture Zones and Seepage Analysis in coal mines. \u2022 Energy Effic"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p023",
+      "label": "Chunk",
+      "name": "Passage (p.23)",
+      "properties": {
+        "text_preview": "xix \u2022 Discovery of Chromite deposits in Sukinda Chromite Belt. \u2022 Electrical Resistivity Imaging and Self Potential Survey for locating Fracture Zones ",
+        "page": 23,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 23,
+        "section_heading": "Section (Page 23)",
+        "chunk_id": "ARE_2016_17_p023",
+        "source_text": "xix \u2022 Discovery of Chromite deposits in Sukinda Chromite Belt. \u2022 Electrical Resistivity Imaging and Self Potential Survey for locating Fracture Zones and Seepage Analysis in coal mines. \u2022 Energy Effic"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_24_",
+      "label": "Section",
+      "name": "Section (Page 24)",
+      "properties": {
+        "page": 24,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 24,
+        "section_heading": "Section (Page 24)",
+        "chunk_id": "ARE_2016_17_p024",
+        "source_text": "xx \u2022 The Centre of Excellence in Mining Technology (CEMT) has also been established at IIT(ISM) Dhanbad in collaboration with Australian institutions and research organizations for conducting research"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p024",
+      "label": "Chunk",
+      "name": "Passage (p.24)",
+      "properties": {
+        "text_preview": "xx \u2022 The Centre of Excellence in Mining Technology (CEMT) has also been established at IIT(ISM) Dhanbad in collaboration with Australian institutions ",
+        "page": 24,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 24,
+        "section_heading": "Section (Page 24)",
+        "chunk_id": "ARE_2016_17_p024",
+        "source_text": "xx \u2022 The Centre of Excellence in Mining Technology (CEMT) has also been established at IIT(ISM) Dhanbad in collaboration with Australian institutions and research organizations for conducting research"
+      }
+    },
+    {
+      "entity_id": "dept_school_of_tunis",
+      "label": "Department",
+      "name": "School of Tunis",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 25,
+        "section_heading": "Section (Page 25)",
+        "chunk_id": "ARE_2016_17_p025",
+        "source_text": "xxi Europe \u2022 Clausthal University of Technology, Germany \u2022 Politechnico Di Torino, Italy \u2022 Perm National Research Poytechnic University (PNRPU), Perm \u2022 Politecnico Di Torino (Dept. of Mechanical and A"
+      }
+    },
+    {
+      "entity_id": "centre_institute_of_geonics",
+      "label": "Centre",
+      "name": "Institute of Geonics",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 25,
+        "section_heading": "Section (Page 25)",
+        "chunk_id": "ARE_2016_17_p025",
+        "source_text": "xxi Europe \u2022 Clausthal University of Technology, Germany \u2022 Politechnico Di Torino, Italy \u2022 Perm National Research Poytechnic University (PNRPU), Perm \u2022 Politecnico Di Torino (Dept. of Mechanical and A"
+      }
+    },
+    {
+      "entity_id": "sec_section__page_25_",
+      "label": "Section",
+      "name": "Section (Page 25)",
+      "properties": {
+        "page": 25,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 25,
+        "section_heading": "Section (Page 25)",
+        "chunk_id": "ARE_2016_17_p025",
+        "source_text": "xxi Europe \u2022 Clausthal University of Technology, Germany \u2022 Politechnico Di Torino, Italy \u2022 Perm National Research Poytechnic University (PNRPU), Perm \u2022 Politecnico Di Torino (Dept. of Mechanical and A"
+      }
+    },
+    {
+      "entity_id": "ARE_2016_17_p025",
+      "label": "Chunk",
+      "name": "Passage (p.25)",
+      "properties": {
+        "text_preview": "xxi Europe \u2022 Clausthal University of Technology, Germany \u2022 Politechnico Di Torino, Italy \u2022 Perm National Research Poytechnic University (PNRPU), Perm ",
+        "page": 25,
+        "pdf": "ARE-2016-17.pdf"
+      },
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 25,
+        "section_heading": "Section (Page 25)",
+        "chunk_id": "ARE_2016_17_p025",
+        "source_text": "xxi Europe \u2022 Clausthal University of Technology, Germany \u2022 Politechnico Di Torino, Italy \u2022 Perm National Research Poytechnic University (PNRPU), Perm \u2022 Politecnico Di Torino (Dept. of Mechanical and A"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_annual_report_has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_annual_report",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 2,
+        "chunk_id": "ARE_2016_17_p002"
+      }
+    },
+    {
+      "relation_id": "rel_sec_annual_report_ARE_2016_17_p002_contains",
+      "source_id": "sec_annual_report",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p002",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 2,
+        "chunk_id": "ARE_2016_17_p002"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_centre_centre_of_excellence_in_safety_has_centre",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_of_excellence_in_safety",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "chunk_id": "ARE_2016_17_p019"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_centre_centre_of_excellence_in_mining_technolog_has_centre",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_of_excellence_in_mining_technolog",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 24,
+        "chunk_id": "ARE_2016_17_p024"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_prog_ph_d__degree_awarded_offers_prog",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "OFFERS_PROGRAM",
+      "target_id": "prog_ph_d__degree_awarded",
+      "target_label": "Program",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 15,
+        "chunk_id": "ARE_2016_17_p015"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_annual_report_2016___2017_has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_annual_report_2016___2017",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 4,
+        "chunk_id": "ARE_2016_17_p004"
+      }
+    },
+    {
+      "relation_id": "rel_sec_annual_report_2016___2017_ARE_2016_17_p003_contains",
+      "source_id": "sec_annual_report_2016___2017",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p003",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 3,
+        "chunk_id": "ARE_2016_17_p003"
+      }
+    },
+    {
+      "relation_id": "rel_sec_annual_report_2016___2017_ARE_2016_17_p004_contains",
+      "source_id": "sec_annual_report_2016___2017",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p004",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 4,
+        "chunk_id": "ARE_2016_17_p004"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_dept_school_of_mines_has_dept",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_DEPARTMENT",
+      "target_id": "dept_school_of_mines",
+      "target_label": "Department",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 24,
+        "chunk_id": "ARE_2016_17_p024"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_centre_institute_of_technology_has_centre",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_institute_of_technology",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 24,
+        "chunk_id": "ARE_2016_17_p024"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_5__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_5_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 5,
+        "chunk_id": "ARE_2016_17_p005"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_5__ARE_2016_17_p005_contains",
+      "source_id": "sec_section__page_5_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p005",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 5,
+        "chunk_id": "ARE_2016_17_p005"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_6__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_6_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 6,
+        "chunk_id": "ARE_2016_17_p006"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_6__ARE_2016_17_p006_contains",
+      "source_id": "sec_section__page_6_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p006",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 6,
+        "chunk_id": "ARE_2016_17_p006"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_7__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_7_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 7,
+        "chunk_id": "ARE_2016_17_p007"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_7__ARE_2016_17_p007_contains",
+      "source_id": "sec_section__page_7_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p007",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 7,
+        "chunk_id": "ARE_2016_17_p007"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_8__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_8_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 8,
+        "chunk_id": "ARE_2016_17_p008"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_8__ARE_2016_17_p008_contains",
+      "source_id": "sec_section__page_8_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p008",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 8,
+        "chunk_id": "ARE_2016_17_p008"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_prog_ph_d__and_d_offers_prog",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "OFFERS_PROGRAM",
+      "target_id": "prog_ph_d__and_d",
+      "target_label": "Program",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 9,
+        "chunk_id": "ARE_2016_17_p009"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_9__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_9_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 9,
+        "chunk_id": "ARE_2016_17_p009"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_9__ARE_2016_17_p009_contains",
+      "source_id": "sec_section__page_9_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p009",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 9,
+        "chunk_id": "ARE_2016_17_p009"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_prog_b_tech_and_dual_degree_programmes_offers_prog",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "OFFERS_PROGRAM",
+      "target_id": "prog_b_tech_and_dual_degree_programmes",
+      "target_label": "Program",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 10,
+        "chunk_id": "ARE_2016_17_p010"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_prog_m_tech_programmes_offers_prog",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "OFFERS_PROGRAM",
+      "target_id": "prog_m_tech_programmes",
+      "target_label": "Program",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 10,
+        "chunk_id": "ARE_2016_17_p010"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_prog_executive_mba_programme_offers_prog",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "OFFERS_PROGRAM",
+      "target_id": "prog_executive_mba_programme",
+      "target_label": "Program",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 10,
+        "chunk_id": "ARE_2016_17_p010"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_10__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_10_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 10,
+        "chunk_id": "ARE_2016_17_p010"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_10__ARE_2016_17_p010_contains",
+      "source_id": "sec_section__page_10_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p010",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 10,
+        "chunk_id": "ARE_2016_17_p010"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_11__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_11_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 11,
+        "chunk_id": "ARE_2016_17_p011"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_11__ARE_2016_17_p011_contains",
+      "source_id": "sec_section__page_11_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p011",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 11,
+        "chunk_id": "ARE_2016_17_p011"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_12__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_12_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 12,
+        "chunk_id": "ARE_2016_17_p012"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_12__ARE_2016_17_p012_contains",
+      "source_id": "sec_section__page_12_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p012",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 12,
+        "chunk_id": "ARE_2016_17_p012"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_13__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_13_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 13,
+        "chunk_id": "ARE_2016_17_p013"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_13__ARE_2016_17_p013_contains",
+      "source_id": "sec_section__page_13_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p013",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 13,
+        "chunk_id": "ARE_2016_17_p013"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_14__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_14_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 14,
+        "chunk_id": "ARE_2016_17_p014"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_14__ARE_2016_17_p014_contains",
+      "source_id": "sec_section__page_14_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p014",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 14,
+        "chunk_id": "ARE_2016_17_p014"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_15__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_15_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 15,
+        "chunk_id": "ARE_2016_17_p015"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_15__ARE_2016_17_p015_contains",
+      "source_id": "sec_section__page_15_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p015",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 15,
+        "chunk_id": "ARE_2016_17_p015"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_prog_ph_d__degrees_awarded_also_provided_offers_prog",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "OFFERS_PROGRAM",
+      "target_id": "prog_ph_d__degrees_awarded_also_provided",
+      "target_label": "Program",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 16,
+        "chunk_id": "ARE_2016_17_p016"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_16__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_16_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 16,
+        "chunk_id": "ARE_2016_17_p016"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_16__ARE_2016_17_p016_contains",
+      "source_id": "sec_section__page_16_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p016",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 16,
+        "chunk_id": "ARE_2016_17_p016"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_prog_ph_d__awarded_yearly_growth_offers_prog",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "OFFERS_PROGRAM",
+      "target_id": "prog_ph_d__awarded_yearly_growth",
+      "target_label": "Program",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 17,
+        "chunk_id": "ARE_2016_17_p017"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_17__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_17_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 17,
+        "chunk_id": "ARE_2016_17_p017"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_17__ARE_2016_17_p017_contains",
+      "source_id": "sec_section__page_17_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p017",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 17,
+        "chunk_id": "ARE_2016_17_p017"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_18__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_18_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 18,
+        "chunk_id": "ARE_2016_17_p018"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_18__ARE_2016_17_p018_contains",
+      "source_id": "sec_section__page_18_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p018",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 18,
+        "chunk_id": "ARE_2016_17_p018"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_centre_centre_of_advanced_learning_in_the_field_has_centre",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_of_advanced_learning_in_the_field",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "chunk_id": "ARE_2016_17_p019"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_centre_centre_for_mining_environment_has_centre",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_for_mining_environment",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "chunk_id": "ARE_2016_17_p019"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_centre_centre_of_advanced_study_in_mining_engin_has_centre",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_of_advanced_study_in_mining_engin",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "chunk_id": "ARE_2016_17_p019"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_centre_centre_of_rock_excavation_engineering_has_centre",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_of_rock_excavation_engineering",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "chunk_id": "ARE_2016_17_p019"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_centre_centre_of_long_wall_mine_mechanization_has_centre",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_of_long_wall_mine_mechanization",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "chunk_id": "ARE_2016_17_p019"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_centre_centre_of_moef___cc_new_research_centres_has_centre",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_of_moef___cc_new_research_centres",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "chunk_id": "ARE_2016_17_p019"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_centre_centre_of_water_resource_management_has_centre",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_of_water_resource_management",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "chunk_id": "ARE_2016_17_p019"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_centre_centre_for_water_and_sanitation_has_centre",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_for_water_and_sanitation",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "chunk_id": "ARE_2016_17_p019"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_centre_centre_for_renewable_energy_has_centre",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_for_renewable_energy",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "chunk_id": "ARE_2016_17_p019"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_centre_centre_for_clean_coal_and_energy_technol_has_centre",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_for_clean_coal_and_energy_technol",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 23,
+        "chunk_id": "ARE_2016_17_p023"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_centre_centre_for_innovation_has_centre",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_for_innovation",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "chunk_id": "ARE_2016_17_p019"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_centre_centre_for_societal_mission_annual_repor_has_centre",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_for_societal_mission_annual_repor",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "chunk_id": "ARE_2016_17_p019"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_19__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_19_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "chunk_id": "ARE_2016_17_p019"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_19__ARE_2016_17_p019_contains",
+      "source_id": "sec_section__page_19_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p019",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 19,
+        "chunk_id": "ARE_2016_17_p019"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_centre_centre_for_incubation_has_centre",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_centre_for_incubation",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 20,
+        "chunk_id": "ARE_2016_17_p020"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_prog_ph_d__degree_offers_prog",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "OFFERS_PROGRAM",
+      "target_id": "prog_ph_d__degree",
+      "target_label": "Program",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 20,
+        "chunk_id": "ARE_2016_17_p020"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_20__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_20_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 20,
+        "chunk_id": "ARE_2016_17_p020"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_20__ARE_2016_17_p020_contains",
+      "source_id": "sec_section__page_20_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p020",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 20,
+        "chunk_id": "ARE_2016_17_p020"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_21__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_21_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 21,
+        "chunk_id": "ARE_2016_17_p021"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_21__ARE_2016_17_p021_contains",
+      "source_id": "sec_section__page_21_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p021",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 21,
+        "chunk_id": "ARE_2016_17_p021"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_22__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_22_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 22,
+        "chunk_id": "ARE_2016_17_p022"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_22__ARE_2016_17_p022_contains",
+      "source_id": "sec_section__page_22_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p022",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 22,
+        "chunk_id": "ARE_2016_17_p022"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_dept_school_of_mines_in_dhanbad_has_dept",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_DEPARTMENT",
+      "target_id": "dept_school_of_mines_in_dhanbad",
+      "target_label": "Department",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 23,
+        "chunk_id": "ARE_2016_17_p023"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_prog_ph_d__programme_will_broaden_the_ho_offers_prog",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "OFFERS_PROGRAM",
+      "target_id": "prog_ph_d__programme_will_broaden_the_ho",
+      "target_label": "Program",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 23,
+        "chunk_id": "ARE_2016_17_p023"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_23__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_23_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 23,
+        "chunk_id": "ARE_2016_17_p023"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_23__ARE_2016_17_p023_contains",
+      "source_id": "sec_section__page_23_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p023",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 23,
+        "chunk_id": "ARE_2016_17_p023"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_24__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_24_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 24,
+        "chunk_id": "ARE_2016_17_p024"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_24__ARE_2016_17_p024_contains",
+      "source_id": "sec_section__page_24_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p024",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 24,
+        "chunk_id": "ARE_2016_17_p024"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_dept_school_of_tunis_has_dept",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_DEPARTMENT",
+      "target_id": "dept_school_of_tunis",
+      "target_label": "Department",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 25,
+        "chunk_id": "ARE_2016_17_p025"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_centre_institute_of_geonics_has_centre",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_CENTRE",
+      "target_id": "centre_institute_of_geonics",
+      "target_label": "Centre",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 25,
+        "chunk_id": "ARE_2016_17_p025"
+      }
+    },
+    {
+      "relation_id": "rel_uni_are_2016_17_sec_section__page_25__has_section",
+      "source_id": "uni_are_2016_17",
+      "source_label": "University",
+      "relation_type": "HAS_SECTION",
+      "target_id": "sec_section__page_25_",
+      "target_label": "Section",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 25,
+        "chunk_id": "ARE_2016_17_p025"
+      }
+    },
+    {
+      "relation_id": "rel_sec_section__page_25__ARE_2016_17_p025_contains",
+      "source_id": "sec_section__page_25_",
+      "source_label": "Section",
+      "relation_type": "CONTAINS_CHUNK",
+      "target_id": "ARE_2016_17_p025",
+      "target_label": "Chunk",
+      "properties": {},
+      "provenance": {
+        "pdf_filename": "ARE-2016-17.pdf",
+        "page_number": 25,
+        "chunk_id": "ARE_2016_17_p025"
+      }
+    }
+  ]
+}

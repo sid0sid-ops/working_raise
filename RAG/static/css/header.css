@@ -1,0 +1,125 @@
+/* Top Headers & Title Bar */
+.home-header {
+    height: 60px;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.home-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.home-brand-logo {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text-primary);
+}
+
+.home-brand-sub {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding-left: 8px;
+    border-left: 1px solid var(--card-border-subtle);
+}
+
+.home-header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.header-action-btn:hover {
+    background: var(--card-surface-high);
+    color: var(--text-primary);
+}
+
+.page-header {
+    height: 64px;
+    padding: 0 24px;
+    border-bottom: 1px solid var(--card-border);
+    background: var(--bg-app);
+}
+
+.header-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-home-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.back-home-btn:hover {
+    background: var(--card-surface);
+    color: var(--text-primary);
+}
+
+.project-title-input {
+    background: transparent;
+    border: none;
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+    outline: none;
+    min-width: 220px;
+}
+
+.project-title-input:hover,
+.project-title-input:focus {
+    background: var(--card-bg);
+}
+
+.mobile-tab-bar {
+    display: none;
+    gap: 8px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}

@@ -1,0 +1,23 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	intent_analyzer(intent_analyzer)
+	vector_retriever(vector_retriever)
+	graph_traverser(graph_traverser)
+	synthesizer_verifier(synthesizer_verifier)
+	corrective_expander(corrective_expander)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> intent_analyzer;
+	corrective_expander --> vector_retriever;
+	graph_traverser --> synthesizer_verifier;
+	intent_analyzer --> vector_retriever;
+	synthesizer_verifier -. &nbsp;finalize&nbsp; .-> __end__;
+	synthesizer_verifier -. &nbsp;expand&nbsp; .-> corrective_expander;
+	vector_retriever --> graph_traverser;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

@@ -1,0 +1,63 @@
+/* Knowledge Graph Studio */
+.studio-panel {
+    display: none;
+    flex: 1;
+}
+
+.studio-panel.active {
+    display: flex;
+}
+
+.studio-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.studio-status-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: var(--radius-md);
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    font-size: 12px;
+    color: #10b981;
+}
+
+.studio-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.studio-textarea {
+    width: 100%;
+    background: var(--card-surface);
+    border: 1px solid var(--card-border-subtle);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: 10px;
+    outline: none;
+}
+
+.studio-output {
+    background: #000000;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    padding: 12px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: #34d399;
+    max-height: 250px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
