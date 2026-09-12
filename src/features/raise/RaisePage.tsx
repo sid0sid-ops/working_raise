@@ -2855,8 +2855,8 @@ export const RaisePage: React.FC = () => {
         <main
           className={`w-full max-w-2xl mx-auto px-[clamp(0.75rem,3vw,1.25rem)] ${
             conversation.length === 0
-              ? 'py-3 sm:py-6 flex-1 flex flex-col justify-start sm:justify-center min-h-full sm:-translate-y-6'
-              : 'pt-2 pb-8 flex flex-col'
+              ? 'flex-1 flex flex-col justify-between sm:justify-center min-h-full py-4 sm:py-6 sm:-translate-y-6'
+              : 'pt-2 pb-4 sm:pb-6 flex-1 flex flex-col justify-between min-h-full'
           } transition-all duration-300`}
         >
         {/* Hero Title & Welcome - Only visible before a question is asked / when conversation is empty */}
@@ -3535,9 +3535,12 @@ export const RaisePage: React.FC = () => {
           </div>
         )}
 
-        {/* Smart Jump-to-Bottom Button - Only visible when user moves/scrolls upward */}
+        {/* End of message stream anchor */}
+        <div ref={messagesEndRef} className="h-px -mt-px pointer-events-none scroll-m-24" />
+
+        {/* Smart Jump-to-Bottom Button - Floats cleanly above sticky query container */}
         {showScrollToBottom && conversation.length > 0 && (
-          <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 animate-in fade-in slide-in-from-bottom-2 duration-150 pointer-events-auto">
+          <div className="fixed bottom-20 sm:bottom-24 left-1/2 -translate-x-1/2 z-40 animate-in fade-in slide-in-from-bottom-2 duration-150 pointer-events-auto">
             <button
               type="button"
               onClick={scrollToBottom}
@@ -3559,15 +3562,17 @@ export const RaisePage: React.FC = () => {
           </div>
         )}
 
-        {/* RAGQueryInterface - RAISE Input Container (In-flow below latest question/answer) */}
+        {/* RAGQueryInterface - RAISE Input Container (Gemini-aligned sticky bottom docking) */}
         <section
+          data-purpose="rag-prompt-container"
           className={`transition-all duration-300 w-full ${
             addSourceMenuOpen === 'input' ? '-translate-y-2.5 sm:translate-y-0' : 'translate-y-0'
           } ${
             conversation.length > 0
-              ? 'relative mt-4 sm:mt-6 mb-8 z-20'
+              ? 'sticky bottom-[max(0.5rem,env(safe-area-inset-bottom))] sm:bottom-4 z-30 mt-auto'
               : 'relative mb-1 sm:mb-0'
           }`}
+        >
           {/* Ambient Glow & Shimmer Sweep - Only visible on new chat / empty state (vanishes after first query) */}
           {conversation.length === 0 && (
             <div aria-hidden="true" className="query-aura-glow animate-in fade-in duration-300" />
@@ -4192,7 +4197,6 @@ export const RaisePage: React.FC = () => {
             )}
           </div>
         </section>
-        <div ref={messagesEndRef} className="h-px -mt-px pointer-events-none" />
       </main>
     </div>
 
