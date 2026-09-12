@@ -2853,11 +2853,11 @@ export const RaisePage: React.FC = () => {
         }`}
       >
         <main
-          className={`flex-1 w-full max-w-2xl mx-auto px-[clamp(0.75rem,3vw,1.25rem)] ${
+          className={`w-full max-w-2xl mx-auto px-[clamp(0.75rem,3vw,1.25rem)] ${
             conversation.length === 0
-              ? 'py-6 justify-center min-h-full'
-              : 'pt-2 pb-24 sm:pb-28 justify-between min-h-full'
-          } flex flex-col transition-all duration-300`}
+              ? 'py-6 justify-center min-h-full flex-1 flex flex-col'
+              : 'pt-2 pb-8 flex flex-col'
+          } transition-all duration-300`}
         >
         {/* Hero Title & Welcome - Only visible before a question is asked / when conversation is empty */}
         {conversation.length === 0 && (
@@ -3532,19 +3532,18 @@ export const RaisePage: React.FC = () => {
               )}
             </div>
           )}
-            <div ref={messagesEndRef} />
           </div>
         )}
 
         {/* Smart Jump-to-Bottom Button - Only visible when user moves/scrolls upward */}
         {showScrollToBottom && conversation.length > 0 && (
-          <div className="flex justify-center mb-2 animate-in fade-in slide-in-from-bottom-2 duration-150">
+          <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 animate-in fade-in slide-in-from-bottom-2 duration-150 pointer-events-auto">
             <button
               type="button"
               onClick={scrollToBottom}
               aria-label="Scroll to latest response"
               title="Resume smooth scroll to bottom"
-              className="bg-white/95 dark:bg-[#151928]/95 hover:bg-slate-50 dark:hover:bg-[#1c2236] text-slate-700 dark:text-slate-200 border border-slate-300/90 dark:border-white/15 px-3 py-1.5 rounded-full shadow-md hover:shadow-lg backdrop-blur-md flex items-center gap-1.5 text-xs font-medium active:scale-95 transition-all cursor-pointer group"
+              className="bg-white/95 dark:bg-[#151928]/95 hover:bg-slate-50 dark:hover:bg-[#1c2236] text-slate-700 dark:text-slate-200 border border-slate-300/90 dark:border-white/15 px-3.5 py-1.5 rounded-full shadow-lg hover:shadow-xl backdrop-blur-md flex items-center gap-1.5 text-xs font-medium active:scale-95 transition-all cursor-pointer group"
             >
               <svg
                 className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400 group-hover:translate-y-0.5 transition-transform"
@@ -3560,13 +3559,13 @@ export const RaisePage: React.FC = () => {
           </div>
         )}
 
-        {/* RAGQueryInterface - RAISE Input Container */}
+        {/* RAGQueryInterface - RAISE Input Container (In-flow below latest question/answer) */}
         <section
           className={`transition-all duration-300 w-full ${
             addSourceMenuOpen === 'input' ? '-translate-y-2.5 sm:translate-y-0' : 'translate-y-0'
           } ${
             conversation.length > 0
-              ? 'sticky bottom-[max(0.5rem,env(safe-area-inset-bottom))] sm:bottom-[max(1rem,env(safe-area-inset-bottom))] z-30 mt-auto'
+              ? 'relative mt-4 sm:mt-6 mb-8 z-20'
               : 'relative mb-1 sm:mb-0'
           }`}
           data-purpose="rag-prompt-container"
@@ -4175,6 +4174,7 @@ export const RaisePage: React.FC = () => {
             )}
           </div>
         </section>
+        <div ref={messagesEndRef} className="h-px -mt-px pointer-events-none" />
       </main>
     </div>
 
