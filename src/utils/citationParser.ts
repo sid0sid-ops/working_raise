@@ -87,6 +87,9 @@ export function cleanRagResponseText(
   // 1. Strip non-printable control characters (except \t, \n, \r)
   let text = rawText.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '');
 
+  // Strip literal escaped control character sequences (e.g. \x08, \u0008)
+  text = text.replace(/\\x0[0-8bBcCeEfF]|\\x1[0-9a-fA-F]|\\x7[fF]|\\u000[0-8bBcCeEfF]|\\u001[0-9a-fA-F]/g, '');
+
   // 2. Normalize newlines
   text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
 
@@ -142,11 +145,12 @@ export function cleanRagResponseText(
   text = text.replace(/[ \t]+(\[\d+\])/g, ' $1');
   text = text.replace(/(\[\d+\])\s*:/g, '$1:');
 
-  // Separate bullets onto distinct lines
+  // Separate bullets onto distinct lines (including glued bullets without space)
+  text = text.replace(/([^\n])\s*•\s*/g, '$1\n\n• ');
   text = text.replace(/\s*•\s*/g, '\n\n• ').trim();
 
-  // Clean title + citation + colon followed by spaces into clean layout
-  text = text.replace(/•\s*(\*\*[^*]+\*\*)\s*(\[\d+\])?\s*[:—–-]?\s{2,}/g, (_, title, cit) => {
+  // Clean title + citation + colon followed by space(s) into clean indented layout
+  text = text.replace(/•\s*(\*\*[^*]+\*\*)\s*(\[\d+\])?\s*[:—–-]?\s+/g, (_, title, cit) => {
     return `• ${title}${cit ? ` ${cit}` : ''}\n  `;
   });
 

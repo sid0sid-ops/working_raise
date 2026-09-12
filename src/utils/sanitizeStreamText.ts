@@ -38,5 +38,14 @@ export function sanitizeStreamText(text: string): string {
   // 4. Strip non-printable control characters (except \t, \n, \r) like \x08 backspaces
   cleaned = cleaned.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '');
 
+  // 5. Strip literal escaped control character sequences from PDF/OCR extractors (e.g. \x08, \u0008)
+  cleaned = cleaned.replace(/\\x0[0-8bBcCeEfF]|\\x1[0-9a-fA-F]|\\x7[fF]|\\u000[0-8bBcCeEfF]|\\u001[0-9a-fA-F]/g, '');
+
+  // 6. Ensure double newlines before bullets so glued list items (e.g. "...text• **Title**") are properly spaced
+  cleaned = cleaned.replace(/([^\n])\s*•\s*/g, '$1\n\n• ');
+
+  // 7. Normalize excess blank lines
+  cleaned = cleaned.replace(/\n{3,}/g, '\n\n');
+
   return cleaned;
 }
