@@ -149,13 +149,20 @@ export function cleanRagResponseText(
   text = text.replace(/([^\n])\s*•\s*/g, '$1\n\n• ');
   text = text.replace(/\s*•\s*/g, '\n\n• ').trim();
 
+  // Support standard Markdown hyphens (- ) and asterisks (* ) as well
+  text = text.replace(/([^\n])\n(- \*\*)/g, '$1\n\n$2');
+  text = text.replace(/([^\n])\n(-\s+)/g, '$1\n\n$2');
+  text = text.replace(/([^\n])\n(\*\s+)/g, '$1\n\n$2');
+  text = text.replace(/([^\n])\s*-\s+\*\*/g, '$1\n\n- **');
+
   // Clean title + citation + colon followed by space(s) into clean indented layout
-  text = text.replace(/•\s*(\*\*[^*]+\*\*)\s*(\[\d+\])?\s*[:—–-]?\s+/g, (_, title, cit) => {
-    return `• ${title}${cit ? ` ${cit}` : ''}\n  `;
+  text = text.replace(/([•\-])\s*(\*\*[^*]+\*\*)\s*(\[\d+\])?\s*[:—–-]?\s+/g, (_, bullet, title, cit) => {
+    return `${bullet} ${title}${cit ? ` ${cit}` : ''}\n  `;
   });
 
   // Separate numbered lists that were inline (e.g., "Intro: 1. **Title**")
   text = text.replace(/([.:;!?])\s+(\d+\.)\s+\*\*/g, '$1\n\n$2 **');
+  text = text.replace(/([^\n])\n(\d+\.\s+\*\*)/g, '$1\n\n$2');
 
   // Strip trailing whitespace per line and collapse 3+ consecutive linebreaks to 2
   text = text.replace(/[ \t]+$/gm, '');

@@ -157,11 +157,22 @@ function parseMarkdownBlocks(text: string): Block[] {
       }
     }
 
-    // 7. Ordered List: 1. Item
+    // 7. Ordered List: 1. item
     if (/^\s*\d+\.\s+/.test(line)) {
       const items: { num: string; text: string; indent: number }[] = [];
       while (i < lines.length) {
         const currentLine = lines[i];
+        if (!currentLine.trim()) {
+          let nextIdx = i + 1;
+          while (nextIdx < lines.length && !lines[nextIdx].trim()) {
+            nextIdx++;
+          }
+          if (nextIdx < lines.length && /^\s*\d+\.\s+/.test(lines[nextIdx])) {
+            i = nextIdx;
+            continue;
+          }
+          break;
+        }
         const match = currentLine.match(/^(\s*)(\d+)\.\s+(.*)$/);
         if (match) {
           const indent = Math.floor(match[1].length / 2);
@@ -185,11 +196,22 @@ function parseMarkdownBlocks(text: string): Block[] {
       continue;
     }
 
-    // 8. Unordered List: - item or * item
+    // 8. Unordered List: - item, * item, or • item
     if (/^\s*([*\-•])\s+/.test(line)) {
       const items: { text: string; indent: number }[] = [];
       while (i < lines.length) {
         const currentLine = lines[i];
+        if (!currentLine.trim()) {
+          let nextIdx = i + 1;
+          while (nextIdx < lines.length && !lines[nextIdx].trim()) {
+            nextIdx++;
+          }
+          if (nextIdx < lines.length && /^\s*([*\-•])\s+/.test(lines[nextIdx])) {
+            i = nextIdx;
+            continue;
+          }
+          break;
+        }
         const match = currentLine.match(/^(\s*)([*\-•])\s+(.*)$/);
         if (match) {
           const indent = Math.floor(match[1].length / 2);

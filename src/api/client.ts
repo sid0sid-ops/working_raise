@@ -355,19 +355,28 @@ class ApiClient {
           return;
         }
 
-        let payload = trimmed;
-        if (payload.startsWith('data:')) {
-          payload = payload.slice(5).trim();
+        // Ignore SSE event declaration lines (e.g. "event: ping", "event: stage")
+        if (trimmed.startsWith('event:')) {
+          return;
         }
 
-        if (!payload || payload === '[DONE]') {
+        let payload = line;
+        let isData = false;
+        if (payload.startsWith('data:')) {
+          isData = true;
+          // Strip "data:" prefix and optional single leading space, but PRESERVE trailing spaces/newlines!
+          payload = payload.slice(5).replace(/^[ \t]/, '');
+        }
+
+        if (!payload || payload.trim() === '[DONE]') {
           return;
         }
 
         // Handle JSON payloads: {"token": "..."} or {"text": "..."} or {"content": "..."}
-        if (payload.startsWith('{') && payload.endsWith('}')) {
+        const trimmedPayload = payload.trim();
+        if (trimmedPayload.startsWith('{') && trimmedPayload.endsWith('}')) {
           try {
-            const parsed = JSON.parse(payload);
+            const parsed = JSON.parse(trimmedPayload);
             const token =
               parsed.token ??
               parsed.text ??
@@ -385,7 +394,7 @@ class ApiClient {
             }
           } catch {
             // Malformed JSON block: attempt unpacking via sanitizeStreamText
-            const unpacked = sanitizeStreamText(payload);
+            const unpacked = sanitizeStreamText(trimmedPayload);
             if (unpacked && !unpacked.startsWith('{')) {
               fullText += unpacked;
               onChunk?.(unpacked, fullText);
@@ -396,16 +405,16 @@ class ApiClient {
         }
 
         // If it was an explicit SSE "data: ..." line that is plain text
-        if (trimmed.startsWith('data:')) {
-          fullText += payload;
-          onChunk?.(payload, fullText);
+        if (isData) {
+          fullText += payload + '\n';
+          onChunk?.(payload + '\n', fullText);
           return;
         }
 
         // If plain text line (not JSON)
-        if (!payload.startsWith('{') && !payload.startsWith('[')) {
-          fullText += line;
-          onChunk?.(line, fullText);
+        if (!trimmedPayload.startsWith('{') && !trimmedPayload.startsWith('[')) {
+          fullText += line + '\n';
+          onChunk?.(line + '\n', fullText);
         }
       };
 
