@@ -25,7 +25,15 @@ export const config: AppConfig = {
 export const getStoredTunnelUrl = (): string => {
   if (typeof window === 'undefined') return '';
   try {
-    return localStorage.getItem('raise_tunnel_url') || localStorage.getItem('raise_gateway_url') || '';
+    const tunnel = localStorage.getItem('raise_tunnel_url');
+    if (tunnel && tunnel.trim() !== '' && !tunnel.includes('localhost') && !tunnel.includes('127.0.0.1')) {
+      return tunnel.trim();
+    }
+    const gateway = localStorage.getItem('raise_gateway_url');
+    if (gateway && gateway.trim() !== '' && !gateway.includes('localhost') && !gateway.includes('127.0.0.1')) {
+      return gateway.trim();
+    }
+    return '';
   } catch {
     return '';
   }
