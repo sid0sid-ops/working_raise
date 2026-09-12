@@ -4131,25 +4131,40 @@ export const RaisePage: React.FC = () => {
                     formatVoiceDuration={formatVoiceDuration}
                   />
 
-                  {Boolean(query.trim() || isLoading) && (
-                    <button
-                      type="button"
-                      onClick={isLoading ? handleAbortActiveQuery : handleExecuteQuery}
-                      disabled={!isLoading && !query.trim()}
-                      title={isLoading ? 'Stop generating' : 'Send question'}
-                      aria-label={isLoading ? 'Stop generating query process' : 'Execute RAG Query'}
-                      className={`${conversation.length === 0 ? 'w-7.5 h-7.5 sm:w-8 sm:h-8' : 'w-6.5 h-6.5 sm:w-8 sm:h-8'} rounded-full bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-black dark:hover:bg-slate-200 active:scale-90 transition-all flex items-center justify-center shadow-md active-glow hover:shadow-indigo-500/50 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed animate-in fade-in zoom-in-75 duration-150`}
-                    >
-                      {isLoading ? (
-                        /* Circular button with a rectangle inside it */
-                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-xs bg-white dark:bg-black" />
-                      ) : (
-                        <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white dark:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path d="M5 10l7-7m0 0l7 7m-7-7v18" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" />
-                        </svg>
-                      )}
-                    </button>
-                  )}
+                  {/* Right-Aligned Action: Submit / Arrow Button (Gemini-style: grayed out when empty, high-contrast when text/docs ready) */}
+                  <button
+                    type="button"
+                    onClick={isLoading ? handleAbortActiveQuery : handleExecuteQuery}
+                    disabled={!isLoading && !query.trim()}
+                    title={isLoading ? 'Stop generating' : query.trim() ? 'Send question' : 'Enter a prompt to submit'}
+                    aria-label={isLoading ? 'Stop generating query process' : 'Execute RAG Query'}
+                    className={`${
+                      conversation.length === 0 ? 'w-7.5 h-7.5 sm:w-8 sm:h-8' : 'w-6.5 h-6.5 sm:w-8 sm:h-8'
+                    } rounded-full transition-all flex items-center justify-center shrink-0 ${
+                      isLoading
+                        ? 'bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-black dark:hover:bg-slate-200 shadow-md cursor-pointer active:scale-95'
+                        : query.trim() || selectedDocs.length > 0
+                        ? 'bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-black dark:hover:bg-slate-200 shadow-md cursor-pointer active:scale-95'
+                        : 'bg-slate-200/70 text-slate-400 dark:bg-white/10 dark:text-slate-500 cursor-not-allowed opacity-60'
+                    }`}
+                  >
+                    {isLoading ? (
+                      <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-xs bg-white dark:bg-black" />
+                    ) : (
+                      <svg
+                        className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${
+                          query.trim() || selectedDocs.length > 0
+                            ? 'text-white dark:text-black'
+                            : 'text-slate-400 dark:text-slate-500'
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M5 10l7-7m0 0l7 7m-7-7v18" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" />
+                      </svg>
+                    )}
+                  </button>
                 </div>
               </div>
             </div>
