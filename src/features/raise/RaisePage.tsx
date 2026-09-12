@@ -2715,7 +2715,7 @@ export const RaisePage: React.FC = () => {
   };
 
   return (
-    <div className="bg-dot-pattern text-slate-900 dark:text-slate-100 min-h-screen antialiased flex flex-col font-sans select-none overflow-x-hidden relative">
+    <div className="bg-dot-pattern text-slate-900 dark:text-slate-100 min-h-screen antialiased flex flex-col font-sans select-none overflow-x-clip relative">
       {/* TopNavigationBar — Modular Header */}
       <MainHeader
         activeSourcesCount={activeSourcesCount}
@@ -2843,8 +2843,8 @@ export const RaisePage: React.FC = () => {
         <main
           className={`flex-1 w-full max-w-2xl mx-auto px-[clamp(0.75rem,3vw,1.25rem)] ${
             conversation.length === 0
-              ? `${hasTopNotice ? 'pt-28' : 'pt-18'} sm:pt-0 pb-3 sm:pb-0 justify-between sm:justify-center min-h-[calc(100dvh-4rem)] sm:min-h-screen sm:-translate-y-10`
-              : `${hasTopNotice ? 'pt-28 sm:pt-24' : 'pt-[clamp(4.25rem,9vh,5.5rem)] sm:pt-20'} pb-[clamp(0.75rem,2.5vw,1.25rem)] sm:pb-8 justify-between min-h-[calc(100dvh-4rem)] sm:min-h-screen`
+              ? `${hasTopNotice ? 'pt-20 sm:pt-0' : 'pt-14 sm:pt-0'} pb-6 sm:pb-0 justify-center min-h-[calc(100dvh-3.5rem)] sm:min-h-screen sm:-translate-y-10`
+              : `${hasTopNotice ? 'pt-28 sm:pt-24' : 'pt-[clamp(4.25rem,9vh,5.5rem)] sm:pt-20'} pb-24 sm:pb-28 justify-between min-h-[calc(100dvh-3.5rem)] sm:min-h-screen`
           } flex flex-col transition-all duration-300`}
         >
         {/* Hero Title & Welcome - Only visible before a question is asked / when conversation is empty */}
@@ -2885,7 +2885,9 @@ export const RaisePage: React.FC = () => {
                     setQuery(item.query);
                     textareaRef.current?.focus();
                   }}
-                  className="p-3 text-left rounded-xl border border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-white/[0.03] hover:bg-indigo-50/70 dark:hover:bg-white/[0.07] hover:border-indigo-300 dark:hover:border-indigo-500/40 transition-all cursor-pointer group shadow-2xs flex flex-col justify-between gap-2"
+                  className={`p-3 text-left rounded-xl border border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-white/[0.03] hover:bg-indigo-50/70 dark:hover:bg-white/[0.07] hover:border-indigo-300 dark:hover:border-indigo-500/40 transition-all cursor-pointer group shadow-2xs flex-col justify-between gap-2 ${
+                    idx >= 2 ? 'hidden sm:flex' : 'flex'
+                  }`}
                 >
                   <p className="text-xs text-slate-800 dark:text-slate-200 font-medium leading-relaxed group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors line-clamp-2">
                     {item.query}
