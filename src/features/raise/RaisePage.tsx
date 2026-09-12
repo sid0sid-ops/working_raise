@@ -3570,7 +3570,11 @@ export const RaisePage: React.FC = () => {
           }`}
           data-purpose="rag-prompt-container"
         >
+          <div aria-hidden="true" className="query-aura-glow" />
+
           <div className="interactive-query-box">
+            <div aria-hidden="true" className="beam-shimmer-sweep" />
+
             {/* Keyboard-navigable suggestions dropdown - compact small box without instructions or enter button */}
             {showSuggestions && filteredSuggestions.length > 0 && (
               <div
