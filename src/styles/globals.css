@@ -196,33 +196,9 @@ html.dark .tag-badge,
   z-index: 10;
 }
 
-.query-aura-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(calc(-50% + var(--box-light-offset-x, 0px)), calc(-50% + var(--box-light-offset-y, 0px)));
-  width: var(--box-light-width, 115%);
-  height: var(--box-light-height, 135%);
-  border-radius: 9999px;
-  pointer-events: none;
-  z-index: 0;
-  background: var(--box-light-gradient, radial-gradient(ellipse 100% 100% at 50% 50%, rgba(99, 102, 241, 0.85) 20%, rgba(168, 85, 247, 0.45) 55%, transparent 90%));
-  filter: blur(var(--box-light-blur, 48px));
-  opacity: var(--box-light-opacity-dark, 0.70);
-  transition: opacity 0.25s ease, filter 0.25s ease;
-  will-change: transform, opacity, filter;
-  animation: var(--box-light-animation, none);
-}
-
-html:not(.dark) .query-aura-glow,
-html.light .query-aura-glow,
-[data-theme="light"] .query-aura-glow {
-  opacity: var(--box-light-opacity-light, 0.45);
-}
-
-/* Hide glow during active conversation if configured for new-chat-only */
-section.sticky .query-aura-glow {
-  display: var(--box-light-active-chat-display, none);
+.query-aura-glow,
+.beam-shimmer-sweep {
+  display: none !important;
 }
 
 .query-aura-pulse {
