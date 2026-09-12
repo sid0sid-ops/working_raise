@@ -745,6 +745,7 @@ export const RaisePage: React.FC = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const contentContainerRef = useRef<HTMLDivElement>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
   const isUserAbortingRef = useRef<boolean>(false);
   const isUnmountedRef = useRef<boolean>(false);
@@ -1129,8 +1130,11 @@ export const RaisePage: React.FC = () => {
 
     const isContentBelowFold = (): boolean => {
       if (conversation.length === 0) return false;
-      const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
-      const clientHeight = window.innerHeight;
+      const container = contentContainerRef.current;
+      const scrollHeight = container
+        ? container.scrollHeight
+        : (document.documentElement.scrollHeight || document.body.scrollHeight);
+      const clientHeight = container ? container.clientHeight : window.innerHeight;
       // If the document has no overflow (entire content fits in screen), nothing below
       if (scrollHeight <= clientHeight + 60) return false;
 
@@ -1142,7 +1146,7 @@ export const RaisePage: React.FC = () => {
         }
       }
 
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollTop = container ? container.scrollTop : (window.scrollY || document.documentElement.scrollTop);
       const distanceFromBottom = scrollHeight - (scrollTop + clientHeight);
       return distanceFromBottom > 90;
     };
@@ -1182,12 +1186,15 @@ export const RaisePage: React.FC = () => {
       }
     }, 100);
 
+    const containerEl = contentContainerRef.current;
+    containerEl?.addEventListener('scroll', checkScrollPosition, { passive: true });
     window.addEventListener('scroll', checkScrollPosition, { passive: true });
     window.addEventListener('wheel', handleWheel, { passive: true });
     window.addEventListener('resize', checkScrollPosition, { passive: true });
 
     return () => {
       clearTimeout(timer);
+      containerEl?.removeEventListener('scroll', checkScrollPosition);
       window.removeEventListener('scroll', checkScrollPosition);
       window.removeEventListener('wheel', handleWheel);
       window.removeEventListener('resize', checkScrollPosition);
@@ -2715,7 +2722,7 @@ export const RaisePage: React.FC = () => {
   };
 
   return (
-    <div className="bg-dot-pattern text-slate-900 dark:text-slate-100 min-h-screen antialiased flex flex-col font-sans select-none overflow-x-clip relative">
+    <div className="bg-dot-pattern text-slate-900 dark:text-slate-100 h-screen h-dvh max-h-screen max-h-dvh antialiased flex flex-col font-sans select-none overflow-hidden relative">
       {/* TopNavigationBar — Modular Header */}
       <MainHeader
         activeSourcesCount={activeSourcesCount}
@@ -2838,13 +2845,18 @@ export const RaisePage: React.FC = () => {
         onViewPdf={handleOpenPdfViewer}
       />
 
-      {/* MainContent Area offset for collapsed rail */}
-      <div className="flex-1 flex flex-col pl-0 sm:pl-16 w-full min-w-0 relative z-10">
+      {/* MainContent Area offset for collapsed rail - positioned below header so content never goes under header */}
+      <div
+        ref={contentContainerRef}
+        className={`flex-1 flex flex-col pl-0 sm:pl-16 w-full min-w-0 relative z-10 overflow-y-auto overflow-x-hidden ${
+          hasTopNotice ? 'mt-24 sm:mt-24' : 'mt-14 sm:mt-16'
+        }`}
+      >
         <main
           className={`flex-1 w-full max-w-2xl mx-auto px-[clamp(0.75rem,3vw,1.25rem)] ${
             conversation.length === 0
-              ? `${hasTopNotice ? 'pt-20 sm:pt-0' : 'pt-14 sm:pt-0'} pb-6 sm:pb-0 justify-center min-h-[calc(100dvh-3.5rem)] sm:min-h-screen sm:-translate-y-10`
-              : `${hasTopNotice ? 'pt-28 sm:pt-24' : 'pt-[clamp(4.25rem,9vh,5.5rem)] sm:pt-20'} pb-24 sm:pb-28 justify-between min-h-[calc(100dvh-3.5rem)] sm:min-h-screen`
+              ? 'py-6 justify-center min-h-full'
+              : 'pt-2 pb-24 sm:pb-28 justify-between min-h-full'
           } flex flex-col transition-all duration-300`}
         >
         {/* Hero Title & Welcome - Only visible before a question is asked / when conversation is empty */}

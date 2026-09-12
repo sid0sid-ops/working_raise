@@ -17,7 +17,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header
       id="mainTopHeader"
-      className="fixed top-0 left-0 sm:left-16 right-0 z-[55] main-top-header-bg border-b border-slate-200/80 dark:border-white/[0.08] px-0 sm:px-4 h-14 sm:h-16 flex items-center justify-between pointer-events-auto select-none transition-colors duration-200"
+      className="fixed top-0 left-0 sm:left-16 right-0 z-[55] bg-transparent border-b-0 border-transparent px-0 sm:px-4 h-14 sm:h-16 flex items-center justify-between pointer-events-auto select-none transition-colors duration-200"
       data-purpose="main-navigation"
     >
       {/* Brand & Mobile Hamburger Menu */}
