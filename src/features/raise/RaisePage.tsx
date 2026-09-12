@@ -2855,7 +2855,7 @@ export const RaisePage: React.FC = () => {
         <main
           className={`w-full max-w-2xl mx-auto px-[clamp(0.75rem,3vw,1.25rem)] ${
             conversation.length === 0
-              ? 'py-6 justify-center min-h-full flex-1 flex flex-col'
+              ? 'py-3 sm:py-6 flex-1 flex flex-col justify-start sm:justify-center min-h-full sm:-translate-y-6'
               : 'pt-2 pb-8 flex flex-col'
           } transition-all duration-300`}
         >
@@ -3568,12 +3568,15 @@ export const RaisePage: React.FC = () => {
               ? 'relative mt-4 sm:mt-6 mb-8 z-20'
               : 'relative mb-1 sm:mb-0'
           }`}
-          data-purpose="rag-prompt-container"
-        >
-          <div aria-hidden="true" className="query-aura-glow" />
+          {/* Ambient Glow & Shimmer Sweep - Only visible on new chat / empty state (vanishes after first query) */}
+          {conversation.length === 0 && (
+            <div aria-hidden="true" className="query-aura-glow animate-in fade-in duration-300" />
+          )}
 
           <div className="interactive-query-box">
-            <div aria-hidden="true" className="beam-shimmer-sweep" />
+            {conversation.length === 0 && (
+              <div aria-hidden="true" className="beam-shimmer-sweep" />
+            )}
 
             {/* Keyboard-navigable suggestions dropdown - compact small box without instructions or enter button */}
             {showSuggestions && filteredSuggestions.length > 0 && (

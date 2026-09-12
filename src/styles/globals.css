@@ -220,7 +220,8 @@ html.light .query-aura-glow,
   opacity: var(--box-light-opacity-light, 0.45);
 }
 
-/* Hide glow during active conversation if configured for new-chat-only */
+/* Hide glow during active conversation */
+section[data-purpose="rag-prompt-container"].relative .query-aura-glow,
 section.sticky .query-aura-glow {
   display: var(--box-light-active-chat-display, none);
 }
