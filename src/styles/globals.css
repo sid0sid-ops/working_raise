@@ -147,6 +147,21 @@ html.dark .bg-dot-pattern::before,
   background-image: radial-gradient(var(--grid-dot-color-dark, rgba(255, 255, 255, 0.36)) var(--grid-dot-size, 1px), transparent var(--grid-dot-size, 1px));
 }
 
+/* Fixed Main Top Header with seamless dot-pattern background matching the workstation theme */
+.main-top-header-bg {
+  background-color: #f8fafc;
+  background-image: radial-gradient(var(--grid-dot-color, rgba(15, 23, 42, 0.76)) var(--grid-dot-size, 1px), transparent var(--grid-dot-size, 1px));
+  background-size: var(--grid-spacing, 34px) var(--grid-spacing, 34px);
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+html.dark .main-top-header-bg,
+[data-theme="dark"] .main-top-header-bg {
+  background-color: #0e1017;
+  background-image: radial-gradient(var(--grid-dot-color-dark, rgba(255, 255, 255, 0.36)) var(--grid-dot-size, 1px), transparent var(--grid-dot-size, 1px));
+}
+
 /* Smooth custom scrollbars for horizontal chip trays and hidden scroll inputs/textareas */
 .no-scrollbar::-webkit-scrollbar,
 textarea.no-scrollbar::-webkit-scrollbar {
