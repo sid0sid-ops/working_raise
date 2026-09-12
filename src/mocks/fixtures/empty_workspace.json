@@ -1,0 +1,19 @@
+{
+  "query": "What startups were incubated?",
+  "query_type": "EMPTY_WORKSPACE",
+  "grounded_answer": "Please upload an academic PDF to begin your research.",
+  "answer": "Please upload an academic PDF to begin your research.",
+  "grounded": false,
+  "traceability_score": 0.0,
+  "verified_claims": [],
+  "citations": [],
+  "top_chunks": [],
+  "subgraph": {
+    "nodes": [],
+    "edges": []
+  },
+  "sources_count": 0,
+  "quality_gate_decision": "empty_workspace",
+  "execution_time": 0.0,
+  "message": "Please upload an academic PDF to begin your research."
+}

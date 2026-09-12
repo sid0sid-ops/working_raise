@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "uploaded_count": 1,
+  "reports": [
+    {
+      "filename": "IITMRP Annual Report.pdf",
+      "doc_id": "IITMRP_Annual_Report",
+      "pages_processed": 30,
+      "chunks_extracted": 73,
+      "facts_extracted": 14,
+      "triples_extracted": 28
+    }
+  ],
+  "total_nodes": 45,
+  "total_edges": 62
+}

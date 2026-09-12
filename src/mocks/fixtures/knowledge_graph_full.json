@@ -1,0 +1,68 @@
+{
+  "nodes": [
+    {
+      "id": "Startup_XYMA_Analytics",
+      "name": "XYMA Analytics",
+      "label": "XYMA Analytics",
+      "type": "Startup",
+      "color": "#e11d48",
+      "provenance": { "doc": "IITMRP Annual Report.pdf", "page": 16 }
+    },
+    {
+      "id": "Startup_Mindgrove",
+      "name": "Mindgrove Technologies",
+      "label": "Mindgrove",
+      "type": "Startup",
+      "color": "#e11d48",
+      "provenance": { "doc": "IITMRP Annual Report.pdf", "page": 18 }
+    },
+    {
+      "id": "Startup_NeoMotion",
+      "name": "NeoMotion",
+      "label": "NeoMotion",
+      "type": "Startup",
+      "color": "#e11d48",
+      "provenance": { "doc": "IITMRP Annual Report.pdf", "page": 22 }
+    },
+    {
+      "id": "Startup_AgniKul",
+      "name": "AgniKul Cosmos",
+      "label": "AgniKul",
+      "type": "Startup",
+      "color": "#e11d48",
+      "provenance": { "doc": "IITMRP Annual Report.pdf", "page": 25 }
+    },
+    {
+      "id": "Institution_IITM",
+      "name": "IIT Madras",
+      "label": "IIT Madras",
+      "type": "Institution",
+      "color": "#2563eb",
+      "provenance": { "doc": "IITMRP Annual Report.pdf", "page": 1 }
+    },
+    {
+      "id": "CoE_CNDE",
+      "name": "Centre for Non-Destructive Evaluation",
+      "label": "CNDE",
+      "type": "CoE",
+      "color": "#0d9488",
+      "provenance": { "doc": "IITMRP Annual Report.pdf", "page": 16 }
+    }
+  ],
+  "edges": [
+    {
+      "source": "Startup_XYMA_Analytics",
+      "target": "CoE_CNDE",
+      "relationship": "CO_DEVELOPED_WITH",
+      "provenance": { "page": 16 }
+    },
+    {
+      "source": "CoE_CNDE",
+      "target": "Institution_IITM",
+      "relationship": "AFFILIATED_WITH",
+      "provenance": { "page": 16 }
+    }
+  ],
+  "total_nodes": 6,
+  "total_edges": 2
+}

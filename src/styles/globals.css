@@ -1,0 +1,459 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+    --radius: 0.5rem;
+    --grid-dot-size: 1px;
+    --grid-dot-color: rgba(15, 23, 42, 0.76);
+    --grid-dot-color-dark: rgba(255, 255, 255, 0.36);
+    --grid-spacing: 34px;
+    --box-light-width: 115%;
+    --box-light-height: 135%;
+    --box-light-blur: 48px;
+    --box-light-offset-x: 0px;
+    --box-light-offset-y: 0px;
+    --box-light-opacity-light: 0.45;
+    --box-light-opacity-dark: 0.70;
+    --box-light-primary: #6366f1;
+    --box-light-secondary: #a855f7;
+    --box-light-gradient: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(99, 102, 241, 0.85) 20%, rgba(168, 85, 247, 0.45) 55%, transparent 90%);
+  }
+
+  .dark,
+  [data-theme="dark"] {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 14%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 14%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 33% 22%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 224 76% 48%;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html.light * {
+    border-color: rgba(226, 232, 240, 0.9);
+  }
+
+  html.dark * {
+    border-color: #27272a;
+  }
+
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  html.dark body,
+  [data-theme="dark"] body {
+    background-color: #0e1017;
+    color: #f1f5f9;
+  }
+}
+
+/* Custom Academic Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.35);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(71, 85, 105, 0.6);
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+/* Prominent dot grid pattern with smooth boundary fade matching the reference interface */
+.bg-dot-pattern {
+  background-color: #f8fafc;
+  position: relative;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+html.dark .bg-dot-pattern,
+[data-theme="dark"] .bg-dot-pattern {
+  background-color: #0e1017;
+}
+
+.bg-dot-pattern::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  /* High-visibility prominent dot grid: customizable via CSS variables with defaults */
+  background-image: radial-gradient(var(--grid-dot-color, rgba(15, 23, 42, 0.76)) var(--grid-dot-size, 1px), transparent var(--grid-dot-size, 1px));
+  background-size: var(--grid-spacing, 34px) var(--grid-spacing, 34px);
+  background-position: center center;
+  /* Elliptical radial gradient mask configured by user */
+  -webkit-mask-image: var(--grid-mask, radial-gradient(ellipse 57% 80% at 50% 50%, #000 15%, rgba(0, 0, 0, 0.75) 60%, rgba(0, 0, 0, 0.2) 80%, transparent 100%));
+  mask-image: var(--grid-mask, radial-gradient(ellipse 57% 80% at 50% 50%, #000 15%, rgba(0, 0, 0, 0.75) 60%, rgba(0, 0, 0, 0.2) 80%, transparent 100%));
+}
+
+html.dark .bg-dot-pattern::before,
+[data-theme="dark"] .bg-dot-pattern::before {
+  background-image: radial-gradient(var(--grid-dot-color-dark, rgba(255, 255, 255, 0.36)) var(--grid-dot-size, 1px), transparent var(--grid-dot-size, 1px));
+}
+
+/* Smooth custom scrollbars for horizontal chip trays and hidden scroll inputs/textareas */
+.no-scrollbar::-webkit-scrollbar,
+textarea.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+.no-scrollbar,
+textarea.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* Glow & Glass Container */
+.glass-input-container {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 250, 252, 0.98) 100%);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.07), inset 0 1px 0 rgba(255, 255, 255, 1);
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+html.dark .glass-input-container,
+[data-theme="dark"] .glass-input-container {
+  background: linear-gradient(180deg, rgba(26, 30, 44, 0.85) 0%, rgba(18, 20, 30, 0.92) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.active-glow {
+  box-shadow: 0 0 14px -2px rgba(99, 102, 241, 0.45);
+}
+
+.tag-badge {
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+html.dark .tag-badge,
+[data-theme="dark"] .tag-badge {
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(129, 140, 248, 0.3);
+}
+
+/* Question Box Ambient Light Glow & Shimmer */
+.interactive-query-box {
+  position: relative;
+  z-index: 10;
+}
+
+.query-aura-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% + var(--box-light-offset-x, 0px)), calc(-50% + var(--box-light-offset-y, 0px)));
+  width: var(--box-light-width, 115%);
+  height: var(--box-light-height, 135%);
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 0;
+  background: var(--box-light-gradient, radial-gradient(ellipse 100% 100% at 50% 50%, rgba(99, 102, 241, 0.85) 20%, rgba(168, 85, 247, 0.45) 55%, transparent 90%));
+  filter: blur(var(--box-light-blur, 48px));
+  opacity: var(--box-light-opacity-dark, 0.70);
+  transition: opacity 0.25s ease, filter 0.25s ease;
+  will-change: transform, opacity, filter;
+  animation: var(--box-light-animation, none);
+}
+
+html:not(.dark) .query-aura-glow,
+html.light .query-aura-glow,
+[data-theme="light"] .query-aura-glow {
+  opacity: var(--box-light-opacity-light, 0.45);
+}
+
+/* Hide glow during active conversation if configured for new-chat-only */
+section.sticky .query-aura-glow {
+  display: var(--box-light-active-chat-display, none);
+}
+
+.query-aura-pulse {
+  animation: boxLightBreathe 4s ease-in-out infinite alternate;
+}
+
+@keyframes boxLightBreathe {
+  0% {
+    transform: translate(calc(-50% + var(--box-light-offset-x, 0px)), calc(-50% + var(--box-light-offset-y, 0px))) scale(0.97);
+    opacity: calc(var(--box-light-opacity-dark, 0.70) * 0.82);
+  }
+  100% {
+    transform: translate(calc(-50% + var(--box-light-offset-x, 0px)), calc(-50% + var(--box-light-offset-y, 0px))) scale(1.03);
+    opacity: var(--box-light-opacity-dark, 0.70);
+  }
+}
+
+html:not(.dark) .query-aura-pulse,
+html.light .query-aura-pulse,
+[data-theme="light"] .query-aura-pulse {
+  animation-name: boxLightBreatheLight;
+}
+
+@keyframes boxLightBreatheLight {
+  0% {
+    transform: translate(calc(-50% + var(--box-light-offset-x, 0px)), calc(-50% + var(--box-light-offset-y, 0px))) scale(0.97);
+    opacity: calc(var(--box-light-opacity-light, 0.45) * 0.82);
+  }
+  100% {
+    transform: translate(calc(-50% + var(--box-light-offset-x, 0px)), calc(-50% + var(--box-light-offset-y, 0px))) scale(1.03);
+    opacity: var(--box-light-opacity-light, 0.45);
+  }
+}
+
+/* ========================================================================= */
+/* THEME COLOR SCHEMES & GLOBAL CONTRAST GUARDS                             */
+/* ========================================================================= */
+
+html:not(.dark),
+html.light,
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+html.dark,
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* ========================================================================= */
+/* ANIMATED QUESTION BOX PLACEHOLDER                                        */
+/* ========================================================================= */
+
+.animated-ask-placeholder {
+  color: #64748b;
+  background: linear-gradient(90deg, #64748b 0%, #1e293b 25%, #6366f1 50%, #1e293b 75%, #64748b 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: askPlaceholderShimmer 4s linear infinite;
+  display: inline;
+}
+
+html.dark .animated-ask-placeholder,
+[data-theme="dark"] .animated-ask-placeholder {
+  color: #94a3b8;
+  background: linear-gradient(90deg, #94a3b8 0%, #f8fafc 25%, #818cf8 50%, #f8fafc 75%, #94a3b8 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: askPlaceholderShimmer 4s linear infinite;
+}
+
+@keyframes askPlaceholderShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-cursor-blink {
+  animation: askCursorBlink 0.9s step-end infinite;
+}
+
+@keyframes askCursorBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   ANIMATED THINKING & THOUGHTS STATE
+   ══════════════════════════════════════════════════════════════════════ */
+
+@keyframes thinkingDotBounce {
+  0%, 80%, 100% {
+    transform: translateY(0) scale(0.85);
+    opacity: 0.35;
+  }
+  40% {
+    transform: translateY(-4px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+.animate-thinking-dot-1 {
+  animation: thinkingDotBounce 1.4s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.animate-thinking-dot-2 {
+  animation: thinkingDotBounce 1.4s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+.animate-thinking-dot-3 {
+  animation: thinkingDotBounce 1.4s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+@keyframes thoughtGlowSweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-thought-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(99, 102, 241, 0.2) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: thoughtGlowSweep 2.2s ease-in-out infinite;
+}
+
+@keyframes thoughtFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-thought-fade {
+  animation: thoughtFadeIn 0.35s ease-out forwards;
+}
+
+@keyframes thoughtPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px -3px rgba(99, 102, 241, 0.15), 0 0 6px -2px rgba(99, 102, 241, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 25px 2px rgba(99, 102, 241, 0.35), 0 0 12px 1px rgba(129, 140, 248, 0.25);
+  }
+}
+
+.animate-thought-pulse-glow {
+  animation: thoughtPulseGlow 3s ease-in-out infinite;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   VOICE QUERY LIVE AUDIO WAVEFORM
+   ══════════════════════════════════════════════════════════════════════ */
+
+@keyframes voiceWaveBar {
+  0% {
+    transform: scaleY(0.35);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scaleY(1.35);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0.65);
+    opacity: 0.85;
+  }
+}
+
+@keyframes voiceWaveIdle {
+  0% {
+    transform: scaleY(0.4);
+    opacity: 0.45;
+  }
+  100% {
+    transform: scaleY(0.8);
+    opacity: 0.75;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   EXPERT CLOUDFLARE TUNNEL HEALTH READY GLOW RAY (Moving Left to Right)
+   ══════════════════════════════════════════════════════════════════════ */
+
+@keyframes tunnelRaySweep {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+.animate-tunnel-ray {
+  animation: tunnelRaySweep 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+

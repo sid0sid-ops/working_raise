@@ -1,0 +1,14 @@
+[
+  { "event": "start", "data": { "chat_id": "c-101", "query": "What is XYMA?", "timestamp": 1788390000 } },
+  { "event": "routing", "data": { "strategy": "LOCAL_GRAPH_CYPHER", "intent": "RELATIONSHIP_QUERY" } },
+  { "event": "token", "data": { "token": "XYMA " } },
+  { "event": "token", "data": { "token": "Analytics " } },
+  { "event": "token", "data": { "token": "is " } },
+  { "event": "token", "data": { "token": "an " } },
+  { "event": "token", "data": { "token": "IIT " } },
+  { "event": "token", "data": { "token": "Madras " } },
+  { "event": "token", "data": { "token": "spin-off [1]." } },
+  { "event": "citation", "data": { "citations": [{ "citation_index": 1, "pdf_filename": "IITMRP Annual Report.pdf", "primary_page": 16 }] } },
+  { "event": "quality_gate", "data": { "decision": "accept", "faithfulness": 1.0, "numerical_mismatches": 0 } },
+  { "event": "done", "data": { "execution_time": 6.82, "traceability_score": 1.0 } }
+]
