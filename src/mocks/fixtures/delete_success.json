@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "filename": "IITMRP Annual Report.pdf",
+  "documents": [
+    {
+      "filename": "AR_2024-25_Combined_English_Mail.pdf",
+      "pages": 120,
+      "size_mb": 35.94,
+      "chunks_count": 180,
+      "status": "ready"
+    }
+  ],
+  "total_count": 1
+}

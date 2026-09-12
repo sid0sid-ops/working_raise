@@ -1,0 +1,12 @@
+{
+  "code": "SCHEMA_VALIDATION_FAILED",
+  "message": "Backend response did not match expected contract for POST /api/graphrag/subgraph-query.",
+  "endpoint": "/api/graphrag/subgraph-query",
+  "details": [
+    {
+      "path": ["citations", 0, "primary_page"],
+      "message": "Expected number, received string"
+    }
+  ],
+  "timestamp": "2026-09-03T23:55:00Z"
+}

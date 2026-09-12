@@ -1,0 +1,6 @@
+{
+  "status": "error",
+  "code": "CHROMADB_LOCKED",
+  "message": "Could not access vector index at .chromadb_bge_large: File lock active.",
+  "hint": "Ensure no other Python process is holding the ChromaDB directory lock."
+}
