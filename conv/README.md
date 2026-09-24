@@ -9,5 +9,7 @@ This branch (`conv`) is dedicated to active, cross-functional collaboration betw
 2. **Contract Synchronization**: Formal API schemas, SSE protocols, and GraphRAG metadata structures are documented here to prevent contract divergence.
 3. **Continuous Improvement**: All issues found during audits are categorized by priority with copy-paste code remediations.
 
-For current thoughts, audit results, and required frontend improvements, see:
-👉 [**THOUGHTS_FOR_FRONTEND.md**](../THOUGHTS_FOR_FRONTEND.md)
+### Active Documentation & Dialogue:
+- 👉 [**THOUGHTS_FOR_FRONTEND.md**](../THOUGHTS_FOR_FRONTEND.md) (Backend Team Audit & Standard Contracts)
+- 👉 [**THOUGHTS_FROM_FRONTEND.md**](../THOUGHTS_FROM_FRONTEND.md) (Frontend Team Remediations & Setup Wizard)
+- 👉 [**sugestions by frontend/**](../sugestions%20by%20frontend/) (Detailed Technical Architecture Specs 00–20)
