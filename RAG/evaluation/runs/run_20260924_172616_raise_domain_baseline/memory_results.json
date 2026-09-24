@@ -1,0 +1,77 @@
+{
+  "full_memory_recall_accuracy": 1.0,
+  "redis_only_recall_accuracy": 1.0,
+  "postgres_only_recall_accuracy": 1.0,
+  "memory_off_recall_accuracy": 0.0,
+  "write_latency_ms": 219.21,
+  "read_latency_ms": 72.0,
+  "contamination_detected": false,
+  "cache_invalidation_valid": true,
+  "probes_summary": [
+    {
+      "session_id": "EVAL::memory::bf94ab87c5da",
+      "mode": "FULL_MEMORY",
+      "declared_entity": "National Institute of Plant Genome Research",
+      "write_success": true,
+      "read_success": true,
+      "recall_accuracy": 1.0,
+      "recalled_text": "National Institute of Plant Genome Research",
+      "memory_source": "REDIS",
+      "write_latency_ms": 219.21,
+      "read_latency_ms": 72.0,
+      "total_test_duration_ms": 437.26
+    },
+    {
+      "session_id": "EVAL::memory::e361ec373807",
+      "mode": "REDIS_ONLY",
+      "declared_entity": "National Institute of Plant Genome Research",
+      "write_success": true,
+      "read_success": true,
+      "recall_accuracy": 1.0,
+      "recalled_text": "National Institute of Plant Genome Research",
+      "memory_source": "REDIS",
+      "write_latency_ms": 187.98,
+      "read_latency_ms": 75.74,
+      "total_test_duration_ms": 404.06
+    },
+    {
+      "session_id": "EVAL::memory::c1089af2469f",
+      "mode": "POSTGRES_ONLY",
+      "declared_entity": "National Institute of Plant Genome Research",
+      "write_success": true,
+      "read_success": true,
+      "recall_accuracy": 1.0,
+      "recalled_text": "My preferred research institution is National Institute of Plant Genome Research (NIPGR).",
+      "memory_source": "POSTGRESQL",
+      "write_latency_ms": 11.7,
+      "read_latency_ms": 2.13,
+      "total_test_duration_ms": 22.04
+    },
+    {
+      "session_id": "EVAL::memory::067fd87c86d5",
+      "mode": "MEMORY_OFF",
+      "declared_entity": "National Institute of Plant Genome Research",
+      "write_success": true,
+      "read_success": false,
+      "recall_accuracy": 0.0,
+      "recalled_text": "",
+      "memory_source": "NONE",
+      "write_latency_ms": 0.0,
+      "read_latency_ms": 0.0,
+      "total_test_duration_ms": 0.0
+    },
+    {
+      "session_a": "sess_A_run_20260924_172616_raise_domain_baseline",
+      "session_b": "sess_B_run_20260924_172616_raise_domain_baseline",
+      "contamination_detected": false,
+      "status": "PASSED"
+    },
+    {
+      "key_doc_a": "cache:completion:fast:default:8884d6aa3267a4a4",
+      "key_doc_b": "cache:completion:fast:default:29c42b0a6af7355f",
+      "key_expert": "cache:completion:expert:default:8884d6aa3267a4a4",
+      "cache_keys_distinct": true,
+      "status": "PASSED"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+# Environment & Local Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.token
+tokens.json
+credentials.json
+
+# Local Vector DB, State & Large Binary Storage
+.chromadb/
+.chromadb_bge_large/
+.runtime/
+*.sqlite
+*.sqlite3
+*.db
+
+# Data directories (raw documents, PDFs, processed chunks, graph triples, manifests)
+data/
+**/data/
+*.pdf
+
+# Evaluation Suites, Benchmarks & Datasets
+evaluation/
+eval_results*.json
+telemetry*.json
+questions.json
+
+# Tests & Test Caches
+tests/
+test_*.py
+*_test.py
+.pytest_cache/
+pytest.ini
+
+# Caching & Python Builds
+.cache/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.ruff_cache/
+.mypy_cache/
+
+# Binary & Compiled Libraries
+*.dll
+*.so
+*.dylib
+*.pyd
+raise_engine.dll
+
+# Rust Build Artifacts
+target/
+**/target/
+wheels/
+**/wheels/
+
+# Logs & Temporary Files
+logs/
+*.log
+scratch/
+tmp/
+temp/
+
+# OS Artifacts
+desktop.ini
+Thumbs.db
+.DS_Store

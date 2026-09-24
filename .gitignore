@@ -1,28 +1,77 @@
-# Test & Presentation Artifacts
-sample_annual_report.pdf
-colab_pipeline_presentation.html
-colab_pipeline_presentation*
-_smoke_test_report.pdf
-*.pdf
+# Environment & Secrets (Never commit credentials)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+
+# Compiled Binaries, Executables & Installers
+bin/
+*.exe
+*.msi
+*.dll
+*.so
+*.dylib
+*.pyd
+
+# Vector Stores, Embeddings & Large Runtime DBs
+.chromadb*/
+**/.chromadb*/
+RAG/.chromadb_bge_large/
+.chromadb_bge_large/
+data/chromadb/
+data/processed/chroma/
+**/data/chromadb/
+**/data/processed/chroma/
+*.sqlite
+*.sqlite3
+*.db
+.runtime/
+**/.runtime/
+
+# Python Build & Caching
+__pycache__/
+*.py[cod]
+*$py.class
+.cache/
+**/.cache/
+RAG/.cache/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+RAISE_SRC/
+
+# Rust Build Artifacts
+target/
+**/target/
+wheels/
+**/wheels/
+
+# Virtual Environments
+.venv/
+env/
+venv/
+
+# Temporary Scratch Scripts & Test Environments
+scratch/
+tmp/
+.gemini/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs & Archives
+*.log
+*.zip
+*.tar.gz
+*.tgz
 
 # Pipeline Runtime Outputs & Handoff Deliverables
-report_blocks.json
-target_blocks.json
-filtering_report.json
-schema_filtering_report.json
-report.html
-source_map.json
-section_map.json
-ai_chunks.json
-validation_report.json
-input_quality_report.json
-semantic_profile.json
-raise_end_to_end_outputs.zip
-executed_output.ipynb
-*.zip
-*.log
-
-# Runtime data & output folders
 outputs/*
 !outputs/.gitkeep
 data/output/*
@@ -33,28 +82,9 @@ data/input/*
 !data/input/.gitkeep
 !data/schemas/*
 
-# Temporary Scratch Scripts & Test Environments
-scratch/
-tmp/
-.gemini/
+# Local Research & Offline Reference Data (Never commit)
+Artifacts/
+reference/
 
-# Python Build & Cache
-__pycache__/
-*.py[cod]
-*$py.class
-.pytest_cache/
-.ruff_cache/
-*.egg-info/
-build/
-dist/
-RAISE_SRC/
-
-# OS & Environment Files
-.DS_Store
-Thumbs.db
-.env
-.venv/
-env/
-venv/
-.runtime/
-python_installer.exe
+# Isolated Frontend Branch Workspace (Managed separately)
+frontend/

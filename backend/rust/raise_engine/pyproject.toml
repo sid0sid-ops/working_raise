@@ -1,0 +1,14 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "raise_engine"
+version = "0.1.0"
+description = "High-performance native acceleration engine for RAISE Graph-Guided Adaptive Hierarchical Chunking (GGAHC)"
+authors = [{ name = "RAISE Engineering Team" }]
+requires-python = ">=3.9"
+
+[tool.maturin]
+features = ["python", "pyo3/extension-module", "pyo3/abi3-py39"]
+module-name = "raise_engine"

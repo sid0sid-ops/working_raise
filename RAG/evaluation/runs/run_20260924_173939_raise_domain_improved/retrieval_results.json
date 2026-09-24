@@ -1,0 +1,751 @@
+[
+  {
+    "case_id": "run_20260924_173939_raise_domain_improved_Q101",
+    "question_id": "Q101",
+    "recalls": {
+      "recall@1": 1.0,
+      "recall@4": 1.0,
+      "recall@8": 1.0,
+      "recall@10": 1.0,
+      "recall@20": 1.0
+    },
+    "mrr@10": 1.0,
+    "ndcg@10": 1.6309297535714575,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "gold_present_in_reranked": true,
+    "rank_vector": 1,
+    "rank_bm25": 3,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": 1,
+    "retrieval_latency_ms": 13486.62,
+    "rerank_latency_ms": 790.16,
+    "vector_candidates": [
+      "Annual_Report_2023_24_p155_c136_01_prop_0",
+      "Annual_Report_2023_24_p155_c136_01_prop_1",
+      "Annual_Report_2023_24_p155_c136_01_prop_2",
+      "Annual_Report_2023_24_p155_c136_01",
+      "Annual_Report_2023_24_parent_136"
+    ],
+    "bm25_candidates": [
+      "Annual_Report_2021_22_p131_c19_01",
+      "Annual_Report_2021_22_parent_019",
+      "Annual_Report_2023_24_p155_c136_01",
+      "Annual_Report_2023_24_parent_136",
+      "Annual_Report_2022_23_p150_c132_01"
+    ],
+    "reranked_candidates": [
+      "Annual_Report_2023_24_p155_c136_01",
+      "Annual_Report_2023_24_parent_136",
+      "Annual_Report_2021_22_p131_c19_01",
+      "Annual_Report_2021_22_parent_019",
+      "Annual_Report_2022_23_p150_c132_01",
+      "Annual_Report_2022_23_parent_132"
+    ]
+  },
+  {
+    "case_id": "run_20260924_173939_raise_domain_improved_Q102",
+    "question_id": "Q102",
+    "recalls": {
+      "recall@1": 1.0,
+      "recall@4": 1.0,
+      "recall@8": 1.0,
+      "recall@10": 1.0,
+      "recall@20": 1.0
+    },
+    "mrr@10": 1.0,
+    "ndcg@10": 2.48713694067948,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "gold_present_in_reranked": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": 1,
+    "retrieval_latency_ms": 3672.02,
+    "rerank_latency_ms": 1093.5,
+    "vector_candidates": [
+      "BRIC_Annual_Report_2025_p017_c17_01_prop_0",
+      "BRIC_Annual_Report_2025_p017_c17_01_prop_6",
+      "BRIC_Annual_Report_2025_p017_c17_01_prop_7",
+      "BRIC_Annual_Report_2025_p017_c17_01_prop_8",
+      "BRIC_Annual_Report_2025_p017_c17_01_prop_9"
+    ],
+    "bm25_candidates": [
+      "BRIC_Annual_Report_2025_p017_c17_01",
+      "BRIC_Annual_Report_2025_parent_017",
+      "BRIC_Annual_Report_2025_p016_c16_01",
+      "BRIC_Annual_Report_2025_parent_016",
+      "BRIC_Annual_Report_2025_p095_c95_01"
+    ],
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_parent_017",
+      "BRIC_Annual_Report_2025_p017_c17_01",
+      "BRIC_Annual_Report_2025_p017_c17_01_prop_7",
+      "BRIC_Annual_Report_2025_p016_c16_01",
+      "BRIC_Annual_Report_2025_parent_016",
+      "BRIC_Annual_Report_2025_p017_c17_01_prop_0"
+    ]
+  },
+  {
+    "case_id": "run_20260924_173939_raise_domain_improved_Q103",
+    "question_id": "Q103",
+    "recalls": {
+      "recall@1": 1.0,
+      "recall@4": 1.0,
+      "recall@8": 1.0,
+      "recall@10": 1.0,
+      "recall@20": 1.0
+    },
+    "mrr@10": 1.0,
+    "ndcg@10": 2.0177825608059994,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "gold_present_in_reranked": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": 1,
+    "retrieval_latency_ms": 1262.79,
+    "rerank_latency_ms": 1056.15,
+    "vector_candidates": [
+      "BRIC_Annual_Report_2025_p017_c17_01_prop_0",
+      "BRIC_Annual_Report_2025_p017_c17_01_prop_1",
+      "BRIC_Annual_Report_2025_p017_c17_01_prop_2",
+      "BRIC_Annual_Report_2025_p017_c17_01_prop_3",
+      "BRIC_Annual_Report_2025_p017_c17_01_prop_4"
+    ],
+    "bm25_candidates": [
+      "BRIC_Annual_Report_2025_p017_c17_01",
+      "BRIC_Annual_Report_2025_parent_017",
+      "BRIC_Annual_Report_2025_p016_c16_01",
+      "BRIC_Annual_Report_2025_parent_016",
+      "BRIC_Annual_Report_2025_p100_c100_01"
+    ],
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_parent_017",
+      "BRIC_Annual_Report_2025_p017_c17_01",
+      "BRIC_Annual_Report_2025_p024_c24_01",
+      "BRIC_Annual_Report_2025_parent_024",
+      "BRIC_Annual_Report_2025_p017_c17_01_prop_17"
+    ]
+  },
+  {
+    "case_id": "run_20260924_173939_raise_domain_improved_Q104",
+    "question_id": "Q104",
+    "recalls": {
+      "recall@1": 1.0,
+      "recall@4": 1.0,
+      "recall@8": 1.0,
+      "recall@10": 1.0,
+      "recall@20": 1.0
+    },
+    "mrr@10": 1.0,
+    "ndcg@10": 1.6309297535714575,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "gold_present_in_reranked": true,
+    "rank_vector": 1,
+    "rank_bm25": 3,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": 1,
+    "retrieval_latency_ms": 1362.59,
+    "rerank_latency_ms": 1208.97,
+    "vector_candidates": [
+      "Annual_Report_2021_22_p131_c19_01",
+      "Annual_Report_2021_22_parent_019",
+      "Annual_Report_2021_22_p131_c19_01_prop_0",
+      "Annual_Report_2021_22_p131_c19_01_prop_2",
+      "Annual_Report_2021_22_p131_c19_01_prop_1"
+    ],
+    "bm25_candidates": [
+      "Annual_Report_2021_22_p134_c22_01",
+      "Annual_Report_2021_22_parent_022",
+      "Annual_Report_2021_22_p131_c19_01",
+      "Annual_Report_2021_22_parent_019",
+      "Annual_Report_2023_24_p158_c139_01"
+    ],
+    "reranked_candidates": [
+      "Annual_Report_2021_22_p131_c19_01",
+      "Annual_Report_2021_22_parent_019",
+      "Annual_Report_2021_22_parent_030",
+      "Annual_Report_2021_22_p141_c27_01",
+      "Annual_Report_2021_22_parent_027",
+      "Annual_Report_2021_22_p136_c23_01"
+    ]
+  },
+  {
+    "case_id": "run_20260924_173939_raise_domain_improved_Q201",
+    "question_id": "Q201",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": false,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "gold_present_in_reranked": false,
+    "rank_vector": 1,
+    "rank_bm25": -1,
+    "rank_graph": 1,
+    "rank_rrf": 10,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 1486.64,
+    "rerank_latency_ms": 1108.32,
+    "vector_candidates": [
+      "Annual_Report_2023_24_parent_001",
+      "Annual_Report_2023_24_p001_c01_01",
+      "Annual_Report_2023_24_parent_143",
+      "Annual_Report_2023_24_p137_c122_01",
+      "Annual_Report_2023_24_parent_122"
+    ],
+    "bm25_candidates": [
+      "Annual_Report_2021_22_p139_c26_01",
+      "Annual_Report_2021_22_parent_026",
+      "Annual_Report_2023_24_p158_c139_01",
+      "Annual_Report_2023_24_parent_139",
+      "Annual_Report_2023_24_p160_c140_01"
+    ],
+    "reranked_candidates": [
+      "Annual_Report_2021_22_p128_c16_01",
+      "Annual_Report_2021_22_parent_016",
+      "Annual_Report_2023_24_parent_139",
+      "Annual_Report_2023_24_p152_c133_01",
+      "Annual_Report_2023_24_parent_133",
+      "Annual_Report_2023_24_p158_c139_01"
+    ]
+  },
+  {
+    "case_id": "run_20260924_173939_raise_domain_improved_Q202",
+    "question_id": "Q202",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_vector": false,
+    "gold_present_in_bm25": false,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": false,
+    "gold_present_in_reranked": false,
+    "rank_vector": -1,
+    "rank_bm25": -1,
+    "rank_graph": 1,
+    "rank_rrf": -1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 1611.22,
+    "rerank_latency_ms": 897.01,
+    "vector_candidates": [
+      "BRIC_Annual_Report_2025_parent_010",
+      "BRIC_Annual_Report_2025_p010_c10_01",
+      "BRIC_Annual_Report_2025_parent_015",
+      "BRIC_Annual_Report_2025_p015_c15_01",
+      "BRIC_Annual_Report_2025_p053_c53_01"
+    ],
+    "bm25_candidates": [
+      "BRIC_Annual_Report_2025_p017_c17_01",
+      "BRIC_Annual_Report_2025_parent_017",
+      "BRIC_Annual_Report_2025_p010_c10_01",
+      "BRIC_Annual_Report_2025_parent_010",
+      "BRIC_Annual_Report_2025_p005_c05_01"
+    ],
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_p010_c10_01",
+      "BRIC_Annual_Report_2025_p017_c17_01",
+      "BRIC_Annual_Report_2025_parent_010",
+      "BRIC_Annual_Report_2025_p024_c24_01",
+      "BRIC_Annual_Report_2025_parent_023",
+      "BRIC_Annual_Report_2025_parent_024"
+    ]
+  },
+  {
+    "case_id": "run_20260924_173939_raise_domain_improved_Q203",
+    "question_id": "Q203",
+    "recalls": {
+      "recall@1": 1.0,
+      "recall@4": 1.0,
+      "recall@8": 1.0,
+      "recall@10": 1.0,
+      "recall@20": 1.0
+    },
+    "mrr@10": 1.0,
+    "ndcg@10": 2.1309297535714578,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "gold_present_in_reranked": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": 1,
+    "retrieval_latency_ms": 1168.59,
+    "rerank_latency_ms": 1059.6,
+    "vector_candidates": [
+      "Annual_Report_2023_24_p029_c22_01",
+      "Annual_Report_2023_24_p029_c22_01_prop_0",
+      "Annual_Report_2023_24_parent_022",
+      "Annual_Report_2023_24_p039_c31_01",
+      "Annual_Report_2023_24_p036_c28_01_prop_10"
+    ],
+    "bm25_candidates": [
+      "Annual_Report_2023_24_p029_c22_01",
+      "Annual_Report_2023_24_parent_022",
+      "Annual_Report_2022_23_p025_c18_01",
+      "Annual_Report_2022_23_parent_018",
+      "Annual_Report_2022_23_p012_c06_01"
+    ],
+    "reranked_candidates": [
+      "Annual_Report_2023_24_parent_022",
+      "Annual_Report_2023_24_p029_c22_01",
+      "Annual_Report_2023_24_p029_c22_01_prop_0",
+      "Annual_Report_2023_24_parent_033",
+      "Annual_Report_2023_24_parent_006",
+      "Annual_Report_2023_24_p120_c108_01"
+    ]
+  },
+  {
+    "case_id": "run_20260924_173939_raise_domain_improved_Q204",
+    "question_id": "Q204",
+    "recalls": {
+      "recall@1": 1.0,
+      "recall@4": 1.0,
+      "recall@8": 1.0,
+      "recall@10": 1.0,
+      "recall@20": 1.0
+    },
+    "mrr@10": 1.0,
+    "ndcg@10": 2.5616063116448506,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "gold_present_in_reranked": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": 1,
+    "retrieval_latency_ms": 1904.47,
+    "rerank_latency_ms": 1107.44,
+    "vector_candidates": [
+      "BRIC_Annual_Report_2025_p015_c15_01_prop_0",
+      "BRIC_Annual_Report_2025_p015_c15_01_prop_1",
+      "BRIC_Annual_Report_2025_p015_c15_01_prop_2",
+      "BRIC_Annual_Report_2025_p015_c15_01_prop_3",
+      "BRIC_Annual_Report_2025_p015_c15_01_prop_4"
+    ],
+    "bm25_candidates": [
+      "BRIC_Annual_Report_2025_p015_c15_01",
+      "BRIC_Annual_Report_2025_parent_015",
+      "BRIC_Annual_Report_2025_p022_c22_01",
+      "BRIC_Annual_Report_2025_parent_022",
+      "BRIC_Annual_Report_2025_p016_c16_01"
+    ],
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_p015_c15_01_prop_15",
+      "BRIC_Annual_Report_2025_p015_c15_01_prop_10",
+      "BRIC_Annual_Report_2025_parent_015",
+      "BRIC_Annual_Report_2025_p015_c15_01",
+      "BRIC_Annual_Report_2025_p016_c16_01",
+      "BRIC_Annual_Report_2025_parent_016"
+    ]
+  },
+  {
+    "case_id": "run_20260924_173939_raise_domain_improved_Q301",
+    "question_id": "Q301",
+    "recalls": {
+      "recall@1": 1.0,
+      "recall@4": 1.0,
+      "recall@8": 1.0,
+      "recall@10": 1.0,
+      "recall@20": 1.0
+    },
+    "mrr@10": 1.0,
+    "ndcg@10": 1.6309297535714575,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "gold_present_in_reranked": true,
+    "rank_vector": 6,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": 1,
+    "retrieval_latency_ms": 1597.21,
+    "rerank_latency_ms": 1179.38,
+    "vector_candidates": [
+      "Annual_Report_2023_24_parent_139",
+      "Annual_Report_2023_24_parent_143",
+      "Annual_Report_2023_24_p154_c135_01",
+      "Annual_Report_2023_24_p158_c139_01",
+      "Annual_Report_2023_24_p164_c144_01"
+    ],
+    "bm25_candidates": [
+      "Annual_Report_2023_24_p155_c136_01",
+      "Annual_Report_2023_24_parent_136",
+      "Annual_Report_2022_23_p151_c133_01",
+      "Annual_Report_2022_23_parent_133",
+      "Annual_Report_2021_22_p132_c20_01"
+    ],
+    "reranked_candidates": [
+      "Annual_Report_2023_24_p155_c136_01",
+      "Annual_Report_2023_24_parent_136",
+      "Annual_Report_2023_24_p154_c135_01",
+      "Annual_Report_2023_24_parent_135",
+      "Annual_Report_2023_24_parent_139",
+      "Annual_Report_2023_24_p156_c137_01"
+    ]
+  },
+  {
+    "case_id": "run_20260924_173939_raise_domain_improved_Q302",
+    "question_id": "Q302",
+    "recalls": {
+      "recall@1": 1.0,
+      "recall@4": 1.0,
+      "recall@8": 1.0,
+      "recall@10": 1.0,
+      "recall@20": 1.0
+    },
+    "mrr@10": 1.0,
+    "ndcg@10": 2.5616063116448506,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "gold_present_in_reranked": true,
+    "rank_vector": 10,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 7,
+    "rank_reranked": 1,
+    "retrieval_latency_ms": 1312.67,
+    "rerank_latency_ms": 1235.01,
+    "vector_candidates": [
+      "Annual_Report_2022_23_parent_003",
+      "Annual_Report_2022_23_p007_c03_01",
+      "Annual_Report_2022_23_parent_136",
+      "Annual_Report_2022_23_p154_c136_01",
+      "Annual_Report_2022_23_parent_128"
+    ],
+    "bm25_candidates": [
+      "Annual_Report_2021_22_p131_c19_01",
+      "Annual_Report_2021_22_parent_019",
+      "Annual_Report_2022_23_p146_c128_01",
+      "Annual_Report_2022_23_parent_128",
+      "Annual_Report_2022_23_p085_c73_01"
+    ],
+    "reranked_candidates": [
+      "Annual_Report_2022_23_p150_c132_01",
+      "Annual_Report_2021_22_p131_c19_01",
+      "Annual_Report_2021_22_parent_019",
+      "Annual_Report_2022_23_parent_132",
+      "Annual_Report_2022_23_parent_140",
+      "Annual_Report_2022_23_p154_c136_01"
+    ]
+  },
+  {
+    "case_id": "run_20260924_173939_raise_domain_improved_Q303",
+    "question_id": "Q303",
+    "recalls": {
+      "recall@1": 1.0,
+      "recall@4": 1.0,
+      "recall@8": 1.0,
+      "recall@10": 1.0,
+      "recall@20": 1.0
+    },
+    "mrr@10": 1.0,
+    "ndcg@10": 1.6309297535714575,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "gold_present_in_reranked": true,
+    "rank_vector": 1,
+    "rank_bm25": 3,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": 1,
+    "retrieval_latency_ms": 1262.52,
+    "rerank_latency_ms": 1289.79,
+    "vector_candidates": [
+      "Annual_Report_2023_24_p156_c137_01_prop_0",
+      "Annual_Report_2023_24_p156_c137_01_prop_1",
+      "Annual_Report_2023_24_p156_c137_01_prop_2",
+      "Annual_Report_2023_24_p156_c137_01",
+      "Annual_Report_2023_24_parent_137"
+    ],
+    "bm25_candidates": [
+      "Annual_Report_2021_22_p148_c33_01",
+      "Annual_Report_2021_22_parent_033",
+      "Annual_Report_2023_24_p156_c137_01",
+      "Annual_Report_2023_24_parent_137",
+      "Annual_Report_2021_22_p132_c20_01"
+    ],
+    "reranked_candidates": [
+      "Annual_Report_2023_24_parent_137",
+      "Annual_Report_2023_24_p156_c137_01",
+      "Annual_Report_2021_22_p132_c20_01",
+      "Annual_Report_2021_22_parent_020",
+      "Annual_Report_2023_24_p164_c144_01",
+      "Annual_Report_2023_24_parent_136"
+    ]
+  },
+  {
+    "case_id": "run_20260924_173939_raise_domain_improved_Q304",
+    "question_id": "Q304",
+    "recalls": {
+      "recall@1": 1.0,
+      "recall@4": 1.0,
+      "recall@8": 1.0,
+      "recall@10": 1.0,
+      "recall@20": 1.0
+    },
+    "mrr@10": 1.0,
+    "ndcg@10": 1.6309297535714575,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "gold_present_in_reranked": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": 1,
+    "retrieval_latency_ms": 1445.36,
+    "rerank_latency_ms": 1399.39,
+    "vector_candidates": [
+      "Annual_Report_2023_24_p156_c137_01_prop_0",
+      "Annual_Report_2023_24_p156_c137_01_prop_1",
+      "Annual_Report_2023_24_p156_c137_01_prop_2",
+      "Annual_Report_2023_24_parent_137",
+      "Annual_Report_2023_24_p156_c137_01"
+    ],
+    "bm25_candidates": [
+      "Annual_Report_2023_24_p156_c137_01",
+      "Annual_Report_2023_24_parent_137",
+      "Annual_Report_2021_22_p132_c20_01",
+      "Annual_Report_2021_22_parent_020",
+      "Annual_Report_2021_22_p148_c33_01"
+    ],
+    "reranked_candidates": [
+      "Annual_Report_2023_24_parent_137",
+      "Annual_Report_2023_24_p156_c137_01",
+      "Annual_Report_2023_24_p164_c144_01",
+      "Annual_Report_2021_22_p132_c20_01",
+      "Annual_Report_2021_22_parent_020",
+      "Annual_Report_2022_23_p151_c133_01"
+    ]
+  },
+  {
+    "case_id": "run_20260924_173939_raise_domain_improved_Q401",
+    "question_id": "Q401",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_vector": false,
+    "gold_present_in_bm25": false,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": false,
+    "gold_present_in_reranked": false,
+    "rank_vector": -1,
+    "rank_bm25": -1,
+    "rank_graph": 1,
+    "rank_rrf": -1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 1367.64,
+    "rerank_latency_ms": 1250.37,
+    "vector_candidates": [
+      "BRIC_Annual_Report_2025_p129_c129_01_prop_1",
+      "BRIC_Annual_Report_2025_p060_c60_01_prop_8",
+      "BRIC_Annual_Report_2025_p012_c12_01_prop_6",
+      "BRIC_Annual_Report_2025_p114_c114_01_prop_0",
+      "BRIC_Annual_Report_2025_p053_c53_01_prop_6"
+    ],
+    "bm25_candidates": [
+      "Annual_Report_2023_24_p151_c132_01",
+      "Annual_Report_2023_24_parent_132",
+      "Annual_Report_2022_23_p144_c126_01",
+      "Annual_Report_2022_23_parent_126",
+      "Annual_Report_2023_24_p156_c137_01"
+    ],
+    "reranked_candidates": [
+      "Annual_Report_2023_24_p151_c132_01",
+      "Annual_Report_2023_24_parent_132",
+      "Annual_Report_2023_24_p156_c137_01",
+      "Annual_Report_2023_24_parent_137"
+    ]
+  },
+  {
+    "case_id": "run_20260924_173939_raise_domain_improved_Q402",
+    "question_id": "Q402",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_vector": false,
+    "gold_present_in_bm25": false,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": false,
+    "gold_present_in_reranked": false,
+    "rank_vector": -1,
+    "rank_bm25": -1,
+    "rank_graph": 1,
+    "rank_rrf": -1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 1435.04,
+    "rerank_latency_ms": 1223.32,
+    "vector_candidates": [
+      "Annual_Report_2023_24_p149_c131_01",
+      "Annual_Report_2023_24_parent_131",
+      "Annual_Report_2023_24_p155_c136_01",
+      "Annual_Report_2023_24_p154_c135_01",
+      "Annual_Report_2023_24_parent_136"
+    ],
+    "bm25_candidates": [
+      "Annual_Report_2022_23_p144_c126_01",
+      "Annual_Report_2022_23_parent_126",
+      "Annual_Report_2023_24_p151_c132_01",
+      "Annual_Report_2023_24_parent_132",
+      "Annual_Report_2022_23_p145_c127_01"
+    ],
+    "reranked_candidates": [
+      "Annual_Report_2023_24_parent_136",
+      "Annual_Report_2023_24_p164_c144_01",
+      "Annual_Report_2023_24_p155_c136_01",
+      "Annual_Report_2023_24_p007_c04_01",
+      "Annual_Report_2023_24_parent_137",
+      "Annual_Report_2023_24_p160_c140_01"
+    ]
+  },
+  {
+    "case_id": "run_20260924_173939_raise_domain_improved_Q403",
+    "question_id": "Q403",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_vector": false,
+    "gold_present_in_bm25": false,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": false,
+    "gold_present_in_reranked": false,
+    "rank_vector": -1,
+    "rank_bm25": -1,
+    "rank_graph": 1,
+    "rank_rrf": -1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 1241.35,
+    "rerank_latency_ms": 1008.17,
+    "vector_candidates": [
+      "Annual_Report_2023_24_parent_137",
+      "Annual_Report_2023_24_p156_c137_01",
+      "Annual_Report_2023_24_parent_139",
+      "Annual_Report_2023_24_p151_c132_01",
+      "Annual_Report_2023_24_parent_122"
+    ],
+    "bm25_candidates": [
+      "Annual_Report_2022_23_p144_c126_01",
+      "Annual_Report_2022_23_parent_126",
+      "Annual_Report_2023_24_p151_c132_01",
+      "Annual_Report_2023_24_parent_132",
+      "Annual_Report_2023_24_p015_c10_01"
+    ],
+    "reranked_candidates": [
+      "Annual_Report_2023_24_p156_c137_01",
+      "Annual_Report_2023_24_parent_137",
+      "Annual_Report_2023_24_parent_139",
+      "Annual_Report_2023_24_parent_136",
+      "Annual_Report_2023_24_p158_c139_01",
+      "Annual_Report_2023_24_parent_132"
+    ]
+  },
+  {
+    "case_id": "run_20260924_173939_raise_domain_improved_Q404",
+    "question_id": "Q404",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_vector": false,
+    "gold_present_in_bm25": false,
+    "gold_present_in_graph": false,
+    "gold_present_in_rrf": false,
+    "gold_present_in_reranked": false,
+    "rank_vector": -1,
+    "rank_bm25": -1,
+    "rank_graph": -1,
+    "rank_rrf": -1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 1351.61,
+    "rerank_latency_ms": 1094.37,
+    "vector_candidates": [
+      "BRIC_Annual_Report_2025_p129_c129_01_prop_5",
+      "BRIC_Annual_Report_2025_p125_c125_01_prop_3",
+      "BRIC_Annual_Report_2025_p129_c129_01_prop_0",
+      "BRIC_Annual_Report_2025_p129_c129_01_prop_12",
+      "BRIC_Annual_Report_2025_p129_c129_01_prop_7"
+    ],
+    "bm25_candidates": [
+      "BRIC_Annual_Report_2025_p122_c122_01",
+      "BRIC_Annual_Report_2025_parent_122",
+      "Annual_Report_2023_24_p061_c49_01",
+      "Annual_Report_2023_24_parent_049",
+      "BRIC_Annual_Report_2025_p129_c129_01"
+    ],
+    "reranked_candidates": [
+      "Annual_Report_2023_24_p060_c48_01",
+      "Annual_Report_2023_24_parent_048",
+      "Annual_Report_2023_24_p061_c49_01",
+      "Annual_Report_2023_24_parent_049",
+      "BRIC_Annual_Report_2025_p129_c129_01_prop_12",
+      "BRIC_Annual_Report_2025_parent_122"
+    ]
+  }
+]
