@@ -68,19 +68,29 @@ We conducted a comprehensive audit of the frontend codebase against the backend 
 To make RAISE immediately accessible to non-technical users and cross-platform researchers on any operating system, we created the **Mission Control Setup Wizard** (`src/features/control-center/`).
 
 ### Key Design Pillars:
-1. **Classic Installer Wizard Semantics**:
-   * Uses clear `← Previous` and `Next →` navigation buttons.
-   * Completely avoids confusing filler words, nested tabs, or ambiguous terminology.
-2. **Fixed Rigid Dimensions (Zero Bouncing)**:
+1. **Zero OS Setup Friction (Automated Detection)**:
+   * Normal users are **never asked to manually select an OS or platform**.
+   * The installer automatically probes the host runtime, reporting:
+     - `Detected Operating System: macOS (Apple Silicon)` / `Windows 11` / `Linux`
+     - `Physical Memory: 16 GB Memory`
+     - `Execution Cores: 8 Logical Cores`
+     - `System Status: Verified & Ready`
+   * Cross-platform developers can still switch targets via a clean status switcher if cross-compiling.
+2. **Classic Installer Wizard Semantics (`Cancel`, `Back`, `Next`, `Start`)**:
+   * All navigation is unified in the bottom footer.
+   * Steps 1–3: `Cancel` (left), `← Back` and `Next →` (right).
+   * Step 4: `Cancel` (left), `← Back` and **`Start`** (right).
+   * **No redundant in-page launch buttons**; no confusing phrases like `"Save & Launch Research Workstation"`.
+3. **Fixed Rigid Dimensions (Zero Bouncing)**:
    * Centered `860px × 680px` uniform dialog box (`max-h-[90vh]`).
    * The window frame remains strictly fixed across all steps so there is zero jitter, resizing, or jumping between screens.
-3. **Transparent Download Sizes on Every Card**:
+4. **Transparent Download Sizes on Every Card**:
    * **100% Free Cloud Profile**: Displays `0 GB (Zero Download)` and `~1.2 GB RAM`.
    * **Local Ollama Models**: Displays `2.0 GB Download` (Llama 3.2 3B) or `4.7 GB Download` (Qwen 2.5 7B).
    * **Neo4j Storage Options**: Displays `0 GB` (Cloud AuraDB) vs `1.5 GB` (Local Bolt Server) vs `0 GB Extra` (ChromaDB Fallback).
-4. **Dynamic Footprint Calculator (`resourceCalculator.ts`)**:
+5. **Dynamic Footprint Calculator (`resourceCalculator.ts`)**:
    * Dynamically sums total disk space and memory footprint in real time based on active user selections—zero hardcoding.
-5. **Zero-Crash Fallback Matrix**:
+6. **Zero-Crash Fallback Matrix**:
    * If Neo4j credentials are empty or local server is unreachable, the system automatically falls back to ChromaDB Dense Vector Search + BM25 keyword matching.
    * PostgreSQL and Redis include in-memory session protection.
 
