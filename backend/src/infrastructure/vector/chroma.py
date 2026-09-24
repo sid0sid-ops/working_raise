@@ -87,10 +87,79 @@ class LocalVectorEngine(IVectorStore):
         "qwen-embedding-4b": "Qwen/Qwen3-Embedding-4B",
     }
 
+    @staticmethod
+    def format_collection_name(
+        dataset: str,
+        parser: str = "docling",
+        embedding_model: str = "bge_large",
+    ) -> str:
+        """
+        Enforces Standardized Tripartite ChromaDB Collection Naming:
+        Formula: {dataset_slug}_{parser_slug}_{model_slug}
+
+        Segment 1: Target Dataset / Corpus (e.g. 'iitmrp', 'nipgr', 'bric', 'raise')
+        Segment 2: Layout & Document Parser (e.g. 'docling', 'pymupdf', 'fast')
+        Segment 3: Dense Embedding Model (e.g. 'bge_large', 'bge_m3', 'minilm', 'qwen')
+
+        Examples:
+          - ("iitmrp", "docling", "bge-large-en-v1.5") -> "iitmrp_docling_bge_large"
+          - ("nipgr", "docling", "bge_large")          -> "nipgr_docling_bge_large"
+          - ("bric", "pymupdf", "all-MiniLM-L6-v2")    -> "bric_pymupdf_minilm"
+          - ("climate_reports", "docling", "bge_m3")   -> "climate_reports_docling_bge_m3"
+        """
+        def _slugify(val: str) -> str:
+            if not val:
+                return ""
+            s = str(val).split("/")[-1].split("\\")[-1]
+            s = re.sub(r"[^a-zA-Z0-9]+", "_", s.strip().lower())
+            return s.strip("_")
+
+        dataset_slug = _slugify(dataset) or "default"
+        parser_slug = _slugify(parser) or "docling"
+
+        raw_model = _slugify(embedding_model) or "bge_large"
+        if "bge_large" in raw_model:
+            model_slug = "bge_large"
+        elif "bge_m3" in raw_model:
+            model_slug = "bge_m3"
+        elif "minilm" in raw_model:
+            model_slug = "minilm"
+        elif "qwen" in raw_model:
+            model_slug = "qwen"
+        else:
+            model_slug = raw_model
+
+        return f"{dataset_slug}_{parser_slug}_{model_slug}"
+
+    @staticmethod
+    def parse_collection_name(name: str) -> Dict[str, str]:
+        """
+        Deconstructs a tripartite collection name into its constituent segments:
+        Returns: {'dataset': ..., 'parser': ..., 'embedding_model': ...}
+        """
+        if not name:
+            return {"dataset": "default", "parser": "docling", "embedding_model": "bge_large"}
+        parts = name.split("_")
+        if len(parts) >= 3:
+            return {
+                "dataset": parts[0],
+                "parser": parts[1],
+                "embedding_model": "_".join(parts[2:]),
+            }
+        elif len(parts) == 2:
+            return {
+                "dataset": parts[0],
+                "parser": parts[1],
+                "embedding_model": "bge_large",
+            }
+        return {"dataset": name, "parser": "unknown", "embedding_model": "unknown"}
+
     def __init__(
         self,
         persist_directory: Optional[Path | str] = None,
         collection_name: Optional[str] = None,
+        dataset: Optional[str] = None,
+        parser: Optional[str] = None,
         model_name: Optional[str] = None,
         device: Optional[str] = None,
     ):
@@ -105,16 +174,55 @@ class LocalVectorEngine(IVectorStore):
 
         self.persist_dir = Path(persist_directory or default_dir).resolve()
         self.persist_dir.mkdir(parents=True, exist_ok=True)
-        self.collection_name = collection_name or default_coll
         resolved_model = model_name or default_model
         self.model_key = resolved_model
         self.model_path = self.AVAILABLE_MODELS.get(resolved_model, resolved_model)
         self.device_override = device or os.getenv("RAISE_EMBEDDING_DEVICE")
-        
+
+        # Systematic Tripartite Naming Convention:
+        # If a dataset is explicitly provided, enforce {dataset}_{parser}_{model}
+        if dataset:
+            self.collection_name = self.format_collection_name(
+                dataset=dataset,
+                parser=parser or "docling",
+                embedding_model=resolved_model,
+            )
+        else:
+            self.collection_name = collection_name or default_coll
+
         self.client = None
         self.collection = None
         self.embed_model = None
         self._init_db()
+
+    def switch_collection(
+        self,
+        collection_name: Optional[str] = None,
+        dataset: Optional[str] = None,
+        parser: Optional[str] = None,
+    ) -> Any:
+        """Switch active collection dynamically following the tripartite naming convention."""
+        if dataset:
+            target_name = self.format_collection_name(
+                dataset=dataset,
+                parser=parser or "docling",
+                embedding_model=self.model_key,
+            )
+        elif collection_name:
+            target_name = collection_name
+        else:
+            return self._get_collection()
+
+        self.collection_name = target_name
+        if HAS_CHROMADB:
+            if getattr(self, "client", None) is None:
+                self._init_db()
+            if getattr(self, "client", None) is not None:
+                self.collection = self.client.get_or_create_collection(
+                    name=self.collection_name,
+                    metadata={"hnsw:space": "cosine"},
+                )
+        return getattr(self, "collection", None)
 
     @property
     def dimension(self) -> int:

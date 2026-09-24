@@ -407,7 +407,21 @@ class AdaptiveChunk:
 
 ChromaDB is the persistent local vector store (`src/infrastructure/vector/chroma.py`):
 - **Persistence Path**: `.chromadb_bge_large` at repository root.
-- **Collection Name**: `raise_graphrag_chunks` (legacy default: `iitmrp_docling_bge_large`).
+- **Tripartite Collection Naming Convention**:
+  Every ChromaDB collection systematically encodes its data provenance following the canonical rule:
+  $$\text{Collection Name} = \{\text{dataset\_slug}\} \_ \{\text{parser\_slug}\} \_ \{\text{model\_slug}\}$$
+
+  | Segment | Meaning | Standard Examples |
+  | :--- | :--- | :--- |
+  | **`[dataset]`** | Target Dataset / Pilot Corpus | `iitmrp` (IIT Madras Research Park), `nipgr` (NIPGR Annual Reports), `bric` (BRIC Reports), `raise` (Master cross-institutional vault) |
+  | **`[parser]`** | Layout & Document Parser Engine | `docling` (IBM Docling TableFormer), `pymupdf` (PyMuPDF Fast Fitz), `auto` |
+  | **`[embedding_model]`** | Dense Vector Model Architecture | `bge_large` (`BAAI/bge-large-en-v1.5`, 1024-dim), `bge_m3` (1024-dim), `minilm` (384-dim), `qwen` |
+
+  **Concrete Examples**:
+  - `iitmrp_docling_bge_large`: Baseline pilot corpus of IIT Madras Research Park parsed with Docling and embedded with BGE-Large.
+  - `nipgr_docling_bge_large`: National Institute of Plant Genome Research corpus parsed with Docling and embedded with BGE-Large.
+  - `bric_pymupdf_minilm`: BRIC reports parsed via PyMuPDF and embedded with MiniLM.
+- **Dynamic Routing**: Supported via `LocalVectorEngine.format_collection_name(dataset, parser, model)` and `.switch_collection(dataset=...)`.
 - **Distance Metric**: Cosine Distance (`{"hnsw:space": "cosine"}`).
 - **HNSW Parameters**: Configured for high recall under dense academic embeddings.
 - **Metadata Filters**: Native Chroma `where` clauses on `document_id`, `library`, `pdf_filename`, and `chunk_type`.

@@ -201,6 +201,20 @@ data: [DONE]
 - **`GET /api/pdf/{filename}`**: Streams raw binary PDF file with `Content-Type: application/pdf`.
 - **Deep-linking Anchor**: When opening a cited page in an iframe or new browser tab, append `#page={primary_page}` (e.g. `/api/pdf/Report.pdf#page=14`).
 
+### D. ChromaDB Tripartite Collection Naming Convention:
+ChromaDB collections systematically encode dataset provenance, parser engine, and embedding model architecture following:
+$$\mathbf{Collection\ Name} = \{\text{dataset\_slug}\} \_ \{\text{parser\_slug}\} \_ \{\text{model\_slug}\}$$
+
+| Segment | Meaning | Standard Slugs |
+| :--- | :--- | :--- |
+| **`[dataset]`** | Target Dataset / Pilot Corpus | `iitmrp` (IIT Madras Research Park), `nipgr` (NIPGR Annual Reports), `bric` (BRIC Reports), `raise` (Master cross-institutional vault) |
+| **`[parser]`** | Layout & Document Parser Engine | `docling` (IBM Docling TableFormer), `pymupdf` (PyMuPDF Fast Fitz), `auto` |
+| **`[embedding_model]`** | Dense Vector Model Architecture | `bge_large` (`BAAI/bge-large-en-v1.5`, 1024-dim), `bge_m3` (1024-dim), `minilm` (384-dim), `qwen` |
+
+**Why `iitmrp_docling_bge_large` exists**:
+The original pilot dataset used to benchmark RAISE was the *IIT Madras Research Park (IITMRP) Annual Report*. 
+When new datasets or custom institutions are ingested, the backend dynamically resolves collections following this rule (e.g. `nipgr_docling_bge_large`, `bric_pymupdf_minilm`), preserving isolation and enabling clean multi-tenant research vaults.
+
 ---
 
 ## 4. Actionable Next Steps for Frontend Team

@@ -77,6 +77,50 @@ class VectorConfig(BaseModel):
     embedding_dimension: int = Field(default_factory=lambda: int(os.getenv("EMBEDDING_DIMENSION", "1024")))
     hnsw_space: str = Field(default_factory=lambda: os.getenv("CHROMA_HNSW_SPACE", "cosine"))
 
+    @staticmethod
+    def format_collection_name(
+        dataset: str,
+        parser: str = "docling",
+        embedding_model: str = "bge_large",
+    ) -> str:
+        """
+        Enforces canonical tripartite naming standard:
+        [dataset]_[parser]_[embedding_model]
+        """
+        import re
+
+        def _clean(val: str) -> str:
+            if not val:
+                return ""
+            s = str(val).split("/")[-1].split("\\")[-1]
+            return re.sub(r"[^a-zA-Z0-9]+", "_", s.strip().lower()).strip("_")
+
+        d = _clean(dataset) or "default"
+        p = _clean(parser) or "docling"
+        m = _clean(embedding_model) or "bge_large"
+        if "bge_large" in m:
+            m = "bge_large"
+        elif "bge_m3" in m:
+            m = "bge_m3"
+        elif "minilm" in m:
+            m = "minilm"
+        elif "qwen" in m:
+            m = "qwen"
+        return f"{d}_{p}_{m}"
+
+    @staticmethod
+    def parse_collection_name(name: str) -> Dict[str, str]:
+        """Deconstructs [dataset]_[parser]_[embedding_model]."""
+        if not name:
+            return {"dataset": "default", "parser": "docling", "embedding_model": "bge_large"}
+        parts = name.split("_")
+        if len(parts) >= 3:
+            return {"dataset": parts[0], "parser": parts[1], "embedding_model": "_".join(parts[2:])}
+        elif len(parts) == 2:
+            return {"dataset": parts[0], "parser": parts[1], "embedding_model": "bge_large"}
+        return {"dataset": name, "parser": "unknown", "embedding_model": "unknown"}
+
+
 
 class LLMConfig(BaseModel):
     """Local & Remote Large Language Model Configuration."""
