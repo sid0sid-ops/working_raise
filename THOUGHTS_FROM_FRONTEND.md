@@ -93,6 +93,13 @@ To make RAISE immediately accessible to non-technical users and cross-platform r
 6. **Zero-Crash Fallback Matrix**:
    * If Neo4j credentials are empty or local server is unreachable, the system automatically falls back to ChromaDB Dense Vector Search + BM25 keyword matching.
    * PostgreSQL and Redis include in-memory session protection.
+7. **Pristine Chat Interface on Initial Load**:
+   * Initial page load goes directly to the main research chat interface (clean search box, suggestions, tuner controls) without disruptive onboarding modal popups or transient banners.
+   * Mission Control is accessible via the Settings modal (`SettingsGatewayTab.tsx`) whenever the user desires.
+8. **Visual Cohesion & Ambient Box Light Glow Integration**:
+   * Removed all emerald/green badges and buttons, standardizing entirely on the main system's obsidian/slate background, indigo accents (`indigo-500/15`, `indigo-400`), and solid white action buttons with bold black text.
+   * Connected the installer window with a soft ambient halo matching the primary box light glow (`bg-indigo-500/15 blur-3xl`).
+   * Eliminated boxy borders and jarring outlines in favor of refined rounded panels (`rounded-2xl`).
 
 ---
 
