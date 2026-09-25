@@ -57,6 +57,44 @@ try:
 except ImportError:
     HAS_CHROMADB = False
 
+# Suppress ChromaDB internal telemetry and initialization notice logging
+import logging
+logging.getLogger("chromadb").setLevel(logging.ERROR)
+logging.getLogger("chromadb.telemetry").setLevel(logging.ERROR)
+logging.getLogger("chromadb.api.client").setLevel(logging.ERROR)
+
+SHARED_CHROMA_SETTINGS = Settings(
+    anonymized_telemetry=False,
+    is_persistent=True,
+    allow_reset=True,
+) if HAS_CHROMADB else None
+
+
+def get_shared_chroma_client(persist_directory: str | Path) -> Any:
+    """Returns a single canonical ChromaDB client per path with identical settings."""
+    if not HAS_CHROMADB:
+        return None
+    norm_path = str(Path(persist_directory).resolve())
+    with _CHROMA_INIT_LOCK:
+        if norm_path not in _GLOBAL_CHROMA_CLIENTS:
+            try:
+                _GLOBAL_CHROMA_CLIENTS[norm_path] = chromadb.PersistentClient(
+                    path=norm_path,
+                    settings=SHARED_CHROMA_SETTINGS,
+                )
+            except Exception:
+                try:
+                    from chromadb.api.client import SharedSystemClient
+                    for _, sys_client in getattr(SharedSystemClient, "_instances", {}).items():
+                        _GLOBAL_CHROMA_CLIENTS[norm_path] = sys_client
+                        break
+                    if norm_path not in _GLOBAL_CHROMA_CLIENTS:
+                        _GLOBAL_CHROMA_CLIENTS[norm_path] = chromadb.PersistentClient(path=norm_path)
+                except Exception:
+                    pass
+        return _GLOBAL_CHROMA_CLIENTS.get(norm_path)
+
+
 try:
     from src.core.config import settings
 except Exception:
@@ -272,21 +310,14 @@ class LocalVectorEngine(IVectorStore):
             return
 
         try:
-            norm_path = str(self.persist_dir.resolve())
-            with _CHROMA_INIT_LOCK:
-                if norm_path not in _GLOBAL_CHROMA_CLIENTS:
-                    _GLOBAL_CHROMA_CLIENTS[norm_path] = chromadb.PersistentClient(
-                        path=norm_path,
-                        settings=Settings(anonymized_telemetry=False, allow_reset=True),
-                    )
-                self.client = _GLOBAL_CHROMA_CLIENTS[norm_path]
-
-            self.collection = self.client.get_or_create_collection(
-                name=self.collection_name,
-                metadata={"hnsw:space": "cosine"},
-            )
-        except Exception as e:
-            print(f"ChromaDB initialization notice: {e}")
+            self.client = get_shared_chroma_client(self.persist_dir)
+            if self.client:
+                self.collection = self.client.get_or_create_collection(
+                    name=self.collection_name,
+                    metadata={"hnsw:space": "cosine"},
+                )
+        except Exception:
+            pass
 
     def _get_embedding_model(self):
         if self.embed_model is None:

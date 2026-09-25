@@ -70,12 +70,10 @@ class PreflightHealthChecker:
         if not p.exists():
             return False, f"ChromaDB persist directory not found at {p}"
         try:
-            import chromadb
-            from chromadb.config import Settings
-            client = chromadb.PersistentClient(
-                path=str(p),
-                settings=Settings(anonymized_telemetry=False, allow_reset=True),
-            )
+            from src.infrastructure.vector.chroma import get_shared_chroma_client
+            client = get_shared_chroma_client(p)
+            if client is None:
+                return False, f"Could not acquire shared ChromaDB client for {p}"
             colls = [c.name for c in client.list_collections()]
             if collection_name not in colls:
                 return False, f"Collection '{collection_name}' not found in ChromaDB. Available: {colls}"
