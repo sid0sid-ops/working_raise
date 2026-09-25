@@ -162,10 +162,11 @@ STRICT FORMATTING AND CITATION RULES:
    - Do NOT enumerate, list, or explain why irrelevant passages or excerpts were omitted.
    - Use citations ([1], [2]) ONLY for the relevant excerpts that directly support your substantive claims.
 
-7. TABULAR DATA & COMPARATIVE ANALYSIS:
-   - Institutional annual reports and academic documents frequently present longitudinal metrics in multi-column tables (e.g., statements organized by reporting periods like "Current Year" and "Previous Year").
-   - Scanned OCR text in legacy documents may occasionally exhibit character distortion in column headers or numeric values (such as letter-digit substitutions or broken formatting). Correlate the table headers and data columns with the document's identified reporting period to deduce the intended figures accurately.
-   - When answering comparative queries that require evaluating changes, differences, or growth across reporting periods, cite the specific verified metrics for each relevant period using standard bracketed citations (e.g., [1], [2]) and compute the exact arithmetic difference or percentage change accurately without guessing.
+7. TABULAR DATA & FINANCIAL COMPARISONS:
+   - Institutional annual reports and academic documents frequently present longitudinal metrics in multi-column tables (e.g., statements organized by reporting periods like 'Current Year' and 'Previous Year').
+   - In scanned OCR text, numbers and years may contain OCR noise: e.g., '31st March 2023' may appear in headers as 'Slst MARCH 2025' or 'Slst MARCH 2u2J', '53,55.00,000' as '53,55.00,Uuu', '48,50,00,000' as '48.S0_C)_(JL' or '48.50.0u.Uuu' (where 'S' is 5, representing 48,50,00,000 / 48.50 crore, NOT 48.80 crore). The source document metadata defines the true fiscal year. Extract figures from the relevant columns accordingly.
+   - When asked to compare figures across years or calculate the difference/change, provide the reported figures for each year and accurately compute the arithmetic difference (Current Year minus Previous Year) without guessing.
+   - Present the direct factual figures with bullet points and clear calculations. Do NOT append speculative meta-notes or trailing paragraphs discussing OCR transcription or artifact noise.
 """
 
 

@@ -18,9 +18,13 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from src.storage.interfaces import IVectorStore
+import threading
 
 DenseVectorEngine = None
 ChromaVectorStore = None
+
+_GLOBAL_CHROMA_CLIENTS: Dict[str, Any] = {}
+_CHROMA_INIT_LOCK = threading.Lock()
 
 # Auto-load .env variables if not already loaded
 try:
@@ -168,9 +172,9 @@ class LocalVectorEngine(IVectorStore):
             default_coll = settings.vector.collection_name
             default_model = settings.vector.embedding_model
         else:
-            default_dir = Path(__file__).resolve().parents[3] / ".chromadb_bge_large"
-            default_coll = "iitmrp_docling_bge_large"
-            default_model = "BAAI/bge-large-en-v1.5"
+            default_dir = os.getenv("CHROMA_PERSIST_DIRECTORY", str(Path(__file__).resolve().parents[3] / ".chromadb_bge_large"))
+            default_coll = os.getenv("CHROMA_COLLECTION_NAME", "iitmrp_docling_bge_large")
+            default_model = os.getenv("EMBEDDING_MODEL", "BAAI/bge-large-en-v1.5")
 
         self.persist_dir = Path(persist_directory or default_dir).resolve()
         self.persist_dir.mkdir(parents=True, exist_ok=True)
@@ -268,10 +272,15 @@ class LocalVectorEngine(IVectorStore):
             return
 
         try:
-            self.client = chromadb.PersistentClient(
-                path=str(self.persist_dir),
-                settings=Settings(anonymized_telemetry=False, allow_reset=True),
-            )
+            norm_path = str(self.persist_dir.resolve())
+            with _CHROMA_INIT_LOCK:
+                if norm_path not in _GLOBAL_CHROMA_CLIENTS:
+                    _GLOBAL_CHROMA_CLIENTS[norm_path] = chromadb.PersistentClient(
+                        path=norm_path,
+                        settings=Settings(anonymized_telemetry=False, allow_reset=True),
+                    )
+                self.client = _GLOBAL_CHROMA_CLIENTS[norm_path]
+
             self.collection = self.client.get_or_create_collection(
                 name=self.collection_name,
                 metadata={"hnsw:space": "cosine"},
@@ -354,7 +363,7 @@ class LocalVectorEngine(IVectorStore):
                     convert_to_numpy=True,
                     normalize_embeddings=True,
                     batch_size=64,
-                    show_progress_bar=True,
+                    show_progress_bar=False,
                 )
                 vec_list = embeddings.tolist()
                 if vec_list and all(self.validate_embedding_vector(v, dim) for v in vec_list):

@@ -508,25 +508,7 @@ class BaselineEvaluationRunner:
         }
 
     def _load_questions(self, benchmark_name: str, limit: Optional[int] = None) -> List[EvalQuestion]:
-        b_clean = benchmark_name.lower().strip()
-        if b_clean in ("raise", "raise-domain", "tier1"):
-            return BenchmarkLoader.load_raise_domain_benchmark()
-        elif b_clean in ("frames", "824"):
-            return BenchmarkLoader.load_frames_benchmark(limit=limit)
-        elif b_clean == "nq":
-            loader = NQDatasetLoader()
-            return loader.load_dev_questions(limit=limit)
-        elif b_clean == "hotpotqa":
-            loader = HotpotQALoader()
-            return loader.load_dev_questions(limit=limit)
-        elif b_clean == "2wiki":
-            loader = TwoWikiMultihopLoader()
-            return loader.load_dev_questions(limit=limit)
-        elif b_clean == "musique":
-            loader = MuSiQueLoader()
-            return loader.load_dev_questions(limit=limit)
-        else:
-            raise ValueError(f"Unknown benchmark suite: '{benchmark_name}'")
+        return BenchmarkLoader.load(benchmark_name, limit=limit)
 
     def _write_run_artifacts(
         self,

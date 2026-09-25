@@ -86,20 +86,28 @@ class StandaloneRAGPipeline:
         self.reranker = self.agent_router.reranker
         self.parallel_retriever = AsyncParallelRetriever(self)
 
-    def _load_processed_data(self):
-        """Auto-load all processed academic chunks and triples into memory."""
+    def _load_processed_data(self, force_reload: bool = False):
+        """Auto-load all processed academic chunks and triples into memory if not already indexed."""
         processed_chunks_dir = settings.processed_dir / "chunks"
         processed_triples_dir = settings.processed_dir / "graph_triples"
 
-        if processed_chunks_dir.exists():
-            for pattern in ["*_chunks.json", "*_parent_chunks.json"]:
-                for f in processed_chunks_dir.glob(pattern):
-                    try:
-                        chunks = json.loads(f.read_text(encoding="utf-8"))
-                        if isinstance(chunks, list) and chunks:
-                            self.vector_engine.ingest_chunks(chunks, doc_id=f.stem)
-                    except Exception:
-                        pass
+        # Fast-path: If persistent ChromaDB is already populated, skip expensive re-embedding
+        already_indexed = False
+        try:
+            already_indexed = (self.vector_engine.count() > 0)
+        except Exception:
+            pass
+
+        if force_reload or not already_indexed:
+            if processed_chunks_dir.exists():
+                for pattern in ["*_chunks.json", "*_parent_chunks.json"]:
+                    for f in processed_chunks_dir.glob(pattern):
+                        try:
+                            chunks = json.loads(f.read_text(encoding="utf-8"))
+                            if isinstance(chunks, list) and chunks:
+                                self.vector_engine.ingest_chunks(chunks, doc_id=f.stem)
+                        except Exception:
+                            pass
 
         if processed_triples_dir.exists():
             triples_list = []
@@ -111,10 +119,11 @@ class StandaloneRAGPipeline:
                     pass
             if triples_list:
                 self.graph_engine.build_from_academic_triples(triples_list)
-                try:
-                    self.sync_to_neo4j()
-                except Exception:
-                    pass
+                if force_reload or not already_indexed:
+                    try:
+                        self.sync_to_neo4j()
+                    except Exception:
+                        pass
 
     def process_artifacts(
         self,

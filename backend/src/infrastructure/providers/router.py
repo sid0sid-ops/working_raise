@@ -318,8 +318,9 @@ class ProviderRouter:
 
             # Apply rate-limit cooldown if 429 encountered
             if "429" in err_msg or "RATE_LIMITED" in err_msg or "quota" in err_msg.lower():
-                self.provider_cooldowns[primary_provider.name] = time.time() + 60.0
-                logger.info(f"Activated 60s cooldown for provider '{primary_provider.name}'.")
+                cooldown_secs = 15.0 if primary_provider.name == "groq" else 60.0
+                self.provider_cooldowns[primary_provider.name] = time.time() + cooldown_secs
+                logger.info(f"Activated {int(cooldown_secs)}s cooldown for provider '{primary_provider.name}'.")
             elif "402" in err_msg or "BILLING_RESTRICTED" in err_msg or "credit card" in err_msg.lower() or "403" in err_msg:
                 self.disabled_providers.add(primary_provider.name)
                 logger.warning(f"Permanently disabled billing-restricted provider '{primary_provider.name}'.")

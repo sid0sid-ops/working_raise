@@ -34,8 +34,8 @@ class DatabaseConfig:
     neo4j_user: str = os.getenv("NEO4J_USER", "neo4j")
     neo4j_password: str = os.getenv("NEO4J_PASSWORD", "password123")
 
-    chroma_dir: str = str(BACKEND_ROOT / ".chromadb_bge_large")
-    chroma_collection: str = "iitmrp_docling_bge_large"
+    chroma_dir: str = os.getenv("CHROMA_PERSIST_DIRECTORY", str(BACKEND_ROOT / ".chromadb_bge_large"))
+    chroma_collection: str = os.getenv("CHROMA_COLLECTION_NAME", "iitmrp_docling_bge_large")
 
 
 @dataclass

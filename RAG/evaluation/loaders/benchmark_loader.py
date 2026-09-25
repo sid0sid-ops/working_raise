@@ -190,7 +190,8 @@ class BenchmarkLoader:
         
         # RAISE Domain
         if b_clean in ("raise", "raise_domain", "tier1"):
-            return cls.load_raise_domain_benchmark()
+            q_list = cls.load_raise_domain_benchmark()
+            return q_list[:limit] if limit else q_list
         # FRAMES
         elif b_clean in ("frames", "google_frames", "824"):
             return cls.load_frames_benchmark(limit=limit)

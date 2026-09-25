@@ -363,11 +363,21 @@ class CrossEncoderReranker:
             try:
                 with warnings.catch_warnings():
                     warnings.filterwarnings("ignore", category=UserWarning)
-                    loaded_model = CrossEncoder(
-                        self.model_name,
-                        device=dev,
-                        token=token,
-                    )
+                    try:
+                        # 1. Zero-latency offline load from local cache
+                        loaded_model = CrossEncoder(
+                            self.model_name,
+                            device=dev,
+                            token=token,
+                            local_files_only=True,
+                        )
+                    except Exception:
+                        # 2. Online fetch only if not yet cached
+                        loaded_model = CrossEncoder(
+                            self.model_name,
+                            device=dev,
+                            token=token,
+                        )
                     self.model = loaded_model
                     _CROSS_ENCODER_MODEL_CACHE[self.model_name] = loaded_model
             except Exception:
@@ -460,7 +470,7 @@ class CrossEncoderReranker:
         # Predict relevance scores in single batch
         if self.model is not None:
             try:
-                raw_scores = self.model.predict(all_pairs)
+                raw_scores = self.model.predict(all_pairs, batch_size=64, show_progress_bar=False)
                 all_scores = [float(s) for s in raw_scores]
             except Exception:
                 all_scores = []

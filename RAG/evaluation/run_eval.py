@@ -23,13 +23,14 @@ for p in [str(PROJECT_ROOT), str(BACKEND_ROOT), str(RAG_ROOT)]:
     sys.path.insert(0, p)
 
 from evaluation.runners.baseline_runner import BaselineEvaluationRunner
+from evaluation.runners.preflight import PreflightHealthChecker
+from evaluation.configs.default_config import ABLATION_REGISTRY
 
 
 def main():
     parser = argparse.ArgumentParser(description="RAISE Scientific Evaluation Framework")
     parser.add_argument("--benchmark", type=str, default="raise-domain",
-                        choices=["raise-domain", "frames", "nq", "hotpotqa", "2wiki", "musique"],
-                        help="Benchmark suite to evaluate")
+                        help="Benchmark suite to evaluate (raise-domain, frames, hotpotqa, 2wiki, musique, nq, triviaqa, beir, trec-dl-2019, trec-dl-2020)")
     parser.add_argument("--mode", type=str, default="MODE_B_END_TO_END",
                         choices=["MODE_A_RETRIEVAL", "MODE_B_END_TO_END"],
                         help="Evaluation mode: Mode A (Retrieval only) or Mode B (End-to-End RAG)")
@@ -43,7 +44,13 @@ def main():
                         help="Custom tag for run ID, e.g. improved")
     parser.add_argument("--all-baseline", action="store_true",
                         help="Executes complete baseline battery across all tiers and ablations")
+    parser.add_argument("--no-fail-fast", action="store_true",
+                        help="Bypasses hard exit on preflight warnings")
     args = parser.parse_args()
+
+    # Pre-flight infrastructure and model health check
+    target_ablation = ABLATION_REGISTRY.get(args.ablation, ABLATION_REGISTRY["ABL-G"])
+    PreflightHealthChecker.run_all_checks(target_ablation, fail_fast=not args.no_fail_fast)
 
     runner = BaselineEvaluationRunner(
         ablation_id=args.ablation,
