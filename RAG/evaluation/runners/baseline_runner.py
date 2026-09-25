@@ -306,6 +306,17 @@ class BaselineEvaluationRunner:
 
         logger.info(f"Evaluation Run {run_id} completed successfully.")
         logger.info(f"Results Summary: Passed {passed_cases}/{total_cases} | EM: {scorecard['qa_exact_match']} | F1: {scorecard['qa_token_f1']} | R@4: {scorecard['retrieval_recall@4']}")
+
+        # Explicit garbage collection and CUDA cache release to prevent memory leaks
+        import gc
+        gc.collect()
+        try:
+            import torch
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+        except ImportError:
+            pass
+
         return scorecard
 
     def _execute_retrieval_case(self, question: EvalQuestion) -> Dict[str, Any]:

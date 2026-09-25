@@ -44,11 +44,15 @@ services:
     image: redis:7-alpine
     container_name: raise-redis
     restart: unless-stopped
-    command: redis-server --appendonly yes --maxmemory 4gb --maxmemory-policy allkeys-lru
+    command: redis-server --appendonly yes --maxmemory ${REDIS_MAX_MEMORY:-512mb} --maxmemory-policy allkeys-lru
     ports:
       - "6379:6379"
     volumes:
       - raise_redis_data:/data
+    deploy:
+      resources:
+        limits:
+          memory: 512M
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s
@@ -73,14 +77,18 @@ services:
       - NEO4J_PLUGINS=["apoc"]
       - NEO4J_dbms_security_procedures_unrestricted=apoc.*
       - NEO4J_dbms_security_procedures_allowlist=apoc.*
-      - NEO4J_server_memory_heap_initial__size=${NEO4J_HEAP_INITIAL_SIZE:-8G}
-      - NEO4J_server_memory_heap_max__size=${NEO4J_HEAP_MAX_SIZE:-12G}
-      - NEO4J_server_memory_pagecache_size=${NEO4J_PAGECACHE_SIZE:-16G}
+      - NEO4J_server_memory_heap_initial__size=${NEO4J_HEAP_INITIAL_SIZE:-512M}
+      - NEO4J_server_memory_heap_max__size=${NEO4J_HEAP_MAX_SIZE:-2G}
+      - NEO4J_server_memory_pagecache_size=${NEO4J_PAGECACHE_SIZE:-1G}
     volumes:
       - neo4j_prod_data:/data
       - neo4j_prod_logs:/logs
       - neo4j_prod_import:/var/lib/neo4j/import
       - neo4j_prod_plugins:/plugins
+    deploy:
+      resources:
+        limits:
+          memory: 3G
     healthcheck:
       test: ["CMD-SHELL", "cypher-shell -u ${NEO4J_USER:-neo4j} -p ${NEO4J_PASSWORD:-password123} 'RETURN 1;' || exit 1"]
       interval: 10s

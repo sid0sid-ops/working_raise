@@ -1,0 +1,16 @@
+{
+  "include": [
+    "backend/src",
+    "RAG/evaluation",
+    "backend/evaluation"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    "**/.chromadb*",
+    "**/RAG/evaluation/runs",
+    "**/backend/rust/raise_engine/target",
+    "**/backend/data",
+    "**/.git"
+  ]
+}

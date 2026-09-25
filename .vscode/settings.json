@@ -1,0 +1,33 @@
+{
+  "files.watcherExclude": {
+    "**/.git/**": true,
+    "**/.chromadb*/**": true,
+    "**/RAG/evaluation/runs/**": true,
+    "**/backend/rust/raise_engine/target/**": true,
+    "**/backend/data/**": true,
+    "**/node_modules/**": true,
+    "**/__pycache__/**": true,
+    "**/.pytest_cache/**": true,
+    "**/logs/**": true
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/.chromadb*": true,
+    "**/RAG/evaluation/runs": true,
+    "**/backend/rust/raise_engine/target": true,
+    "**/backend/data": true,
+    "**/node_modules": true
+  },
+  "python.analysis.exclude": [
+    "**/backend/rust/**",
+    "**/RAG/evaluation/runs/**",
+    "**/.chromadb*/**",
+    "**/backend/data/**",
+    "**/node_modules/**"
+  ],
+  "python.analysis.ignore": [
+    "**/backend/rust/**",
+    "**/RAG/evaluation/runs/**",
+    "**/.chromadb*/**"
+  ]
+}
