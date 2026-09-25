@@ -301,6 +301,18 @@ def get_llm_provider(config: Optional[LLMConfig] = None, provider_name: Optional
     elif backend == "cohere":
         from src.infrastructure.providers.cohere import CohereProvider
         return CohereProvider()
+    elif backend == "mistral":
+        from src.infrastructure.providers.mistral import MistralProvider
+        return MistralProvider()
+    elif backend in ("vercel", "typesafe", "jev"):
+        from src.infrastructure.providers.vercel import VercelAIGatewayProvider
+        return VercelAIGatewayProvider()
+    elif backend == "openrouter":
+        from src.infrastructure.providers.openrouter import OpenRouterProvider
+        return OpenRouterProvider()
+    elif backend in ("universal", "custom", "together", "fireworks", "perplexity"):
+        from src.infrastructure.providers.universal import UniversalCloudProvider
+        return UniversalCloudProvider(custom_name=backend)
     elif backend == "ollama":
         return LocalOllamaProvider(base_url=cfg.base_url, model_name=cfg.model_name)
     else:

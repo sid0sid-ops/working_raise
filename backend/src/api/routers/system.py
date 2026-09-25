@@ -30,8 +30,13 @@ class SystemConfigRequest(BaseModel):
     gemini_api_key: Optional[str] = None
     nvidia_api_key: Optional[str] = None
     cohere_api_key: Optional[str] = None
+    mistral_api_key: Optional[str] = None
+    vercel_api_key: Optional[str] = None
     deepseek_api_key: Optional[str] = None
     openrouter_api_key: Optional[str] = None
+    custom_api_key: Optional[str] = None
+    custom_base_url: Optional[str] = None
+    custom_model_name: Optional[str] = None
     selected_local_model: Optional[str] = "llama3.2:3b"
     neo4j_mode: str = Field(default="cloud", description="cloud, local, or in_memory_fallback")
     neo4j_uri: Optional[str] = None
@@ -156,16 +161,23 @@ async def get_current_configuration() -> Dict[str, Any]:
         "nvidia_masked": _mask_secret(cm.get_credential("nvidia")),
         "cohere_configured": cm.get_credential_status("cohere") == "configured",
         "cohere_masked": _mask_secret(cm.get_credential("cohere")),
+        "mistral_configured": cm.get_credential_status("mistral") == "configured",
+        "mistral_masked": _mask_secret(cm.get_credential("mistral")),
+        "vercel_configured": cm.get_credential_status("vercel") == "configured" or cm.get_credential_status("typesafe") == "configured",
+        "vercel_masked": _mask_secret(cm.get_credential("vercel") or cm.get_credential("typesafe")),
         "deepseek_configured": cm.get_credential_status("deepseek") == "configured",
         "deepseek_masked": _mask_secret(cm.get_credential("deepseek")),
         "openrouter_configured": cm.get_credential_status("openrouter") == "configured",
         "openrouter_masked": _mask_secret(cm.get_credential("openrouter")),
+        "custom_configured": cm.get_credential_status("custom") == "configured",
+        "custom_masked": _mask_secret(cm.get_credential("custom")),
         "neo4j_uri": neo4j_uri,
         "neo4j_database": os.getenv("NEO4J_DATABASE", "neo4j"),
         "neo4j_is_cloud": "databases.neo4j.io" in neo4j_uri,
         "redis_is_cloud": "upstash.io" in redis_url,
         "first_run_completed": bool(
             cm.get_credential_status("groq") == "configured"
+            or cm.get_credential_status("mistral") == "configured"
             or cm.get_credential_status("gemini") == "configured"
             or cm.get_credential_status("nvidia") == "configured"
             or cm.get_credential_status("cohere") == "configured"
@@ -261,6 +273,18 @@ async def save_configuration(cfg: SystemConfigRequest) -> Dict[str, Any]:
         elif cfg.llm_mode == "cloud_cohere":
             env_map["LLM_BACKEND"] = "cohere"
             env_map["LLM_MODEL_NAME"] = "command-r-plus-08-2024"
+        elif cfg.llm_mode == "cloud_mistral":
+            env_map["LLM_BACKEND"] = "mistral"
+            env_map["LLM_MODEL_NAME"] = "open-mistral-nemo"
+        elif cfg.llm_mode == "cloud_vercel":
+            env_map["LLM_BACKEND"] = "vercel"
+            env_map["LLM_MODEL_NAME"] = "typesafe-ai/jev"
+        elif cfg.llm_mode == "cloud_custom":
+            env_map["LLM_BACKEND"] = "universal"
+            env_map["LLM_MODEL_NAME"] = cfg.custom_model_name or "gpt-4o-mini"
+            if cfg.custom_base_url:
+                env_map["CUSTOM_LLM_BASE_URL"] = cfg.custom_base_url
+                os.environ["CUSTOM_LLM_BASE_URL"] = cfg.custom_base_url
         else:  # cloud_groq default
             env_map["LLM_BACKEND"] = "groq"
             env_map["LLM_MODEL_NAME"] = "llama-3.3-70b-versatile"
@@ -277,8 +301,11 @@ async def save_configuration(cfg: SystemConfigRequest) -> Dict[str, Any]:
             ("gemini", cfg.gemini_api_key),
             ("nvidia", cfg.nvidia_api_key),
             ("cohere", cfg.cohere_api_key),
+            ("mistral", cfg.mistral_api_key),
+            ("vercel", cfg.vercel_api_key),
             ("deepseek", cfg.deepseek_api_key),
             ("openrouter", cfg.openrouter_api_key),
+            ("custom", cfg.custom_api_key),
         ]:
             if secret and secret.strip():
                 cm.set_credential(prov, secret.strip())

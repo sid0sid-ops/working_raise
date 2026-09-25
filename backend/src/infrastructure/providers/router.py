@@ -22,6 +22,9 @@ from src.infrastructure.providers.base import (
 from src.infrastructure.providers.llm import LocalVLLMProvider, get_llm_provider
 from src.infrastructure.providers.gemini import GeminiProvider
 from src.infrastructure.providers.groq import GroqProvider
+from src.infrastructure.providers.mistral import MistralProvider
+from src.infrastructure.providers.vercel import VercelAIGatewayProvider
+from src.infrastructure.providers.universal import UniversalCloudProvider
 from src.infrastructure.providers.deepseek import DeepSeekProvider
 from src.infrastructure.providers.nvidia import NvidiaNIMProvider
 from src.infrastructure.providers.cohere import CohereProvider
@@ -96,10 +99,13 @@ class ProviderRouter:
             "vllm": LocalVLLMProvider(),
             "gemini": GeminiProvider(),
             "groq": GroqProvider(),
-            "deepseek": DeepSeekProvider(),
+            "mistral": MistralProvider(),
             "nvidia": NvidiaNIMProvider(),
             "cohere": CohereProvider(),
+            "vercel": VercelAIGatewayProvider(),
+            "deepseek": DeepSeekProvider(),
             "openrouter": OpenRouterProvider(),
+            "universal": UniversalCloudProvider(),
         }
 
         # Active primary provider selection
@@ -107,14 +113,17 @@ class ProviderRouter:
 
         # Task routing policy mapping (Production Defaults for 8 Pipeline Phases)
         # DeepSeek is NOT used as default because it has NO permanent free tier (returns HTTP 402 once trial expires).
-        # Cloud defaults route to high-throughput free/developer tiers: Groq, NVIDIA NIM, Cohere, Gemini.
+        # Cloud defaults route to high-throughput free/developer tiers: Groq, Mistral, NVIDIA NIM, Cohere, Gemini.
+        from src.infrastructure.credentials.manager import get_credential_manager
+        _cm = get_credential_manager()
+
         self.task_policy: Dict[InferenceTask, str] = {
             InferenceTask.CHAT: "groq" if self.cloud_allowed else "vllm",  # Phase 1: Low-latency chat
             InferenceTask.RAG_GENERATION: primary_cloud if self.mode == ExecutionMode.CLOUD else "vllm",  # Phase 2: RAG Answer Synthesis
             InferenceTask.DOCUMENT_EXTRACTION: "gemini",  # Phase 3: Doc Layout & Vision
             InferenceTask.QUERY_REWRITE: "groq",  # Phase 4: Query Intake & Reformulation
             InferenceTask.REASONING: primary_cloud if self.cloud_allowed else "vllm",  # Phase 5: Multi-Hop Relational Reasoning
-            InferenceTask.CODE: primary_cloud if self.cloud_allowed else "vllm",  # Phase 6: Code & Formal Cypher
+            InferenceTask.CODE: "mistral" if _cm.get_credential_status("mistral") == "configured" and self.cloud_allowed else (primary_cloud if self.cloud_allowed else "vllm"),  # Phase 6: Code & Formal Cypher
             InferenceTask.SUMMARIZATION: "groq",  # Phase 7: Community / Executive Summaries
             InferenceTask.RERANKING: "cohere",  # Phase 8: Neural Cross-Attention Reranking
             InferenceTask.STRUCTURED_EXTRACTION: primary_cloud if self.cloud_allowed else "vllm",
@@ -134,24 +143,24 @@ class ProviderRouter:
     def _refresh_fallback_chain(self, primary_cloud: Optional[str] = None) -> None:
         """
         Dynamically constructs the fallback chain based on user-provided API keys.
-        Providers without free tiers (DeepSeek, OpenRouter) are strictly omitted
-        unless the user has explicitly written their key and it is not payment-restricted.
+        Providers without free tiers or requiring balance (DeepSeek, OpenRouter, Vercel)
+        are strictly omitted unless the user has explicitly written their key and it is not payment-restricted.
         """
         from src.infrastructure.credentials.manager import get_credential_manager
         cm = get_credential_manager()
         prim = primary_cloud or (self.fallback_chain[0] if self.fallback_chain else "groq")
 
         active = [prim] if prim not in self.disabled_providers else []
-        for cand in ["nvidia", "cohere", "gemini", "groq"]:
+        for cand in ["groq", "mistral", "nvidia", "cohere", "gemini"]:
             if cand in self.disabled_providers:
                 continue
             if cm.get_credential_status(cand) == "configured":
                 if cand not in active:
                     active.append(cand)
 
-        # DeepSeek and OpenRouter require prepaid balance (HTTP 402 if expired)
+        # Paid / account-credit gated tiers (HTTP 402/403 if expired or missing card)
         # ONLY include if user explicitly wrote their key AND not disabled
-        for paid in ["deepseek", "openrouter"]:
+        for paid in ["deepseek", "openrouter", "vercel", "universal"]:
             if paid not in self.disabled_providers and cm.get_credential_status(paid) == "configured":
                 if paid not in active:
                     active.append(paid)
@@ -166,7 +175,7 @@ class ProviderRouter:
         """
         Dynamically returns ONLY the LLMs that are actively usable by the user.
         If a user writes their key, the LLM dynamically appears here.
-        DeepSeek and other paid APIs are excluded if balance is $0 (HTTP 402) or unconfigured.
+        Restricted/disabled providers are excluded.
         """
         from src.infrastructure.credentials.manager import get_credential_manager
         cm = get_credential_manager()
@@ -174,11 +183,14 @@ class ProviderRouter:
 
         cloud_meta = {
             "groq": {"name": "Groq LPU (High-Throughput)", "tier": "Free Tier", "default_model": "qwen/qwen3.8-27b"},
+            "mistral": {"name": "Mistral AI", "tier": "Free / Developer Tier", "default_model": "open-mistral-nemo"},
             "nvidia": {"name": "NVIDIA NIM", "tier": "Developer Free Tier (1,000 Credits)", "default_model": "meta/llama-3.2-11b-vision-instruct"},
             "cohere": {"name": "Cohere Command", "tier": "Evaluation Free Tier", "default_model": "command-r-plus-08-2024"},
             "gemini": {"name": "Google Gemini", "tier": "Free Tier (Rate-Limited Quota)", "default_model": "gemini-2.0-flash"},
+            "vercel": {"name": "Vercel AI Gateway / TypeSafe Jev", "tier": "Vercel Gateway Tier", "default_model": "typesafe-ai/jev"},
             "deepseek": {"name": "DeepSeek API", "tier": "Prepaid Only (No Permanent Free Tier)", "default_model": "deepseek-chat"},
             "openrouter": {"name": "OpenRouter Gateway", "tier": "Prepaid Only (Account Credits)", "default_model": "anthropic/claude-3-haiku"},
+            "universal": {"name": "Universal Custom Cloud API", "tier": "Custom OpenAI-Compatible", "default_model": "gpt-4o-mini"},
         }
 
         # Check local vLLM
@@ -308,12 +320,15 @@ class ProviderRouter:
             if "429" in err_msg or "RATE_LIMITED" in err_msg or "quota" in err_msg.lower():
                 self.provider_cooldowns[primary_provider.name] = time.time() + 60.0
                 logger.info(f"Activated 60s cooldown for provider '{primary_provider.name}'.")
+            elif "402" in err_msg or "BILLING_RESTRICTED" in err_msg or "credit card" in err_msg.lower() or "403" in err_msg:
+                self.disabled_providers.add(primary_provider.name)
+                logger.warning(f"Permanently disabled billing-restricted provider '{primary_provider.name}'.")
 
             # Try each provider in the fallback chain
             errors = [f"{primary_provider.name}: {err_msg}"]
             now = time.time()
             for candidate_name in self.fallback_chain:
-                if candidate_name == primary_provider.name:
+                if candidate_name == primary_provider.name or candidate_name in self.disabled_providers:
                     continue
                 # Skip candidates actively on cooldown
                 if self.provider_cooldowns.get(candidate_name, 0) > now:
@@ -357,6 +372,9 @@ class ProviderRouter:
                     fb_str = str(fb_err)
                     if "429" in fb_str or "RATE_LIMITED" in fb_str or "quota" in fb_str.lower():
                         self.provider_cooldowns[candidate_name] = time.time() + 60.0
+                    elif "402" in fb_str or "BILLING_RESTRICTED" in fb_str or "credit card" in fb_str.lower() or ("403" in fb_str and candidate_name in ("deepseek", "vercel", "openrouter")):
+                        self.disabled_providers.add(candidate_name)
+                        logger.warning(f"Permanently disabled billing-restricted fallback '{candidate_name}'.")
                     errors.append(f"{candidate_name}: {fb_err}")
                     logger.warning(f"Fallback candidate '{candidate_name}' failed: {fb_err}")
 

@@ -44,19 +44,27 @@ def classify_http_status(status_code: int) -> str:
 
 def safe_http_request(
     url: str,
-    payload: Dict[str, Any],
+    payload: Optional[Dict[str, Any]] = None,
     headers: Optional[Dict[str, str]] = None,
     timeout: float = 30.0,
     max_retries: int = 3,
     backoff_seconds: float = 3.0,
+    method: Optional[str] = None,
 ) -> Tuple[Dict[str, Any], float]:
     """
-    Execute HTTP POST request with bounded retries and latency tracking.
+    Execute safe HTTP request (POST or GET) with bounded retries and latency tracking.
     Returns (response_json, elapsed_ms).
     Ensures zero authorization token disclosure on network or JSON failure.
     """
-    body_bytes = json.dumps(payload).encode("utf-8")
-    req_headers = {"Content-Type": "application/json", "User-Agent": "RAISE-MultiBackend/2.5"}
+    req_headers = {"User-Agent": "RAISE-MultiBackend/2.5"}
+    body_bytes = None
+    if payload is not None:
+        body_bytes = json.dumps(payload).encode("utf-8")
+        req_headers["Content-Type"] = "application/json"
+        http_method = method or "POST"
+    else:
+        http_method = method or "GET"
+
     if headers:
         req_headers.update(headers)
 
@@ -66,7 +74,7 @@ def safe_http_request(
     while attempts <= max_retries:
         attempts += 1
         t_start = time.perf_counter()
-        req = urllib.request.Request(url, data=body_bytes, headers=req_headers, method="POST")
+        req = urllib.request.Request(url, data=body_bytes, headers=req_headers, method=http_method)
 
         try:
             with urllib.request.urlopen(req, timeout=timeout) as resp:

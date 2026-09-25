@@ -1,9 +1,9 @@
 # RAISE Architecture — Chunking, Retrieval, Embedding & Data-Layer Reference
 
-**Document Version**: 1.3.0  
+**Document Version**: 1.4.0  
 **Status**: Canonical, Evaluated & Production-Verified  
 **Date**: September 25, 2026  
-**Last Updated**: 2026-09-25T06:45:00+05:30  
+**Last Updated**: 2026-09-25T07:00:00+05:30  
 **Scope**: End-to-End Document Lifecycle, FFI Acceleration, Multi-Engine Retrieval, Multi-Cloud Resilience, and LangGraph Orchestration  
 **Target Repository**: `semanticClimate/RAISE` (`backend/` and `RAG/`)
 
@@ -948,22 +948,28 @@ flowchart TD
     subgraph ComputeFailover["1. LLM & Reasoning Multi-Cloud Cascades"]
         LocalLLM["Local vLLM / Ollama (Qwen 2.5 14B, RTX 3090 24GB)"]
         Groq["Cloud Tier 1: Groq LPU (Llama 3.3 70B / Qwen 2.5 27B, <1s TTFT)"]
-        NIM["Cloud Tier 2: NVIDIA NIM (Llama 3.2 11B Vision, 1,000 Free Credits)"]
-        Cohere["Cloud Tier 3: Cohere Command (Command-R+ 08-2024, Free Dev Tier)"]
-        Gemini["Cloud Tier 4: Google Gemini API (Gemini 2.0 Flash, 1M+ Context)"]
+        Mistral["Cloud Tier 2: Mistral AI (open-mistral-nemo / codestral-latest)"]
+        NIM["Cloud Tier 3: NVIDIA NIM (Llama 3.2 11B Vision, 1,000 Free Credits)"]
+        Cohere["Cloud Tier 4: Cohere Command (Command-R+ 08-2024, Free Dev Tier)"]
+        Gemini["Cloud Tier 5: Google Gemini API (Gemini 2.0 Flash, 1M+ Context)"]
         PaidGate{"User Funded Key Configured?"}
+        Vercel["Gateway Tier: Vercel AI Gateway (TypeSafe Jev / Claude / GPT-4o)"]
         DeepSeek["Paid Tier 1: DeepSeek Cloud (V3/R1, Prepaid Only - No Free Tier)"]
         OpenRouter["Paid Tier 2: OpenRouter Gateway (Claude 3.5 Sonnet / Mistral Large)"]
+        Universal["Custom Tier: Universal Cloud (Together / Fireworks / OpenAI)"]
         SafeRefusal["Safe Fallback: unverified_responder (Safe Refusal, Zero Hallucination)"]
 
         LocalLLM -->|CUDA OOM / Local Offline| Groq
-        Groq -->|429 Rate Limit (60s Cooldown)| NIM
+        Groq -->|429 Rate Limit (60s Cooldown)| Mistral
+        Mistral -->|429 Rate Limit| NIM
         NIM -->|429 Rate Limit| Cohere
         Cohere -->|429 Rate Limit| Gemini
         Gemini -->|All Free Cloud Exhausted| PaidGate
-        PaidGate -->|Key Configured & Funded| DeepSeek
+        PaidGate -->|Key Configured & Funded| Vercel
+        Vercel -->|Missing Card / Billing 403| DeepSeek
         DeepSeek -->|402 Unfunded / Disabled| OpenRouter
-        OpenRouter -->|Credit Exhausted| SafeRefusal
+        OpenRouter -->|Credit Exhausted| Universal
+        Universal -->|All Exhausted| SafeRefusal
         PaidGate -->|No Paid Keys| SafeRefusal
     end
 
@@ -1009,15 +1015,18 @@ flowchart TD
 #### 1. Multi-Cloud LLM Inference & Agentic Synthesis
 - **Primary On-Prem / Local**: Local vLLM (`Qwen/Qwen2.5-14B-Instruct-GPTQ-Int4` on CUDA `localhost:8002/v1`) or Ollama (`localhost:11434/v1`) running on a single NVIDIA RTX 3090 GPU (24GB VRAM).
 - **Cloud Tier 1 (Ultra-Low Latency LPU)**: **Groq Cloud** (`llama-3.3-70b-versatile`, `qwen/qwen3.8-27b`) — 250+ tokens/sec, sub-second TTFT, primary failover for high-throughput evaluation, query intake, and production streaming.
-- **Cloud Tier 2 (Developer Vision & Structured Extraction)**: **NVIDIA NIM Cloud** (`meta/llama-3.2-11b-vision-instruct`, `meta/llama-3.3-70b-instruct`) — 1,000 developer free credits, enterprise-grade structured JSON extraction, and high-fidelity vision parsing.
-- **Cloud Tier 3 (Neural Cross-Attention & Citation Reasoning)**: **Cohere Command** (`command-r-plus-08-2024`, `rerank-v3.5`) — generous free evaluation tier, automated reranking fallback, and citation-native multi-hop synthesis.
-- **Cloud Tier 4 (Long-Context & Document Synthesis)**: **Google Gemini API** (`gemini-2.0-flash`, `gemini-2.5-flash`) — native 1M+ token context windows for full-document cross-audit synthesis with free-tier quota protection.
-- **User-Funded / Paid-Only APIs (Dynamic Gating)**:
-  - **DeepSeek Cloud** (`deepseek-chat`, `deepseek-reasoner`): **No permanent free tier**. Promotional token credits expire quickly, resulting in `HTTP 402 Payment Required`. DeepSeek is excluded from default fallback chains and is dynamically activated *only* when the operator explicitly provides a funded API key.
+- **Cloud Tier 2 (European Sovereign High-Efficiency Models)**: **Mistral AI** (`open-mistral-nemo`, `open-mistral-7b`, `codestral-latest`) — native multi-model support, intra-model automatic fallbacks, and high-efficiency reasoning.
+- **Cloud Tier 3 (Developer Vision & Structured Extraction)**: **NVIDIA NIM Cloud** (`meta/llama-3.2-11b-vision-instruct`, `meta/llama-3.3-70b-instruct`) — 1,000 developer free credits, enterprise-grade structured JSON extraction, and high-fidelity vision parsing.
+- **Cloud Tier 4 (Neural Cross-Attention & Citation Reasoning)**: **Cohere Command** (`command-r-plus-08-2024`, `rerank-v3.5`) — generous free evaluation tier, automated reranking fallback, and citation-native multi-hop synthesis.
+- **Cloud Tier 5 (Long-Context & Document Synthesis)**: **Google Gemini API** (`gemini-2.0-flash`, `gemini-2.5-flash`) — native 1M+ token context windows for full-document cross-audit synthesis with free-tier quota protection.
+- **Universal Cloud & Account-Gated Provider Adapters (Dynamic Gating)**:
+  - **Vercel AI Gateway & TypeSafe Jev** (`typesafe-ai/jev`): High-speed decision model routing and multi-provider gateway. Gated with a billing-restricted circuit breaker: if credit card is unconfigured (`HTTP 403`), it automatically disables itself without interrupting the pipeline.
+  - **Universal Cloud Adapter (`UniversalCloudProvider`)**: Pluggable OpenAI-compatible adapter supporting ANY arbitrary endpoint (Together AI, Fireworks AI, Perplexity, OpenAI, Anyscale) via `CUSTOM_LLM_BASE_URL` and `CUSTOM_LLM_API_KEY`.
+  - **DeepSeek Cloud** (`deepseek-chat`, `deepseek-reasoner`): **No permanent free tier**. Promotional token credits expire quickly, resulting in `HTTP 402 Payment Required`. Gated in `ProviderRouter` so it is permanently bypassed unless the operator configures a funded key.
   - **OpenRouter AI Gateway** (`anthropic/claude-3.5-sonnet`, `mistralai/mistral-large-2`): Dynamic multi-provider aggregator, activated only when funded account credits are available.
 - **Circuit Breaker Policies**:
   - **HTTP 429 (`RATE_LIMITED`) Circuit Breaker**: Automatically places any rate-limited provider into a 60-second cooldown timer. During this window, all routing requests dynamically bypass the cooling-down provider and target the next available healthy cloud candidate without dropping queries.
-  - **HTTP 402 (`PAYMENT_REQUIRED`) Circuit Breaker**: Permanently disables unfunded paid providers (`self.disabled_providers.add(cand)`) for the lifetime of the session to prevent repeated failed network roundtrips.
+  - **HTTP 402/403 (`BILLING_RESTRICTED`) Circuit Breaker**: Permanently disables unfunded paid providers (`self.disabled_providers.add(cand)`) for the lifetime of the session to prevent repeated failed network roundtrips.
   - **Dynamic Provider Registry**: Exposed via `GET /api/system/dynamic-llms` and `GET /api/system/config`. Surfaces actual active providers dynamically instead of hardcoding model names.
   - **Safe Refusal Guarantee**: If all external providers are exhausted, the pipeline automatically routes to `unverified_responder` to emit a polite, evidence-grounded refusal rather than hallucinating unsupported claims.
 
@@ -1099,6 +1108,9 @@ The table below records the verified metrics from the latest benchmark run (`run
 | **Relational Database** | `backend/src/infrastructure/database/postgres.py` | `PostgresManager` (6 tables) | **Verified** |
 | **Redis Cache & Session Bus** | `backend/src/infrastructure/cache/redis.py` | `RedisCacheManager` (sliding window turns) | **Verified** |
 | **Provenance Verification** | `backend/src/features/verification/claim_verifier.py` | `ClaimVerifier`, `AnswerContract` | **Verified** |
-| **Dynamic Multi-Cloud Router**| `backend/src/infrastructure/providers/router.py` | `ProviderRouter` (Groq, NVIDIA NIM, Cohere, Gemini, vLLM, DeepSeek/OpenRouter Gated) | **Verified** |
+| **Dynamic Multi-Cloud Router**| `backend/src/infrastructure/providers/router.py` | `ProviderRouter` (Groq, Mistral, NVIDIA NIM, Cohere, Gemini, vLLM, Vercel, DeepSeek, OpenRouter, Universal) | **Verified** |
+| **Mistral AI Adapter**        | `backend/src/infrastructure/providers/mistral.py` | `MistralProvider` (open-mistral-nemo, codestral-latest) | **Verified** |
+| **Vercel AI Gateway Adapter**  | `backend/src/infrastructure/providers/vercel.py` | `VercelAIGatewayProvider` (typesafe-ai/jev, AI Gateway) | **Verified** |
+| **Universal Cloud LLM Adapter**| `backend/src/infrastructure/providers/universal.py` | `UniversalCloudProvider` (OpenAI-compatible generic adapter) | **Verified** |
 | **Control Center API Router** | `backend/src/api/routers/system.py` | `get_hardware_telemetry`, `get_dynamic_llms`, `save_configuration` | **Verified** |
 
