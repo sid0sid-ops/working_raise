@@ -1,0 +1,6 @@
+{
+  "connected": false,
+  "uri": "bolt://localhost:7687",
+  "error": "Failed to establish connection to ('localhost', 7687)",
+  "hint": "Ensure Neo4j is running locally (bolt://localhost:7687) or provide Neo4j AuraDB credentials."
+}

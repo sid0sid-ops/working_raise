@@ -1,0 +1,61 @@
+{
+  "documents": [
+    {
+      "id": "doc_iitmrp_report",
+      "doc_id": "doc_iitmrp_report",
+      "filename": "IITMRP Annual Report.pdf",
+      "pages": 44,
+      "size_mb": 27.54,
+      "chunks_count": 73,
+      "status": "ready",
+      "phase": "ready",
+      "is_protected": true,
+      "can_delete": false,
+      "deletable": false,
+      "owner": "system"
+    },
+    {
+      "id": "doc_ar_2024_25",
+      "doc_id": "doc_ar_2024_25",
+      "filename": "AR_2024-25_Combined_English_Mail.pdf",
+      "pages": 120,
+      "size_mb": 35.94,
+      "chunks_count": 180,
+      "status": "ready",
+      "phase": "ready",
+      "is_protected": true,
+      "can_delete": false,
+      "deletable": false,
+      "owner": "system"
+    },
+    {
+      "id": "doc_annual_report_final",
+      "doc_id": "doc_annual_report_final",
+      "filename": "Annual Report 2024-25 final upload.pdf",
+      "pages": 92,
+      "size_mb": 17.8,
+      "chunks_count": 145,
+      "status": "ready",
+      "phase": "ready",
+      "is_protected": true,
+      "can_delete": false,
+      "deletable": false,
+      "owner": "system"
+    },
+    {
+      "id": "doc_are_2016_17",
+      "doc_id": "doc_are_2016_17",
+      "filename": "ARE-2016-17.pdf",
+      "pages": 64,
+      "size_mb": 10.1,
+      "chunks_count": 98,
+      "status": "ready",
+      "phase": "ready",
+      "is_protected": true,
+      "can_delete": false,
+      "deletable": false,
+      "owner": "system"
+    }
+  ],
+  "total_count": 4
+}

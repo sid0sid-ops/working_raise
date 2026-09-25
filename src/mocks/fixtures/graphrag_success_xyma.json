@@ -1,0 +1,165 @@
+{
+  "query": "Identify the specific IIT Madras faculty members, research centers, and product lines associated with the startups XYMA Analytics, Mindgrove Technologies, and NeoMotion, and detail their real-world industrial deployments or beneficiaries as of 2024-25.",
+  "routing_strategy": "LOCAL_GRAPH_CYPHER",
+  "intent_route": "graph query",
+  "standalone_query": "Identify the specific IIT Madras faculty members, research centers, and product lines associated with the startups XYMA Analytics, Mindgrove Technologies, and NeoMotion, and detail their real-world industrial deployments or beneficiaries as of 2024-25.",
+  "decomposed_queries": [
+    "Identify faculty members and research centers for XYMA Analytics and real-world deployments.",
+    "Identify faculty members and product lines for Mindgrove Technologies.",
+    "Detail NeoMotion research centers and beneficiary outreach."
+  ],
+  "latency_sec": 8.42,
+  "thread_id": "thread-spec-xyma-01",
+  "query_type": "RELATIONSHIP_QUERY",
+  "selected_tools": ["neo4j_subgraph_traversal", "vector_search", "quality_gate_verifier"],
+  "cypher_status": "SUCCESS",
+  "cypher_repair_count": 0,
+  "path_critic_expanded": true,
+  "grounded_answer": "As detailed in the audited institutional records, the deep-tech startups originate directly from IIT Madras research:\n\n### 1. XYMA Analytics\n* **Faculty & CoEs:** Founded under the guidance of **Prof. Krishnan Balasubramanian** and **Prof. Prabhu Rajagopal** from the **Centre for Non-Destructive Evaluation (CNDE)** [1].\n* **Product Lines:** High-temperature multi-point ultrasonic waveguide temperature sensors (TMAP™ and µ-PAUT) [1].\n* **Deployments:** Commercial deployments across major industrial clients including **Reliance Industries ROG Cracker unit** and **Emirates Global Aluminium** for real-time vessel monitoring [1].\n\n### 2. Mindgrove Technologies\n* **Faculty & Ecosystem:** Incubated through the **IIT Madras Incubation Cell (IITMIC)** with technical mentorship from the Department of Computer Science and Engineering [2].\n* **Product Lines:** India's first commercially available high-performance microcontrollers including the **Secure IoT** system-on-chip built on the Shakti RISC-V architecture [2].\n* **Industrial Impact:** Targeted for connected edge devices, smart metering, and automotive telemetry systems [2].\n\n### 3. NeoMotion\n* **Faculty & Product:** Co-founded by **Prof. Sujatha Srinivasan** and the TTK Center for Rehabilitation Research and Device Development (R2D2) [3].\n* **Product Lines:** **NeoFly** (custom personalized wheelchair) and **NeoBolt** (motorized clip-on add-on converting wheelchairs into electric road vehicles) [3].\n* **Deployments:** Benefitted over 5,000 mobility-impaired individuals across 32 states with institutional CSR support [3].",
+  "traceability_score": 0.95,
+  "verified_claims": [
+    {
+      "claim_id": "c1",
+      "text": "XYMA Analytics was guided by Prof. Krishnan Balasubramanian and Prof. Prabhu Rajagopal from CNDE.",
+      "is_supported": true,
+      "status": "SUPPORTED",
+      "extracted_numbers": [],
+      "matched_numbers": [],
+      "citations_found": [1],
+      "notes": []
+    },
+    {
+      "claim_id": "c2",
+      "text": "NeoMotion benefitted over 5,000 individuals across 32 states.",
+      "is_supported": true,
+      "status": "SUPPORTED",
+      "extracted_numbers": ["5000", "32"],
+      "matched_numbers": ["5000", "32"],
+      "citations_found": [3],
+      "notes": []
+    }
+  ],
+  "citations": [
+    {
+      "citation_index": 1,
+      "chunk_id": "IITMRP_Annual_Report_chk_16",
+      "document_id": "IITMRP_Annual_Report",
+      "pdf_filename": "IITMRP Annual Report.pdf",
+      "primary_page": 16,
+      "heading": "CNDE Spin-Offs & Waveguide Sensor Deployments",
+      "plain_text": "XYMA Analytics, incubated at IIT Madras and originating from CNDE under Prof. Krishnan Balasubramanian, deployed its TMAP sensors in Reliance Industries and Emirates Global Aluminium...",
+      "university": "IIT Madras",
+      "similarity": 0.942
+    },
+    {
+      "citation_index": 2,
+      "chunk_id": "IITMRP_Annual_Report_chk_18",
+      "document_id": "IITMRP_Annual_Report",
+      "pdf_filename": "IITMRP Annual Report.pdf",
+      "primary_page": 18,
+      "heading": "Mindgrove Technologies & RISC-V Silicon",
+      "plain_text": "Mindgrove Technologies taped out India's first commercial Secure IoT microcontroller based on the Shakti core...",
+      "university": "IIT Madras",
+      "similarity": 0.915
+    },
+    {
+      "citation_index": 3,
+      "chunk_id": "IITMRP_Annual_Report_chk_22",
+      "document_id": "IITMRP_Annual_Report",
+      "pdf_filename": "IITMRP Annual Report.pdf",
+      "primary_page": 22,
+      "heading": "NeoMotion Assistive Mobility Ecosystem",
+      "plain_text": "NeoMotion's NeoFly and NeoBolt solutions reached over 5,000 users across 32 Indian states through CSR partnerships...",
+      "university": "IIT Madras",
+      "similarity": 0.928
+    }
+  ],
+  "subgraph": {
+    "nodes": [
+      {
+        "id": "s_xyma",
+        "name": "XYMA Analytics",
+        "label": "XYMA",
+        "type": "Startup",
+        "provenance": { "doc": "IITMRP Annual Report.pdf", "page": 16 }
+      },
+      {
+        "id": "s_mindgrove",
+        "name": "Mindgrove Technologies",
+        "label": "Mindgrove",
+        "type": "Startup",
+        "provenance": { "doc": "IITMRP Annual Report.pdf", "page": 18 }
+      },
+      {
+        "id": "s_neomotion",
+        "name": "NeoMotion",
+        "label": "NeoMotion",
+        "type": "Startup",
+        "provenance": { "doc": "IITMRP Annual Report.pdf", "page": 22 }
+      },
+      {
+        "id": "p_krishnan",
+        "name": "Prof. Krishnan Balasubramanian",
+        "label": "Prof. Krishnan",
+        "type": "Person",
+        "provenance": { "doc": "IITMRP Annual Report.pdf", "page": 16 }
+      },
+      {
+        "id": "lab_cnde",
+        "name": "Centre for Non-Destructive Evaluation",
+        "label": "CNDE",
+        "type": "CoE",
+        "provenance": { "doc": "IITMRP Annual Report.pdf", "page": 16 }
+      }
+    ],
+    "edges": [
+      {
+        "source": "s_xyma",
+        "target": "lab_cnde",
+        "relationship": "CO_DEVELOPED_WITH",
+        "provenance": { "page": 16 }
+      },
+      {
+        "source": "s_xyma",
+        "target": "p_krishnan",
+        "relationship": "MENTORED_BY",
+        "provenance": { "page": 16 }
+      }
+    ]
+  },
+  "top_chunks": [
+    {
+      "chunk_id": "IITMRP_Annual_Report_chk_16",
+      "text": "XYMA Analytics, incubated at IIT Madras and originating from CNDE under Prof. Krishnan Balasubramanian, deployed its TMAP sensors in Reliance Industries and Emirates Global Aluminium...",
+      "similarity": 0.942,
+      "metadata": { "pdf_filename": "IITMRP Annual Report.pdf", "primary_page": 16 }
+    }
+  ],
+  "quality_gate_decision": "accept",
+  "quality_gate_report": {
+    "evaluator_type": "RuntimeFaithfulnessQualityGate",
+    "faithfulness": 0.95,
+    "answer_relevance": 0.92,
+    "context_precision": 0.94,
+    "context_recall": 0.89,
+    "overall_score": 0.93,
+    "supported_claims_count": 2,
+    "total_claims_count": 2,
+    "numerical_mismatches": 0,
+    "citation_errors": 0,
+    "is_acceptable": true,
+    "rejection_reason": null
+  },
+  "follow_up_inquiries": [
+    "What industrial deployments were achieved by XYMA Analytics in 2024-25?",
+    "Which microcontrollers were developed by Mindgrove Technologies?",
+    "How many individuals were impacted by NeoMotion assistive devices?"
+  ],
+  "suggestions": [
+    "What industrial deployments were achieved by XYMA Analytics in 2024-25?",
+    "Which microcontrollers were developed by Mindgrove Technologies?",
+    "How many individuals were impacted by NeoMotion assistive devices?"
+  ],
+  "retry_count": 0,
+  "execution_time": 7.75
+}

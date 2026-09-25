@@ -1,0 +1,6 @@
+{
+  "status": "error",
+  "code": "VLLM_CONNECTION_FAILED",
+  "message": "Failed to connect to vLLM server at http://localhost:8002/v1: Connection refused.",
+  "hint": "Run: docker start raise-vllm-prod"
+}

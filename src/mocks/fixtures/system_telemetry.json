@@ -1,0 +1,17 @@
+{
+  "telemetry": {
+    "gpu_model": "NVIDIA GeForce RTX 3090 (24 GB VRAM)",
+    "ram_total_gb": 63.8,
+    "ram_available_gb": 42.1,
+    "ram_percent": 34.0,
+    "embedding_model": "BAAI/bge-large-en-v1.5 (1024-dim, cuda:0)",
+    "neo4j_endpoint": "bolt://localhost:7687"
+  },
+  "neo4j": {
+    "connected": true,
+    "uri": "bolt://localhost:7687",
+    "user": "neo4j",
+    "database": "neo4j",
+    "total_nodes": 16
+  }
+}

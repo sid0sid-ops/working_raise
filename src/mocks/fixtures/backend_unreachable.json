@@ -1,0 +1,8 @@
+{
+  "code": "BACKEND_UNREACHABLE",
+  "message": "Failed to connect to RAISE Gateway at http://192.168.1.100:8000. Ensure host machine is running and firewall allows TCP 8000.",
+  "status": 0,
+  "endpoint": "/api/documents",
+  "retryable": true,
+  "timestamp": "2026-09-03T23:55:00Z"
+}

@@ -1,0 +1,29 @@
+{
+  "query": "Provide financial details not in the document",
+  "grounded_answer": "I could not verify this answer against the uploaded academic sources. Please upload additional relevant material or refine the question.",
+  "quality_gate_decision": "unable_to_verify",
+  "traceability_score": 0.0,
+  "verified_claims": [],
+  "citations": [],
+  "subgraph": {
+    "nodes": [],
+    "edges": []
+  },
+  "top_chunks": [],
+  "quality_gate_report": {
+    "evaluator_type": "LocalHeuristicEvaluator",
+    "faithfulness": 0.45,
+    "answer_relevance": 0.4,
+    "context_precision": 0.35,
+    "context_recall": 0.3,
+    "overall_score": 0.38,
+    "supported_claims_count": 1,
+    "total_claims_count": 4,
+    "numerical_mismatches": 2,
+    "citation_errors": 1,
+    "is_acceptable": false,
+    "rejection_reason": "Faithfulness score 0.45 below threshold 0.80; 2 numerical mismatch(es)"
+  },
+  "retry_count": 2,
+  "execution_time": 14.2
+}
