@@ -146,13 +146,26 @@ async def get_current_configuration() -> Dict[str, Any]:
     llm_backend = os.getenv("LLM_BACKEND", "groq")
     neo4j_uri = os.getenv("NEO4J_URI", "")
     redis_url = os.getenv("REDIS_URL", "")
+    privacy_mode = os.getenv("PRIVACY_MODE", "false").lower() in ("true", "1", "yes")
+
+    raw_model = os.getenv("LLM_MODEL_NAME", "llama-3.3-70b-versatile")
+    last_model = p_router.last_used_model
+    last_provider = p_router.last_used_provider
+    available_provs = p_router.get_dynamic_available_providers()
+
+    if privacy_mode:
+        raw_model = "RAISE-Neural-Engine"
+        last_model = "RAISE-Neural-Engine" if last_model else None
+        last_provider = "RAISE-Cloud-Mesh" if last_provider else None
+        available_provs = ["RAISE-Cloud-Mesh"]
 
     return {
         "llm_mode": "local_vllm" if llm_backend == "vllm" else ("local_ollama" if llm_backend == "ollama" else f"cloud_{llm_backend}"),
-        "llm_model_name": os.getenv("LLM_MODEL_NAME", "llama-3.3-70b-versatile"),
-        "last_used_provider": p_router.last_used_provider,
-        "last_used_model": p_router.last_used_model,
-        "available_providers": p_router.get_dynamic_available_providers(),
+        "llm_model_name": raw_model,
+        "last_used_provider": last_provider,
+        "last_used_model": last_model,
+        "available_providers": available_provs,
+        "privacy_mode": privacy_mode,
         "groq_configured": cm.get_credential_status("groq") == "configured",
         "groq_masked": _mask_secret(cm.get_credential("groq")),
         "gemini_configured": cm.get_credential_status("gemini") == "configured",

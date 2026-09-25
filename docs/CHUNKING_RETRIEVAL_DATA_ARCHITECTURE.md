@@ -1,10 +1,10 @@
 # RAISE Architecture — Chunking, Retrieval, Embedding & Data-Layer Reference
 
-**Document Version**: 1.5.0  
+**Document Version**: 1.6.0  
 **Status**: Canonical, Evaluated & Production-Verified  
 **Date**: September 25, 2026  
-**Last Updated**: 2026-09-25T07:30:00+05:30  
-**Scope**: End-to-End Document Lifecycle, FFI Acceleration, Multi-Engine Retrieval, Multi-Cloud Resilience, Academic Benchmark Battery, and LangGraph Orchestration  
+**Last Updated**: 2026-09-25T07:35:00+05:30  
+**Scope**: End-to-End Document Lifecycle, FFI Acceleration, Multi-Engine Retrieval, Multi-Cloud Resilience, Academic Benchmark Battery, Network Security & Gateway Observability, and LangGraph Orchestration  
 **Target Repository**: `semanticClimate/RAISE` (`backend/` and `RAG/`)
 
 ---
@@ -1189,5 +1189,31 @@ raise_questions = BenchmarkLoader.load("raise-domain")
 1. **Evaluator Sandboxing**: Academic datasets (Wikipedia passages, MS MARCO snippets, SciFact abstracts) are NEVER ingested into the production institutional ChromaDB (`iitmrp_docling_bge_large`) or production Neo4j AuraDB (`7639347a`).
 2. **Ephemeral Execution**: When evaluating on academic benchmarks, the `hybrid_retriever` operates against dedicated ephemeral test collections or in-memory vector spaces (`TemporaryGraphBuilder`).
 3. **Reproducibility Guarantee**: The complete acquisition script `RAG/evaluation/scripts/download_benchmarks.py` enables deterministic 1-click re-downloading and verification directly from official upstream sources.
+
+---
+
+## 31. Network Security, Gateway Observability & Privacy Protection Matrix
+
+When the RAISE platform is deployed behind enterprise networking proxies or routed through Cloudflare, visibility into internal models and prompt payloads is governed by connection topology and TLS inspection policies:
+
+### 1. Multi-Layer Observability & Visibility Audit
+
+| Observability Layer | Network Path | Can Observer See Model Name? | Can Observer See Prompts / Context? | Can Observer See API Keys? | Mitigations & Hardening |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Public Browser via Cloudflare CDN / Tunnel** | `Browser -> Cloudflare Edge -> FastAPI Backend` | **NO** in `/api/chat` (omitted from response payload) | **NO** (Only final synthesized answer returned) | **NO** (Keys never leave backend) | Use `PRIVACY_MODE=true` to mask `/api/system/config` |
+| **Cloudflare AI Gateway** | `FastAPI -> CF AI Gateway -> Upstream LLM` | **YES** (Indexed for dashboard cost analytics) | **YES** if "Log Request/Response Bodies" is ON; **NO** if toggled OFF | **NO** (Passed in encrypted headers) | Set "Log Request and Response Bodies" to **OFF** |
+| **Corporate Cloudflare Zero Trust (WARP - Default)** | `Host -> Corporate Gateway -> Cloud LLMs` | **NO** (Protected by TLS 1.3 tunnel) | **NO** (Protected by TLS 1.3 tunnel) | **NO** (Protected by TLS 1.3 tunnel) | Standard end-to-end encrypted HTTPS |
+| **Corporate Cloudflare Zero Trust (WARP - TLS Inspection)** | `Host -> MITM Decryption -> Cloud LLMs` | **YES** (Decrypted at corporate gateway) | **YES** (Full prompt & payload readable) | **YES** (Visible in raw Authorization header) | Add `Do Not Decrypt` policy bypass for AI domains |
+
+### 2. Privacy Mode Masking (`PRIVACY_MODE=true`)
+
+When `PRIVACY_MODE=true` is enabled in `backend/.env`, the system configuration router (`GET /api/system/config`) automatically masks active model and provider identifiers:
+- `llm_model_name` $\to$ `"RAISE-Neural-Engine"`
+- `last_used_model` $\to$ `"RAISE-Neural-Engine"`
+- `last_used_provider` $\to$ `"RAISE-Cloud-Mesh"`
+- `available_providers` $\to$ `["RAISE-Cloud-Mesh"]`
+
+This prevents competitive reverse-engineering or model fingerprinting by unauthorized API callers or front-end observers.
+
 
 
