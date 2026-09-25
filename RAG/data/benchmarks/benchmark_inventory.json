@@ -1,0 +1,47 @@
+[
+  {
+    "benchmark": "BEIR-SciFact",
+    "count": 300,
+    "status": "SUCCESS"
+  },
+  {
+    "benchmark": "TREC-DL-2019",
+    "count": 200,
+    "status": "SUCCESS"
+  },
+  {
+    "benchmark": "TREC-DL-2020",
+    "count": 200,
+    "status": "SUCCESS"
+  },
+  {
+    "benchmark": "HotpotQA",
+    "count": 300,
+    "status": "SUCCESS"
+  },
+  {
+    "benchmark": "2WikiMultihopQA",
+    "count": 300,
+    "status": "SUCCESS"
+  },
+  {
+    "benchmark": "MuSiQue",
+    "count": 300,
+    "status": "SUCCESS"
+  },
+  {
+    "benchmark": "FRAMES",
+    "count": 300,
+    "status": "SUCCESS"
+  },
+  {
+    "benchmark": "Natural Questions",
+    "count": 300,
+    "status": "SUCCESS"
+  },
+  {
+    "benchmark": "TriviaQA",
+    "count": 300,
+    "status": "SUCCESS"
+  }
+]

@@ -1,10 +1,10 @@
 # RAISE Architecture — Chunking, Retrieval, Embedding & Data-Layer Reference
 
-**Document Version**: 1.4.0  
+**Document Version**: 1.5.0  
 **Status**: Canonical, Evaluated & Production-Verified  
 **Date**: September 25, 2026  
-**Last Updated**: 2026-09-25T07:00:00+05:30  
-**Scope**: End-to-End Document Lifecycle, FFI Acceleration, Multi-Engine Retrieval, Multi-Cloud Resilience, and LangGraph Orchestration  
+**Last Updated**: 2026-09-25T07:30:00+05:30  
+**Scope**: End-to-End Document Lifecycle, FFI Acceleration, Multi-Engine Retrieval, Multi-Cloud Resilience, Academic Benchmark Battery, and LangGraph Orchestration  
 **Target Repository**: `semanticClimate/RAISE` (`backend/` and `RAG/`)
 
 ---
@@ -1116,4 +1116,78 @@ The table below records the verified metrics from the latest benchmark run (`run
 | **Vercel AI Gateway Adapter**  | `backend/src/infrastructure/providers/vercel.py` | `VercelAIGatewayProvider` (typesafe-ai/jev, AI Gateway) | **Verified** |
 | **Universal Cloud LLM Adapter**| `backend/src/infrastructure/providers/universal.py` | `UniversalCloudProvider` (OpenAI-compatible generic adapter) | **Verified** |
 | **Control Center API Router** | `backend/src/api/routers/system.py` | `get_hardware_telemetry`, `get_dynamic_llms`, `save_configuration` | **Verified** |
+
+---
+
+## 30. Academic Benchmark Evaluation Battery & Standardized Datasets
+
+To ensure the RAISE architecture generalizes beyond institutional documents, the system incorporates an academic evaluation battery spanning retrieval, multi-hop reasoning, and open-domain generation. All evaluation sets are strictly isolated under `RAG/data/benchmarks/` and `RAG/evaluation/datasets/`, ensuring zero cross-contamination with production knowledge stores.
+
+### 1. Verified Benchmark Inventory
+
+| Category | Benchmark | Target Split | Sample Size | Verified Provenance Source | Primary Evaluation Focus |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Retrieval** | **BEIR (SciFact)** | `test` qrels | 300 queries | Official BEIR repository (TU Darmstadt) | Dense/lexical zero-shot scientific retrieval |
+| **Retrieval** | **TREC DL 2019** | `test2019` | 200 queries | Official NIST TREC 2019 + MS MARCO | High-precision passage re-ranking ($n\text{DCG}@10$) |
+| **Retrieval** | **TREC DL 2020** | `test2020` | 200 queries | Official NIST TREC 2020 + MS MARCO | High-precision passage re-ranking ($n\text{DCG}@10$) |
+| **Reasoning** | **HotpotQA** | `dev_distractor_v1` | 300 questions | Official HotpotQA repository (Yang et al.) | 2-hop comparison & bridge multi-document reasoning |
+| **Reasoning** | **2WikiMultihopQA** | `dev` | 300 questions | Official 2Wiki repository (Ho et al., COLING 2020) | Relational multi-hop path and evidence extraction |
+| **Reasoning** | **MuSiQue** | `dev` (ans v1.0) | 300 questions | Official Stony Brook NLP (Trivedi et al.) | 2-to-4 hop disconnected reasoning chains & contrast traps |
+| **Reasoning** | **FRAMES** | `test.tsv` | 300 questions | Official Google Research frames-benchmark | Multi-hop fact retrieval & numerical aggregation |
+| **Generation / QA** | **Natural Questions** | `dev` | 300 questions | Official Google Research NQ | Real Google search queries with short/long ground truths |
+| **Generation / QA** | **TriviaQA** | `rc.nocontext dev`| 300 questions | Official Mandar Joshi et al. TriviaQA | Knowledge-heavy open-domain question answering |
+
+### 2. Standardized Evaluation Schema (`EvalQuestion`)
+
+Every benchmark is parsed into a unified schema implemented in `RAG/evaluation/loaders/schema.py`:
+
+```python
+@dataclass
+class EvalQuestion:
+    q_id: str                      # Canonical unique ID (e.g. HOTPOT_5a8b57f..., BEIR_SCIFACT_0)
+    benchmark: str                 # Benchmark suite name (BEIR, HotpotQA, 2Wiki, etc.)
+    dataset: str                   # Dataset version/identifier
+    question: str                  # Query text
+    tier: Optional[str]            # Reasoning tier or category
+    ground_truth_answer: Optional[str]  # Golden answer or None (for ranking)
+    target_document: Optional[str]      # Specific document constraint
+    page_citations: List[str]      # Golden page citations
+    required_keywords: List[str]   # Mandatory semantic keywords
+    supporting_facts: List[str]    # Golden evidence sentences/chains
+    hop_count: int                 # Required hops (1, 2, 3, or 4)
+    is_unanswerable: bool          # Unanswerable trap query indicator
+    metadata: Dict[str, Any]       # Raw provenance, qrels, and aliases
+```
+
+### 3. Unified Dispatcher Interface (`BenchmarkLoader.load`)
+
+The `BenchmarkLoader` class dynamically loads any benchmark on demand with optional sample limits:
+
+```python
+from RAG.evaluation.loaders.benchmark_loader import BenchmarkLoader
+
+# 1. Retrieval
+beir_questions = BenchmarkLoader.load("beir", limit=300)
+dl19_questions = BenchmarkLoader.load("trec-dl-2019", limit=200)
+
+# 2. Multi-Hop Reasoning
+hotpot_questions = BenchmarkLoader.load("hotpotqa", limit=300)
+twowiki_questions = BenchmarkLoader.load("2wikimultihopqa", limit=300)
+musique_questions = BenchmarkLoader.load("musique", limit=300)
+frames_questions = BenchmarkLoader.load("frames", limit=300)
+
+# 3. Generation & Open-Domain QA
+nq_questions = BenchmarkLoader.load("nq", limit=300)
+trivia_questions = BenchmarkLoader.load("triviaqa", limit=300)
+
+# 4. Institutional Domain
+raise_questions = BenchmarkLoader.load("raise-domain")
+```
+
+### 4. Storage Isolation & Guardrails Policy
+
+1. **Evaluator Sandboxing**: Academic datasets (Wikipedia passages, MS MARCO snippets, SciFact abstracts) are NEVER ingested into the production institutional ChromaDB (`iitmrp_docling_bge_large`) or production Neo4j AuraDB (`7639347a`).
+2. **Ephemeral Execution**: When evaluating on academic benchmarks, the `hybrid_retriever` operates against dedicated ephemeral test collections or in-memory vector spaces (`TemporaryGraphBuilder`).
+3. **Reproducibility Guarantee**: The complete acquisition script `RAG/evaluation/scripts/download_benchmarks.py` enables deterministic 1-click re-downloading and verification directly from official upstream sources.
+
 

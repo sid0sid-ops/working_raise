@@ -113,13 +113,122 @@ class BenchmarkLoader:
         logger.info(f"Loaded {len(questions)} questions from FRAMES benchmark.")
         return questions
 
+    @staticmethod
+    def _load_standardized_jsonl(filepath: Path, limit: Optional[int] = None) -> List[EvalQuestion]:
+        """Loads standardized EvalQuestion instances from a JSONL file."""
+        if not filepath.exists():
+            raise FileNotFoundError(f"Benchmark file not found at {filepath}")
+        questions: List[EvalQuestion] = []
+        with open(filepath, "r", encoding="utf-8") as f:
+            for idx, line in enumerate(f):
+                if limit and idx >= limit:
+                    break
+                if not line.strip():
+                    continue
+                d = json.loads(line)
+                questions.append(EvalQuestion(
+                    q_id=str(d.get("q_id", f"Q_{idx}")),
+                    benchmark=str(d.get("benchmark", "Standard")),
+                    dataset=str(d.get("dataset", "")),
+                    tier=str(d.get("tier", "Standard")),
+                    question=str(d.get("question", "")).strip(),
+                    ground_truth_answer=d.get("ground_truth_answer"),
+                    target_document=d.get("target_document"),
+                    page_citations=d.get("page_citations", []),
+                    required_keywords=d.get("required_keywords", []),
+                    supporting_facts=d.get("supporting_facts", []),
+                    hop_count=int(d.get("hop_count", 1)),
+                    is_unanswerable=bool(d.get("is_unanswerable", False)),
+                    metadata=d.get("metadata", {})
+                ))
+        return questions
+
+    @classmethod
+    def load_hotpotqa(cls, limit: Optional[int] = None) -> List[EvalQuestion]:
+        path = EVAL_ROOT / "datasets" / "hotpotqa" / "samples_300.jsonl"
+        return cls._load_standardized_jsonl(path, limit=limit)
+
+    @classmethod
+    def load_2wikimultihopqa(cls, limit: Optional[int] = None) -> List[EvalQuestion]:
+        path = EVAL_ROOT / "datasets" / "2wikimultihopqa" / "samples_300.jsonl"
+        return cls._load_standardized_jsonl(path, limit=limit)
+
+    @classmethod
+    def load_musique(cls, limit: Optional[int] = None) -> List[EvalQuestion]:
+        path = EVAL_ROOT / "datasets" / "musique" / "samples_300.jsonl"
+        return cls._load_standardized_jsonl(path, limit=limit)
+
+    @classmethod
+    def load_nq(cls, limit: Optional[int] = None) -> List[EvalQuestion]:
+        path = EVAL_ROOT / "datasets" / "nq" / "dev" / "samples_300.jsonl"
+        return cls._load_standardized_jsonl(path, limit=limit)
+
+    @classmethod
+    def load_triviaqa(cls, limit: Optional[int] = None) -> List[EvalQuestion]:
+        path = EVAL_ROOT / "datasets" / "triviaqa" / "samples_300.jsonl"
+        return cls._load_standardized_jsonl(path, limit=limit)
+
+    @classmethod
+    def load_beir(cls, limit: Optional[int] = None) -> List[EvalQuestion]:
+        path = EVAL_ROOT / "datasets" / "beir" / "scifact" / "samples_300.jsonl"
+        return cls._load_standardized_jsonl(path, limit=limit)
+
+    @classmethod
+    def load_trec_dl_2019(cls, limit: Optional[int] = None) -> List[EvalQuestion]:
+        path = EVAL_ROOT / "datasets" / "trec_dl" / "2019" / "samples_200.jsonl"
+        return cls._load_standardized_jsonl(path, limit=limit)
+
+    @classmethod
+    def load_trec_dl_2020(cls, limit: Optional[int] = None) -> List[EvalQuestion]:
+        path = EVAL_ROOT / "datasets" / "trec_dl" / "2020" / "samples_200.jsonl"
+        return cls._load_standardized_jsonl(path, limit=limit)
+
     @classmethod
     def load(cls, benchmark_name: str, limit: Optional[int] = None) -> List[EvalQuestion]:
-        """Unified benchmark dispatcher."""
-        b_clean = benchmark_name.lower().strip()
-        if b_clean in ("raise", "raise-domain", "raise_domain", "tier1"):
+        """Unified benchmark dispatcher across all 9 academic benchmarks + RAISE Domain."""
+        b_clean = benchmark_name.lower().strip().replace("-", "_").replace(" ", "_")
+        
+        # RAISE Domain
+        if b_clean in ("raise", "raise_domain", "tier1"):
             return cls.load_raise_domain_benchmark()
+        # FRAMES
         elif b_clean in ("frames", "google_frames", "824"):
             return cls.load_frames_benchmark(limit=limit)
+        # HotpotQA
+        elif b_clean in ("hotpot", "hotpotqa"):
+            return cls.load_hotpotqa(limit=limit)
+        # 2WikiMultihopQA
+        elif b_clean in ("2wiki", "2wikimultihop", "2wikimultihopqa", "twowiki"):
+            return cls.load_2wikimultihopqa(limit=limit)
+        # MuSiQue
+        elif b_clean in ("musique", "musique_ans"):
+            return cls.load_musique(limit=limit)
+        # Natural Questions
+        elif b_clean in ("nq", "natural_questions", "naturalquestions"):
+            return cls.load_nq(limit=limit)
+        # TriviaQA
+        elif b_clean in ("trivia", "triviaqa"):
+            return cls.load_triviaqa(limit=limit)
+        # BEIR
+        elif b_clean in ("beir", "beir_scifact", "scifact"):
+            return cls.load_beir(limit=limit)
+        # TREC DL 2019
+        elif b_clean in ("trec_2019", "trec_dl_2019", "trecdl2019", "dl19"):
+            return cls.load_trec_dl_2019(limit=limit)
+        # TREC DL 2020
+        elif b_clean in ("trec_2020", "trec_dl_2020", "trecdl2020", "dl20"):
+            return cls.load_trec_dl_2020(limit=limit)
         else:
-            raise ValueError(f"Unknown benchmark: '{benchmark_name}'. Supported: 'raise-domain', 'frames'.")
+            raise ValueError(
+                f"Unknown benchmark: '{benchmark_name}'. Supported:\n"
+                "- raise-domain\n"
+                "- frames\n"
+                "- hotpotqa\n"
+                "- 2wikimultihopqa\n"
+                "- musique\n"
+                "- nq\n"
+                "- triviaqa\n"
+                "- beir\n"
+                "- trec-dl-2019\n"
+                "- trec-dl-2020"
+            )
