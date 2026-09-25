@@ -224,7 +224,10 @@ async def test_system_connections(req: Optional[SystemConfigRequest] = None) -> 
         results["neo4j"] = {
             "connected": neo_check.get("connected", False),
             "uri": neo_check.get("uri", os.getenv("NEO4J_URI", "")),
-            "provider": "Neo4j AuraDB Cloud" if "databases.neo4j.io" in os.getenv("NEO4J_URI", "") else "Local Bolt",
+            "http_url": neo_check.get("http_url"),
+            "provider": neo_check.get("provider", "Neo4j AuraDB Cloud" if "databases.neo4j.io" in os.getenv("NEO4J_URI", "") else "Local Bolt"),
+            "total_nodes": neo_check.get("total_nodes", 0),
+            "database": neo_check.get("database", os.getenv("NEO4J_DATABASE", "neo4j")),
             "status": "PASS" if neo_check.get("connected") else "FALLBACK_VECTOR_BM25"
         }
     except Exception as e:

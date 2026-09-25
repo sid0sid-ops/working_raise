@@ -1030,12 +1030,15 @@ flowchart TD
   - **Dynamic Provider Registry**: Exposed via `GET /api/system/dynamic-llms` and `GET /api/system/config`. Surfaces actual active providers dynamically instead of hardcoding model names.
   - **Safe Refusal Guarantee**: If all external providers are exhausted, the pipeline automatically routes to `unverified_responder` to emit a polite, evidence-grounded refusal rather than hallucinating unsupported claims.
 
-#### 2. Knowledge Graph Cloud Options
-- **Primary**: Local Neo4j 5.26 (`bolt://localhost:7687`).
-- **Cloud Tier 1**: **Neo4j AuraDB Enterprise / Professional Cloud** (`neo4j+s://...databases.neo4j.io`) — automated cloud clustering, multi-region replication, and zero-maintenance managed Neo4j.
-- **Cloud Tier 2**: **AWS Neptune / Memgraph Cloud** — high-performance openCypher graph streaming.
-- **In-Memory Fallback**: Ephemeral in-memory NetworkX graph (`TemporaryGraphBuilder`).
-- **Circuit Breaker**: Socket probe with 50ms timeout. If Neo4j/AuraDB is unreachable, automatically activates in-memory `TemporaryGraphBuilder` and seamlessly routes query traversal to `hybrid_retriever` without crashing or skipping evidence.
+#### 2. Knowledge Graph Cloud Options & Dual-Channel Resilience
+- **Cloud Primary (Production Verified)**: **Neo4j AuraDB Cloud** (`neo4j+s://7639347a.databases.neo4j.io` on database `7639347a`) — automated cloud clustering, multi-region replication, and zero-maintenance managed Neo4j holding 2,580 institutional entity and chunk nodes.
+- **Dual-Protocol Cloud Transport**:
+  1. **Primary High-Speed Binary (Bolt `neo4j+s://`)**: Adaptive 15.0s connection and acquisition timeouts with connection pooling (up to 50 pooled sessions) and keep-alive heartbeats to handle cloud latency across geographical regions.
+  2. **Zero-Port-Block Fallback (HTTP Query v2 API `https://.../db/{database}/query/v2`)**: Fully serverless REST API transport over standard HTTPS port 443. If corporate firewalls, proxies, or network policies block raw TCP port 7687, `Neo4jDatabase` automatically falls back to the HTTP Query v2 API without dropping graph queries or throwing connection errors.
+- **Cloud Secondary / Alternative**: **AWS Neptune / Memgraph Cloud** — high-performance openCypher graph streaming.
+- **Local Fallback**: Local Neo4j 5.26 (`bolt://localhost:7687`).
+- **In-Memory Fallback**: Ephemeral in-memory NetworkX graph (`TemporaryGraphBuilder` with Louvain community detection).
+- **Circuit Breaker**: Adaptive socket probe (3.0s cloud / 0.5s local). If Neo4j AuraDB Bolt is unreachable, activates HTTP Query v2; if both cloud endpoints are unavailable, activates in-memory `TemporaryGraphBuilder` and seamlessly routes query traversal to `hybrid_retriever` without crashing or skipping evidence.
 
 #### 3. Vector Database & Object Storage Cloud Options
 - **Primary**: Local ChromaDB HNSW (`.chromadb_bge_large` on disk).

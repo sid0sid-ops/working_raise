@@ -50,7 +50,15 @@ class Neo4jDatabase(IGraphStore):
             self.uri = uri or os.getenv("NEO4J_URI", "bolt://localhost:7687")
             self.user = user or os.getenv("NEO4J_USER", "neo4j")
             self.password = password or os.getenv("NEO4J_PASSWORD", "password123")
-            self.database = database or os.getenv("NEO4J_DATABASE", "neo4j")
+        self.is_cloud = bool(self.uri and ("databases.neo4j.io" in self.uri or "+s://" in self.uri))
+        self.http_query_url = None
+        if self.uri and "databases.neo4j.io" in self.uri:
+            try:
+                host_part = self.uri.split("://")[1].split("/")[0].split(":")[0]
+                instance_id = host_part.split(".")[0]
+                self.http_query_url = f"https://{instance_id}.databases.neo4j.io/db/{self.database}/query/v2"
+            except Exception:
+                self.http_query_url = None
         self._driver = None
 
     def get_driver(self):
@@ -58,16 +66,19 @@ class Neo4jDatabase(IGraphStore):
             return None
         if self._driver is None:
             try:
+                conn_timeout = 15.0 if self.is_cloud else 3.0
+                acq_timeout = 10.0 if self.is_cloud else 2.0
                 self._driver = GraphDatabase.driver(
                     self.uri,
                     auth=(self.user, self.password),
-                    connection_timeout=3.0,
+                    connection_timeout=conn_timeout,
                     max_connection_pool_size=50,
-                    connection_acquisition_timeout=2.0,
+                    connection_acquisition_timeout=acq_timeout,
                     max_connection_lifetime=3600,
                     keep_alive=True,
                 )
-            except Exception:
+            except Exception as e:
+                logger.debug(f"Failed to create Neo4j driver: {e}")
                 self._driver = None
         return self._driver
 
@@ -125,9 +136,49 @@ class Neo4jDatabase(IGraphStore):
         except Exception as e:
             return {"status": "error", "error": str(e)}
 
+    def execute_http_query(self, query: str, parameters: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
+        """
+        Execute Cypher query via Neo4j AuraDB HTTP Query v2 API (/db/{database}/query/v2).
+        Enables zero-blocked port operation over standard HTTPS port 443.
+        """
+        if not self.http_query_url or not self.password:
+            return []
+        import urllib.request
+        import base64
+        import json
+
+        payload = {"statement": query}
+        if parameters:
+            payload["parameters"] = parameters
+
+        auth_b64 = base64.b64encode(f"{self.user}:{self.password}".encode()).decode()
+        req = urllib.request.Request(
+            self.http_query_url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={
+                "Authorization": f"Basic {auth_b64}",
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "User-Agent": "RAISE-Neo4jAuraClient/2.5",
+            },
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=15.0) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+                fields = data.get("data", {}).get("fields", [])
+                values = data.get("data", {}).get("values", [])
+                results = []
+                for row in values:
+                    results.append(dict(zip(fields, row)))
+                return results
+        except Exception as e:
+            logger.warning(f"Neo4j HTTP Query v2 failed: {e}")
+            return [{"error": str(e)}]
+
     def check_connection(self) -> Dict[str, Any]:
         """
-        Verify live connection to Neo4j database.
+        Verify live connection to Neo4j database using Bolt protocol with HTTP Query v2 fallback.
         """
         if not HAS_NEO4J:
             return {"connected": False, "error": "neo4j python package not installed"}
@@ -138,7 +189,7 @@ class Neo4jDatabase(IGraphStore):
 
         try:
             import socket
-            # Fast socket probe to prevent multi-second TCP timeout when offline
+            # Socket probe with adaptive timeout for local vs cloud AuraDB
             host = "127.0.0.1"
             port = 7687
             if self.uri and "://" in self.uri:
@@ -149,9 +200,29 @@ class Neo4jDatabase(IGraphStore):
                     host = "127.0.0.1" if h_str in ("localhost", "127.0.0.1") else h_str
                 else:
                     host = "127.0.0.1" if netloc in ("localhost", "127.0.0.1") else netloc
-            with socket.create_connection((host, port), timeout=0.5):
+            probe_timeout = 3.0 if self.is_cloud else 0.5
+            with socket.create_connection((host, port), timeout=probe_timeout):
                 pass
         except Exception as e:
+            # If Bolt socket probe fails, try HTTP Query v2 API before declaring offline
+            if self.is_cloud and self.http_query_url:
+                try:
+                    http_test = self.execute_http_query("RETURN 1 AS ping")
+                    if http_test and http_test[0].get("ping") == 1:
+                        self._last_connected_state = True
+                        cnt_res = self.execute_http_query("MATCH (n) RETURN count(n) AS total_nodes")
+                        total = cnt_res[0].get("total_nodes", 0) if cnt_res else 0
+                        return {
+                            "connected": True,
+                            "uri": self.uri,
+                            "http_url": self.http_query_url,
+                            "user": self.user,
+                            "database": self.database,
+                            "provider": "Neo4j AuraDB Cloud (HTTP Query v2 API)",
+                            "total_nodes": total,
+                        }
+                except Exception:
+                    pass
             self._last_connected_state = False
             return {"connected": False, "uri": self.uri, "error": f"Neo4j offline: {e}"}
 
@@ -176,13 +247,34 @@ class Neo4jDatabase(IGraphStore):
                     return {
                         "connected": True,
                         "uri": self.uri,
+                        "http_url": self.http_query_url,
                         "user": self.user,
                         "database": self.database,
+                        "provider": "Neo4j AuraDB Cloud" if self.is_cloud else "Local Neo4j Bolt",
                         "total_nodes": total,
                     }
                 self._last_connected_state = False
                 return {"connected": False, "error": "Ping failed"}
         except Exception as e:
+            # Fallback to HTTP Query v2 API if Bolt driver fails
+            if self.is_cloud and self.http_query_url:
+                try:
+                    http_test = self.execute_http_query("RETURN 1 AS ping")
+                    if http_test and http_test[0].get("ping") == 1:
+                        self._last_connected_state = True
+                        cnt_res = self.execute_http_query("MATCH (n) RETURN count(n) AS total_nodes")
+                        total = cnt_res[0].get("total_nodes", 0) if cnt_res else 0
+                        return {
+                            "connected": True,
+                            "uri": self.uri,
+                            "http_url": self.http_query_url,
+                            "user": self.user,
+                            "database": self.database,
+                            "provider": "Neo4j AuraDB Cloud (HTTP Query v2 API Fallback)",
+                            "total_nodes": total,
+                        }
+                except Exception:
+                    pass
             return {
                 "connected": False,
                 "uri": self.uri,
@@ -218,18 +310,27 @@ class Neo4jDatabase(IGraphStore):
     def run_cypher(self, query: str, parameters: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
         """
         Execute arbitrary Cypher query and return list of records as dictionaries.
+        Supports automatic fallback to HTTP Query v2 API if Bolt protocol is blocked or fails.
         """
         driver = self.get_driver()
-        if not driver:
-            return []
         parameters = parameters or {}
+        if not driver:
+            if self.is_cloud and self.http_query_url:
+                return self.execute_http_query(query, parameters)
+            return []
         records = []
         try:
             with driver.session(database=self.database) as session:
                 result = session.run(query, parameters)
                 for record in result:
                     records.append(record.data())
+                return records
         except Exception as e:
+            if self.is_cloud and self.http_query_url:
+                logger.info(f"Bolt query failed ({e}). Executing via Neo4j AuraDB HTTP Query v2 API...")
+                http_res = self.execute_http_query(query, parameters)
+                if http_res and "error" not in http_res[0]:
+                    return http_res
             records.append({"error": str(e)})
         return records
 
