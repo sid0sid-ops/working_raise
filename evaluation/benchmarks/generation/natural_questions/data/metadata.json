@@ -1,0 +1,18 @@
+{
+  "dataset_name": "Natural Questions (NQ)",
+  "source": "Google Research",
+  "official_url": "https://ai.google.com/research/NaturalQuestions/download",
+  "paper": "https://doi.org/10.1162/tacl_a_00276",
+  "license": "CC BY-SA 3.0",
+  "description": "Google Natural Questions consists of real queries issued to the Google search engine with annotated long answers (HTML bounding boxes) and short answers (spans).",
+  "target_split": "dev",
+  "approx_splits": {
+    "train": 307373,
+    "dev": 7830,
+    "test": 7842
+  },
+  "storage_policy": {
+    "isolation": "STRICT_EVAL_ONLY",
+    "notes": "Never ingest NQ corpus into production ChromaDB (iitmrp_docling_bge_large) or production Neo4j. Kept strictly isolated in RAG/evaluation/datasets/nq/."
+  }
+}

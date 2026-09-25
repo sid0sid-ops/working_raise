@@ -23,9 +23,12 @@ def is_chunk_relevant(chunk: Dict[str, Any], gold_evidence: List[str]) -> bool:
     c_pdf = str(c_meta.get("pdf_filename") or "").lower()
 
     for gold in gold_evidence:
-        g_clean = gold.lower().strip()
+        if not gold:
+            continue
+        gold_str = str(gold)
+        g_clean = gold_str.lower().strip()
         # Direct chunk id match
-        if _normalize_id(gold) == c_id:
+        if _normalize_id(gold_str) == c_id:
             return True
         # Citation match (e.g. "Page 155")
         if "page" in g_clean and c_page and f"page {c_page}" in g_clean:
@@ -47,7 +50,7 @@ def calculate_recall_at_k(candidates: List[Dict[str, Any]], gold_evidence: List[
         k_values = [1, 4, 8, 10, 20]
     
     if not gold_evidence:
-        return {f"recall@{k}": 1.0 for k in k_values}
+        return {f"recall@{k}": 0.0 for k in k_values}
 
     results = {}
     for k in k_values:
@@ -61,7 +64,7 @@ def calculate_recall_at_k(candidates: List[Dict[str, Any]], gold_evidence: List[
 def calculate_mrr(candidates: List[Dict[str, Any]], gold_evidence: List[str], max_k: int = 10) -> float:
     """Mean Reciprocal Rank of first relevant passage up to max_k."""
     if not gold_evidence:
-        return 1.0
+        return 0.0
 
     for rank, c in enumerate(candidates[:max_k], start=1):
         if is_chunk_relevant(c, gold_evidence):
@@ -72,7 +75,7 @@ def calculate_mrr(candidates: List[Dict[str, Any]], gold_evidence: List[str], ma
 def calculate_ndcg_at_k(candidates: List[Dict[str, Any]], gold_evidence: List[str], k: int = 10) -> float:
     """Normalized Discounted Cumulative Gain at K."""
     if not gold_evidence:
-        return 1.0
+        return 0.0
 
     dcg = 0.0
     for rank, c in enumerate(candidates[:k], start=1):

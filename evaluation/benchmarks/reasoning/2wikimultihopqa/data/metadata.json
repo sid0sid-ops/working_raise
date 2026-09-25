@@ -1,0 +1,20 @@
+{
+  "dataset_name": "2WikiMultihopQA",
+  "priority": "P0",
+  "source": "Official 2WikiMultihopQA (Ho et al., COLING 2020)",
+  "github": "https://github.com/Alab-NII/2wikimultihopqa",
+  "target_file": "dev.json",
+  "description": "Multi-hop question answering with explicit relational reasoning paths, entity linking IDs, relation triples, and supporting fact sentence indices.",
+  "eval_metrics": [
+    "answer_em",
+    "answer_f1",
+    "sp_em",
+    "sp_f1",
+    "evidence_triple_recall",
+    "path_completeness"
+  ],
+  "storage_policy": {
+    "isolation": "STRICT_EVAL_ONLY",
+    "notes": "Never ingest 2Wiki paragraphs into production ChromaDB (iitmrp_docling_bge_large) or production Neo4j. Kept strictly isolated in RAG/evaluation/datasets/2wikimultihopqa/."
+  }
+}

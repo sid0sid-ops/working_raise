@@ -136,10 +136,10 @@ class BenchmarkLoader:
                     target_document=d.get("target_document"),
                     page_citations=d.get("page_citations", []),
                     required_keywords=d.get("required_keywords", []),
-                    supporting_facts=d.get("supporting_facts", []),
+                    supporting_facts=d.get("supporting_facts") or d.get("relevant_doc_ids") or [],
                     hop_count=int(d.get("hop_count", 1)),
                     is_unanswerable=bool(d.get("is_unanswerable", False)),
-                    metadata=d.get("metadata", {})
+                    metadata={**d.get("metadata", {}), **({"relevant_doc_ids": d.get("relevant_doc_ids")} if d.get("relevant_doc_ids") else {})}
                 ))
         return questions
 

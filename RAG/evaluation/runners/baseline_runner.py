@@ -374,7 +374,14 @@ class BaselineEvaluationRunner:
         rerank_lat = (time.time() - t_rerank) * 1000
 
         # Scoring
-        gold_ev = question.page_citations or question.required_keywords or [question.ground_truth_answer]
+        candidate_gold = (
+            question.supporting_facts
+            or question.page_citations
+            or question.required_keywords
+            or (question.metadata.get("relevant_doc_ids") if isinstance(question.metadata, dict) else [])
+            or ([question.ground_truth_answer] if question.ground_truth_answer else [])
+        )
+        gold_ev = [str(g) for g in candidate_gold if g]
         recalls = calculate_recall_at_k(reranked, gold_ev, k_values=[1, 4, 8, 10, 20])
         mrr = calculate_mrr(reranked, gold_ev, max_k=10)
         ndcg = calculate_ndcg_at_k(reranked, gold_ev, k=10)

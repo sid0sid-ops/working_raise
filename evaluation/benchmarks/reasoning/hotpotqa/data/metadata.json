@@ -1,0 +1,23 @@
+{
+  "dataset_name": "HotpotQA",
+  "priority": "P0",
+  "source": "Official HotpotQA (Yang et al., EMNLP 2018)",
+  "official_url": "https://hotpotqa.github.io/",
+  "github": "https://github.com/hotpotqa/hotpot",
+  "target_file": "hotpot_dev_distractor_v1.json",
+  "description": "Multi-hop question answering dataset with explanations. Requires finding and reasoning over multiple supporting Wikipedia documents.",
+  "eval_metrics": [
+    "answer_em",
+    "answer_f1",
+    "sp_em",
+    "sp_f1",
+    "sp_prec",
+    "sp_recall",
+    "joint_em",
+    "joint_f1"
+  ],
+  "storage_policy": {
+    "isolation": "STRICT_EVAL_ONLY",
+    "notes": "Never ingest HotpotQA Wikipedia chunks into production ChromaDB (iitmrp_docling_bge_large) or production Neo4j. Kept strictly isolated in RAG/evaluation/datasets/hotpotqa/."
+  }
+}

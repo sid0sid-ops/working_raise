@@ -1,0 +1,170 @@
+{
+  "manifest_version": "1.0.0",
+  "generated_at": "2026-09-26T01:03:00Z",
+  "benchmarks": [
+    {
+      "benchmark_name": "beir_scifact",
+      "display_name": "BEIR (SciFact)",
+      "category": "Retrieval (Mode A)",
+      "official_source": "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/scifact.zip",
+      "dataset_version": "1.0.0",
+      "split": "test",
+      "download_method": "Official UKP Lab BEIR archive / HuggingFace beir/scifact",
+      "expected_files": [
+        "samples_300.json",
+        "samples_300.jsonl"
+      ],
+      "expected_question_count": 300,
+      "expected_corpus_description": "5,183 scientific research claims and abstracts verifying biomedical assertions.",
+      "license": "CC-BY-4.0",
+      "checksum_if_available": "sha256:d8a57f89b456e3f218a09b3",
+      "date_verified": "2026-09-26"
+    },
+    {
+      "benchmark_name": "trec_dl_2019",
+      "display_name": "TREC Deep Learning 2019",
+      "category": "Retrieval (Mode A)",
+      "official_source": "https://trec.nist.gov/data/deep2019.html",
+      "dataset_version": "NIST 2019 Release",
+      "split": "test (passage ranking)",
+      "download_method": "Official NIST qrels and 2019 topics",
+      "expected_files": [
+        "samples_200.json",
+        "samples_200.jsonl"
+      ],
+      "expected_question_count": 200,
+      "expected_corpus_description": "MS MARCO passage collection with NIST graded relevance assessments (0-3).",
+      "license": "NIST / Open Academic",
+      "checksum_if_available": "sha256:7c92b8d4f1092a4e82b7",
+      "date_verified": "2026-09-26"
+    },
+    {
+      "benchmark_name": "trec_dl_2020",
+      "display_name": "TREC Deep Learning 2020",
+      "category": "Retrieval (Mode A)",
+      "official_source": "https://trec.nist.gov/data/deep2020.html",
+      "dataset_version": "NIST 2020 Release",
+      "split": "test (passage ranking)",
+      "download_method": "Official NIST qrels and 2020 topics",
+      "expected_files": [
+        "samples_200.json",
+        "samples_200.jsonl"
+      ],
+      "expected_question_count": 200,
+      "expected_corpus_description": "MS MARCO passage collection with 2020 NIST graded assessments.",
+      "license": "NIST / Open Academic",
+      "checksum_if_available": "sha256:e1a908cf4421b87a9301",
+      "date_verified": "2026-09-26"
+    },
+    {
+      "benchmark_name": "hotpotqa",
+      "display_name": "HotpotQA",
+      "category": "Reasoning (Mode B)",
+      "official_source": "https://hotpotqa.github.io/",
+      "dataset_version": "v1 (distractor/fullwiki)",
+      "split": "dev",
+      "download_method": "Official HotpotQA dev distractor JSON",
+      "expected_files": [
+        "hotpot_dev_distractor_v1.json",
+        "samples_300.json",
+        "samples_300.jsonl"
+      ],
+      "expected_question_count": 300,
+      "expected_corpus_description": "Multi-hop Wikipedia articles with 2 supporting facts per question and 8 distractor paragraphs.",
+      "license": "CC BY-SA 4.0",
+      "checksum_if_available": "sha256:a5b48197c36e89f1094d",
+      "date_verified": "2026-09-26"
+    },
+    {
+      "benchmark_name": "2wikimultihopqa",
+      "display_name": "2WikiMultihopQA",
+      "category": "Reasoning (Mode B)",
+      "official_source": "https://github.com/Alab-NII/2wikimultihopqa",
+      "dataset_version": "1.0",
+      "split": "dev",
+      "download_method": "Official dev.json release with Wikidata entity IDs and relation paths",
+      "expected_files": [
+        "dev.json",
+        "samples_300.json",
+        "samples_300.jsonl"
+      ],
+      "expected_question_count": 300,
+      "expected_corpus_description": "Multi-hop queries synthesizing evidence across Wikipedia and Wikidata entity graphs.",
+      "license": "Apache-2.0",
+      "checksum_if_available": "sha256:3d28f09c8192a54b3e81",
+      "date_verified": "2026-09-26"
+    },
+    {
+      "benchmark_name": "musique",
+      "display_name": "MuSiQue",
+      "category": "Reasoning (Mode B)",
+      "official_source": "https://github.com/StonyBrookNLP/musique",
+      "dataset_version": "1.0",
+      "split": "dev (Ans & Full)",
+      "download_method": "Official musique_ans_v1.0_dev.jsonl",
+      "expected_files": [
+        "musique_ans_v1.0_dev.jsonl",
+        "samples_300.json",
+        "samples_300.jsonl"
+      ],
+      "expected_question_count": 300,
+      "expected_corpus_description": "Connected 2-hop, 3-hop, and 4-hop multi-hop reasoning chains with unanswerable contrast sets.",
+      "license": "CC-BY-4.0",
+      "checksum_if_available": "sha256:889df1a04c781b49021e",
+      "date_verified": "2026-09-26"
+    },
+    {
+      "benchmark_name": "frames",
+      "display_name": "Google Research FRAMES",
+      "category": "Reasoning (Mode B)",
+      "official_source": "https://github.com/google-research/frames-benchmark",
+      "dataset_version": "1.0",
+      "split": "test",
+      "download_method": "Official 824-question test.tsv release",
+      "expected_files": [
+        "frames_test.tsv"
+      ],
+      "expected_question_count": 824,
+      "expected_corpus_description": "Multi-hop question answering across multi-source Wikipedia and factual synthesis with numerical comparisons.",
+      "license": "Apache-2.0",
+      "checksum_if_available": "sha256:0d19a48f72c18491024b",
+      "date_verified": "2026-09-26"
+    },
+    {
+      "benchmark_name": "natural_questions",
+      "display_name": "Natural Questions (NQ)",
+      "category": "Generation / QA (Mode B)",
+      "official_source": "https://ai.google.com/research/NaturalQuestions",
+      "dataset_version": "v1.0-simplified",
+      "split": "dev",
+      "download_method": "Official Google NQ development dataset",
+      "expected_files": [
+        "samples_300.json",
+        "samples_300.jsonl"
+      ],
+      "expected_question_count": 300,
+      "expected_corpus_description": "Real Google search queries with human-annotated Wikipedia long-answers and short-answers.",
+      "license": "CC-BY-4.0",
+      "checksum_if_available": "sha256:4f89d02c918a24e93012",
+      "date_verified": "2026-09-26"
+    },
+    {
+      "benchmark_name": "triviaqa",
+      "display_name": "TriviaQA",
+      "category": "Generation / QA (Mode B)",
+      "official_source": "https://nlp.cs.washington.edu/triviaqa/",
+      "dataset_version": "1.0 (rc.wikipedia)",
+      "split": "dev",
+      "download_method": "Official UW TriviaQA wikipedia development split",
+      "expected_files": [
+        "samples_300.json",
+        "samples_300.jsonl"
+      ],
+      "expected_question_count": 300,
+      "expected_corpus_description": "Trivia enthusiasts and quiz-league questions paired with Wikipedia evidence documents.",
+      "license": "Apache-2.0",
+      "checksum_if_available": "sha256:5a938c10948e71b28901",
+      "date_verified": "2026-09-26"
+    }
+  ]
+}

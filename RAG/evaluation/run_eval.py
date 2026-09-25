@@ -59,12 +59,23 @@ def main():
 
     if args.all_baseline:
         print("=== EXECUTING COMPLETE BASELINE BATTERY ACROSS ALL TIERS ===")
-        suites = ["raise-domain", "nq", "hotpotqa", "2wiki", "musique"]
+        suites = [
+            ("raise-domain", "MODE_B_END_TO_END", None),
+            ("beir", "MODE_A_RETRIEVAL", args.limit or 10),
+            ("trec-dl-2019", "MODE_A_RETRIEVAL", args.limit or 10),
+            ("trec-dl-2020", "MODE_A_RETRIEVAL", args.limit or 10),
+            ("hotpotqa", "MODE_B_END_TO_END", args.limit or 10),
+            ("2wikimultihopqa", "MODE_B_END_TO_END", args.limit or 10),
+            ("musique", "MODE_B_END_TO_END", args.limit or 10),
+            ("frames", "MODE_B_END_TO_END", args.limit or 10),
+            ("nq", "MODE_B_END_TO_END", args.limit or 10),
+            ("triviaqa", "MODE_B_END_TO_END", args.limit or 10),
+        ]
         master_results = {}
-        for s in suites:
-            print(f"\n>>> Running Benchmark: {s} <<<")
-            res = runner.run_benchmark(s, mode=args.mode, limit=10 if s != "raise-domain" else None, run_tag=args.run_tag)
-            master_results[s] = res
+        for s_name, s_mode, s_limit in suites:
+            print(f"\n>>> Running Benchmark: {s_name} ({s_mode}) <<<")
+            res = runner.run_benchmark(s_name, mode=s_mode, limit=s_limit, run_tag=args.run_tag)
+            master_results[s_name] = res
 
         print("\n=== MASTER BASELINE BATTERY COMPLETE ===")
         print(json.dumps(master_results, indent=2))

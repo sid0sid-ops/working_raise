@@ -1,0 +1,24 @@
+{
+  "dataset_name": "MuSiQue",
+  "priority": "P0",
+  "source": "Official MuSiQue (Trivedi et al., TACL 2022)",
+  "github": "https://github.com/stonybrooknlp/musique",
+  "splits": [
+    "musique_ans_v1.0_dev.jsonl",
+    "musique_full_v1.0_dev.jsonl"
+  ],
+  "description": "Multi-hop dataset with disconnected reasoning chains across 2-hop, 3-hop, and 4-hop questions, plus unanswerable contrast sets designed to punish retrieval shortcuts.",
+  "eval_metrics": [
+    "answer_em",
+    "answer_f1",
+    "hop_stratified_em",
+    "hop_stratified_f1",
+    "hop_completion_rate",
+    "unsupported_answer_rate",
+    "safe_abstention_rate"
+  ],
+  "storage_policy": {
+    "isolation": "STRICT_EVAL_ONLY",
+    "notes": "Never ingest MuSiQue paragraphs into production ChromaDB (iitmrp_docling_bge_large) or production Neo4j. Kept strictly isolated in RAG/evaluation/datasets/musique/."
+  }
+}
