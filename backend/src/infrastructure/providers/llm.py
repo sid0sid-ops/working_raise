@@ -98,7 +98,7 @@ class LocalVLLMProvider(BaseLLMProvider):
                 return data["choices"][0]["message"]["content"]
         except Exception as e:
             logger.warning(f"Local vLLM completion failed: {e}")
-            return f"Error executing inference: {e}"
+            raise RuntimeError(f"Error executing inference: {e}")
 
     async def complete_stream(
         self,
@@ -208,7 +208,7 @@ class CloudOpenAICompatibleProvider(BaseLLMProvider):
                 return data["choices"][0]["message"]["content"]
         except Exception as e:
             logger.error(f"Cloud LLM completion failed: {e}")
-            return f"Cloud LLM error: {e}"
+            raise RuntimeError(f"Cloud LLM error: {e}")
 
     async def complete_stream(
         self,
@@ -258,7 +258,7 @@ class LocalOllamaProvider(BaseLLMProvider):
                 return data.get("response", "")
         except Exception as e:
             logger.warning(f"Ollama completion failed: {e}")
-            return f"Ollama error: {e}"
+            raise RuntimeError(f"Ollama error: {e}")
 
     async def complete_stream(
         self,

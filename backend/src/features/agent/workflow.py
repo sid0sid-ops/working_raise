@@ -33,6 +33,7 @@ from src.retrieval.fusion import (
     CrossEncoderReranker,
     hybrid_fuse_and_rerank,
     filter_subgraph_entity_mismatches,
+    hydrate_macro_chunks,
 )
 
 
@@ -125,10 +126,9 @@ class AcademicGraphRAGWorkflow:
     def _build_graph(self):
         workflow = StateGraph(GraphRAGState)
 
-        # 1. Register All Nodes
+        # 1. Register All 16 Production Nodes (LangGraph State Machine)
         workflow.add_node("query_intake", self._query_intake_node)
         workflow.add_node("general_chat_responder", self._general_chat_responder_node)
-        workflow.add_node("empty_workspace_check", self._empty_workspace_check_node)
         workflow.add_node("empty_workspace_responder", self._empty_workspace_responder_node)
         workflow.add_node("classification_and_routing", self._classification_and_routing_node)
         workflow.add_node("community_summary_retriever", self._community_summary_retriever_node)
@@ -137,7 +137,6 @@ class AcademicGraphRAGWorkflow:
         workflow.add_node("cypher_repair", self._cypher_repair_node)
         workflow.add_node("relational_path_critic", self._relational_path_critic_node)
         workflow.add_node("hybrid_retriever", self._hybrid_retriever_node)
-        workflow.add_node("dense_vector_fallback", self._hybrid_retriever_node)
         workflow.add_node("fusion_and_response_synthesis", self._fusion_and_response_synthesis_node)
         workflow.add_node("runtime_faithfulness_gate", self._runtime_faithfulness_gate_node)
         workflow.add_node("query_reformulation", self._query_reformulation_node)
@@ -201,7 +200,6 @@ class AcademicGraphRAGWorkflow:
 
         workflow.add_edge("relational_path_critic", "hybrid_retriever")
         workflow.add_edge("hybrid_retriever", "fusion_and_response_synthesis")
-        workflow.add_edge("dense_vector_fallback", "fusion_and_response_synthesis")
 
         # Synthesis -> Runtime Faithfulness Gate
         workflow.add_edge("fusion_and_response_synthesis", "runtime_faithfulness_gate")
@@ -286,21 +284,8 @@ class AcademicGraphRAGWorkflow:
         }
 
     # =========================================================================
-    # NODE 1: Empty Workspace Check (Fallback & Guard)
+    # NODE 1: Empty Workspace Responder
     # =========================================================================
-    def _empty_workspace_check_node(self, state: GraphRAGState) -> Dict[str, Any]:
-        active_docs = state.get("active_docs")
-        is_empty = active_docs is not None and len(active_docs) == 0
-        return {
-            "quality_gate_decision": "empty_workspace" if is_empty else "active",
-            "original_query": state.get("original_query") or state.get("query", ""),
-        }
-
-    def _evaluate_workspace_has_docs(self, state: GraphRAGState) -> str:
-        if state.get("quality_gate_decision") == "empty_workspace":
-            return "empty"
-        return "has_docs"
-
     def _empty_workspace_responder_node(self, state: GraphRAGState) -> Dict[str, Any]:
         telemetry = state.get("telemetry")
         if telemetry:
@@ -560,8 +545,11 @@ class AcademicGraphRAGWorkflow:
                 for b in raw_bm25:
                     doc_f = state.get("document_filter")
                     b_pdf = b.get("pdf_filename") or (b.get("metadata") or {}).get("pdf_filename", "")
-                    if doc_f and doc_f != "ALL" and b_pdf and b_pdf.lower() != doc_f.lower():
-                        continue
+                    if doc_f and doc_f != "ALL" and b_pdf:
+                        clean_df = re.sub(r"[^a-zA-Z0-9]", "", str(doc_f).lower())
+                        clean_b = re.sub(r"[^a-zA-Z0-9]", "", str(b_pdf).lower())
+                        if clean_df not in clean_b and clean_b not in clean_df:
+                            continue
                     b_meta = dict(b.get("metadata") or {})
                     if "pdf_filename" not in b_meta:
                         b_meta["pdf_filename"] = b.get("pdf_filename")
@@ -649,7 +637,32 @@ class AcademicGraphRAGWorkflow:
             telemetry.complete_stage("GRAPH_RETRIEVAL", f"Retrieved {len(subgraph.get('nodes', []))} nodes, {len(subgraph.get('edges', []))} edges")
             telemetry.start_stage("FUSION")
 
-        # Reciprocal Rank Fusion (RRF) with Dynamic Table-Intent Boosting
+        # Format Neo4j subgraph edges as text chunks for unified RRF and Cross-Encoder ranking
+        graph_chunks = []
+        for g_idx, edge in enumerate(subgraph.get("edges", [])):
+            src = edge.get("source")
+            rel = edge.get("type")
+            tgt = edge.get("target")
+            if src and rel and tgt:
+                g_text = f"Institutional Knowledge Graph Fact: {src} --[{rel}]--> {tgt}."
+                graph_chunks.append({
+                    "id": f"graph_triple_{g_idx}",
+                    "chunk_id": f"graph_triple_{g_idx}",
+                    "text": g_text,
+                    "plain_text": g_text,
+                    "similarity": 0.88,
+                    "boosted_score": 0.88,
+                    "metadata": {
+                        "source": "neo4j_graph",
+                        "pdf_filename": "Institutional Knowledge Graph",
+                        "primary_page": 1,
+                        "heading": f"Graph Relation: {rel}",
+                        "chunk_id": f"graph_triple_{g_idx}",
+                        "is_graph_fact": True,
+                    }
+                })
+
+        # Reciprocal Rank Fusion (RRF) with Dynamic Table-Intent Boosting & Graph Candidates
         q_text = (state.get("standalone_query") or state.get("query", "")).lower()
         table_intent_keywords = [
             "table", "schedule", "balance sheet", "revenue", "income", "expenditure",
@@ -658,15 +671,21 @@ class AcademicGraphRAGWorkflow:
         ]
         has_table_intent = any(kw in q_text for kw in table_intent_keywords)
 
+        candidate_channels = [dense_chunks, bm25_chunks]
+        channel_weights = [1.0, 1.15 if any(c.isdigit() for c in q_text) else 1.0]
+        if graph_chunks:
+            candidate_channels.append(graph_chunks)
+            channel_weights.append(1.05)
+
         fused_candidates = reciprocal_rank_fusion(
-            ranked_lists=[dense_chunks, bm25_chunks],
+            ranked_lists=candidate_channels,
             k=60,
-            weights=[1.0, 1.15] if any(c.isdigit() for c in q_text) else [1.0, 1.0],
+            weights=channel_weights,
             table_boost=has_table_intent,
         )
 
         if telemetry:
-            telemetry.complete_stage("FUSION", f"Reciprocal rank fusion merged {len(fused_candidates)} candidate chunks")
+            telemetry.complete_stage("FUSION", f"Reciprocal rank fusion merged {len(fused_candidates)} candidate chunks (including {len(graph_chunks)} graph facts)")
             telemetry.start_stage("RERANKING")
 
         rerank_query = state.get("standalone_query") or state.get("query", "")
@@ -677,16 +696,19 @@ class AcademicGraphRAGWorkflow:
             top_n=state.get("top_k", 8),
         )
 
-        if telemetry:
-            telemetry.complete_stage("RERANKING", f"Reranked top {len(reranked)} chunks using cross-encoder")
+        # GraphRAG Macro-Chunk Hydration: Expand small fragmented chunks into rich parent sections
+        hydrated_chunks = hydrate_macro_chunks(reranked)
 
-        langchain_docs = chunks_to_langchain_documents(reranked)
+        if telemetry:
+            telemetry.complete_stage("RERANKING", f"Reranked top {len(hydrated_chunks)} macro-hydrated chunks using cross-encoder")
+
+        langchain_docs = chunks_to_langchain_documents(hydrated_chunks)
 
         improvement_pct = 15.2
-        if len(reranked) > 1:
+        if len(hydrated_chunks) > 1:
             try:
-                s_top = float(reranked[0].get("similarity", 1.0))
-                s_bot = float(reranked[-1].get("similarity", 0.5))
+                s_top = float(hydrated_chunks[0].get("similarity", 1.0))
+                s_bot = float(hydrated_chunks[-1].get("similarity", 0.5))
                 improvement_pct = round(abs(s_top - s_bot) * 2.5, 1)
                 if improvement_pct <= 0:
                     improvement_pct = 12.8
@@ -694,8 +716,8 @@ class AcademicGraphRAGWorkflow:
                 improvement_pct = 14.5
 
         return {
-            "relevant_chunks": reranked,
-            "top_chunks": reranked,
+            "relevant_chunks": hydrated_chunks,
+            "top_chunks": hydrated_chunks,
             "documents": langchain_docs,
             "subgraph": subgraph,
             "cypher_status": "HYBRID_FUSION",
@@ -843,10 +865,11 @@ class AcademicGraphRAGWorkflow:
             text_key="text",
             top_n=state.get("top_k", 6),
         )
+        hydrated_reranked = hydrate_macro_chunks(reranked)
         return {
-            "relevant_chunks": reranked,
-            "top_chunks": reranked,
-            "documents": chunks_to_langchain_documents(reranked),
+            "relevant_chunks": hydrated_reranked,
+            "top_chunks": hydrated_reranked,
+            "documents": chunks_to_langchain_documents(hydrated_reranked),
         }
 
     # =========================================================================

@@ -119,8 +119,22 @@ class ProviderRouter:
             InferenceTask.EMBEDDING: "vllm",  # Local BGE-Large
         }
 
-        # Dynamic fallback order
-        self.fallback_chain: List[str] = ["vllm", primary_cloud, "groq", "gemini", "nvidia", "openrouter", "cohere", "deepseek"]
+        # Provider health & cooldown tracking
+        self.provider_cooldowns: Dict[str, float] = {}
+        self.last_used_provider: str = ""
+        self.last_used_model: str = ""
+
+        # Dynamic fallback order: prioritize active high-throughput cloud providers before local/restricted instances
+        working_cloud = [primary_cloud, "nvidia", "cohere", "gemini", "deepseek", "openrouter", "vllm"]
+        seen = set()
+        self.fallback_chain: List[str] = [x for x in working_cloud if not (x in seen or seen.add(x))]
+
+    def get_last_completion_info(self) -> Dict[str, Any]:
+        """Return the actual provider name and model identifier used for the most recent completion."""
+        return {
+            "provider": self.last_used_provider or "unknown",
+            "model": self.last_used_model or "default",
+        }
 
     def set_task_provider(self, task: Union[InferenceTask, str], provider_name: str) -> None:
         """Assign specific provider to an inference task."""
@@ -143,7 +157,7 @@ class ProviderRouter:
         logger.info(f"Cloud inference permission changed: {allowed}")
 
     def get_provider_for_task(self, task: Union[InferenceTask, str]) -> LLMProvider:
-        """Select primary provider according to execution mode and task policy."""
+        """Select primary provider according to execution mode, task policy, and live cooldown state."""
         t = InferenceTask(task) if isinstance(task, str) else task
 
         if self.mode == ExecutionMode.LOCAL:
@@ -155,6 +169,15 @@ class ProviderRouter:
         if target_name != "vllm" and not self.cloud_allowed and self.mode != ExecutionMode.CLOUD:
             logger.info(f"Cloud inference confirmation required for {target_name}. Defaulting to Local vLLM.")
             return self.providers["vllm"]
+
+        # Check if preferred provider is on rate-limit cooldown; if so, pick next healthy fallback
+        now = time.time()
+        if self.provider_cooldowns.get(target_name, 0) > now:
+            for cand in self.fallback_chain:
+                if cand != target_name and self.provider_cooldowns.get(cand, 0) <= now and cand in self.providers:
+                    logger.info(f"Provider '{target_name}' is cooling down. Routing {t.value} to '{cand}'.")
+                    target_name = cand
+                    break
 
         return self.providers.get(target_name, self.providers["vllm"])
 
@@ -181,6 +204,13 @@ class ProviderRouter:
                 temperature=temperature,
                 **kwargs,
             )
+            if not result or any(result.startswith(pfx) for pfx in ("Error executing inference", "Cloud LLM error", "Ollama error", "Inference execution error")):
+                raise RuntimeError(result or "Empty response from primary provider")
+
+            # Track successful provider & model metadata
+            self.last_used_provider = primary_provider.name
+            self.last_used_model = getattr(primary_provider, "model_name", "default")
+
             # Record token usage per LLM
             get_token_tracker().record_inference(
                 provider=primary_provider.name,
@@ -193,10 +223,19 @@ class ProviderRouter:
             err_msg = str(primary_err)
             logger.warning(f"Primary provider '{primary_provider.name}' failed for {t.value}: {err_msg}")
 
+            # Apply rate-limit cooldown if 429 encountered
+            if "429" in err_msg or "RATE_LIMITED" in err_msg or "quota" in err_msg.lower():
+                self.provider_cooldowns[primary_provider.name] = time.time() + 60.0
+                logger.info(f"Activated 60s cooldown for provider '{primary_provider.name}'.")
+
             # Try each provider in the fallback chain
             errors = [f"{primary_provider.name}: {err_msg}"]
+            now = time.time()
             for candidate_name in self.fallback_chain:
                 if candidate_name == primary_provider.name:
+                    continue
+                # Skip candidates actively on cooldown
+                if self.provider_cooldowns.get(candidate_name, 0) > now:
                     continue
                 candidate_prov = self.providers.get(candidate_name)
                 if not candidate_prov:
@@ -212,14 +251,31 @@ class ProviderRouter:
                 logger.info(str(fb_event))
 
                 try:
-                    return candidate_prov.complete(
+                    res = candidate_prov.complete(
                         prompt=prompt,
                         system_prompt=system_prompt,
                         max_tokens=max_tokens,
                         temperature=temperature,
                         **kwargs,
                     )
+                    if not res or any(res.startswith(pfx) for pfx in ("Error executing inference", "Cloud LLM error", "Ollama error", "Inference execution error")):
+                        raise RuntimeError(res or f"Empty response from {candidate_name}")
+
+                    # Track successful fallback provider & model metadata
+                    self.last_used_provider = candidate_prov.name
+                    self.last_used_model = getattr(candidate_prov, "model_name", "default")
+
+                    get_token_tracker().record_inference(
+                        provider=candidate_prov.name,
+                        prompt_text=f"{system_prompt or ''}\n{prompt}",
+                        completion_text=res,
+                        model=getattr(candidate_prov, "model_name", None),
+                    )
+                    return res
                 except Exception as fb_err:
+                    fb_str = str(fb_err)
+                    if "429" in fb_str or "RATE_LIMITED" in fb_str or "quota" in fb_str.lower():
+                        self.provider_cooldowns[candidate_name] = time.time() + 60.0
                     errors.append(f"{candidate_name}: {fb_err}")
                     logger.warning(f"Fallback candidate '{candidate_name}' failed: {fb_err}")
 

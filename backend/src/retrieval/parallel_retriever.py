@@ -83,7 +83,15 @@ class SelfContainedBM25:
             chunk = self.chunks[i]
             if active_docs:
                 doc_name = str(chunk.get("pdf_filename") or (chunk.get("metadata") or {}).get("pdf_filename") or chunk.get("document_id") or (chunk.get("metadata") or {}).get("doc_id") or "")
-                if not any(ad.lower() in doc_name.lower() or Path(ad).stem.lower() in doc_name.lower() for ad in active_docs):
+                clean_doc = re.sub(r"[^a-zA-Z0-9]", "", doc_name.lower())
+                matched_doc = False
+                for ad in active_docs:
+                    clean_ad = re.sub(r"[^a-zA-Z0-9]", "", str(ad).lower())
+                    clean_stem = re.sub(r"[^a-zA-Z0-9]", "", Path(ad).stem.lower())
+                    if clean_ad in clean_doc or clean_doc in clean_ad or clean_stem in clean_doc or clean_doc in clean_stem:
+                        matched_doc = True
+                        break
+                if not matched_doc:
                     continue
 
             score = 0.0

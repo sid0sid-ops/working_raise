@@ -13,12 +13,14 @@ import json
 from pathlib import Path
 
 EVAL_ROOT = Path(__file__).resolve().parent
-PROJECT_ROOT = EVAL_ROOT.parent
+RAG_ROOT = EVAL_ROOT.parent
+PROJECT_ROOT = RAG_ROOT.parent
 BACKEND_ROOT = PROJECT_ROOT / "backend"
 
-for p in [str(PROJECT_ROOT), str(BACKEND_ROOT), str(EVAL_ROOT)]:
-    if p not in sys.path:
-        sys.path.insert(0, p)
+for p in [str(PROJECT_ROOT), str(BACKEND_ROOT), str(RAG_ROOT)]:
+    while p in sys.path:
+        sys.path.remove(p)
+    sys.path.insert(0, p)
 
 from evaluation.runners.baseline_runner import BaselineEvaluationRunner
 

@@ -535,29 +535,35 @@ class LocalVectorEngine(IVectorStore):
 
         if col is not None and total_items > 0:
             try:
-                # Build normalized candidates set for active_docs to bridge space vs underscore differences
-                normalized_active = None
-                if active_docs and len(active_docs) > 0:
-                    normalized_active = set()
-                    for d in active_docs:
-                        normalized_active.add(d)
-                        normalized_active.add(d.replace(" ", "_"))
-                        normalized_active.add(d.replace("_", " "))
-                        stem = Path(d).stem
-                        normalized_active.add(stem)
-                        normalized_active.add(stem.replace(" ", "_"))
-                        normalized_active.add(stem.replace("_", " "))
+                # Robust canonical mapping for document filenames across formats
+                doc_name_map = {
+                    "annualreport202122": "Annual Report 2021-22.pdf",
+                    "annualreport202223": "Annual Report 2022-23.pdf",
+                    "annualreport202324": "Annual Report 2023-24.pdf",
+                    "bricannualreport2025": "BRIC-Annual-Report-2025.pdf",
+                    "bric2025": "BRIC-Annual-Report-2025.pdf",
+                }
+
+                def _canonical_names(val: str) -> List[str]:
+                    c_clean = re.sub(r"[^a-zA-Z0-9]", "", str(val).lower())
+                    names = [val, val.replace(" ", "_"), val.replace("_", " ")]
+                    for k, mapped in doc_name_map.items():
+                        if k in c_clean or c_clean in k:
+                            names.append(mapped)
+                    return list(dict.fromkeys(names))
 
                 where_clause = None
                 if doc_filter and doc_filter != "ALL":
-                    norm_filter = [doc_filter, doc_filter.replace(" ", "_"), doc_filter.replace("_", " ")]
-                    norm_filter = list(dict.fromkeys(norm_filter))
+                    norm_filter = _canonical_names(doc_filter)
                     if len(norm_filter) == 1:
                         where_clause = {"pdf_filename": norm_filter[0]}
                     else:
                         where_clause = {"pdf_filename": {"$in": norm_filter}}
-                elif normalized_active:
-                    active_list = list(normalized_active)
+                elif active_docs and len(active_docs) > 0:
+                    active_candidates = []
+                    for ad in active_docs:
+                        active_candidates.extend(_canonical_names(ad))
+                    active_list = list(dict.fromkeys(active_candidates))
                     if len(active_list) == 1:
                         where_clause = {"pdf_filename": active_list[0]}
                     else:
@@ -606,20 +612,25 @@ class LocalVectorEngine(IVectorStore):
                         meta_uni = str(meta.get("university", ""))
 
                         # Active document filter
-                        if normalized_active is not None and len(normalized_active) > 0:
-                            if (
-                                meta_pdf not in normalized_active
-                                and meta_pdf.replace("_", " ") not in normalized_active
-                                and meta_pdf.replace(" ", "_") not in normalized_active
-                                and meta_doc_id not in normalized_active
-                                and meta_doc_id.replace("_", " ") not in normalized_active
-                            ):
+                        if active_docs and len(active_docs) > 0:
+                            clean_pdf = re.sub(r"[^a-zA-Z0-9]", "", meta_pdf.lower())
+                            clean_doc = re.sub(r"[^a-zA-Z0-9]", "", meta_doc_id.lower())
+                            matched_active = False
+                            for ad in active_docs:
+                                clean_ad = re.sub(r"[^a-zA-Z0-9]", "", str(ad).lower())
+                                clean_stem = re.sub(r"[^a-zA-Z0-9]", "", Path(ad).stem.lower())
+                                if clean_ad in clean_pdf or clean_pdf in clean_ad or clean_stem in clean_doc or clean_doc in clean_stem:
+                                    matched_active = True
+                                    break
+                            if not matched_active:
                                 continue
 
                         # Single document filter
                         if doc_filter and doc_filter != "ALL":
-                            doc_f_norm = {doc_filter.lower(), doc_filter.lower().replace(" ", "_"), doc_filter.lower().replace("_", " ")}
-                            if meta_pdf.lower() not in doc_f_norm and meta_doc_id.lower() not in doc_f_norm:
+                            clean_df = re.sub(r"[^a-zA-Z0-9]", "", str(doc_filter).lower())
+                            clean_pdf = re.sub(r"[^a-zA-Z0-9]", "", meta_pdf.lower())
+                            clean_doc = re.sub(r"[^a-zA-Z0-9]", "", meta_doc_id.lower())
+                            if clean_df not in clean_pdf and clean_pdf not in clean_df and clean_df not in clean_doc and clean_doc not in clean_df:
                                 continue
 
                         # University filter

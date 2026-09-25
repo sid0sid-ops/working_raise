@@ -247,7 +247,7 @@ class BaselineEvaluationRunner:
                 answer_records.append({"case_id": case_id, "question_id": q.q_id, **qa_res, "outcome": outcome})
 
                 # Polite inter-query pacing for cloud providers
-                time.sleep(2.0)
+                time.sleep(3.5)
 
             except Exception as e:
                 logger.error(f"Error executing case {q.q_id}: {e}", exc_info=True)

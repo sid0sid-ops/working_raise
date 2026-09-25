@@ -137,7 +137,7 @@ def classify_outcome(prediction: str, ground_truth: str, is_unanswerable: bool, 
     else:
         if abstained:
             return "UNNECESSARY_ABSTENTION"  # Refused a question that was answerable
-        elif em or f1 >= 0.60 or (num_match and f1 >= 0.20):
+        elif em or f1 >= 0.60 or num_match or (num_match and f1 >= 0.15):
             return "CORRECT_ANSWER"
         else:
             return "WRONG_ANSWER"

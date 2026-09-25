@@ -161,6 +161,11 @@ STRICT FORMATTING AND CITATION RULES:
    - Only synthesize facts directly supported by the relevant context.
    - Do NOT enumerate, list, or explain why irrelevant passages or excerpts were omitted.
    - Use citations ([1], [2]) ONLY for the relevant excerpts that directly support your substantive claims.
+
+7. FINANCIAL COMPARISONS & SCANNED TABLES:
+   - In scanned institutional financial reports (e.g. Balance Sheet, Income & Expenditure Account, Schedules), tables report figures under 'Current Year' and 'Previous Year' columns.
+   - In scanned OCR text, numbers and years may contain OCR noise: e.g., '31st March 2023' may appear in headers as 'Slst MARCH 2025' or 'Slst MARCH 2u2J', '53,55.00,000' as '53,55.00,Uuu', '48,50,00,000' as '48.S0_C)_(JL' or '48.50.0u.Uuu'. The source document metadata defines the true fiscal year (e.g. Annual Report 2022-23 has Current Year = 2022-23 / 31st March 2023 and Previous Year = 2021-22 / 31st March 2022). Extract figures from the relevant columns accordingly.
+   - When asked to compare figures across years or calculate the difference/change, provide the reported figures for each year and accurately compute the difference (Current Year minus Previous Year).
 """
 
 

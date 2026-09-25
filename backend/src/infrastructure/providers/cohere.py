@@ -43,6 +43,7 @@ class CohereProvider(LLMProvider, EmbeddingProvider, RerankerProvider):
     ):
         self.api_key = api_key
         self.chat_model = chat_model or os.getenv("COHERE_CHAT_MODEL", DEFAULT_COHERE_CHAT_MODEL)
+        self.model_name = self.chat_model
         self.embed_model = embed_model or os.getenv("COHERE_EMBED_MODEL", DEFAULT_COHERE_EMBED_MODEL)
         self.rerank_model = rerank_model or os.getenv("COHERE_RERANK_MODEL", DEFAULT_COHERE_RERANK_MODEL)
         self.base_url = (base_url or os.getenv("COHERE_BASE_URL", DEFAULT_COHERE_ENDPOINT)).rstrip("/")

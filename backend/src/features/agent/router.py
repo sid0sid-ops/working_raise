@@ -21,7 +21,7 @@ from src.features.verification.fact_engine import FactEngine, NumericFact
 from src.features.graph.engine import GraphRAGEngine
 from src.infrastructure.graph.neo4j import Neo4jDatabase
 from src.features.memory.reasoning import ReasoningMemory
-from src.retrieval.fusion import CrossEncoderReranker, document_to_chunk, chunk_to_document, reciprocal_rank_fusion
+from src.retrieval.fusion import CrossEncoderReranker, document_to_chunk, chunk_to_document, reciprocal_rank_fusion, hydrate_macro_chunks
 from src.features.verification.table_engine import TableEngine
 from src.infrastructure.vector.chroma import LocalVectorEngine
 
@@ -250,8 +250,11 @@ class AgentRouter:
                 res = []
                 for b in raw_hits:
                     pdf_n = b.get("pdf_filename") or (b.get("metadata") or {}).get("pdf_filename", "")
-                    if doc_filter and doc_filter != "ALL" and pdf_n and pdf_n.lower() != doc_filter.lower():
-                        continue
+                    if doc_filter and doc_filter != "ALL" and pdf_n:
+                        clean_df = re.sub(r"[^a-zA-Z0-9]", "", str(doc_filter).lower())
+                        clean_n = re.sub(r"[^a-zA-Z0-9]", "", str(pdf_n).lower())
+                        if clean_df not in clean_n and clean_n not in clean_df:
+                            continue
                     b_meta = dict(b.get("metadata") or {})
                     if "pdf_filename" not in b_meta:
                         b_meta["pdf_filename"] = b.get("pdf_filename")
@@ -419,6 +422,9 @@ class AgentRouter:
             top_n=8,
         )
 
+        # GraphRAG Macro-Chunk Hydration: expand child snippets into rich parent sections
+        chunks = hydrate_macro_chunks(chunks)
+
         # For contact/author queries, ensure chunk 1 is prioritized at top if present
         q_low = plan.query.lower()
         if any(w in q_low for w in ["phone", "mobile", "contact", "email", "name", "who", "author", "candidate"]):
@@ -555,10 +561,13 @@ class AgentRouter:
                     temperature=0.1,
                 )
 
-                if llm_response and not llm_response.startswith("Inference execution error"):
+                if llm_response and not any(llm_response.startswith(pfx) for pfx in ("Inference execution error", "Error executing inference", "Cloud LLM error", "Ollama error")):
+                    compl_info = getattr(router, "get_last_completion_info", lambda: {})()
+                    actual_provider = compl_info.get("provider") or prov.name
+                    actual_model = compl_info.get("model") or getattr(prov, "model_name", "default")
                     plan.synthesis_metadata = {
-                        "provider": prov.name,
-                        "model": getattr(prov, "model_name", "default"),
+                        "provider": actual_provider,
+                        "model": actual_model,
                         "prompt_tokens": est_prompt_tokens,
                         "completion_tokens": len(llm_response.split()) * 4 // 3,
                         "total_tokens": est_prompt_tokens + len(llm_response.split()) * 4 // 3,

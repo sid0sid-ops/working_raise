@@ -79,7 +79,7 @@ This registry exhaustively maps every directory, module, class, and public funct
 
 - **`rust_bridge.py`**:
   - *Purpose*: PyO3 bridge loading `raise_engine.pyd` for SIMD-accelerated BM25, SimHash, and graph analytics with pure Python fallback.
-  - *Public Symbols*: `RustBridge`, `is_rust_available()`.
+  - *Public Symbols*: `RustBridge`, `is_rust_engine_available()`.
 
 ---
 
