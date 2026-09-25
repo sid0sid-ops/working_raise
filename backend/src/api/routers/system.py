@@ -28,6 +28,10 @@ class SystemConfigRequest(BaseModel):
     llm_mode: str = Field(default="cloud_groq", description="cloud_groq, cloud_gemini, or local_ollama")
     groq_api_key: Optional[str] = None
     gemini_api_key: Optional[str] = None
+    nvidia_api_key: Optional[str] = None
+    cohere_api_key: Optional[str] = None
+    deepseek_api_key: Optional[str] = None
+    openrouter_api_key: Optional[str] = None
     selected_local_model: Optional[str] = "llama3.2:3b"
     neo4j_mode: str = Field(default="cloud", description="cloud, local, or in_memory_fallback")
     neo4j_uri: Optional[str] = None
@@ -127,24 +131,55 @@ async def get_hardware_telemetry() -> Dict[str, Any]:
 
 @router.get("/config")
 async def get_current_configuration() -> Dict[str, Any]:
-    """Returns current active system configuration with sensitive keys masked."""
+    """Returns current active system configuration with sensitive keys masked and dynamic providers listed."""
+    from src.infrastructure.credentials.manager import get_credential_manager
+    from src.infrastructure.providers.router import get_provider_router
+
+    cm = get_credential_manager()
+    p_router = get_provider_router()
+
     llm_backend = os.getenv("LLM_BACKEND", "groq")
     neo4j_uri = os.getenv("NEO4J_URI", "")
     redis_url = os.getenv("REDIS_URL", "")
 
     return {
-        "llm_mode": "local_ollama" if llm_backend == "ollama" else f"cloud_{llm_backend}",
+        "llm_mode": "local_vllm" if llm_backend == "vllm" else ("local_ollama" if llm_backend == "ollama" else f"cloud_{llm_backend}"),
         "llm_model_name": os.getenv("LLM_MODEL_NAME", "llama-3.3-70b-versatile"),
-        "groq_configured": bool(os.getenv("GROQ_API_KEY")),
-        "groq_masked": _mask_secret(os.getenv("GROQ_API_KEY")),
-        "gemini_configured": bool(os.getenv("GEMINI_API_KEY")),
-        "gemini_masked": _mask_secret(os.getenv("GEMINI_API_KEY")),
+        "last_used_provider": p_router.last_used_provider,
+        "last_used_model": p_router.last_used_model,
+        "available_providers": p_router.get_dynamic_available_providers(),
+        "groq_configured": cm.get_credential_status("groq") == "configured",
+        "groq_masked": _mask_secret(cm.get_credential("groq")),
+        "gemini_configured": cm.get_credential_status("gemini") == "configured",
+        "gemini_masked": _mask_secret(cm.get_credential("gemini")),
+        "nvidia_configured": cm.get_credential_status("nvidia") == "configured",
+        "nvidia_masked": _mask_secret(cm.get_credential("nvidia")),
+        "cohere_configured": cm.get_credential_status("cohere") == "configured",
+        "cohere_masked": _mask_secret(cm.get_credential("cohere")),
+        "deepseek_configured": cm.get_credential_status("deepseek") == "configured",
+        "deepseek_masked": _mask_secret(cm.get_credential("deepseek")),
+        "openrouter_configured": cm.get_credential_status("openrouter") == "configured",
+        "openrouter_masked": _mask_secret(cm.get_credential("openrouter")),
         "neo4j_uri": neo4j_uri,
         "neo4j_database": os.getenv("NEO4J_DATABASE", "neo4j"),
         "neo4j_is_cloud": "databases.neo4j.io" in neo4j_uri,
         "redis_is_cloud": "upstash.io" in redis_url,
-        "first_run_completed": bool(os.getenv("GROQ_API_KEY") or os.getenv("GEMINI_API_KEY") or llm_backend == "ollama"),
+        "first_run_completed": bool(
+            cm.get_credential_status("groq") == "configured"
+            or cm.get_credential_status("gemini") == "configured"
+            or cm.get_credential_status("nvidia") == "configured"
+            or cm.get_credential_status("cohere") == "configured"
+            or llm_backend in ["ollama", "vllm"]
+        ),
     }
+
+
+@router.get("/dynamic-llms")
+async def get_dynamic_llms() -> List[Dict[str, Any]]:
+    """Returns list of dynamically available LLMs based on active hardware and configured API keys."""
+    from src.infrastructure.providers.router import get_provider_router
+    p_router = get_provider_router()
+    return p_router.get_dynamic_available_providers()
 
 
 @router.post("/test-connections")
@@ -217,14 +252,45 @@ async def save_configuration(cfg: SystemConfigRequest) -> Dict[str, Any]:
             env_map["LLM_BASE_URL"] = "http://localhost:11434/v1"
         elif cfg.llm_mode == "cloud_gemini":
             env_map["LLM_BACKEND"] = "gemini"
-            env_map["LLM_MODEL_NAME"] = "gemini-2.5-flash"
+            env_map["LLM_MODEL_NAME"] = "gemini-2.0-flash"
             if cfg.gemini_api_key:
                 env_map["GEMINI_API_KEY"] = cfg.gemini_api_key
+        elif cfg.llm_mode == "cloud_nvidia":
+            env_map["LLM_BACKEND"] = "nvidia"
+            env_map["LLM_MODEL_NAME"] = "meta/llama-3.2-11b-vision-instruct"
+        elif cfg.llm_mode == "cloud_cohere":
+            env_map["LLM_BACKEND"] = "cohere"
+            env_map["LLM_MODEL_NAME"] = "command-r-plus-08-2024"
         else:  # cloud_groq default
             env_map["LLM_BACKEND"] = "groq"
             env_map["LLM_MODEL_NAME"] = "llama-3.3-70b-versatile"
             if cfg.groq_api_key:
                 env_map["GROQ_API_KEY"] = cfg.groq_api_key
+
+        # Update provider credentials if provided
+        from src.infrastructure.credentials.manager import get_credential_manager
+        from src.infrastructure.providers.router import get_provider_router
+        cm = get_credential_manager()
+
+        for prov, secret in [
+            ("groq", cfg.groq_api_key),
+            ("gemini", cfg.gemini_api_key),
+            ("nvidia", cfg.nvidia_api_key),
+            ("cohere", cfg.cohere_api_key),
+            ("deepseek", cfg.deepseek_api_key),
+            ("openrouter", cfg.openrouter_api_key),
+        ]:
+            if secret and secret.strip():
+                cm.set_credential(prov, secret.strip())
+                env_var = f"{prov.upper()}_API_KEY"
+                env_map[env_var] = secret.strip()
+                os.environ[env_var] = secret.strip()
+
+        # Refresh provider router fallback chain dynamically
+        try:
+            get_provider_router()._refresh_fallback_chain()
+        except Exception as e:
+            logger.warning(f"Could not refresh provider router: {e}")
 
         # Update Neo4j
         if cfg.neo4j_mode == "cloud" and cfg.neo4j_uri:

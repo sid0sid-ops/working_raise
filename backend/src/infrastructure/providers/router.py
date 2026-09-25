@@ -10,7 +10,7 @@ import os
 import logging
 import time
 from enum import Enum
-from typing import Any, AsyncGenerator, Dict, List, Optional, Tuple, Union
+from typing import Any, AsyncGenerator, Dict, List, Optional, Set, Tuple, Union
 
 from src.core.config import settings
 from src.infrastructure.providers.base import (
@@ -106,28 +106,109 @@ class ProviderRouter:
         primary_cloud = env_backend if env_backend in self.providers else "groq"
 
         # Task routing policy mapping (Production Defaults for 8 Pipeline Phases)
+        # DeepSeek is NOT used as default because it has NO permanent free tier (returns HTTP 402 once trial expires).
+        # Cloud defaults route to high-throughput free/developer tiers: Groq, NVIDIA NIM, Cohere, Gemini.
         self.task_policy: Dict[InferenceTask, str] = {
             InferenceTask.CHAT: "groq" if self.cloud_allowed else "vllm",  # Phase 1: Low-latency chat
             InferenceTask.RAG_GENERATION: primary_cloud if self.mode == ExecutionMode.CLOUD else "vllm",  # Phase 2: RAG Answer Synthesis
             InferenceTask.DOCUMENT_EXTRACTION: "gemini",  # Phase 3: Doc Layout & Vision
             InferenceTask.QUERY_REWRITE: "groq",  # Phase 4: Query Intake & Reformulation
-            InferenceTask.REASONING: "deepseek",  # Phase 5: Multi-Hop Relational Reasoning
-            InferenceTask.CODE: "deepseek",  # Phase 6: Code & Formal Cypher
-            InferenceTask.SUMMARIZATION: "openrouter",  # Phase 7: Community / Executive Summaries
+            InferenceTask.REASONING: primary_cloud if self.cloud_allowed else "vllm",  # Phase 5: Multi-Hop Relational Reasoning
+            InferenceTask.CODE: primary_cloud if self.cloud_allowed else "vllm",  # Phase 6: Code & Formal Cypher
+            InferenceTask.SUMMARIZATION: "groq",  # Phase 7: Community / Executive Summaries
             InferenceTask.RERANKING: "cohere",  # Phase 8: Neural Cross-Attention Reranking
-            InferenceTask.STRUCTURED_EXTRACTION: "deepseek",
+            InferenceTask.STRUCTURED_EXTRACTION: primary_cloud if self.cloud_allowed else "vllm",
             InferenceTask.EMBEDDING: "vllm",  # Local BGE-Large
         }
 
-        # Provider health & cooldown tracking
+        # Provider health, cooldown & disabled tracking
         self.provider_cooldowns: Dict[str, float] = {}
+        self.disabled_providers: Set[str] = set()
         self.last_used_provider: str = ""
         self.last_used_model: str = ""
 
-        # Dynamic fallback order: prioritize active high-throughput cloud providers before local/restricted instances
-        working_cloud = [primary_cloud, "nvidia", "cohere", "gemini", "deepseek", "openrouter", "vllm"]
-        seen = set()
-        self.fallback_chain: List[str] = [x for x in working_cloud if not (x in seen or seen.add(x))]
+        # Construct dynamic fallback chain based on user-provided keys
+        self.fallback_chain: List[str] = []
+        self._refresh_fallback_chain(primary_cloud)
+
+    def _refresh_fallback_chain(self, primary_cloud: Optional[str] = None) -> None:
+        """
+        Dynamically constructs the fallback chain based on user-provided API keys.
+        Providers without free tiers (DeepSeek, OpenRouter) are strictly omitted
+        unless the user has explicitly written their key and it is not payment-restricted.
+        """
+        from src.infrastructure.credentials.manager import get_credential_manager
+        cm = get_credential_manager()
+        prim = primary_cloud or (self.fallback_chain[0] if self.fallback_chain else "groq")
+
+        active = [prim] if prim not in self.disabled_providers else []
+        for cand in ["nvidia", "cohere", "gemini", "groq"]:
+            if cand in self.disabled_providers:
+                continue
+            if cm.get_credential_status(cand) == "configured":
+                if cand not in active:
+                    active.append(cand)
+
+        # DeepSeek and OpenRouter require prepaid balance (HTTP 402 if expired)
+        # ONLY include if user explicitly wrote their key AND not disabled
+        for paid in ["deepseek", "openrouter"]:
+            if paid not in self.disabled_providers and cm.get_credential_status(paid) == "configured":
+                if paid not in active:
+                    active.append(paid)
+
+        if "vllm" not in active:
+            active.append("vllm")
+
+        self.fallback_chain = active
+        logger.info(f"Dynamic fallback chain updated: {self.fallback_chain}")
+
+    def get_dynamic_available_providers(self) -> List[Dict[str, Any]]:
+        """
+        Dynamically returns ONLY the LLMs that are actively usable by the user.
+        If a user writes their key, the LLM dynamically appears here.
+        DeepSeek and other paid APIs are excluded if balance is $0 (HTTP 402) or unconfigured.
+        """
+        from src.infrastructure.credentials.manager import get_credential_manager
+        cm = get_credential_manager()
+        available = []
+
+        cloud_meta = {
+            "groq": {"name": "Groq LPU (High-Throughput)", "tier": "Free Tier", "default_model": "qwen/qwen3.8-27b"},
+            "nvidia": {"name": "NVIDIA NIM", "tier": "Developer Free Tier (1,000 Credits)", "default_model": "meta/llama-3.2-11b-vision-instruct"},
+            "cohere": {"name": "Cohere Command", "tier": "Evaluation Free Tier", "default_model": "command-r-plus-08-2024"},
+            "gemini": {"name": "Google Gemini", "tier": "Free Tier (Rate-Limited Quota)", "default_model": "gemini-2.0-flash"},
+            "deepseek": {"name": "DeepSeek API", "tier": "Prepaid Only (No Permanent Free Tier)", "default_model": "deepseek-chat"},
+            "openrouter": {"name": "OpenRouter Gateway", "tier": "Prepaid Only (Account Credits)", "default_model": "anthropic/claude-3-haiku"},
+        }
+
+        # Check local vLLM
+        if "vllm" in self.providers and "vllm" not in self.disabled_providers:
+            available.append({
+                "provider": "vllm",
+                "display_name": "Local vLLM (RTX 3090)",
+                "model": getattr(self.providers["vllm"], "model_name", "Qwen2.5-14B"),
+                "status": "READY" if self.mode == ExecutionMode.LOCAL else "LOCAL_OFFLINE",
+                "is_active": self.mode == ExecutionMode.LOCAL,
+                "tier": "Local Zero-Cost (24GB VRAM)",
+            })
+
+        for p_id, info in cloud_meta.items():
+            if p_id in self.disabled_providers:
+                continue
+            status = cm.get_credential_status(p_id)
+            if status == "configured":
+                prov_obj = self.providers.get(p_id)
+                m_name = getattr(prov_obj, "model_name", info["default_model"]) if prov_obj else info["default_model"]
+                available.append({
+                    "provider": p_id,
+                    "display_name": info["name"],
+                    "model": m_name,
+                    "status": "READY",
+                    "is_active": self.task_policy.get(InferenceTask.RAG_GENERATION) == p_id,
+                    "tier": info["tier"],
+                })
+
+        return available
 
     def get_last_completion_info(self) -> Dict[str, Any]:
         """Return the actual provider name and model identifier used for the most recent completion."""
@@ -170,12 +251,12 @@ class ProviderRouter:
             logger.info(f"Cloud inference confirmation required for {target_name}. Defaulting to Local vLLM.")
             return self.providers["vllm"]
 
-        # Check if preferred provider is on rate-limit cooldown; if so, pick next healthy fallback
+        # Check if preferred provider is on rate-limit cooldown or disabled; if so, pick next healthy fallback
         now = time.time()
-        if self.provider_cooldowns.get(target_name, 0) > now:
+        if target_name in self.disabled_providers or self.provider_cooldowns.get(target_name, 0) > now:
             for cand in self.fallback_chain:
-                if cand != target_name and self.provider_cooldowns.get(cand, 0) <= now and cand in self.providers:
-                    logger.info(f"Provider '{target_name}' is cooling down. Routing {t.value} to '{cand}'.")
+                if cand != target_name and cand not in self.disabled_providers and self.provider_cooldowns.get(cand, 0) <= now and cand in self.providers:
+                    logger.info(f"Provider '{target_name}' unavailable (cooldown/disabled). Routing {t.value} to '{cand}'.")
                     target_name = cand
                     break
 
