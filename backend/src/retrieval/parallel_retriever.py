@@ -19,6 +19,16 @@ from collections import Counter
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 from src.retrieval.fusion import reciprocal_rank_fusion, CrossEncoderReranker
+from .bm25 import SelfContainedBM25
+from .intent import classify_retrieval_intent, redistribute_channel_weights
+
+__all__ = [
+    "AsyncParallelRetriever",
+    "ParallelRetriever",
+    "SelfContainedBM25",
+    "classify_retrieval_intent",
+    "redistribute_channel_weights",
+]
 
 BASE_DIR = Path(__file__).parent.parent.resolve()
 _bin_dir = BASE_DIR / "bin"
@@ -32,95 +42,13 @@ except Exception:
     HAS_RUST_ENGINE = False
 
 
-class SelfContainedBM25:
-    """
-    An independent, zero-dependency implementation of the Okapi BM25 
-    document ranking algorithm. Completely offline-compatible.
-    """
-    def __init__(self, corpus_chunks: list, k1: float = 1.5, b: float = 0.75):
-        self.k1 = k1
-        self.b = b
-        self.chunks = corpus_chunks
-        self.corpus_size = len(corpus_chunks)
-        
-        # Tokenize corpus
-        self.tokenized_corpus = [self._tokenize(c.get("plain_text") or c.get("text") or "") for c in corpus_chunks]
-        self.avg_doc_len = (
-            sum(len(doc) for doc in self.tokenized_corpus) / self.corpus_size 
-            if self.corpus_size > 0 else 1.0
-        )
-        
-        # Calculate document frequencies
-        self.doc_freqs = []
-        self.doc_lens = []
-        self.df = Counter()
-        
-        for doc in self.tokenized_corpus:
-            self.doc_lens.append(len(doc))
-            freqs = Counter(doc)
-            self.doc_freqs.append(freqs)
-            for word in freqs.keys():
-                self.df[word] += 1
-                
-        # Precompute IDF scores
-        self.idf = {}
-        for word, freq in self.df.items():
-            self.idf[word] = math.log((self.corpus_size - freq + 0.5) / (freq + 0.5) + 1.0)
-            
-    def _tokenize(self, text: str) -> list:
-        return re.findall(r'\b\w+\b', text.lower())
-        
-    def search(self, query: str, top_k: int = 6, active_docs: Optional[List[str]] = None) -> list:
-        # Strict drawer isolation: If active_docs is explicitly empty, return zero hits
-        if active_docs is not None and len(active_docs) == 0:
-            return []
-        query_tokens = [t for t in self._tokenize(query) if len(t) > 2]
-        if not query_tokens:
-            return []
-            
-        scores = []
-        for i in range(self.corpus_size):
-            chunk = self.chunks[i]
-            if active_docs:
-                doc_name = str(chunk.get("pdf_filename") or (chunk.get("metadata") or {}).get("pdf_filename") or chunk.get("document_id") or (chunk.get("metadata") or {}).get("doc_id") or "")
-                clean_doc = re.sub(r"[^a-zA-Z0-9]", "", doc_name.lower())
-                matched_doc = False
-                for ad in active_docs:
-                    clean_ad = re.sub(r"[^a-zA-Z0-9]", "", str(ad).lower())
-                    clean_stem = re.sub(r"[^a-zA-Z0-9]", "", Path(ad).stem.lower())
-                    if clean_ad in clean_doc or clean_doc in clean_ad or clean_stem in clean_doc or clean_doc in clean_stem:
-                        matched_doc = True
-                        break
-                if not matched_doc:
-                    continue
-
-            score = 0.0
-            doc_len = self.doc_lens[i]
-            freqs = self.doc_freqs[i]
-            
-            for token in query_tokens:
-                if token in freqs:
-                    tf = freqs[token]
-                    idf = self.idf.get(token, 0.0)
-                    
-                    numerator = tf * (self.k1 + 1)
-                    denominator = tf + self.k1 * (1.0 - self.b + self.b * (doc_len / self.avg_doc_len))
-                    score += idf * (numerator / denominator)
-                    
-            if score > 0.0:
-                item = dict(chunk)
-                item["bm25_score"] = float(score)
-                scores.append((score, item))
-            
-        # Sort descending by BM25 score
-        scores.sort(key=lambda x: x[0], reverse=True)
-        return [chunk for score, chunk in scores[:top_k]]
-
-
 class AsyncParallelRetriever:
     """
     Executes dense, sparse, and graph retrieval paths concurrently using asyncio.gather.
     """
+
+    # Retain static method alias for backward compatibility
+    classify_retrieval_intent = staticmethod(classify_retrieval_intent)
 
     def __init__(self, rag_pipeline: Any, reranker_model: Optional[str] = None):
         self.pipeline = rag_pipeline
@@ -342,41 +270,7 @@ class AsyncParallelRetriever:
 
         return await loop.run_in_executor(None, _graph_search)
 
-    @staticmethod
-    def classify_retrieval_intent(query: str) -> Tuple[str, List[float]]:
-        """
-        Dynamically classifies query intent into retrieval modalities:
-        - NUMERICAL_OR_FACTUAL: High density of digits, dates, currencies, schedule/census/budget keywords.
-          Weights: [Dense: 0.30, Sparse BM25: 0.50, Neo4j Graph: 0.20]
-        - RELATIONAL_OR_LINEAGE: Entity hierarchies, directors, organizations, faculties, dependencies.
-          Weights: [Dense: 0.25, Sparse BM25: 0.20, Neo4j Graph: 0.55]
-        - THEMATIC_OR_OVERVIEW: Broad summaries, conceptual research, comparative narratives.
-          Weights: [Dense: 0.55, Sparse BM25: 0.25, Neo4j Graph: 0.20]
-        """
-        q_lower = query.lower()
 
-        # 1. Numerical & Quantitative indicators
-        has_numbers = bool(re.search(r"\b\d+(?:\.\d+)?%?\b", query))
-        has_financial = any(k in q_lower for k in [
-            "expenditure", "revenue", "budget", "cost", "crore", "lakh", "million", "billion",
-            "schedule", "fee", "penalty", "population", "census", "growth", "metric", "count",
-            "how many", "total", "percentage", "amount", "rupees", "inr", "$", "₹", "€"
-        ])
-        if has_financial or (has_numbers and ("how" in q_lower or "what" in q_lower or "which" in q_lower)):
-            return "NUMERICAL_OR_FACTUAL", [0.30, 0.50, 0.20]
-
-        # 2. Relational & Multi-hop Lineage indicators
-        has_relational = any(k in q_lower for k in [
-            "director", "dean", "faculty", "professor", "head", "department", "centre",
-            "alumnus", "alumni", "founder", "incubated", "startup", "partner", "collaborat",
-            "subsidiary", "who is", "who was", "affiliated", "connected", "lineage", "parent of",
-            "born in", "founded by", "led by", "awarded to"
-        ])
-        if has_relational:
-            return "RELATIONAL_OR_LINEAGE", [0.25, 0.20, 0.55]
-
-        # 3. Default Thematic / Conceptual
-        return "THEMATIC_OR_OVERVIEW", [0.55, 0.25, 0.20]
 
     async def retrieve_parallel_and_fuse(
         self,
@@ -418,38 +312,12 @@ class AsyncParallelRetriever:
 
         # 3. Classify query intent to dynamically weight modalities
         intent_type, raw_intent_weights = self.classify_retrieval_intent(query)
-
-        # Variance-based signal calibration:
-        # Check if sparse BM25 scores have actual discriminative variance
-        dense_signal = bool(dense_res and len(dense_res) > 0)
-        sparse_signal = False
-        if sparse_res:
-            s_scores = [float(s.get("similarity") or s.get("score") or 0.0) for s in sparse_res]
-            if len(s_scores) > 1 and (max(s_scores) - min(s_scores)) > 0.01:
-                sparse_signal = True
-            elif len(s_scores) == 1 and s_scores[0] > 0.1:
-                sparse_signal = True
-
-        graph_signal = bool(graph_res and len(graph_res) > 0)
-
-        # Dynamic channel weight redistribution:
-        # If BM25 or Graph have zero discriminative signal (e.g. open-domain query),
-        # dynamically shift weight budget into the dense vector channel.
-        w_dense, w_sparse, w_graph = raw_intent_weights
-        if not sparse_signal and not graph_signal:
-            w_dense = 1.0
-            w_sparse = 0.0
-            w_graph = 0.0
-        elif not sparse_signal:
-            w_dense += w_sparse * 0.75
-            w_graph += w_sparse * 0.25
-            w_sparse = 0.0
-        elif not graph_signal:
-            w_dense += w_graph * 0.75
-            w_sparse += w_graph * 0.25
-            w_graph = 0.0
-
-        adapted_weights = [w_dense, w_sparse, w_graph]
+        adapted_weights = redistribute_channel_weights(
+            raw_intent_weights=raw_intent_weights,
+            dense_res=dense_res or [],
+            sparse_res=sparse_res or [],
+            graph_res=graph_res or [],
+        )
 
         # 4. Reciprocal Rank Fusion with Adaptive Intent Weights
         ranked_candidates_list = [dense_res or [], sparse_res or [], graph_res or []]
