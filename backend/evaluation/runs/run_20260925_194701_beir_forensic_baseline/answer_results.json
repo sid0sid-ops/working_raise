@@ -1,0 +1,67 @@
+[
+  {
+    "case_id": "run_20260925_194701_beir_forensic_baseline_BEIR_SCIFACT_1",
+    "question_id": "BEIR_SCIFACT_1",
+    "exact_match": false,
+    "token_f1": 0.0,
+    "numeric_exact_match": true,
+    "faithfulness_score": 1.0,
+    "quality_gate_decision": "ACCEPT",
+    "citations_valid": true,
+    "unsupported_answer": false,
+    "unnecessary_abstention": false,
+    "outcome": "WRONG_ANSWER"
+  },
+  {
+    "case_id": "run_20260925_194701_beir_forensic_baseline_BEIR_SCIFACT_3",
+    "question_id": "BEIR_SCIFACT_3",
+    "exact_match": false,
+    "token_f1": 0.0,
+    "numeric_exact_match": true,
+    "faithfulness_score": 1.0,
+    "quality_gate_decision": "ACCEPT",
+    "citations_valid": true,
+    "unsupported_answer": false,
+    "unnecessary_abstention": false,
+    "outcome": "WRONG_ANSWER"
+  },
+  {
+    "case_id": "run_20260925_194701_beir_forensic_baseline_BEIR_SCIFACT_5",
+    "question_id": "BEIR_SCIFACT_5",
+    "exact_match": false,
+    "token_f1": 0.0,
+    "numeric_exact_match": true,
+    "faithfulness_score": 1.0,
+    "quality_gate_decision": "ACCEPT",
+    "citations_valid": true,
+    "unsupported_answer": false,
+    "unnecessary_abstention": false,
+    "outcome": "WRONG_ANSWER"
+  },
+  {
+    "case_id": "run_20260925_194701_beir_forensic_baseline_BEIR_SCIFACT_13",
+    "question_id": "BEIR_SCIFACT_13",
+    "exact_match": false,
+    "token_f1": 0.0,
+    "numeric_exact_match": true,
+    "faithfulness_score": 1.0,
+    "quality_gate_decision": "ACCEPT",
+    "citations_valid": true,
+    "unsupported_answer": false,
+    "unnecessary_abstention": false,
+    "outcome": "WRONG_ANSWER"
+  },
+  {
+    "case_id": "run_20260925_194701_beir_forensic_baseline_BEIR_SCIFACT_36",
+    "question_id": "BEIR_SCIFACT_36",
+    "exact_match": false,
+    "token_f1": 0.0,
+    "numeric_exact_match": true,
+    "faithfulness_score": 1.0,
+    "quality_gate_decision": "ACCEPT",
+    "citations_valid": true,
+    "unsupported_answer": false,
+    "unnecessary_abstention": false,
+    "outcome": "WRONG_ANSWER"
+  }
+]

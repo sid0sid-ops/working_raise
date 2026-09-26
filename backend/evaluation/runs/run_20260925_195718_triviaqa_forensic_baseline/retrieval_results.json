@@ -1,0 +1,150 @@
+[
+  {
+    "case_id": "run_20260925_195718_triviaqa_forensic_baseline_TRIVIA_tc_2",
+    "question_id": "TRIVIA_tc_2",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_reranked": false,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": false,
+    "gold_present_in_rrf": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 540.88,
+    "rerank_latency_ms": 449.83,
+    "reranked_candidates": [
+      "Annual_Report_2023_24_p145_c128_01_prop_3",
+      "Annual_Report_2021_22_p081_c10_01",
+      "Annual_Report_2021_22_parent_010",
+      "Annual_Report_2022_23_p069_c57_01_prop_2"
+    ]
+  },
+  {
+    "case_id": "run_20260925_195718_triviaqa_forensic_baseline_TRIVIA_tc_33",
+    "question_id": "TRIVIA_tc_33",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_reranked": false,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 1915.28,
+    "rerank_latency_ms": 1810.89,
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_p167_c167_01_prop_11",
+      "Annual_Report_2022_23_p080_c68_01",
+      "Annual_Report_2022_23_parent_068",
+      "Annual_Report_2023_24_p082_c70_01_prop_25"
+    ]
+  },
+  {
+    "case_id": "run_20260925_195718_triviaqa_forensic_baseline_TRIVIA_tc_40",
+    "question_id": "TRIVIA_tc_40",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_reranked": false,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": false,
+    "gold_present_in_rrf": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 283.46,
+    "rerank_latency_ms": 181.33,
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_p127_c127_01_prop_10",
+      "Annual_Report_2023_24_p101_c89_01"
+    ]
+  },
+  {
+    "case_id": "run_20260925_195718_triviaqa_forensic_baseline_TRIVIA_tc_49",
+    "question_id": "TRIVIA_tc_49",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_reranked": false,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 2131.45,
+    "rerank_latency_ms": 2039.24,
+    "reranked_candidates": [
+      "Annual_Report_2023_24_p083_c71_01_prop_3",
+      "Annual_Report_2023_24_p059_c47_01_prop_4",
+      "Annual_Report_2022_23_parent_008",
+      "Annual_Report_2023_24_p083_c71_01_prop_7"
+    ]
+  },
+  {
+    "case_id": "run_20260925_195718_triviaqa_forensic_baseline_TRIVIA_tc_56",
+    "question_id": "TRIVIA_tc_56",
+    "recalls": {
+      "recall@1": 1.0,
+      "recall@4": 1.0,
+      "recall@8": 1.0,
+      "recall@10": 1.0
+    },
+    "mrr@10": 1.0,
+    "ndcg@10": 2.0616063116448506,
+    "gold_present_in_reranked": true,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": 1,
+    "retrieval_latency_ms": 2011.72,
+    "rerank_latency_ms": 1918.44,
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_p045_c45_01_prop_3",
+      "BRIC_Annual_Report_2025_p205_c205_01_prop_12",
+      "graph_triple_1",
+      "BRIC_Annual_Report_2025_p045_c45_01_prop_1"
+    ]
+  }
+]

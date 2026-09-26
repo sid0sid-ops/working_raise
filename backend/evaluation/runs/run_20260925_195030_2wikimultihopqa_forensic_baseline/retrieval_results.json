@@ -1,0 +1,162 @@
+[
+  {
+    "case_id": "run_20260925_195030_2wikimultihopqa_forensic_baseline_2WIKI_8813f87c0bdd11eba7f7acde48001122",
+    "question_id": "2WIKI_8813f87c0bdd11eba7f7acde48001122",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_reranked": false,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 1668.32,
+    "rerank_latency_ms": 1560.32,
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_p127_c127_01_prop_18",
+      "graph_triple_4",
+      "graph_triple_17",
+      "graph_triple_0",
+      "graph_triple_3",
+      "graph_triple_2"
+    ]
+  },
+  {
+    "case_id": "run_20260925_195030_2wikimultihopqa_forensic_baseline_2WIKI_61a46987092f11ebbdaeac1f6bf848b6",
+    "question_id": "2WIKI_61a46987092f11ebbdaeac1f6bf848b6",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_reranked": false,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": false,
+    "gold_present_in_rrf": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 640.77,
+    "rerank_latency_ms": 526.95,
+    "reranked_candidates": [
+      "Annual_Report_2022_23_p098_c86_01_prop_8",
+      "Annual_Report_2022_23_p100_c88_01",
+      "Annual_Report_2022_23_p115_c103_01_prop_3",
+      "Annual_Report_2022_23_p106_c94_01_prop_16",
+      "Annual_Report_2022_23_parent_088",
+      "Annual_Report_2023_24_p120_c108_01_prop_11"
+    ]
+  },
+  {
+    "case_id": "run_20260925_195030_2wikimultihopqa_forensic_baseline_2WIKI_e2a3bf2a0bdd11eba7f7acde48001122",
+    "question_id": "2WIKI_e2a3bf2a0bdd11eba7f7acde48001122",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_reranked": false,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 1868.52,
+    "rerank_latency_ms": 1762.25,
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_p201_c201_01_prop_39",
+      "graph_triple_11",
+      "graph_triple_41",
+      "BRIC_Annual_Report_2025_p149_c149_01_prop_0",
+      "graph_triple_37",
+      "BRIC_Annual_Report_2025_p149_c149_01_prop_4"
+    ]
+  },
+  {
+    "case_id": "run_20260925_195030_2wikimultihopqa_forensic_baseline_2WIKI_0cd3bdea0bde11eba7f7acde48001122",
+    "question_id": "2WIKI_0cd3bdea0bde11eba7f7acde48001122",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_reranked": false,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 1591.09,
+    "rerank_latency_ms": 1512.65,
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_p120_c120_01_prop_5",
+      "BRIC_Annual_Report_2025_p128_c128_01_prop_2",
+      "BRIC_Annual_Report_2025_p127_c127_01",
+      "BRIC_Annual_Report_2025_parent_127",
+      "BRIC_Annual_Report_2025_p129_c129_01_prop_8",
+      "Annual_Report_2023_24_p092_c80_01_prop_3"
+    ]
+  },
+  {
+    "case_id": "run_20260925_195030_2wikimultihopqa_forensic_baseline_2WIKI_f9dcb4a60bda11eba7f7acde48001122",
+    "question_id": "2WIKI_f9dcb4a60bda11eba7f7acde48001122",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_reranked": false,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 1848.24,
+    "rerank_latency_ms": 1752.94,
+    "reranked_candidates": [
+      "Annual_Report_2023_24_p116_c104_01_prop_8",
+      "Annual_Report_2023_24_p117_c105_01_prop_12",
+      "Annual_Report_2023_24_p140_c125_01_prop_2",
+      "BRIC_Annual_Report_2025_p111_c111_01",
+      "Annual_Report_2022_23_p134_c119_01_prop_1",
+      "Annual_Report_2023_24_p152_c133_01_prop_3"
+    ]
+  }
+]

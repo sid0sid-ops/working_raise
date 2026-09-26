@@ -1,0 +1,22 @@
+{
+  "retrieval_recall@1": 0.2,
+  "retrieval_recall@4": 0.2,
+  "retrieval_recall@8": 0.2,
+  "retrieval_recall@10": 0.2,
+  "retrieval_mrr@10": 0.2,
+  "retrieval_ndcg@10": 0.4123,
+  "qa_exact_match": 0.2,
+  "qa_token_f1": 0.008,
+  "numeric_accuracy": 1.0,
+  "grounding_faithfulness": 0.8,
+  "citation_accuracy": 1.0,
+  "unsupported_answer_rate": 0.0,
+  "unnecessary_abstention_rate": 1.0,
+  "latency_p50_ms": 24161.94,
+  "latency_p95_ms": 25486.63,
+  "memory_recall_accuracy": 1.0,
+  "memory_read_latency_ms": 0.37,
+  "total_cases": 5,
+  "passed_cases": 0,
+  "failed_cases": 5
+}

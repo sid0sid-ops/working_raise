@@ -18,15 +18,12 @@ credentials.json
 *.db
 
 # Data directories (raw documents, PDFs, processed chunks, graph triples, manifests)
-data/
-**/data/
+/data/
 *.pdf
 
 # Evaluation Suites, Benchmarks & Datasets
-evaluation/
-eval_results*.json
-telemetry*.json
-questions.json
+!/evaluation/
+!/evaluation/**
 
 # Tests & Test Caches
 tests/

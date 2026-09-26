@@ -1,0 +1,271 @@
+{
+  "benchmark_name": "RAISE-Bench-V1",
+  "version": "2.0",
+  "metadata": {
+    "total_questions": 16,
+    "target_documents": [
+      "BRIC-Annual-Report-2025.pdf",
+      "Annual Report 2023-24.pdf",
+      "Annual Report 2022-23.pdf",
+      "Annual Report 2021-22.pdf"
+    ],
+    "tiers": [
+      "Tier 1: Exact Table Metrics",
+      "Tier 2: Multi-Hop Entity Relationships",
+      "Tier 3: Longitudinal Trend Analysis",
+      "Tier 4: Unanswerable Traps"
+    ]
+  },
+  "questions": [
+    {
+      "q_id": "Q101",
+      "tier": 1,
+      "target_document": "Annual Report 2023-24.pdf",
+      "page_citations": [
+        "Annual Report 2023-24.pdf (Balance Sheet as on 31st March 2024, Page 155)"
+      ],
+      "question": "In the National Institute of Plant Genome Research (NIPGR) Balance Sheet as on 31st March 2024 (Page 155), what are the exact figures reported for 'Corpus/Capital Fund', 'Reserves and Surplus', and 'Earmarked / Endowment Funds' for the Current Year (2023-24)?",
+      "ground_truth_answer": "- **Corpus/Capital Fund**: **Rs. 1,23,92,56,765**\n- **Reserves and Surplus**: **Rs. (7,01,72,084)**\n- **Earmarked / Endowment Funds**: **Rs. 14,27,83,599**",
+      "required_keywords": [
+        "14,27,83,599",
+        "1,23,92",
+        "7,01,72",
+        "Corpus",
+        "Endowment"
+      ]
+    },
+    {
+      "q_id": "Q102",
+      "tier": 1,
+      "target_document": "BRIC-Annual-Report-2025.pdf",
+      "page_citations": [
+        "BRIC-Annual-Report-2025.pdf (Doctoral Research & Training, Page 17)"
+      ],
+      "question": "According to the BRIC Annual Report 2025 (Page 17), under the doctoral research program details, what are the exact counts for 'ongoing networked interdisciplinary research programs', 'total students currently enrolled', 'first batch students who completed immersion training', and 'number of partner agencies' involved in immersion training?",
+      "ground_truth_answer": "- **Ongoing networked interdisciplinary research programs**: **47**\n- **Total students currently enrolled**: **122**\n- **First batch students pursuing doctoral research after immersion training**: **57**\n- **Number of partner agencies for immersion training**: **13**",
+      "required_keywords": [
+        "47",
+        "122",
+        "57",
+        "13",
+        "immersion training",
+        "interdisciplinary"
+      ]
+    },
+    {
+      "q_id": "Q103",
+      "tier": 1,
+      "target_document": "BRIC-Annual-Report-2025.pdf",
+      "page_citations": [
+        "BRIC-Annual-Report-2025.pdf (Section 2.1.4 EIR Program, Page 17)"
+      ],
+      "question": "In the BRIC Annual Report 2025 (Page 17), under Section 2.1.4 'Entrepreneur in Residence (EIR) program', what are the exact numbers for 'technology submissions solicited', 'technologies shortlisted across sectors', 'duration of salary funding (in months)', and 'technologies selected for funding and mentoring in the first phase'?",
+      "ground_truth_answer": "- **Technology submissions solicited**: **38**\n- **Technologies shortlisted across sectors**: **9**\n- **Duration of salary funding**: **18-month** salary (jointly funded by BIRAC and VCs)\n- **Technologies selected for funding and mentoring in the first phase**: **5**",
+      "required_keywords": [
+        "38",
+        "9",
+        "18-month",
+        "5",
+        "BIRAC",
+        "EIR",
+        "submissions"
+      ]
+    },
+    {
+      "q_id": "Q104",
+      "tier": 1,
+      "target_document": "Annual Report 2021-22.pdf",
+      "page_citations": [
+        "Annual Report 2021-22.pdf (Balance Sheet as on 31st March 2022, Page 131)"
+      ],
+      "question": "In the National Institute of Plant Genome Research (NIPGR) Balance Sheet as on 31st March 2022 (Page 131), what are the exact figures reported for 'Corpus/Capital Fund' for both the Current Year (2021-22) and the Previous Year (2020-21)?",
+      "ground_truth_answer": "- **Current Year (2021-22)**: **Rs. 1,24,28,61,303**\n- **Previous Year (2020-21)**: **Rs. 1,24,91,58,426**",
+      "required_keywords": [
+        "1,24,28,61,303",
+        "1,24,91,58,426",
+        "Corpus",
+        "Balance Sheet",
+        "31st March 2022"
+      ]
+    },
+    {
+      "q_id": "Q201",
+      "tier": 2,
+      "target_document": "Annual Report 2023-24.pdf",
+      "page_citations": [
+        "Annual Report 2023-24.pdf (Balance Sheet Signatories, Page 155)"
+      ],
+      "question": "Who is the Director of the National Institute of Plant Genome Research (NIPGR) who signed the Balance Sheet as on 31st March 2024, and what are the names and designations of the Finance Officer and Controller of Administration who co-signed the financial statements on August 24, 2024?",
+      "ground_truth_answer": "- **Director**: **Dr. Subhra Chakraborty**\n- **Finance Officer**: **Vineeta Sharma**\n- **Controller of Administration**: **Sandeep Datta**\n- **Auditor**: **Parul Goyal (Chartered Accountant)**",
+      "required_keywords": [
+        "Subhra Chakraborty",
+        "Vineeta Sharma",
+        "Sandeep Datta",
+        "Director",
+        "Finance Officer",
+        "Controller of Administration"
+      ]
+    },
+    {
+      "q_id": "Q202",
+      "tier": 2,
+      "target_document": "BRIC-Annual-Report-2025.pdf",
+      "page_citations": [
+        "BRIC-Annual-Report-2025.pdf (Pages 10 and 17)"
+      ],
+      "question": "Under which central government department was the Biotechnology Research and Innovation Council (BRIC) established as an apex institutional framework, and what specific council/agency collaborated with BRIC to launch the Post-Doctoral Entrepreneur-in-Residence (EIR) program?",
+      "ground_truth_answer": "- **Central Government Department**: **Department of Biotechnology (DBT)**, Government of India\n- **Collaborating Agency**: **Biotechnology Industry Research Assistance Council (BIRAC)**",
+      "required_keywords": [
+        "Department of Biotechnology",
+        "DBT",
+        "BIRAC",
+        "Biotechnology Industry Research Assistance Council",
+        "Entrepreneur-in-Residence"
+      ]
+    },
+    {
+      "q_id": "Q203",
+      "tier": 2,
+      "target_document": "Annual Report 2023-24.pdf",
+      "page_citations": [
+        "Annual Report 2023-24.pdf (Research Highlights, Page 29)"
+      ],
+      "question": "In the research programs of NIPGR detailed in the 2023-24 Annual Report, which fungal pathogen was identified as causing devastating dry root rot (DRR) in chickpea exacerbated by drought, and who was the Principal Investigator (PI) leading this project?",
+      "ground_truth_answer": "- **Fungal Pathogen**: **Macrophomina phaseolina**\n- **Disease**: **Dry root rot (DRR)** in chickpea\n- **Principal Investigator (PI)**: **Dr. Muthappa Senthil-Kumar**",
+      "required_keywords": [
+        "Macrophomina phaseolina",
+        "Muthappa Senthil-Kumar",
+        "dry root rot",
+        "chickpea"
+      ]
+    },
+    {
+      "q_id": "Q204",
+      "tier": 2,
+      "target_document": "BRIC-Annual-Report-2025.pdf",
+      "page_citations": [
+        "BRIC-Annual-Report-2025.pdf (Governance and Strategic Initiatives, Page 15)"
+      ],
+      "question": "According to the BRIC Annual Report 2025 (Page 15), on what exact dates were the four 'Chintan Shivirs' organized to deliberate on research priorities and administrative harmonization, and how many research ideas were submitted through the portal?",
+      "ground_truth_answer": "- **Chintan Shivir Dates**:\n  1. **26-27 May 2023**\n  2. **7-8 September 2023**\n  3. **16 March 2024**\n  4. **28 September 2024**\n- **Research Ideas Submitted**: **over 175 research ideas** (with profiles of more than 320 scientists registered)",
+      "required_keywords": [
+        "26-27 May 2023",
+        "7-8 September 2023",
+        "16 March 2024",
+        "28 September 2024",
+        "175",
+        "Chintan Shivirs"
+      ]
+    },
+    {
+      "q_id": "Q301",
+      "tier": 3,
+      "target_document": "Annual Report 2023-24.pdf",
+      "page_citations": [
+        "Annual Report 2023-24.pdf (Page 155) and Annual Report 2022-23.pdf (Page 150)"
+      ],
+      "question": "Compare the 'Earmarked / Endowment Funds' of NIPGR between the Balance Sheets as of 31st March 2023 (in 2022-23 report) and 31st March 2024 (in 2023-24 report). Did the fund increase or decrease, and what is the exact difference in Rupees?",
+      "ground_truth_answer": "- **31st March 2023**: **Rs. 11,40,23,933**\n- **31st March 2024**: **Rs. 14,27,83,599**\n- **Trend**: **Increased**\n- **Exact Difference**: **Rs. 2,87,59,666** (Rs. 14,27,83,599 - Rs. 11,40,23,933)",
+      "required_keywords": [
+        "11,40,23,933",
+        "14,27,83,599",
+        "increase",
+        "2,87,59,666",
+        "Endowment"
+      ]
+    },
+    {
+      "q_id": "Q302",
+      "tier": 3,
+      "target_document": "Annual Report 2022-23.pdf",
+      "page_citations": [
+        "Annual Report 2022-23.pdf (Page 150) and Annual Report 2021-22.pdf (Page 131)"
+      ],
+      "question": "What was the reported figure for 'Corpus/Capital Fund' of NIPGR on 31st March 2022 compared to 31st March 2023?",
+      "ground_truth_answer": "- **31st March 2022**: **Rs. 1,24,28,61,303**\n- **31st March 2023**: **Rs. 1,24,28,61,303**\n- **Comparison**: The Corpus/Capital Fund remained unchanged at **Rs. 1,24,28,61,303** across both fiscal year-ends.",
+      "required_keywords": [
+        "1,24,28,61,303",
+        "Corpus",
+        "31st March 2022",
+        "31st March 2023"
+      ]
+    },
+    {
+      "q_id": "Q303",
+      "tier": 3,
+      "target_document": "Annual Report 2023-24.pdf",
+      "page_citations": [
+        "Annual Report 2023-24.pdf (Income & Expenditure Account, Page 156)"
+      ],
+      "question": "In NIPGR's Income & Expenditure account for the year ended 31st March 2024 (Page 156), compare the recurring Grants and Subsidies received in the Current Year (2023-24) against the Previous Year (2022-23). What was the increase in recurring grants?",
+      "ground_truth_answer": "- **Recurring Grants Current Year (2023-24)**: **Rs. 53,55,00,000**\n- **Recurring Grants Previous Year (2022-23)**: **Rs. 48,50,00,000**\n- **Increase**: **Rs. 5,05,00,000** (an increase of Rs. 5.05 Crore)",
+      "required_keywords": [
+        "53,55,00,000",
+        "48,50,00,000",
+        "5,05,00,000",
+        "Grants",
+        "Recurring"
+      ]
+    },
+    {
+      "q_id": "Q304",
+      "tier": 3,
+      "target_document": "Annual Report 2023-24.pdf",
+      "page_citations": [
+        "Annual Report 2023-24.pdf (Income & Expenditure Account, Page 156)"
+      ],
+      "question": "In NIPGR's Income & Expenditure account for the year ended 31st March 2024 (Page 156), what were the Establishment Expenses for the Current Year (2023-24) and the Previous Year (2022-23), and by how much did they change?",
+      "ground_truth_answer": "- **Establishment Expenses Current Year (2023-24)**: **Rs. 18,14,41,812**\n- **Establishment Expenses Previous Year (2022-23)**: **Rs. 15,90,67,160**\n- **Net Change / Increase**: **Rs. 2,23,74,652**",
+      "required_keywords": [
+        "18,14,41,812",
+        "15,90,67,160",
+        "Establishment Expenses",
+        "2,23,74,652"
+      ]
+    },
+    {
+      "q_id": "Q401",
+      "tier": 4,
+      "target_document": "BRIC-Annual-Report-2025.pdf",
+      "page_citations": [],
+      "question": "According to the attached reports, what was the total expenditure allocated to quantum computing laboratory infrastructure at the Indian Institute of Science (IISc) Bangalore in 2024?",
+      "ground_truth_answer": "INSUFFICIENT_EVIDENCE: The attached institutional reports (BRIC and NIPGR annual reports) do not contain records or budget allocations for quantum computing laboratories at IISc Bangalore.",
+      "required_keywords": [
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "q_id": "Q402",
+      "tier": 4,
+      "target_document": "Annual Report 2023-24.pdf",
+      "page_citations": [],
+      "question": "What are the audited financial figures and total corpus balance reported for the fiscal year 2034-35 in the NIPGR annual report?",
+      "ground_truth_answer": "INSUFFICIENT_EVIDENCE: The document library contains reports up to the 2024-25 fiscal period. Financial data for the future year 2034-35 is not available.",
+      "required_keywords": [
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "q_id": "Q403",
+      "tier": 4,
+      "target_document": "Annual Report 2023-24.pdf",
+      "page_citations": [],
+      "question": "What was the total revenue earned by NIPGR from commercial space rocket launch vehicle licensing in 2023-24?",
+      "ground_truth_answer": "INSUFFICIENT_EVIDENCE: NIPGR is a plant genome and agricultural biotechnology research institute. The report contains no records or revenue related to space rocket launch vehicles.",
+      "required_keywords": [
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "q_id": "Q404",
+      "tier": 4,
+      "target_document": "BRIC-Annual-Report-2025.pdf",
+      "page_citations": [],
+      "question": "According to the internal admissions manual of IIT Bombay, what is the cutoff rank for Computer Science engineering?",
+      "ground_truth_answer": "INSUFFICIENT_EVIDENCE: The document 'internal admissions manual of IIT Bombay' is not registered in the active document library or attached to the drawer.",
+      "required_keywords": [
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+[
+  {
+    "case_id": "run_20260925_194733_trec_dl_2019_forensic_baseline_TREC_DL_2019_1108939",
+    "question_id": "TREC_DL_2019_1108939",
+    "exact_match": false,
+    "token_f1": 0.0,
+    "numeric_exact_match": true,
+    "faithfulness_score": 1.0,
+    "quality_gate_decision": "ACCEPT",
+    "citations_valid": true,
+    "unsupported_answer": false,
+    "unnecessary_abstention": false,
+    "outcome": "WRONG_ANSWER"
+  },
+  {
+    "case_id": "run_20260925_194733_trec_dl_2019_forensic_baseline_TREC_DL_2019_1112389",
+    "question_id": "TREC_DL_2019_1112389",
+    "exact_match": false,
+    "token_f1": 0.0,
+    "numeric_exact_match": true,
+    "faithfulness_score": 1.0,
+    "quality_gate_decision": "ACCEPT",
+    "citations_valid": true,
+    "unsupported_answer": false,
+    "unnecessary_abstention": false,
+    "outcome": "WRONG_ANSWER"
+  },
+  {
+    "case_id": "run_20260925_194733_trec_dl_2019_forensic_baseline_TREC_DL_2019_792752",
+    "question_id": "TREC_DL_2019_792752",
+    "exact_match": false,
+    "token_f1": 0.0,
+    "numeric_exact_match": true,
+    "faithfulness_score": 1.0,
+    "quality_gate_decision": "ACCEPT",
+    "citations_valid": true,
+    "unsupported_answer": false,
+    "unnecessary_abstention": false,
+    "outcome": "WRONG_ANSWER"
+  },
+  {
+    "case_id": "run_20260925_194733_trec_dl_2019_forensic_baseline_TREC_DL_2019_1119729",
+    "question_id": "TREC_DL_2019_1119729",
+    "exact_match": false,
+    "token_f1": 0.0,
+    "numeric_exact_match": true,
+    "faithfulness_score": 1.0,
+    "quality_gate_decision": "ACCEPT",
+    "citations_valid": true,
+    "unsupported_answer": false,
+    "unnecessary_abstention": false,
+    "outcome": "WRONG_ANSWER"
+  },
+  {
+    "case_id": "run_20260925_194733_trec_dl_2019_forensic_baseline_TREC_DL_2019_1105095",
+    "question_id": "TREC_DL_2019_1105095",
+    "exact_match": false,
+    "token_f1": 0.0,
+    "numeric_exact_match": true,
+    "faithfulness_score": 1.0,
+    "quality_gate_decision": "ACCEPT",
+    "citations_valid": true,
+    "unsupported_answer": false,
+    "unnecessary_abstention": false,
+    "outcome": "WRONG_ANSWER"
+  }
+]

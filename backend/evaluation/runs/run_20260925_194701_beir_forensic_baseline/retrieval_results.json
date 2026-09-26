@@ -1,0 +1,234 @@
+[
+  {
+    "case_id": "run_20260925_194701_beir_forensic_baseline_BEIR_SCIFACT_1",
+    "question_id": "BEIR_SCIFACT_1",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_vector": false,
+    "gold_present_in_bm25": false,
+    "gold_present_in_graph": false,
+    "gold_present_in_rrf": false,
+    "gold_present_in_reranked": false,
+    "rank_vector": -1,
+    "rank_bm25": -1,
+    "rank_graph": -1,
+    "rank_rrf": -1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 689.78,
+    "rerank_latency_ms": 1007.76,
+    "vector_candidates": [
+      "BRIC_Annual_Report_2025_p079_c79_01_prop_0",
+      "BRIC_Annual_Report_2025_p086_c86_01_prop_12",
+      "BRIC_Annual_Report_2025_parent_200",
+      "BRIC_Annual_Report_2025_p164_c164_01_prop_10",
+      "BRIC_Annual_Report_2025_p133_c133_01_prop_44"
+    ],
+    "bm25_candidates": [
+      "BRIC_Annual_Report_2025_p089_c89_01",
+      "BRIC_Annual_Report_2025_parent_089",
+      "BRIC_Annual_Report_2025_p144_c144_01",
+      "BRIC_Annual_Report_2025_parent_144",
+      "Annual_Report_2022_23_p023_c16_01"
+    ],
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_parent_155",
+      "BRIC_Annual_Report_2025_p175_c175_01",
+      "BRIC_Annual_Report_2025_parent_175",
+      "Annual_Report_2022_23_p041_c32_01_prop_6",
+      "BRIC_Annual_Report_2025_parent_200",
+      "BRIC_Annual_Report_2025_parent_089"
+    ]
+  },
+  {
+    "case_id": "run_20260925_194701_beir_forensic_baseline_BEIR_SCIFACT_3",
+    "question_id": "BEIR_SCIFACT_3",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_vector": false,
+    "gold_present_in_bm25": false,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": false,
+    "gold_present_in_reranked": false,
+    "rank_vector": -1,
+    "rank_bm25": -1,
+    "rank_graph": 1,
+    "rank_rrf": -1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 2179.98,
+    "rerank_latency_ms": 1531.92,
+    "vector_candidates": [
+      "Annual_Report_2023_24_p124_c112_01",
+      "Annual_Report_2022_23_parent_103",
+      "BRIC_Annual_Report_2025_p100_c100_01_prop_1",
+      "BRIC_Annual_Report_2025_parent_050",
+      "Annual_Report_2023_24_parent_087"
+    ],
+    "bm25_candidates": [
+      "BRIC_Annual_Report_2025_p100_c100_01",
+      "BRIC_Annual_Report_2025_parent_100",
+      "Annual_Report_2022_23_p018_c11_01",
+      "Annual_Report_2022_23_parent_011",
+      "BRIC_Annual_Report_2025_p179_c179_01"
+    ],
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_p176_c176_01",
+      "BRIC_Annual_Report_2025_parent_176",
+      "BRIC_Annual_Report_2025_p179_c179_01",
+      "BRIC_Annual_Report_2025_parent_179",
+      "BRIC_Annual_Report_2025_p100_c100_01_prop_1",
+      "BRIC_Annual_Report_2025_p070_c70_01"
+    ]
+  },
+  {
+    "case_id": "run_20260925_194701_beir_forensic_baseline_BEIR_SCIFACT_5",
+    "question_id": "BEIR_SCIFACT_5",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_vector": false,
+    "gold_present_in_bm25": false,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": false,
+    "gold_present_in_reranked": false,
+    "rank_vector": -1,
+    "rank_bm25": -1,
+    "rank_graph": 1,
+    "rank_rrf": -1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 2351.2,
+    "rerank_latency_ms": 1619.95,
+    "vector_candidates": [
+      "BRIC_Annual_Report_2025_p038_c38_01_prop_4",
+      "BRIC_Annual_Report_2025_p197_c197_01_prop_6",
+      "BRIC_Annual_Report_2025_p158_c158_01_prop_28",
+      "BRIC_Annual_Report_2025_p033_c33_01_prop_0",
+      "BRIC_Annual_Report_2025_p205_c205_01_prop_12"
+    ],
+    "bm25_candidates": [
+      "BRIC_Annual_Report_2025_p114_c114_01",
+      "BRIC_Annual_Report_2025_parent_114",
+      "Annual_Report_2022_23_p160_c141_01",
+      "Annual_Report_2022_23_parent_141",
+      "BRIC_Annual_Report_2025_p196_c196_01"
+    ],
+    "reranked_candidates": [
+      "Annual_Report_2022_23_p160_c141_01",
+      "Annual_Report_2022_23_parent_141",
+      "BRIC_Annual_Report_2025_p148_c148_01_prop_42",
+      "BRIC_Annual_Report_2025_p038_c38_01_prop_1",
+      "BRIC_Annual_Report_2025_p196_c196_01",
+      "Annual_Report_2021_22_parent_033"
+    ]
+  },
+  {
+    "case_id": "run_20260925_194701_beir_forensic_baseline_BEIR_SCIFACT_13",
+    "question_id": "BEIR_SCIFACT_13",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_vector": false,
+    "gold_present_in_bm25": false,
+    "gold_present_in_graph": false,
+    "gold_present_in_rrf": false,
+    "gold_present_in_reranked": false,
+    "rank_vector": -1,
+    "rank_bm25": -1,
+    "rank_graph": -1,
+    "rank_rrf": -1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 648.28,
+    "rerank_latency_ms": 1395.43,
+    "vector_candidates": [
+      "BRIC_Annual_Report_2025_p033_c33_01_prop_10",
+      "BRIC_Annual_Report_2025_p083_c83_01_prop_2",
+      "BRIC_Annual_Report_2025_p082_c82_01_prop_5",
+      "BRIC_Annual_Report_2025_p083_c83_01",
+      "BRIC_Annual_Report_2025_p083_c83_01_prop_1"
+    ],
+    "bm25_candidates": [
+      "BRIC_Annual_Report_2025_p083_c83_01",
+      "BRIC_Annual_Report_2025_parent_083",
+      "BRIC_Annual_Report_2025_p045_c45_01",
+      "BRIC_Annual_Report_2025_parent_045",
+      "BRIC_Annual_Report_2025_p079_c79_01"
+    ],
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_p083_c83_01_prop_1",
+      "BRIC_Annual_Report_2025_p180_c180_01_prop_13",
+      "BRIC_Annual_Report_2025_p083_c83_01",
+      "BRIC_Annual_Report_2025_parent_083",
+      "BRIC_Annual_Report_2025_p151_c151_01_prop_18",
+      "BRIC_Annual_Report_2025_p045_c45_01_prop_1"
+    ]
+  },
+  {
+    "case_id": "run_20260925_194701_beir_forensic_baseline_BEIR_SCIFACT_36",
+    "question_id": "BEIR_SCIFACT_36",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_vector": false,
+    "gold_present_in_bm25": false,
+    "gold_present_in_graph": false,
+    "gold_present_in_rrf": false,
+    "gold_present_in_reranked": false,
+    "rank_vector": -1,
+    "rank_bm25": -1,
+    "rank_graph": -1,
+    "rank_rrf": -1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 637.97,
+    "rerank_latency_ms": 1405.66,
+    "vector_candidates": [
+      "BRIC_Annual_Report_2025_p043_c43_01_prop_17",
+      "BRIC_Annual_Report_2025_p172_c172_01_prop_30",
+      "BRIC_Annual_Report_2025_p043_c43_01_prop_19",
+      "BRIC_Annual_Report_2025_p044_c44_01_prop_0",
+      "BRIC_Annual_Report_2025_p040_c40_01_prop_7"
+    ],
+    "bm25_candidates": [
+      "BRIC_Annual_Report_2025_p043_c43_01",
+      "BRIC_Annual_Report_2025_parent_043",
+      "BRIC_Annual_Report_2025_p044_c44_01",
+      "BRIC_Annual_Report_2025_parent_044",
+      "Annual_Report_2023_24_p023_c16_01"
+    ],
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_p043_c43_01_prop_19",
+      "BRIC_Annual_Report_2025_p044_c44_01",
+      "BRIC_Annual_Report_2025_p043_c43_01_prop_17"
+    ]
+  }
+]

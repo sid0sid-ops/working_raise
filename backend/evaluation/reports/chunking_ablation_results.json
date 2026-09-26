@@ -1,0 +1,110 @@
+[
+  {
+    "strategy_label": "Baseline A: Fixed Size",
+    "strategy": "fixed",
+    "child_chunks_count": 1,
+    "parent_chunks_count": 0,
+    "avg_child_tokens": 161.0,
+    "merges": 0,
+    "splits": 0,
+    "boundary_confidence": 0.0,
+    "keyword_evidence_recall": 1.0,
+    "latency_ms": 8040.84
+  },
+  {
+    "strategy_label": "Baseline B: Recursive Splitter",
+    "strategy": "recursive",
+    "child_chunks_count": 3,
+    "parent_chunks_count": 0,
+    "avg_child_tokens": 39.3,
+    "merges": 0,
+    "splits": 0,
+    "boundary_confidence": 0.0,
+    "keyword_evidence_recall": 0.778,
+    "latency_ms": 0.1
+  },
+  {
+    "strategy_label": "Baseline C: Semantic Continuity",
+    "strategy": "semantic",
+    "child_chunks_count": 5,
+    "parent_chunks_count": 5,
+    "avg_child_tokens": 33.4,
+    "merges": 0,
+    "splits": 4,
+    "boundary_confidence": 0.8,
+    "keyword_evidence_recall": 0.889,
+    "latency_ms": 12.76
+  },
+  {
+    "strategy_label": "Advanced A: Structure Aware",
+    "strategy": "structure_aware",
+    "child_chunks_count": 5,
+    "parent_chunks_count": 5,
+    "avg_child_tokens": 33.4,
+    "merges": 1,
+    "splits": 3,
+    "boundary_confidence": 0.85,
+    "keyword_evidence_recall": 0.889,
+    "latency_ms": 3.63
+  },
+  {
+    "strategy_label": "Advanced B: Hierarchical Parent-Child",
+    "strategy": "hierarchical",
+    "child_chunks_count": 5,
+    "parent_chunks_count": 5,
+    "avg_child_tokens": 33.4,
+    "merges": 1,
+    "splits": 3,
+    "boundary_confidence": 0.85,
+    "keyword_evidence_recall": 0.889,
+    "latency_ms": 3.89
+  },
+  {
+    "strategy_label": "Advanced C: GGAHC Full Hybrid",
+    "strategy": "gga_hybrid",
+    "child_chunks_count": 5,
+    "parent_chunks_count": 5,
+    "avg_child_tokens": 33.4,
+    "merges": 0,
+    "splits": 0,
+    "boundary_confidence": 0.85,
+    "keyword_evidence_recall": 0.889,
+    "latency_ms": 5.59
+  },
+  {
+    "strategy_label": "Ablation 1: GGAHC w/o Entity Continuity",
+    "strategy": "gga_hybrid",
+    "child_chunks_count": 5,
+    "parent_chunks_count": 5,
+    "avg_child_tokens": 33.4,
+    "merges": 0,
+    "splits": 2,
+    "boundary_confidence": 0.805,
+    "keyword_evidence_recall": 0.889,
+    "latency_ms": 4.3
+  },
+  {
+    "strategy_label": "Ablation 2: GGAHC w/o Rel Continuity",
+    "strategy": "gga_hybrid",
+    "child_chunks_count": 5,
+    "parent_chunks_count": 5,
+    "avg_child_tokens": 33.4,
+    "merges": 0,
+    "splits": 0,
+    "boundary_confidence": 0.85,
+    "keyword_evidence_recall": 0.889,
+    "latency_ms": 4.55
+  },
+  {
+    "strategy_label": "Ablation 3: GGAHC w/o Community Detection",
+    "strategy": "gga_hybrid",
+    "child_chunks_count": 5,
+    "parent_chunks_count": 5,
+    "avg_child_tokens": 33.4,
+    "merges": 0,
+    "splits": 0,
+    "boundary_confidence": 0.85,
+    "keyword_evidence_recall": 0.889,
+    "latency_ms": 3.6
+  }
+]

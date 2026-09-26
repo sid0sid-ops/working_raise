@@ -1,0 +1,162 @@
+[
+  {
+    "case_id": "run_20260925_195158_musique_forensic_baseline_MUSIQUE_2hop__153573_109006",
+    "question_id": "MUSIQUE_2hop__153573_109006",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_reranked": false,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 1623.13,
+    "rerank_latency_ms": 1581.0,
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_p043_c43_01_prop_21",
+      "BRIC_Annual_Report_2025_p046_c46_01_prop_10",
+      "BRIC_Annual_Report_2025_p043_c43_01_prop_10",
+      "BRIC_Annual_Report_2025_p134_c134_01_prop_35",
+      "BRIC_Annual_Report_2025_p158_c158_01_prop_8",
+      "BRIC_Annual_Report_2025_p160_c160_01_prop_47"
+    ]
+  },
+  {
+    "case_id": "run_20260925_195158_musique_forensic_baseline_MUSIQUE_4hop1__129721_32392_823060_610794",
+    "question_id": "MUSIQUE_4hop1__129721_32392_823060_610794",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_reranked": false,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 2043.86,
+    "rerank_latency_ms": 1934.54,
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_p114_c114_01",
+      "Annual_Report_2023_24_p140_c125_01_prop_2",
+      "Annual_Report_2022_23_p134_c119_01_prop_1",
+      "Annual_Report_2022_23_p129_c114_01_prop_5",
+      "Annual_Report_2022_23_p132_c117_01_prop_5",
+      "BRIC_Annual_Report_2025_parent_114"
+    ]
+  },
+  {
+    "case_id": "run_20260925_195158_musique_forensic_baseline_MUSIQUE_3hop2__655849_223623_162182",
+    "question_id": "MUSIQUE_3hop2__655849_223623_162182",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_reranked": false,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": true,
+    "gold_present_in_rrf": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 1966.28,
+    "rerank_latency_ms": 1869.84,
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_p052_c52_01",
+      "BRIC_Annual_Report_2025_p131_c131_01_prop_31",
+      "BRIC_Annual_Report_2025_p134_c134_01_prop_39",
+      "BRIC_Annual_Report_2025_p144_c144_01_prop_31",
+      "graph_triple_11",
+      "BRIC_Annual_Report_2025_parent_052"
+    ]
+  },
+  {
+    "case_id": "run_20260925_195158_musique_forensic_baseline_MUSIQUE_3hop1__241001_568433_47686",
+    "question_id": "MUSIQUE_3hop1__241001_568433_47686",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_reranked": false,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": false,
+    "gold_present_in_rrf": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 403.13,
+    "rerank_latency_ms": 359.85,
+    "reranked_candidates": [
+      "BRIC_Annual_Report_2025_p005_c05_01",
+      "BRIC_Annual_Report_2025_p114_c114_01",
+      "Annual_Report_2023_24_p138_c123_01_prop_2",
+      "Annual_Report_2023_24_p099_c87_01_prop_4",
+      "BRIC_Annual_Report_2025_parent_114",
+      "BRIC_Annual_Report_2025_parent_005"
+    ]
+  },
+  {
+    "case_id": "run_20260925_195158_musique_forensic_baseline_MUSIQUE_2hop__231890_595414",
+    "question_id": "MUSIQUE_2hop__231890_595414",
+    "recalls": {
+      "recall@1": 0.0,
+      "recall@4": 0.0,
+      "recall@8": 0.0,
+      "recall@10": 0.0
+    },
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0,
+    "gold_present_in_reranked": false,
+    "gold_present_in_vector": true,
+    "gold_present_in_bm25": true,
+    "gold_present_in_graph": false,
+    "gold_present_in_rrf": true,
+    "rank_vector": 1,
+    "rank_bm25": 1,
+    "rank_graph": 1,
+    "rank_rrf": 1,
+    "rank_reranked": -1,
+    "retrieval_latency_ms": 658.35,
+    "rerank_latency_ms": 544.4,
+    "reranked_candidates": [
+      "Annual_Report_2022_23_p039_c30_01_prop_15",
+      "BRIC_Annual_Report_2025_parent_065",
+      "Annual_Report_2023_24_p105_c93_01_prop_6",
+      "Annual_Report_2023_24_p023_c16_01_prop_8",
+      "Annual_Report_2023_24_p059_c47_01_prop_4",
+      "BRIC_Annual_Report_2025_p065_c65_01"
+    ]
+  }
+]

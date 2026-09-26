@@ -1,0 +1,13 @@
+{
+  "benchmark": "FRAMES",
+  "full_name": "Factuality, Retrieval, And reasoning MEasurement Set",
+  "source": "https://huggingface.co/datasets/google/frames-benchmark",
+  "dataset_revision": "58d9fb6330f3ab1316d1eca12e5e8ef23dcc22ef",
+  "filename": "test.tsv",
+  "sha256": "1f5b0a29345eae1708761cb69c4b1254ac2ff2621f8a3a2cd85c072a113834b9",
+  "download_date": "2026-09-23T22:00:22.022490+00:00",
+  "sample_count": 824,
+  "pipeline_version": "2.5.0",
+  "license": "Apache 2.0 (Google Research)",
+  "reference_paper": "https://arxiv.org/abs/2409.12941"
+}
