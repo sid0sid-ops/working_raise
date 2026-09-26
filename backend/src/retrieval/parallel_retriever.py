@@ -419,12 +419,44 @@ class AsyncParallelRetriever:
         # 3. Classify query intent to dynamically weight modalities
         intent_type, raw_intent_weights = self.classify_retrieval_intent(query)
 
+        # Variance-based signal calibration:
+        # Check if sparse BM25 scores have actual discriminative variance
+        dense_signal = bool(dense_res and len(dense_res) > 0)
+        sparse_signal = False
+        if sparse_res:
+            s_scores = [float(s.get("similarity") or s.get("score") or 0.0) for s in sparse_res]
+            if len(s_scores) > 1 and (max(s_scores) - min(s_scores)) > 0.01:
+                sparse_signal = True
+            elif len(s_scores) == 1 and s_scores[0] > 0.1:
+                sparse_signal = True
+
+        graph_signal = bool(graph_res and len(graph_res) > 0)
+
+        # Dynamic channel weight redistribution:
+        # If BM25 or Graph have zero discriminative signal (e.g. open-domain query),
+        # dynamically shift weight budget into the dense vector channel.
+        w_dense, w_sparse, w_graph = raw_intent_weights
+        if not sparse_signal and not graph_signal:
+            w_dense = 1.0
+            w_sparse = 0.0
+            w_graph = 0.0
+        elif not sparse_signal:
+            w_dense += w_sparse * 0.75
+            w_graph += w_sparse * 0.25
+            w_sparse = 0.0
+        elif not graph_signal:
+            w_dense += w_graph * 0.75
+            w_sparse += w_graph * 0.25
+            w_graph = 0.0
+
+        adapted_weights = [w_dense, w_sparse, w_graph]
+
         # 4. Reciprocal Rank Fusion with Adaptive Intent Weights
         ranked_candidates_list = [dense_res or [], sparse_res or [], graph_res or []]
         active_lists = []
         active_weights = []
-        for l_res, w in zip(ranked_candidates_list, raw_intent_weights):
-            if l_res:
+        for l_res, w in zip(ranked_candidates_list, adapted_weights):
+            if l_res and w > 0.0:
                 active_lists.append(l_res)
                 active_weights.append(w)
 

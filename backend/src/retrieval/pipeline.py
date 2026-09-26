@@ -6,6 +6,7 @@ multi-hop subgraph traversal, and agentic grounded answering.
 
 from __future__ import annotations
 
+import os
 import json
 import re
 from pathlib import Path
@@ -124,6 +125,19 @@ class StandaloneRAGPipeline:
                         self.sync_to_neo4j()
                     except Exception:
                         pass
+
+    def set_evaluation_namespace(self, collection_name: str) -> None:
+        """Dynamically routes vector search to an isolated evaluation collection."""
+        self.vector_engine.switch_collection(collection_name)
+        if hasattr(self, "agent_router") and hasattr(self.agent_router, "vector_engine"):
+            self.agent_router.vector_engine.switch_collection(collection_name)
+
+    def reset_production_namespace(self) -> None:
+        """Restores the canonical production academic collection."""
+        prod_col = os.getenv("CHROMA_COLLECTION_NAME", "iitmrp_docling_bge_large")
+        self.vector_engine.switch_collection(prod_col)
+        if hasattr(self, "agent_router") and hasattr(self.agent_router, "vector_engine"):
+            self.agent_router.vector_engine.switch_collection(prod_col)
 
     def process_artifacts(
         self,

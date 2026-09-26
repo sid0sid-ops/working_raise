@@ -30,6 +30,10 @@ def is_chunk_relevant(chunk: Dict[str, Any], gold_evidence: List[str]) -> bool:
         # Direct chunk id match
         if _normalize_id(gold_str) == c_id:
             return True
+        # Title or doc_id match (benchmarks)
+        c_title = _normalize_id(c_meta.get("title") or c_meta.get("doc_id") or "")
+        if c_title and _normalize_id(gold_str) == c_title:
+            return True
         # Citation match (e.g. "Page 155")
         if "page" in g_clean and c_page and f"page {c_page}" in g_clean:
             if not c_pdf or any(part in g_clean for part in c_pdf.split(".")[0].split("-")):

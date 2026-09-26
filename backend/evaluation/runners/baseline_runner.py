@@ -139,7 +139,16 @@ class BaselineEvaluationRunner:
             evaluation_mode=mode,
         )
 
-        # 4. Execute question-by-question evaluation
+        # 4. Setup benchmark isolated evaluation namespace (Dynamic routing)
+        from ..loaders.benchmark_corpus_indexer import BenchmarkCorpusIndexer
+        active_ns = BenchmarkCorpusIndexer.setup_benchmark_collection(
+            pipeline=self.pipeline,
+            benchmark_name=benchmark_name,
+            limit=len(questions) * 3,
+        )
+        logger.info(f"Routed evaluation pipeline to isolated namespace: '{active_ns}'")
+
+        # 5. Execute question-by-question evaluation
         raw_results = []
         retrieval_records = []
         answer_records = []
@@ -317,6 +326,12 @@ class BaselineEvaluationRunner:
         except ImportError:
             pass
 
+        # Restore canonical production academic namespace
+        try:
+            self.pipeline.reset_production_namespace()
+        except Exception:
+            pass
+
         return scorecard
 
     def _execute_retrieval_case(self, question: EvalQuestion) -> Dict[str, Any]:
@@ -454,7 +469,15 @@ class BaselineEvaluationRunner:
 
         # Retrieval trace extraction
         top_chunks = raw_res.get("top_chunks") or raw_res.get("relevant_chunks") or []
-        gold_ev = question.page_citations or question.required_keywords or [gold_answer]
+        candidate_gold = (
+            question.supporting_facts
+            or question.page_citations
+            or question.required_keywords
+            or (question.metadata.get("context_titles") if isinstance(question.metadata, dict) else [])
+            or (question.metadata.get("relevant_doc_ids") if isinstance(question.metadata, dict) else [])
+            or ([gold_answer] if gold_answer else [])
+        )
+        gold_ev = [str(g) for g in candidate_gold if g]
         recalls = calculate_recall_at_k(top_chunks, gold_ev, k_values=[1, 4, 8, 10])
 
         ret_trace = {

@@ -416,6 +416,87 @@ class LocalVectorEngine(IVectorStore):
             fallback_vecs.append([x / norm for x in vec])
         return fallback_vecs
 
+    def ingest_evaluation_chunks(
+        self,
+        chunks: List[Dict[str, Any]],
+        collection_name: str,
+        doc_id: str = "eval_corpus",
+    ) -> int:
+        """
+        Securely ingests benchmark/evaluation passages into an isolated ChromaDB collection.
+        Bypasses standard production doc_id rejection while strictly isolating from the
+        production academic corpus.
+        """
+        if not chunks:
+            return 0
+
+        self.switch_collection(collection_name)
+        col = self._get_collection()
+        if col is None:
+            return 0
+
+        ids = []
+        documents = []
+        metadatas = []
+
+        for idx, chunk in enumerate(chunks):
+            cid = str(chunk.get("chunk_id") or f"{doc_id}_chk_{idx}")
+            plain_text = chunk.get("plain_text") or chunk.get("text") or chunk.get("content") or ""
+            if not plain_text.strip():
+                continue
+
+            ids.append(cid)
+            documents.append(plain_text)
+            meta = dict(chunk.get("metadata") or {})
+            meta.update({
+                "chunk_id": cid,
+                "doc_id": str(chunk.get("doc_id") or doc_id),
+                "pdf_filename": str(chunk.get("pdf_filename") or doc_id),
+                "heading": str(chunk.get("heading") or chunk.get("title") or "Section"),
+                "primary_page": int(chunk.get("primary_page") or 1),
+                "token_estimate": int(chunk.get("token_estimate") or len(plain_text.split())),
+            })
+            metadatas.append(meta)
+
+        if not ids:
+            return 0
+
+        # Fast path: check existing IDs
+        try:
+            all_existing = set()
+            chk_batch = 2000
+            for i in range(0, len(ids), chk_batch):
+                batch_res = col.get(ids=ids[i:i+chk_batch])
+                if batch_res and "ids" in batch_res:
+                    all_existing.update(batch_res["ids"])
+            missing_indices = [i for i, c_id in enumerate(ids) if c_id not in all_existing]
+            if not missing_indices:
+                return len(ids)
+            ids = [ids[i] for i in missing_indices]
+            documents = [documents[i] for i in missing_indices]
+            metadatas = [metadatas[i] for i in missing_indices]
+        except Exception:
+            pass
+
+        embeddings = self.compute_embeddings(documents)
+
+        batch_size = 2000
+        total_inserted = 0
+        for i in range(0, len(ids), batch_size):
+            b_ids = ids[i:i+batch_size]
+            b_docs = documents[i:i+batch_size]
+            b_metas = metadatas[i:i+batch_size]
+            b_embs = embeddings[i:i+batch_size]
+            col.upsert(
+                ids=b_ids,
+                documents=b_docs,
+                embeddings=b_embs,
+                metadatas=b_metas,
+            )
+            total_inserted += len(b_ids)
+
+        return total_inserted
+
     def ingest_chunks(self, chunks: List[Dict[str, Any]], doc_id: str = "default") -> int:
         """
         Add context-enriched document chunks into ChromaDB collection with full provenance metadata.
