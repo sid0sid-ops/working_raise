@@ -13,6 +13,7 @@ Ensures 100% strict isolation:
 
 from __future__ import annotations
 
+import os
 import json
 import logging
 from pathlib import Path
@@ -33,8 +34,9 @@ class BenchmarkCorpusIndexer:
     @classmethod
     def get_namespace_for_benchmark(cls, benchmark_name: str) -> str:
         b_clean = benchmark_name.lower().strip().replace("-", "_").replace(" ", "_")
+        prod_col = os.getenv("CHROMA_COLLECTION_NAME", "raise_docling_bge_large")
         if b_clean in ("raise", "raise_domain", "tier1"):
-            return "iitmrp_docling_bge_large"
+            return prod_col
         return f"eval_{b_clean}"
 
     @classmethod
@@ -243,10 +245,11 @@ class BenchmarkCorpusIndexer:
         """
         namespace = cls.get_namespace_for_benchmark(benchmark_name)
         
+        prod_col = os.getenv("CHROMA_COLLECTION_NAME", "raise_docling_bge_large")
         # If in-domain, restore production collection
-        if namespace == "iitmrp_docling_bge_large":
+        if namespace == prod_col or namespace == "iitmrp_docling_bge_large":
             pipeline.reset_production_namespace()
-            return namespace
+            return prod_col
 
         # Switch to evaluation collection
         pipeline.set_evaluation_namespace(namespace)

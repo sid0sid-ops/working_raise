@@ -179,7 +179,7 @@ services:
       - LLM_BACKEND=openai-compatible
       - LLM_MODEL_NAME=Qwen/Qwen2.5-14B-Instruct-GPTQ-Int4
       - CHROMA_PERSIST_DIRECTORY=/app/.chromadb_bge_large
-      - CHROMA_COLLECTION_NAME=iitmrp_docling_bge_large
+      - CHROMA_COLLECTION_NAME=raise_docling_bge_large
       - EMBEDDING_MODEL=BAAI/bge-large-en-v1.5
       - EMBEDDING_DEVICE=cpu
       - EMBEDDING_DIMENSION=1024

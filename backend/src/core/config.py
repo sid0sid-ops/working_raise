@@ -71,7 +71,7 @@ class VectorConfig(BaseModel):
             else (PROJECT_ROOT / os.getenv("CHROMA_PERSIST_DIRECTORY", ".chromadb_bge_large")).resolve()
         )
     )
-    collection_name: str = Field(default_factory=lambda: os.getenv("CHROMA_COLLECTION_NAME", "iitmrp_docling_bge_large"))
+    collection_name: str = Field(default_factory=lambda: os.getenv("CHROMA_COLLECTION_NAME", "raise_docling_bge_large"))
     embedding_model: str = Field(default_factory=lambda: os.getenv("EMBEDDING_MODEL", "BAAI/bge-large-en-v1.5"))
     embedding_device: str = Field(default_factory=lambda: os.getenv("EMBEDDING_DEVICE", "cuda"))
     embedding_dimension: int = Field(default_factory=lambda: int(os.getenv("EMBEDDING_DIMENSION", "1024")))

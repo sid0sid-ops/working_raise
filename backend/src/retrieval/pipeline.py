@@ -134,7 +134,7 @@ class StandaloneRAGPipeline:
 
     def reset_production_namespace(self) -> None:
         """Restores the canonical production academic collection."""
-        prod_col = os.getenv("CHROMA_COLLECTION_NAME", "iitmrp_docling_bge_large")
+        prod_col = os.getenv("CHROMA_COLLECTION_NAME", "raise_docling_bge_large")
         self.vector_engine.switch_collection(prod_col)
         if hasattr(self, "agent_router") and hasattr(self.agent_router, "vector_engine"):
             self.agent_router.vector_engine.switch_collection(prod_col)

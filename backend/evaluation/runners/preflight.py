@@ -142,7 +142,7 @@ class PreflightHealthChecker:
                 resolved_chroma = cp.resolve()
                 break
         chroma_dir = resolved_chroma or Path(chroma_env).resolve()
-        chroma_coll = os.getenv("CHROMA_COLLECTION_NAME", "iitmrp_docling_bge_large")
+        chroma_coll = os.getenv("CHROMA_COLLECTION_NAME", "raise_docling_bge_large")
         ok_chroma, msg_chroma = cls.check_chromadb(chroma_dir, chroma_coll)
         results["chromadb"] = {"status": "PASS" if ok_chroma else "FAIL", "detail": msg_chroma}
         icon_chroma = "[PASS]" if ok_chroma else "[FAIL]"
